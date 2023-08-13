@@ -85,7 +85,7 @@ V\left(X\right)=\int_{-\infty}^\infty \left(x-E\left(X\right)\right)^2p\left(x\r
  \end{align}
 を，連続確率変数$X$の分散という．
  \subsection{関数の適用}
-関数$f:S\to T$を連続確率変数$X=\left(S,P\right)$に適用した連続確率変数を$Y=\left(T,Q\right)$とし，その確率密度関数を$q$とすると，累積分布関数$Q$は，
+微分可能な関数$f:S\to T$を連続確率変数$X=\left(S,P\right)$に適用した連続確率変数を$Y=\left(T,Q\right)$とし，その確率密度関数を$q$とすると，累積分布関数$Q$は，
  \begin{align}
 Q\left(b\right)&=\int_{-\infty}^bq\left(y\right)dy\nonumber\\
 &=\int_{x\in S|f\left(x\right)<b}p\left(x\right)\frac{dy}{dx}dx\nonumber\\
@@ -96,7 +96,7 @@ Q\left(b\right)&=\int_{-\infty}^bq\left(y\right)dy\nonumber\\
 q\left(b\right)&=Q'\left(b\right)\nonumber\\
 &=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)f'\left(x\right)dx
  \end{align}
-となる．ここで，上の微分を下の図を用いて解く．
+となる．ここで，上の微分を図を用いて解く．
  \begin{figure}
   \begin{center}
    \begin{tikzpicture}
@@ -113,9 +113,17 @@ q\left(b\right)&=Q'\left(b\right)\nonumber\\
     \draw[dashed](6,2)--(-0.5,2)node[left]{$b$};
     \draw[dashed](6.5,2.5)--(-0.5,2.5)node[left]{$b+\Delta b$};
    \end{tikzpicture}
-   \caption{$b$の微小な変化による$\{x\in S|f\left(x\right)<b\}$の変化}
+   \caption{$b$の微小な変化による$\{x\in S|f\left(x\right)<b\}$の変化}\label{IntegrationRangeChange}
   \end{center}
  \end{figure}
+図\ref{IntegrationRangeChange}のように，$f\left(x\right)=b$の全ての解を$\{a_0,\cdots,a_N\}=\{x\in S|f\left(x\right)=b\}$とし，$b$の微小な変化$\Delta b$に対する$a_0,\cdots,a_N$の反応をそれぞれ$\Delta a_0,\cdots,\Delta a_N$とする．
+ここで，$\Delta b$は十分に小さいから，$\forall n\in\{0,\cdots,N\}$に対して，
+ \begin{align}
+f'\left(a_n\right)&=\frac{\Delta b}{\Delta a_n}\nonumber\\
+\Delta a_n&=\frac{\Delta b}{f'\left(a_n\right)}
+ \end{align}
+である．
+ただしここで$f'\left(a_n\right)=0$の場合，それは$a_n$が$f$の極大若しくは極小であることにより，$b$の微小な変化によって$a_n$が消滅または2つに分裂することを意味し，$\Delta a_n$は定義できない．
  \begin{figure}
   \begin{center}
    \begin{tikzpicture}
@@ -125,16 +133,36 @@ q\left(b\right)&=Q'\left(b\right)\nonumber\\
     \draw[domain=1.5:6.5]plot({\x}, {5*(1/(pi*(1+(\x-4)^2)))*(\x^2-8*\x+44/3)})node[right]{$z=p\left(x\right)f'\left(x\right)$};
     \draw[dashed](2,{5*(1/(pi*(1+(2-4)^2)))*(2^2-8*2+44/3)})--(2,0)node[below]{$a_0$};
     \draw[dashed](2.2236,{5*(1/(pi*(1+(2.2236-4)^2)))*(2.2236^2-8*2.2236+44/3)})--(2.2236,-0.5)node[below]{$a_0+\Delta a_0$};
-    \draw({(2+2.2236)/2},{5*(1/(pi*(1+(2-4)^2)))*(2^2-8*2+44/3)/2})node{$s_0$};
+    \draw({(2+2.2236)/2},{5*(1/(pi*(1+(2-4)^2)))*(2^2-8*2+44/3)/2})node{$\Delta s_0$};
     \draw[dashed](4,{5*(1/(pi*(1+(4-4)^2)))*(4^2-8*4+44/3)})--(4,0)node[above]{$a_1$};
     \draw[dashed](3.61019,{5*(1/(pi*(1+(3.61019-4)^2)))*(3.61019^2-8*3.61019+44/3)})--(3.61019,0.5)node[above]{$a_1+\Delta a_1$};
-    \draw({(4+3.61019)/2},{5*(1/(pi*(1+(4-4)^2)))*(4^2-8*4+44/3)/2})node{$s_1$};
+    \draw({(4+3.61019)/2},{5*(1/(pi*(1+(4-4)^2)))*(4^2-8*4+44/3)/2})node{$\Delta s_1$};
     \draw[dashed](6,{5*(1/(pi*(1+(6-4)^2)))*(6^2-8*6+44/3)})--(6,0)node[below]{$a_2$};
     \draw[dashed](6.16621,{5*(1/(pi*(1+(6.16621-4)^2)))*(6.16621^2-8*6.16621+44/3)})--(6.16621,-0.5)node[below]{$a_2+\Delta a_2$};
-    \draw({(6+6.16621)/2},{5*(1/(pi*(1+(6-4)^2)))*(6^2-8*6+44/3)/2})node{$s_2$};
+    \draw({(6+6.16621)/2},{5*(1/(pi*(1+(6-4)^2)))*(6^2-8*6+44/3)/2})node{$\Delta s_2$};
    \end{tikzpicture}
-   \caption{$b$の微小な変化による$Q\left(b\right)$の変化}
+   \caption{$b$の微小な変化による$Q\left(b\right)$の変化}\label{QChange}
   \end{center}
  \end{figure}
+図\ref{QChange}において，領域$\{(x,y)|a_n\le x\le a_n+\Delta a_n\land \left(0-y\right)\left(p\left(x\right)f'\left(x\right)-y\right)\le0\}$を台形とみなすと，その面積$\Delta s_n$は，
+ \begin{align}
+\Delta s_n&=\frac{1}{2}\Delta a_n\left(p\left(a_n\right)f'\left(a_n\right)+p\left(a_n+\Delta a_n\right)f'\left(a_n+\Delta a_n\right)\right)\nonumber\\
+&=\frac{\Delta b}{2f'\left(a_n\right)}\left(p\left(a_n\right)f'\left(a_n\right)+p\left(a_n+\frac{\Delta b}{f'\left(a_n\right)}\right)f'\left(a_n+\frac{\Delta b}{f'\left(a_n\right)}\right)\right)
+ \end{align}
+となり，これを$\Delta b$で割ると，
+ \begin{align}
+\frac{\Delta s_n}{\Delta b}&=\frac{p\left(a_n\right)f'\left(a_n\right)+p\left(a_n+\frac{\Delta b}{f'\left(a_n\right)}\right)f'\left(a_n+\frac{\Delta b}{f'\left(a_n\right)}\right)}{2f'\left(a_n\right)}\nonumber\\
+&=\frac{p\left(a_n\right)f'\left(a_n\right)+p\left(a_n+\frac{0}{f'\left(a_n\right)}\right)f'\left(a_n+\frac{0}{f'\left(a_n\right)}\right)}{2f'\left(a_n\right)}\nonumber\\
+&=\frac{p\left(a_n\right)f'\left(a_n\right)+p\left(a_n\right)f'\left(a_n\right)}{2f'\left(a_n\right)}\nonumber\\
+&=\frac{2p\left(a_n\right)f'\left(a_n\right)}{2f'\left(a_n\right)}\nonumber\\
+&=p\left(a_n\right)
+ \end{align}
+となる．$q\left(b\right)$は，これを$\forall a_n\in\{a_0,\cdots,a_N\}=\{x\in S|f\left(x\right)=b\}$について足し合わせたものであるから，
+ \begin{align}
+q\left(b\right)&=Q'\left(b\right)\nonumber\\
+&=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)f'\left(x\right)dx\nonumber\\
+&=\sum_{x\in S|f\left(x\right)=b}p\left(x\right)
+ \end{align}
+となる．
 \end{document}
 

@@ -15,6 +15,7 @@ rebuild: clean
 
 %.dvi: %.tex
 	platex $^
+	platex $^
 
 .PRECIOUS: %.dvi
 
