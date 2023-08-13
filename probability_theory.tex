@@ -10,8 +10,8 @@
 $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0\right),\cdots,p\left(0\right)$で定まる変数がある．
  \begin{itemize}
   \item 全ての場合の集合$S=\{0,\cdots,n-1\}$を標本空間という．
-  \item $p:S\rightarrow\left[0,1\right]$を確率質量関数という．
-  \item $P:S\rightarrow\left[0,1\right];a\mapsto\sum_{x\in S|x<a}p\left(x\right)$を累積分布関数という．
+  \item $p:S\to\left[0,1\right]$を確率質量関数という．
+  \item $P:S\to\left[0,1\right];a\mapsto\sum_{x\in S|x<a}p\left(x\right)$を累積分布関数という．
  \end{itemize}
 累積分布関数$P$が
  \begin{align}
@@ -38,12 +38,25 @@ E\left(X\right)=\sum_{x\in S}xp\left(x\right)
 V\left(X\right)=\sum_{x\in S}\left(x-E\left(X\right)\right)^2p\left(x\right)
  \end{align}
 を，離散確率変数$X$の分散という．
+ \subsection{関数の適用}
+関数$f:S\to T$を離散確率変数$X=\left(S,P\right)$に適用した離散確率変数を$Y=\left(T,Q\right)$とし，その確率質量関数を$q$とすると，累積分布関数$Q$は，
+ \begin{align}
+Q\left(b\right)&=\sum_{y\in T|y<b}q\left(y\right)\nonumber\\
+&=\sum_{x\in S|f\left(x\right)<b}p\left(x\right)
+ \end{align}
+であり，確率質量関数$q$は，
+ \begin{align}
+q\left(b\right)&=Q\left(b+1\right)-Q\left(b\right)\nonumber\\
+&=\left(\sum_{x\in S|f\left(x\right)<b+1}p\left(x\right)\right)-\left(\sum_{x\in S|f\left(x\right)<b}p\left(x\right)\right)\nonumber\\
+&=\sum_{x\in S|f\left(x\right)=b}p\left(x\right)
+ \end{align}
+となる．
  \section{連続確率変数}
 実数全体の集合$\mathbb{R}$の中から確率的に実数が選択される変数がある．
  \begin{itemize}
   \item 選択されうる実数の集合$S=\mathbb{R}$を標本空間という．
-  \item $p:S\rightarrow\left[0,\infty\right)$を確率密度関数という．
-  \item $P:S\rightarrow\left[0,1\right];a\mapsto\int_{-\infty}^ap\left(x\right)dx$を累積分布関数という．
+  \item $p:S\to\left[0,\infty\right)$を確率密度関数という．
+  \item $P:S\to\left[0,1\right];a\mapsto\int_{-\infty}^ap\left(x\right)dx$を累積分布関数という．
  \end{itemize}
 累積分布関数$P$が
  \begin{align}
@@ -69,5 +82,13 @@ E\left(X\right)=\int_{-\infty}^\infty xp\left(x\right)dx
 V\left(X\right)=\int_{-\infty}^\infty \left(x-E\left(X\right)\right)^2p\left(x\right)dx
  \end{align}
 を，連続確率変数$X$の分散という．
+ \subsection{関数の適用}
+関数$f:S\to T$を連続確率変数$X=\left(S,P\right)$に適用した連続確率変数を$Y=\left(T,Q\right)$とし，その確率密度関数を$q$とすると，累積分布関数$Q$は，
+ \begin{align}
+Q\left(b\right)&=\int_{-\infty}^bq\left(y\right)dy\nonumber\\
+&=\int_{x\in S|f\left(x\right)<b}p\left(x\right)\frac{dy}{dx}dx\nonumber\\
+&=\int_{x\in S|f\left(x\right)<b}p\left(x\right)f'\left(x\right)dx
+ \end{align}
+であり，確率密度関数$q$は，
 \end{document}
 
