@@ -1,6 +1,8 @@
 \documentclass[dvipdfmx]{jsarticle}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{intersections, calc, arrows.meta}
 \title{確率論}
 \author{伊藤 太清}
 \date{\today}
@@ -90,5 +92,22 @@ Q\left(b\right)&=\int_{-\infty}^bq\left(y\right)dy\nonumber\\
 &=\int_{x\in S|f\left(x\right)<b}p\left(x\right)f'\left(x\right)dx
  \end{align}
 であり，確率密度関数$q$は，
+ \begin{align}
+q\left(b\right)&=Q'\left(b\right)\nonumber\\
+&=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)f'\left(x\right)dx
+ \end{align}
+となる．ここで，上の微分を下の図を用いて解く．
+ \begin{center}
+  \begin{tikzpicture}
+   \draw(0,0)node[below left]{$O$};
+   \draw[->](-0.5,0)--(8,0)node[right]{$x$};
+   \draw[->](0,-0.5)--(0,4)node[above]{$y$};
+   \draw[domain=-2.5:2.5]plot({\x+4}, {(\x^3-4*\x)/3+2})node[right]{$y=f\left(x\right)$};
+   \draw[dashed](2,2)--(2,0)node[below]{$a_0$};
+   \draw[dashed](4,2)--(4,0)node[below]{$a_1$};
+   \draw[dashed](6,2)--(6,0)node[below]{$a_2$};
+   \draw[dashed](6,2)--(0,2)node[left]{$b$};
+  \end{tikzpicture}
+ \end{center}
 \end{document}
 
