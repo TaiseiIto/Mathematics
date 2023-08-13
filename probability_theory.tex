@@ -1,41 +1,73 @@
 \documentclass[dvipdfmx]{jsarticle}
+\usepackage{amsfonts}
 \usepackage{amsmath}
-\title{�m���_}
-\author{�ɓ� ����}
+\title{確率論}
+\author{伊藤 太清}
 \date{\today}
 \begin{document}
  \maketitle
- \section{���U�m���ϐ�}
-$n$�ʂ�̏ꍇ$S=\{0,\cdots,n-1\}$���ꂼ��̊m��$\left(p\left(0\right),\cdots,p\left(0\right)\right)$�Œ�܂�ϐ�������D
+ \section{離散確率変数}
+$n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0\right),\cdots,p\left(0\right)$で定まる変数がある．
  \begin{itemize}
-  \item �S�Ă̏ꍇ�̏W��$S=\{0,\cdots,n-1\}$��W�{��ԂƂ����D
-  \item $p:S\rightarrow\left[0,1\right]$���m�����ʊ֐��Ƃ����D
-  \item $P:S\rightarrow\left[0,1\right];a\mapsto\sum_{x\in S|x<a}p\left(x\right)$��ݐϕ��z�֐��Ƃ����D
+  \item 全ての場合の集合$S=\{0,\cdots,n-1\}$を標本空間という．
+  \item $p:S\rightarrow\left[0,1\right]$を確率質量関数という．
+  \item $P:S\rightarrow\left[0,1\right];a\mapsto\sum_{x\in S|x<a}p\left(x\right)$を累積分布関数という．
  \end{itemize}
-�ݐϕ��z�֐���
+累積分布関数$P$が
  \begin{align}
 P\left(n\right)=1
  \end{align}
-�𖞂����Ƃ��C$X=\left(S,P\right)$�𗣎U�m���ϐ��Ƃ����D
-�ݐϕ��z�֐�$P$���m�����ʊ֐�$p$��p����
+を満たすとき，$X=\left(S,P\right)$を離散確率変数という．
+累積分布関数$P$が確率質量関数$p$を用いて
  \begin{align}
 P\left(a\right)=\sum_{x\in S|x<a}p\left(x\right)
  \end{align}
-�ƕ\�����̂ɑ΂��C�m�����ʊ֐�$p$�͗ݐϕ��z�֐�$P$��p����
+と表されるのに対し，確率質量関数$p$は累積分布関数$P$を用いて
  \begin{align}
 p\left(a\right)&=\left(\sum_{x\in S|x<a+1}p\left(x\right)\right)-\left(\sum_{x\in S|x<a}p\left(x\right)\right)\nonumber\\
 &=P\left(a+1\right)-P\left(a\right)
  \end{align}
-�ƕ\�����D
- \subsection{����}
+と表される．
+ \subsection{平均}
  \begin{align}
 E\left(X\right)=\sum_{x\in S}xp\left(x\right)
  \end{align}
-���C���U�m���ϐ�$X$�̕��ςƂ����D
- \subsection{���U}
+を，離散確率変数$X$の平均という．
+ \subsection{分散}
  \begin{align}
 V\left(X\right)=\sum_{x\in S}\left(x-E\left(X\right)\right)^2p\left(x\right)
  \end{align}
-���C���U�m���ϐ�$X$�̕��U�Ƃ����D
+を，離散確率変数$X$の分散という．
+ \section{連続確率変数}
+実数全体の集合$\mathbb{R}$の中から確率的に実数が選択される変数がある．
+ \begin{itemize}
+  \item 選択されうる実数の集合$S=\mathbb{R}$を標本空間という．
+  \item $p:S\rightarrow\left[0,\infty\right)$を確率密度関数という．
+  \item $P:S\rightarrow\left[0,1\right];a\mapsto\int_{-\infty}^ap\left(x\right)dx$を累積分布関数という．
+ \end{itemize}
+累積分布関数$P$が
+ \begin{align}
+\lim_{a\to\infty}P\left(a\right)=1
+ \end{align}
+を満たすとき，$X=\left(S,P\right)$を連続確率変数という．
+累積分布関数$P$が確率密度関数$p$を用いて
+ \begin{align}
+P\left(a\right)=\int_{-\infty}^ap\left(x\right)dx
+ \end{align}
+と表されるのに対し，確率密度関数$p$は累積分布関数$P$を用いて，
+ \begin{align}
+p\left(a\right)=P'\left(a\right)
+ \end{align}
+と表される．
+ \subsection{平均}
+ \begin{align}
+E\left(X\right)=\int_{-\infty}^\infty xp\left(x\right)dx
+ \end{align}
+を，連続確率変数$X$の平均という．
+ \subsection{分散}
+ \begin{align}
+V\left(X\right)=\int_{-\infty}^\infty \left(x-E\left(X\right)\right)^2p\left(x\right)dx
+ \end{align}
+を，連続確率変数$X$の分散という．
 \end{document}
 
