@@ -131,7 +131,7 @@ $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0
  \end{align}
 を，連続確率変数$X$の分散という．
  \subsection{関数の適用}
-微分可能な関数$f:S\to T$を連続確率変数$X=\left(S,P\right)$に適用した連続確率変数を$Y=\left(T,Q\right)$とし，その確率密度関数を$q$とすると，累積分布関数$Q$は，
+微分可能で$f'\left(x\right)=0$の解が高々有限個である関数$f:S\to T$を連続確率変数$X=\left(S,P\right)$に適用した連続確率変数を$Y=\left(T,Q\right)$とし，その確率密度関数を$q$とすると，$f'\left(b\right)=0$を満たすような$b$の範囲内において，累積分布関数$Q$は，
  \begin{align}
   Q\left(b\right)&=\mathscr{P}\left(y<b\right)\nonumber\\
   &=\mathscr{P}\left(f\left(x\right)<b\right)\nonumber\\
@@ -222,6 +222,7 @@ $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0
   &=\int_{-\infty}^\infty f\left(x\right)p\left(x\right)dx
  \end{align}
 となる．
+ここで，$f'\left(x\right)=0$となる$x$は高々有限個しかないため，この積分の結果には影響しない．
  \subsubsection{分散}
 連続確率変数$Y$の分散は
  \begin{align}
@@ -234,6 +235,7 @@ $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0
   &=\int_{-\infty}^\infty\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)dx
  \end{align}
 となる．
+ここで，$f'\left(x\right)=0$となる$x$は高々有限個しかないため，この積分の結果には影響しない．
  \section{平均と分散の関係に関する定理}
 確率変数$X$と，それに関数$f:\mathbb{R}\to\mathbb{R};x\mapsto x^2$を適用した確率変数$X^2$があるとき，$X$の平均$E\left(X\right)$と分散$V\left(X\right)$の間には，次の関係が成り立つ．
  \begin{align}
