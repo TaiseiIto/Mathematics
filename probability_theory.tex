@@ -5,6 +5,14 @@
 \usepackage{mathrsfs}
 \usepackage{tikz}
 \usetikzlibrary{intersections, calc, arrows.meta}
+\makeatletter
+\newcommand{\subsubsubsection}{\@startsection{paragraph}{4}{\z@}%
+ {1.0\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
+ {.1\Cvs \@plus.3\Cdp}%
+ {\reset@font\sffamily\normalsize}
+}
+\makeatother
+\setcounter{secnumdepth}{4}
 \title{確率論}
 \author{伊藤 太清}
 \date{\today}
@@ -75,7 +83,7 @@ $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0
   &=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}yp\left(x\right)\nonumber\\
   &=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}f\left(x\right)p\left(x\right)\nonumber\\
   &=\sum_{x\in S|f\left(x\right)\in T}f\left(x\right)p\left(x\right)\nonumber\\
-  &=\sum_{x\in S}f\left(x\right)p\left(x\right)
+  &=\sum_{x\in S}f\left(x\right)p\left(x\right)\label{DiscreteFunctionAverage}
  \end{align}
 となる．
  \subsubsection{分散}
@@ -219,7 +227,7 @@ $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0
   &=\int_{-\infty}^\infty\sum_{x\in S|f\left(x\right)=y}\frac{f\left(x\right)p\left(x\right)}{f'\left(x\right)}dy\nonumber\\
   &=\int_{-\infty}^\infty\frac{f\left(x\right)p\left(x\right)}{f'\left(x\right)}\frac{dy}{dx}dx\nonumber\\
   &=\int_{-\infty}^\infty\frac{f\left(x\right)p\left(x\right)}{f'\left(x\right)}f'\left(x\right)dx\nonumber\\
-  &=\int_{-\infty}^\infty f\left(x\right)p\left(x\right)dx
+  &=\int_{-\infty}^\infty f\left(x\right)p\left(x\right)dx\label{ContinuousFunctionAverate}
  \end{align}
 となる．
 ここで，$f'\left(x\right)=0$となる$x$は高々有限個しかないため，この積分の結果には影響しない．
@@ -266,12 +274,34 @@ $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0
   &=E\left(X^2\right)-E\left(X\right)^2
  \end{align}
  \section{平均の線形性}
-ある2つの確率変数$X$と$Y$があり，ある数$a$と$b$があるとき，
+ \subsection{和の平均は平均の和}
+ある2つの確率変数$X$と$Y$があるとき，
  \begin{align}
-  E\left(aX+bY\right)&=aE\left(X\right)+bE\left(Y\right)
+  E\left(X+Y\right)&=E\left(X\right)+E\left(Y\right)
  \end{align}
 である．
- \subsection{証明}
+ \subsubsection{証明}
+ \subsection{スカラー倍の平均は平均のスカラー倍}
+ある確率変数$X$とある数$a$があるとき，
+ \begin{align}
+  E\left(aX\right)&=aE\left(X\right)
+ \end{align}
+である．
+ \subsubsection{証明}
+ \subsubsubsection{$X$が離散確率分布の場合}
+式(\ref{DiscreteFunctionAverage})より，
+ \begin{align}
+  E\left(aX\right)&=\sum_{x\in S}axp\left(x\right)\nonumber\\
+  &=a\sum_{x\in S}xp\left(x\right)\nonumber\\
+  &=aE\left(aX\right)\nonumber\\
+ \end{align}
+ \subsubsubsection{$X$が連続確率分布の場合}
+式(\ref{ContinuousFunctionAverate})より，
+ \begin{align}
+  E\left(aX\right)&=\int_{-\infty}^\infty axp\left(x\right)dx\nonumber\\
+  &=a\int_{-\infty}^\infty xp\left(x\right)dx\nonumber\\
+  &=aE\left(aX\right)
+ \end{align}
  \section{積率母関数}
 ある確率変数$X$に対し，その積率母関数$M_X$は，
  \begin{align}
