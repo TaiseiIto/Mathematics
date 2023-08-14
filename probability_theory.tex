@@ -282,12 +282,12 @@ $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0
   &=\frac{d^n}{dt^n}\sum_{k=0}^\infty \frac{E\left(X^k\right)}{k!}t^k\nonumber\\
   &=\sum_{k=0}^\infty \frac{E\left(X^k\right)}{k!}\frac{d^n}{dt^n}t^k\nonumber\\
   &=\sum_{k=n}^\infty \frac{E\left(X^k\right)}{k!}\frac{d^n}{dt^n}t^k\nonumber\\
-  &=\sum_{k=n}^\infty \frac{E\left(X^k\right)}{k!}\frac{k!}{\left(k-n\right)!}t^{k-n}\nonumber\\
-  &=\sum_{k=n}^\infty \frac{E\left(X^k\right)}{\left(k-n\right)!}t^{k-n}\nonumber\\
-  &=\sum_{k=0}^\infty \frac{E\left(X^{k+n}\right)}{k!}t^k\nonumber\\
-  M_X^{\left(n\right)}\left(0\right)&=\frac{E\left(X^{0+n}\right)}{0!}t^0\nonumber\\
-  &=\frac{E\left(X^n\right)}{0!}t^0\nonumber\\
-  &=E\left(X^n\right)\nonumber\\
+  &=\frac{E\left(X^n\right)}{n!}\frac{d^n}{dt^n}t^n+\sum_{k=n+1}^\infty \frac{E\left(X^k\right)}{k!}\frac{d^n}{dt^n}t^k\nonumber\\
+  &=\frac{E\left(X^n\right)}{n!}n!+\sum_{k=n+1}^\infty \frac{E\left(X^k\right)}{k!}\frac{k!}{\left(k-n\right)!}t^{k-n}\nonumber\\
+  &=E\left(X^n\right)+\sum_{k=n+1}^\infty \frac{E\left(X^k\right)}{\left(k-n\right)!}t^{k-n}\nonumber\\
+  &=E\left(X^n\right)+\sum_{k=1}^\infty \frac{E\left(X^{k+n}\right)}{k!}t^k\nonumber\\
+  M_X^{\left(n\right)}\left(0\right)&=E\left(X^n\right)+\sum_{k=1}^\infty \frac{E\left(X^{k+n}\right)}{k!}0^k\nonumber\\
+  &=E\left(X^n\right)
  \end{align}
 \end{document}
 
