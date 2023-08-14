@@ -234,5 +234,34 @@ $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0
   &=\int_{-\infty}^\infty\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)dx
  \end{align}
 となる．
+ \section{平均と分散の関係に関する定理}
+確率変数$X$と，それに関数$f:\mathbb{R}\to\mathbb{R};x\mapsto x^2$を適用した確率変数$X^2$があるとき，$X$の平均$E\left(X\right)$と分散$V\left(X\right)$の間には，次の関係が成り立つ．
+ \begin{align}
+  V\left(X\right)&=E\left(X^2\right)-E\left(X\right)^2
+ \end{align}
+ \subsection{証明}
+確率変数$X$が離散確率変数の場合と連続確率変数の場合に分けて証明する．
+ \subsubsection{確率変数$X$が離散確率変数の場合}
+ \begin{align}
+  V\left(X\right)&=\sum_{x\in S}\left(x-E\left(X\right)\right)^2p\left(x\right)\nonumber\\
+  &=\sum_{x\in S}\left(x^2-2xE\left(X\right)+E\left(X\right)^2\right)p\left(x\right)\nonumber\\
+  &=\sum_{x\in S}\left(x^2p\left(x\right)-2xE\left(X\right)p\left(x\right)+E\left(X\right)^2p\left(x\right)\right)\nonumber\\
+  &=\left(\sum_{x\in S}x^2p\left(x\right)\right)-\left(\sum_{x\in S}2xE\left(X\right)p\left(x\right)\right)+\left(\sum_{x\in S}E\left(X\right)^2p\left(x\right)\right)\nonumber\\
+  &=\left(\sum_{x\in S}f\left(x\right)p\left(x\right)\right)-2E\left(X\right)\left(\sum_{x\in S}xp\left(x\right)\right)+E\left(X\right)^2\left(\sum_{x\in S}p\left(x\right)\right)\nonumber\\
+  &=E\left(X^2\right)-2E\left(X\right)E\left(X\right)+E\left(X\right)^2\nonumber\\
+  &=E\left(X^2\right)-2E\left(X\right)^2+E\left(X\right)^2\nonumber\\
+  &=E\left(X^2\right)-E\left(X\right)^2
+ \end{align}
+ \subsubsection{確率変数$X$が連続確率変数の場合}
+ \begin{align}
+  V\left(X\right)&=\int_{-\infty}^\infty\left(x-E\left(X\right)\right)^2p\left(x\right)dx\nonumber\\
+  &=\int_{-\infty}^\infty\left(x^2-2xE\left(X\right)+E\left(X\right)^2\right)p\left(x\right)dx\nonumber\\
+  &=\int_{-\infty}^\infty\left(x^2p\left(x\right)-2xE\left(X\right)p\left(x\right)+E\left(X\right)^2p\left(x\right)\right)dx\nonumber\\
+  &=\int_{-\infty}^\infty x^2p\left(x\right)dx-\int_{-\infty}^\infty 2xE\left(X\right)p\left(x\right)dx+\int_{-\infty}^\infty E\left(X\right)^2p\left(x\right)dx\nonumber\\
+  &=\int_{-\infty}^\infty f\left(x\right)p\left(x\right)dx-2E\left(X\right)\int_{-\infty}^\infty xp\left(x\right)dx+E\left(X\right)^2\int_{-\infty}^\infty p\left(x\right)dx\nonumber\\
+  &=E\left(X^2\right)-2E\left(X\right)E\left(X\right)+E\left(X\right)^2\nonumber\\
+  &=E\left(X^2\right)-2E\left(X\right)^2+E\left(X\right)^2\nonumber\\
+  &=E\left(X^2\right)-E\left(X\right)^2
+ \end{align}
 \end{document}
 
