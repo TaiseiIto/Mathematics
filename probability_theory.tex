@@ -53,6 +53,28 @@ q\left(b\right)&=Q\left(b+1\right)-Q\left(b\right)\nonumber\\
 &=\sum_{x\in S|f\left(x\right)=b}p\left(x\right)
  \end{align}
 となる．
+ \subsubsection{平均}
+離散確率変数$Y$の平均は，
+ \begin{align}
+E\left(Y\right)&=\sum_{y\in T}yq\left(y\right)\nonumber\\
+&=\sum_{y\in T}y\sum_{x\in S|f\left(x\right)=y}p\left(x\right)\nonumber\\
+&=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}yp\left(x\right)\nonumber\\
+&=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}f\left(x\right)p\left(x\right)\nonumber\\
+&=\sum_{x\in S|f\left(x\right)\in T}f\left(x\right)p\left(x\right)\nonumber\\
+&=\sum_{x\in S}f\left(x\right)p\left(x\right)
+ \end{align}
+となる．
+ \subsubsection{分散}
+離散確率変数$Y$の分散は，
+ \begin{align}
+V\left(Y\right)&=\sum{y\in T}\left(y-E\left(Y\right)\right)^2q\left(y\right)\nonumber\\
+&=\sum{y\in T}\left(y-E\left(Y\right)\right)^2\sum_{x\in S|f\left(x\right)=y}p\left(x\right)\nonumber\\
+&=\sum{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(y-E\left(Y\right)\right)^2p\left(x\right)\nonumber\\
+&=\sum{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)\nonumber\\
+&=\sum_{x\in S|f\left(x\right)\in T}\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)\nonumber\\
+&=\sum_{x\in S}\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)
+ \end{align}
+となる．
  \section{連続確率変数}
 実数全体の集合$\mathbb{R}$の中から確率的に実数が選択される変数がある．
  \begin{itemize}
