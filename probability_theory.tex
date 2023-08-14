@@ -265,5 +265,29 @@ $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0
   &=E\left(X^2\right)-2E\left(X\right)^2+E\left(X\right)^2\nonumber\\
   &=E\left(X^2\right)-E\left(X\right)^2
  \end{align}
+ \section{積率母関数}
+ある確率変数$X$に対し，その積率母関数$M_X$は，
+ \begin{align}
+  M_X\left(t\right)&=E\left(e^{tX}\right)
+ \end{align}
+と定義される．
+ \subsection{積率母関数に関する定理}
+ \begin{align}
+  M_X^{\left(n\right)}\left(0\right)&=E\left(X^n\right)
+ \end{align}
+ \subsubsection{証明}
+ \begin{align}
+  M_X^{\left(n\right)}\left(t\right)&=\frac{d^n}{dt^n}E\left(e^{tX}\right)\nonumber\\
+  &=\frac{d^n}{dt^n}E\left(\sum_{k=0}^\infty \frac{X^k}{k!}t^k\right)\nonumber\\
+  &=\frac{d^n}{dt^n}\sum_{k=0}^\infty \frac{E\left(X^k\right)}{k!}t^k\nonumber\\
+  &=\sum_{k=0}^\infty \frac{E\left(X^k\right)}{k!}\frac{d^n}{dt^n}t^k\nonumber\\
+  &=\sum_{k=n}^\infty \frac{E\left(X^k\right)}{k!}\frac{d^n}{dt^n}t^k\nonumber\\
+  &=\sum_{k=n}^\infty \frac{E\left(X^k\right)}{k!}\frac{k!}{\left(k-n\right)!}t^{k-n}\nonumber\\
+  &=\sum_{k=n}^\infty \frac{E\left(X^k\right)}{\left(k-n\right)!}t^{k-n}\nonumber\\
+  &=\sum_{k=0}^\infty \frac{E\left(X^{k+n}\right)}{k!}t^k\nonumber\\
+  M_X^{\left(n\right)}\left(0\right)&=\frac{E\left(X^{0+n}\right)}{0!}t^0\nonumber\\
+  &=\frac{E\left(X^n\right)}{0!}t^0\nonumber\\
+  &=E\left(X^n\right)\nonumber\\
+ \end{align}
 \end{document}
 
