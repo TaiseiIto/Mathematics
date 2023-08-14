@@ -2,6 +2,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{here}
+\usepackage{mathrsfs}
 \usepackage{tikz}
 \usetikzlibrary{intersections, calc, arrows.meta}
 \title{確率論}
@@ -10,7 +11,7 @@
 \begin{document}
  \maketitle
  \section{離散確率変数}
-$n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0\right),\cdots,p\left(0\right)$で定まる変数がある．
+$n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0\right),\cdots,p\left(n-1\right)$で定まる変数がある．
  \begin{itemize}
   \item 全ての場合の集合$S=\{0,\cdots,n-1\}$を標本空間という．
   \item $p:S\to\left[0,1\right]$を確率質量関数という．
@@ -18,62 +19,73 @@ $n$通りの場合$S=\{0,\cdots,n-1\}$の中からそれぞれの確率$p\left(0
  \end{itemize}
 累積分布関数$P$が
  \begin{align}
-P\left(n\right)=1
+  P\left(n\right)=1
  \end{align}
 を満たすとき，$X=\left(S,P\right)$を離散確率変数という．
 累積分布関数$P$が確率質量関数$p$を用いて
  \begin{align}
-P\left(a\right)=\sum_{x\in S|x<a}p\left(x\right)
+  P\left(a\right)=\sum_{x\in S|x<a}p\left(x\right)
  \end{align}
 と表されるのに対し，確率質量関数$p$は累積分布関数$P$を用いて
  \begin{align}
-p\left(a\right)&=\left(\sum_{x\in S|x<a+1}p\left(x\right)\right)-\left(\sum_{x\in S|x<a}p\left(x\right)\right)\nonumber\\
-&=P\left(a+1\right)-P\left(a\right)
+  p\left(a\right)&=\left(\sum_{x\in S|x<a+1}p\left(x\right)\right)-\left(\sum_{x\in S|x<a}p\left(x\right)\right)\nonumber\\
+  &=P\left(a+1\right)-P\left(a\right)
+ \end{align}
+と表される．
+ \subsection{確率}
+離散確率変数$X$から取り出された値$a$が，$S$の部分集合$S'$の元である確率は，事象からその事象の確率への関数である確率関数$\mathscr{P}$を用いて，
+ \begin{align}
+  \mathscr{P}\left(a\in S'\right)&=\sum_{x\in S'}p\left(x\right)
+ \end{align}
+である．
+また，累積分布関数$P$は，確率関数$\mathscr{P}$を用いて，
+ \begin{align}
+  P\left(x\right)&=\mathscr{P}\left(a<x\right)
  \end{align}
 と表される．
  \subsection{平均}
  \begin{align}
-E\left(X\right)=\sum_{x\in S}xp\left(x\right)
+  E\left(X\right)=\sum_{x\in S}xp\left(x\right)
  \end{align}
 を，離散確率変数$X$の平均という．
  \subsection{分散}
  \begin{align}
-V\left(X\right)=\sum_{x\in S}\left(x-E\left(X\right)\right)^2p\left(x\right)
+  V\left(X\right)=\sum_{x\in S}\left(x-E\left(X\right)\right)^2p\left(x\right)
  \end{align}
 を，離散確率変数$X$の分散という．
  \subsection{関数の適用}
 関数$f:S\to T$を離散確率変数$X=\left(S,P\right)$に適用した離散確率変数を$Y=\left(T,Q\right)$とし，その確率質量関数を$q$とすると，累積分布関数$Q$は，
  \begin{align}
-Q\left(b\right)&=\sum_{y\in T|y<b}q\left(y\right)\nonumber\\
-&=\sum_{x\in S|f\left(x\right)<b}p\left(x\right)
+  Q\left(b\right)&=\sum_{y\in T|y<b}q\left(y\right)\nonumber\\
+  &=\sum_{x\in S|f\left(x\right)<b}p\left(x\right)
  \end{align}
 であり，確率質量関数$q$は，
  \begin{align}
-q\left(b\right)&=Q\left(b+1\right)-Q\left(b\right)\nonumber\\
-&=\left(\sum_{x\in S|f\left(x\right)<b+1}p\left(x\right)\right)-\left(\sum_{x\in S|f\left(x\right)<b}p\left(x\right)\right)\nonumber\\
-&=\sum_{x\in S|f\left(x\right)=b}p\left(x\right)
+  q\left(b\right)&=Q\left(b+1\right)-Q\left(b\right)\nonumber\\
+  &=\left(\sum_{x\in S|f\left(x\right)<b+1}p\left(x\right)\right)-\left(\sum_{x\in S|f\left(x\right)<b}p\left(x\right)\right)\nonumber\\
+  &=\sum_{x\in S|f\left(x\right)=b}p\left(x\right)
  \end{align}
 となる．
  \subsubsection{平均}
 離散確率変数$Y$の平均は，
  \begin{align}
-E\left(Y\right)&=\sum_{y\in T}yq\left(y\right)\nonumber\\
-&=\sum_{y\in T}y\sum_{x\in S|f\left(x\right)=y}p\left(x\right)\nonumber\\
-&=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}yp\left(x\right)\nonumber\\
-&=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}f\left(x\right)p\left(x\right)\nonumber\\
-&=\sum_{x\in S|f\left(x\right)\in T}f\left(x\right)p\left(x\right)\nonumber\\
-&=\sum_{x\in S}f\left(x\right)p\left(x\right)
+  E\left(Y\right)&=\sum_{y\in T}yq\left(y\right)\nonumber\\
+  &=\sum_{y\in T}y\sum_{x\in S|f\left(x\right)=y}p\left(x\right)\nonumber\\
+  &=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}yp\left(x\right)\nonumber\\
+  &=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}f\left(x\right)p\left(x\right)\nonumber\\
+  &=\sum_{x\in S|f\left(x\right)\in T}f\left(x\right)p\left(x\right)\nonumber\\
+  &=\sum_{x\in S}f\left(x\right)p\left(x\right)
  \end{align}
 となる．
  \subsubsection{分散}
 離散確率変数$Y$の分散は，
  \begin{align}
-V\left(Y\right)&=\sum{y\in T}\left(y-E\left(Y\right)\right)^2q\left(y\right)\nonumber\\
-&=\sum{y\in T}\left(y-E\left(Y\right)\right)^2\sum_{x\in S|f\left(x\right)=y}p\left(x\right)\nonumber\\
-&=\sum{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(y-E\left(Y\right)\right)^2p\left(x\right)\nonumber\\
-&=\sum{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)\nonumber\\
-&=\sum_{x\in S|f\left(x\right)\in T}\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)\nonumber\\
-&=\sum_{x\in S}\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)
+  V\left(Y\right)&=\sum{y\in T}\left(y-E\left(Y\right)\right)^2q\left(y\right)\nonumber\\
+  &=\sum{y\in T}\left(y-E\left(Y\right)\right)^2\sum_{x\in S|f\left(x\right)=y}p\left(x\right)\nonumber\\
+  &=\sum{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(y-E\left(Y\right)\right)^2p\left(x\right)\nonumber\\
+  &=\sum{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)\nonumber\\
+  &=\sum_{x\in S|f\left(x\right)\in T}\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)\nonumber\\
+  &=\sum_{x\in S}\left(f\left(x\right)-E\left(Y\right)\right)^2p\left(x\right)
  \end{align}
 となる．
  \section{連続確率変数}
@@ -85,38 +97,38 @@ V\left(Y\right)&=\sum{y\in T}\left(y-E\left(Y\right)\right)^2q\left(y\right)\non
  \end{itemize}
 累積分布関数$P$が
  \begin{align}
-\lim_{a\to\infty}P\left(a\right)=1
+  \lim_{a\to\infty}P\left(a\right)=1
  \end{align}
 を満たすとき，$X=\left(S,P\right)$を連続確率変数という．
 累積分布関数$P$が確率密度関数$p$を用いて
  \begin{align}
-P\left(a\right)=\int_{-\infty}^ap\left(x\right)dx
+  P\left(a\right)=\int_{-\infty}^ap\left(x\right)dx
  \end{align}
 と表されるのに対し，確率密度関数$p$は累積分布関数$P$を用いて，
  \begin{align}
-p\left(a\right)=P'\left(a\right)
+  p\left(a\right)=P'\left(a\right)
  \end{align}
 と表される．
  \subsection{平均}
  \begin{align}
-E\left(X\right)=\int_{-\infty}^\infty xp\left(x\right)dx
+  E\left(X\right)=\int_{-\infty}^\infty xp\left(x\right)dx
  \end{align}
 を，連続確率変数$X$の平均という．
  \subsection{分散}
  \begin{align}
-V\left(X\right)=\int_{-\infty}^\infty \left(x-E\left(X\right)\right)^2p\left(x\right)dx
+  V\left(X\right)=\int_{-\infty}^\infty \left(x-E\left(X\right)\right)^2p\left(x\right)dx
  \end{align}
 を，連続確率変数$X$の分散という．
  \subsection{関数の適用}
 微分可能な関数$f:S\to T$を連続確率変数$X=\left(S,P\right)$に適用した連続確率変数を$Y=\left(T,Q\right)$とし，その確率密度関数を$q$とすると，累積分布関数$Q$は，
  \begin{align}
-Q\left(b\right)&=\int_{-\infty}^bq\left(y\right)dy\nonumber\\
-&=\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx
+  Q\left(b\right)&=\int_{-\infty}^bq\left(y\right)dy\nonumber\\
+  &=\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx
  \end{align}
 であり，確率密度関数$q$は，
  \begin{align}
-q\left(b\right)&=Q'\left(b\right)\nonumber\\
-&=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx
+  q\left(b\right)&=Q'\left(b\right)\nonumber\\
+  &=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx
  \end{align}
 となる．ここで，上の微分を図を用いて解く．
  \begin{figure}[H]
@@ -141,8 +153,8 @@ q\left(b\right)&=Q'\left(b\right)\nonumber\\
 図\ref{IntegrationRangeChange}のように，$f\left(x\right)=b$の全ての解を$\{a_0,\cdots,a_N\}=\{x\in S|f\left(x\right)=b\}$とし，$b$の微小な変化$\Delta b$に対する$a_0,\cdots,a_N$の反応をそれぞれ$\Delta a_0,\cdots,\Delta a_N$とする．
 ここで，$\Delta b$は十分に小さいから，$\forall n\in\{0,\cdots,N\}$に対して，
  \begin{align}
-f'\left(a_n\right)&=\frac{\Delta b}{\Delta a_n}\nonumber\\
-\Delta a_n&=\frac{\Delta b}{f'\left(a_n\right)}
+  f'\left(a_n\right)&=\frac{\Delta b}{\Delta a_n}\nonumber\\
+  \Delta a_n&=\frac{\Delta b}{f'\left(a_n\right)}
  \end{align}
 である．
 ただしここで$f'\left(a_n\right)=0$の場合，それは$a_n$が$f$の極大若しくは極小であることにより，$b$の微小な変化によって$a_n$が消滅または2つに分裂することを意味し，$\Delta a_n$は定義できない．
@@ -168,22 +180,22 @@ f'\left(a_n\right)&=\frac{\Delta b}{\Delta a_n}\nonumber\\
  \end{figure}
 図\ref{QChange}において，領域$\{(x,y)|a_n\le x\le a_n+\Delta a_n\land \left(0-y\right)\left(p\left(x\right)-y\right)\le0\}$を台形とみなすと，その面積$\Delta s_n$は，
  \begin{align}
-\Delta s_n&=\frac{1}{2}\Delta a_n\left(p\left(a_n\right)+p\left(a_n+\Delta a_n\right)\right)\nonumber\\
-&=\frac{\Delta b}{2f'\left(a_n\right)}\left(p\left(a_n\right)+p\left(a_n+\frac{\Delta b}{f'\left(a_n\right)}\right)\right)
+  \Delta s_n&=\frac{1}{2}\Delta a_n\left(p\left(a_n\right)+p\left(a_n+\Delta a_n\right)\right)\nonumber\\
+  &=\frac{\Delta b}{2f'\left(a_n\right)}\left(p\left(a_n\right)+p\left(a_n+\frac{\Delta b}{f'\left(a_n\right)}\right)\right)
  \end{align}
 となり，これを$\Delta b$で割ると，
  \begin{align}
-\frac{\Delta s_n}{\Delta b}&=\frac{p\left(a_n\right)+p\left(a_n+\frac{\Delta b}{f'\left(a_n\right)}\right)}{2f'\left(a_n\right)}\nonumber\\
-&=\frac{p\left(a_n\right)+p\left(a_n+\frac{0}{f'\left(a_n\right)}\right)}{2f'\left(a_n\right)}\nonumber\\
-&=\frac{p\left(a_n\right)+p\left(a_n\right)}{2f'\left(a_n\right)}\nonumber\\
-&=\frac{2p\left(a_n\right)}{2f'\left(a_n\right)}\nonumber\\
-&=\frac{p\left(a_n\right)}{f'\left(a_n\right)}
+  \frac{\Delta s_n}{\Delta b}&=\frac{p\left(a_n\right)+p\left(a_n+\frac{\Delta b}{f'\left(a_n\right)}\right)}{2f'\left(a_n\right)}\nonumber\\
+  &=\frac{p\left(a_n\right)+p\left(a_n+\frac{0}{f'\left(a_n\right)}\right)}{2f'\left(a_n\right)}\nonumber\\
+  &=\frac{p\left(a_n\right)+p\left(a_n\right)}{2f'\left(a_n\right)}\nonumber\\
+  &=\frac{2p\left(a_n\right)}{2f'\left(a_n\right)}\nonumber\\
+  &=\frac{p\left(a_n\right)}{f'\left(a_n\right)}
  \end{align}
 となる．$q\left(b\right)$は，これを$\forall a_n\in\{a_0,\cdots,a_N\}=\{x\in S|f\left(x\right)=b\}$について足し合わせたものであるから，
  \begin{align}
-q\left(b\right)&=Q'\left(b\right)\nonumber\\
-&=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx\nonumber\\
-&=\sum_{x\in S|f\left(x\right)=b}\frac{p\left(x\right)}{f'\left(x\right)}
+  q\left(b\right)&=Q'\left(b\right)\nonumber\\
+  &=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx\nonumber\\
+  &=\sum_{x\in S|f\left(x\right)=b}\frac{p\left(x\right)}{f'\left(x\right)}
  \end{align}
 となる．
  \subsubsection{平均}
