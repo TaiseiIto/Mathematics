@@ -282,7 +282,7 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
 である．
  \subsubsection{証明}
  \subsubsubsection{離散確率変数同士の和の平均}
-互いに独立とは限らない2つの離散確率変数$X$と$Y$があり，それらの確率質量変数が$p\left(x,y\right)$の形で与えられている．
+互いに独立とは限らない2つの離散確率変数$X$と$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率質量変数が$p\left(x,y\right)$の形で与えられている．
 この時，$X$単独の確率質量関数$p_X$は，
  \begin{align}
   p_X\left(x\right)&=\sum_{y\in T}p\left(x,y\right)
@@ -316,7 +316,7 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
  \end{align}
 である．
  \subsubsubsection{連続確率変数同士の和の平均}
-互いに独立とは限らない2つの連続確率変数$X$と$Y$があり，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
+互いに独立とは限らない2つの連続確率変数$X$と$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
 この時，$X$単独の確率密度関数$p_X$は，
  \begin{align}
   p_X\left(x\right)&=\int_{-\infty}^\infty p\left(x,y\right)dy
@@ -349,7 +349,7 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=E\left(X\right)+E\left(Y\right)
  \end{align}
  \subsubsubsection{離散確率変数と連続確率変数の和の平均}
-互いに独立とは限らない離散確率変数$X$と連続確率変数$Y$があり，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
+互いに独立とは限らない離散確率変数$X$と連続確率変数$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
 この時，$X$単独の確率質量関数$p_X$は，
  \begin{align}
   p_X\left(x\right)&=\int_{-\infty}^\infty p\left(x,y\right)dy
@@ -403,6 +403,41 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=a\int_{-\infty}^\infty xp\left(x\right)dx\nonumber\\
   &=aE\left(aX\right)
  \end{align}
+ \section{独立な確率変数の積の平均}
+互いに独立な2つの確率変数$X,Y$について，
+ \begin{align}
+  E\left(XY\right)&=E\left(X\right)E\left(Y\right)
+ \end{align}
+が成り立つ．
+ただし，2つの確率変数が互いに独立であるということは，それらの組$(X,Y)$の確率質量関数若しくは確率密度関数を，それぞれの確率質量関数若しくは確率密度関数の積で表すことができることを意味する．
+ \subsection{証明}
+ \subsubsection{独立な離散確率変数同士の積の平均}
+互いに独立な2つの離散確率変数$X,Y$があり，それぞれの標本空間を$S,T$とし，それぞれの確率質量関数を$p,q$とすると，
+ \begin{align}
+  E\left(XY\right)&=\sum_{x\in S}\sum_{y\in T}xyp\left(x\right)q\left(y\right)\nonumber\\
+  &=\sum_{x\in S}xp\left(x\right)\sum_{y\in T}yq\left(y\right)\nonumber\\
+  &=\left(\sum_{x\in S}xp\left(x\right)\right)\left(\sum_{y\in T}yq\left(y\right)\right)\nonumber\\
+  &=E\left(X\right)E\left(Y\right)
+ \end{align}
+となる．
+ \subsubsection{独立な連続確率変数同士の積の平均}
+互いに独立な2つの連続確率変数$X,Y$があり，それぞれの標本空間を$S,T$とし，それぞれの確率質量関数を$p,q$とすると，
+ \begin{align}
+  E\left(XY\right)&=\int_{-\infty}^\infty\int_{-\infty}^\infty xyp\left(x\right)q\left(y\right)dydx\nonumber\\
+  &=\int_{-\infty}^\infty xp\left(x\right)\int_{-\infty}^\infty yq\left(y\right)dydx\nonumber\\
+  &=\int_{-\infty}^\infty xp\left(x\right)dx\int_{-\infty}^\infty yq\left(y\right)dy\nonumber\\
+  &=E\left(X\right)E\left(Y\right)
+ \end{align}
+となる．
+ \subsubsection{独立な離散確率変数と連続確率変数の積の平均}
+互いに独立な離散確率変数$X$と連続確率変数$Y$があり，それぞれの標本空間を$S,T$とし，それぞれの確率質量関数を$p,q$とすると，
+ \begin{align}
+  E\left(XY\right)&=\sum_{x\in S}\int_{-\infty}^\infty xyp\left(x\right)q\left(y\right)dy\nonumber\\
+  &=\sum_{x\in S}xp\left(x\right)\int_{-\infty}^\infty yq\left(y\right)dy\nonumber\\
+  &=\left(\sum_{x\in S}xp\left(x\right)\right)\left(\int_{-\infty}^\infty yq\left(y\right)dy\right)\nonumber\\
+  &=E\left(X\right)E\left(Y\right)
+ \end{align}
+となる．
  \section{確率母関数}
 ある離散確率変数$X$に対し，その確率母関数$G_X$は，
  \begin{align}
