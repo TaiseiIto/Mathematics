@@ -403,6 +403,31 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=a\int_{-\infty}^\infty xp\left(x\right)dx\nonumber\\
   &=aE\left(aX\right)
  \end{align}
+ \section{確率母関数}
+ある離散確率変数$X$に対し，その確率母関数$G_X$は，
+ \begin{align}
+  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+  &=\sum_{x\in S}t^xp\left(x\right)
+ \end{align}
+と定義される．
+ \subsection{確率母関数と確率質量関数の関係}
+確率母関数$G_X$と確率質量関数$p$の間には，以下の関係が成り立つ．
+ \begin{align}
+  \frac{G_X^{\left(a\right)}\left(0\right)}{a!}&=p\left(a\right)
+ \end{align}
+ \subsubsection{証明}
+ \begin{align}
+  G_X^{\left(a\right)}\left(t\right)&=\frac{d^a}{dt^a}E\left(t^X\right)\nonumber\\
+  &=\frac{d^a}{dt^a}\sum_{x\in S}t^xp\left(x\right)\nonumber\\
+  &=\sum_{x\in S}p\left(x\right)\frac{d^a}{dt^a}t^x\nonumber\\
+  &=\sum_{x\in S|a\le x}p\left(x\right)\frac{d^a}{dt^a}t^x\nonumber\\
+  &=p\left(a\right)\frac{d^a}{dt^a}t^a+\sum_{x\in S|a<x}p\left(x\right)\frac{d^a}{dt^a}t^x\nonumber\\
+  &=p\left(a\right)\left(\prod_{k=0}^{a-1}\left(a-k\right)\right)t^{a-a}+\sum_{x\in S|a<x}p\left(x\right)\left(\prod_{k=0}^{a-1}\left(x-k\right)\right)t^{x-a}\nonumber\\
+  &=p\left(a\right)a!+\sum_{x\in S|a<x}p\left(x\right)\frac{x!}{\left(x-a\right)!}t^{x-a}\nonumber\\
+  G_X^{\left(a\right)}\left(0\right)&=p\left(a\right)a!+\sum_{x\in S|a<x}p\left(x\right)\frac{x!}{\left(x-a\right)!}0^{x-a}\nonumber\\
+  G_X^{\left(a\right)}\left(0\right)&=p\left(a\right)a!\nonumber\\
+  \frac{G_X^{\left(a\right)}\left(0\right)}{a!}&=p\left(a\right)\nonumber\\
+ \end{align}
  \section{積率母関数}
 ある確率変数$X$に対し，その積率母関数$M_X$は，
  \begin{align}
