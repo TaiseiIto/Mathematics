@@ -537,7 +537,7 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=e^{bt}M_X\left(at\right)\nonumber\\
  \end{align}
  \subsection{互いに独立な確率変数の和の積率母関数}
-互いに独立な$N$個の確率変数$X_0,\cdots,X_{N-1}$の和$X=\sum_{n=0}^NX_n$の積率母関数$M_X$は，
+互いに独立な$N$個の確率変数$X_0,\cdots,X_{N-1}$の和$X=\sum_{n=0}^{N-1}X_n$の積率母関数$M_X$は，
  \begin{align}
   M_X\left(t\right)&=\prod_{n=0}^{N-1}M_{X_n}\left(t\right)
  \end{align}
@@ -593,6 +593,22 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=E\left(e^{iatX}e^{ibt}\right)\nonumber\\
   &=e^{ibt}E\left(e^{iatX}\right)\nonumber\\
   &=e^{ibt}\phi_{X}\left(at\right)
+ \end{align}
+ \subsection{互いに独立な確率変数の和の特性関数}
+互いに独立な$N$個の確率変数$X_0,\cdots,X_{N-1}$の和$X=\sum_{n=0}^{N-1}X_n$の特性関数$\phi_X$は，
+ \begin{align}
+  \phi_X\left(t\right)&=\prod_{n=0}^{N-1}\phi_{X_n}\left(t\right)
+ \end{align}
+である．
+ \subsubsection{証明}
+式(\ref{ProductAverage})を用いて証明する．
+ \begin{align}
+  \phi_X\left(t\right)&=E\left(\exp\left(itX\right)\right)\nonumber\\
+  &=E\left(\exp\left(it\sum_{n=0}^{N-1}X_n\right)\right)\nonumber\\
+  &=E\left(\exp\left(\sum_{n=0}^{N-1}itX_n\right)\right)\nonumber\\
+  &=E\left(\prod_{n=0}^{N-1}\exp\left(itX_n\right)\right)\nonumber\\
+  &=\prod_{n=0}^{N-1}E\left(\exp\left(itX_n\right)\right)\nonumber\\
+  &=\prod_{n=0}^{N-1}\phi_{X_n}\left(t\right)
  \end{align}
 \end{document}
 
