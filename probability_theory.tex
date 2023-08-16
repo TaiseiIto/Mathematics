@@ -649,7 +649,33 @@ $K_X$のマクローリン展開
   &=\sum_{k=0}^\infty\frac{M_X^{\left(k\right)}\left(0\right)t^{k+n}}{k!n!}\nonumber\\
   &=\sum_{k=n}^\infty\frac{M_X^{\left(k-n\right)}\left(0\right)t^k}{\left(k-n\right)!n!}\nonumber\\
   \sum_{k=0}^\infty\frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}t^k&=\sum_{k=n}^\infty\frac{k!}{\left(k-n\right)!n!}M_X^{\left(k-n\right)}\left(0\right)t^k\nonumber\\
+  &=\sum_{k=n}^\infty{}_kC_{n}M_X^{\left(k-n\right)}\left(0\right)t^k\nonumber\\
  \end{align}
-それぞれの項の係数を比較すると，
+それぞれの項の係数を比較すると，$k<n$の場合，
+ \begin{align}
+  \frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}t^k&=0
+ \end{align}
+これは，任意の実数$t$について成り立つ必要があるから，
+ \begin{align}
+  \frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}&=0
+ \end{align}
+となる．また，$n\le k$の場合，
+ \begin{align}
+  \frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}t^k&={}_kC_{n}M_X^{\left(k-n\right)}\left(0\right)t^k
+ \end{align}
+これも同様に任意の実数$t$について成り立つ必要があるから，
+ \begin{align}
+  \frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}&={}_kC_{n}M_X^{\left(k-n\right)}\left(0\right)
+ \end{align}
+である．
+以上をまとめると，
+ \begin{align}
+  \frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}&=
+  \begin{cases}
+   0&\left(k<n\right)\\
+   {}_kC_{n}M_X^{\left(k-n\right)}\left(0\right)&\left(n\le k\right)
+  \end{cases}
+ \end{align}
+となる．
 \end{document}
 
