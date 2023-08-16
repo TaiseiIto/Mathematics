@@ -549,8 +549,11 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=E\left(\exp\left(tX\right)\right)\nonumber\\
   &=E\left(\exp\left(t\sum_{n=0}^{N-1}X_n\right)\right)\nonumber\\
   &=E\left(\exp\left(\sum_{n=0}^{N-1}tX_n\right)\right)\nonumber\\
-  &=E\left(\prod_{n=0}^{N-1}\exp\left(tX_n\right)\right)\nonumber\\
-  &=\prod_{n=0}^{N-1}E\left(\exp\left(tX_n\right)\right)\nonumber\\
+  &=E\left(\prod_{n=0}^{N-1}\exp\left(tX_n\right)\right)\nonumber
+ \end{align}
+ここで，$X_0,\cdots,X_{N-1}$は互いに独立だから式(\ref{ProductAverage})により，
+ \begin{align}
+  M_X\left(t\right)&=\prod_{n=0}^{N-1}E\left(\exp\left(tX_n\right)\right)\nonumber\\
   &=\prod_{n=0}^{N-1}M_{X_n}\left(t\right)
  \end{align}
  \section{特性関数}
@@ -606,9 +609,47 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   \phi_X\left(t\right)&=E\left(\exp\left(itX\right)\right)\nonumber\\
   &=E\left(\exp\left(it\sum_{n=0}^{N-1}X_n\right)\right)\nonumber\\
   &=E\left(\exp\left(\sum_{n=0}^{N-1}itX_n\right)\right)\nonumber\\
-  &=E\left(\prod_{n=0}^{N-1}\exp\left(itX_n\right)\right)\nonumber\\
-  &=\prod_{n=0}^{N-1}E\left(\exp\left(itX_n\right)\right)\nonumber\\
+  &=E\left(\prod_{n=0}^{N-1}\exp\left(itX_n\right)\right)\nonumber
+ \end{align}
+ここで，$X_0,\cdots,X_{N-1}$は互いに独立だから式(\ref{ProductAverage})により，
+ \begin{align}
+  \phi_X\left(t\right)&=\prod_{n=0}^{N-1}E\left(\exp\left(itX_n\right)\right)\nonumber\\
   &=\prod_{n=0}^{N-1}\phi_{X_n}\left(t\right)
  \end{align}
+ \section{キュムラント母関数}
+確率変数$X$のキュムラント母関数$K_X$は，
+ \begin{align}
+  K_X\left(t\right)&=\log M_X\left(t\right)
+ \end{align}
+と定義される．
+$K_X$のマクローリン展開
+ \begin{align}
+  K_X\left(t\right)&=\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}
+ \end{align}
+における$K_X^{\left(k\right)}\left(0\right)$を確率変数$X$の$k$次キュムラントという．
+ \subsection{キュムラントと積率の関係}
+キュムラント母関数の定義より，
+ \begin{align}
+  \log M_X\left(t\right)&=K_X\left(t\right)\nonumber\\
+  M_X\left(t\right)&=\exp K_X\left(t\right)\nonumber\\
+  \sum_{k=0}^\infty \frac{M_X^{\left(k\right)}\left(0\right)t^k}{k!}&=\exp\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}\nonumber\\
+  \frac{d}{dK_X^{\left(n\right)}\left(0\right)}\sum_{k=0}^\infty \frac{M_X^{\left(k\right)}\left(0\right)t^k}{k!}&=\frac{d}{dK_X^{\left(n\right)}\left(0\right)}\exp\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}\nonumber\\
+  \sum_{k=0}^\infty \frac{t^k}{k!}\frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}&=\left(\frac{d}{dK_X^{\left(n\right)}\left(0\right)}\sum_{k=0}^\infty\frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}\right)\left(\exp\sum_{k=0}^\infty\frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}\right)\nonumber\\
+  &=\left(\sum_{k=0}^\infty\frac{t^k}{k!}\frac{dK_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}\right)\left(\exp\sum_{k=0}^\infty\frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}\right)\nonumber\\
+  &=\left(\sum_{k=0}^\infty\frac{t^k}{k!}\frac{dK_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}\right)\exp K_X\left(t\right)\nonumber\\
+  &=\left(\sum_{k=0}^\infty\frac{t^k}{k!}\frac{dK_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}\right)M_X\left(t\right)\nonumber\\
+  &=\left(\sum_{k=0}^\infty\frac{t^k}{k!}\frac{dK_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}\right)\left(\sum_{k=0}^\infty\frac{M_X^{\left(k\right)}\left(0\right)t^k}{k!}\right)\nonumber
+ \end{align}
+ここで，$K_X^{\left(k\right)}\left(0\right)$はキュムラント母関数のマクローリン展開による各項の係数である．
+マクローリン展開は任意の多項式を表現できるため，各行の係数は互いに独立なパラメータであると言える．
+よって，$k \ne n$のとき，$K_X^{\left(n\right)}\left(0\right)$から見て$K_X^{\left(k\right)}\left(0\right)$は定数とみなすことができるため，
+ \begin{align}
+  \sum_{k=0}^\infty\frac{t^k}{k!}\frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}&=\left(\frac{t^n}{n!}\frac{dK_X^{\left(n\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}\right)\left(\sum_{k=0}^\infty\frac{M_X^{\left(k\right)}\left(0\right)t^k}{k!}\right)\nonumber\\
+  &=\frac{t^n}{n!}\sum_{k=0}^\infty\frac{M_X^{\left(k\right)}\left(0\right)t^k}{k!}\nonumber\\
+  &=\sum_{k=0}^\infty\frac{M_X^{\left(k\right)}\left(0\right)t^{k+n}}{k!n!}\nonumber\\
+  &=\sum_{k=n}^\infty\frac{M_X^{\left(k-n\right)}\left(0\right)t^k}{\left(k-n\right)!n!}\nonumber\\
+  \sum_{k=0}^\infty\frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}t^k&=\sum_{k=n}^\infty\frac{k!}{\left(k-n\right)!n!}M_X^{\left(k-n\right)}\left(0\right)t^k\nonumber\\
+ \end{align}
+それぞれの項の係数を比較すると，
 \end{document}
 
