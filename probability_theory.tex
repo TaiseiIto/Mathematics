@@ -783,7 +783,25 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   &=-\left(1-p_1\right)^2\log_2\left(1-p_1\right)-p_1^2\log_2p_1\nonumber\\
  \end{align}
  \subsection{確率母関数}
+ \begin{align}
+  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+  &=\left(1-p_1\right)t^0+p_1t^1\nonumber\\
+  &=\left(1-p_1\right)+p_1t\nonumber\\
+  &=p_1t+1-p_1
+ \end{align}
  \subsection{特性関数}
+ \begin{align}
+  \phi_X\left(t\right)&=E\left(e^{itX}\right)\nonumber\\
+  &=\left(1-p_1\right)e^{it0}+p_1e^{it1}\nonumber\\
+  &=\left(1-p_1\right)+p_1e^{it}\nonumber\\
+  &=p_1e^{it}+1-p_1
+ \end{align}
  \subsection{キュムラント母関数}
+ \begin{align}
+  K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
+  &=\log p_1e^t\nonumber\\
+  &=\log p_1+\log e^t\nonumber\\
+  &=t+\log p_1
+ \end{align}
 \end{document}
 
