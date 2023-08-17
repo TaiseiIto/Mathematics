@@ -743,7 +743,7 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   \sigma\left(X\right)&=\sqrt{V\left(X\right)}\nonumber\\
   &=\sqrt{p_1\left(1-p_1\right)}
  \end{align}
- \subsection{原点周りの積率母関数}
+ \subsection{平均周りの積率母関数}
  \begin{align}
   M_{X-E\left(X\right)}\left(t\right)&=E\left(e^{t\left(X-E\left(X\right)\right)}\right)\nonumber\\
   &=E\left(e^{t\left(X-p_1\right)}\right)\nonumber\\
@@ -803,5 +803,62 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   &=\log p_1+\log e^t\nonumber\\
   &=t+\log p_1
  \end{align}
+ \section{二項分布}
+ベルヌーイ分布に従う$N$個の確率変数$X_0,\cdots,X_{N-1}$の和
+ \begin{align}
+  X&=\sum_{n=0}^{N-1} X_n
+ \end{align}
+を二項分布といい，その標本空間は$S=\{0,\cdots,N\}$であり，その確率質量関数は
+ \begin{align}
+  p\left(n\right)&={}_NC_np_1^n\left(1-p_1\right)^{N-n}
+ \end{align}
+である．
+ \subsection{原点周りの積率母関数}
+ \begin{align}
+  M_X\left(t\right)&=E\left(e^{tX}\right)\nonumber\\
+  &=\sum_{n=0}^Ne^{tn}{}_NC_np_1^n\left(1-p_1\right)^{N-n}\nonumber\\
+  &=\sum_{n=0}^N{}_NC_n\left(p_1e^t\right)^n\left(1-p_1\right)^{N-n}\nonumber\\
+  &=\left(p_1e^t+1-p_1\right)^N\\
+  M_X^{\left(1\right)}\left(t\right)&=Np_1e^t\left(p_1e^t+1-p_1\right)^{N-1}\\
+  M_X^{\left(2\right)}\left(t\right)&=Np_1e^t\left(p_1e^t+1-p_1\right)^{N-1}+N\left(N-1\right)p_1^2e^2t\left(p_1e^t+1-p_1\right)^{N-2}
+ \end{align}
+ \subsection{平均}
+ \begin{align}
+  E\left(X\right)&=M_X^{\left(1\right)}\left(0\right)\nonumber\\
+  &=Np_1e^0\left(p_1e^0+1-p_1\right)^{N-1}\nonumber\\
+  &=Np_1\left(p_1+1-p_1\right)^{N-1}\nonumber\\
+  &=Np_1
+ \end{align}
+ \subsection{分散}
+ \begin{align}
+  V\left(X\right)&=E\left(X^2\right)-E\left(X\right)^2\nonumber\\
+  &=M_X^{\left(2\right)}\left(0\right)-\left(Np_1\right)^2\nonumber\\
+  &=Np_1e^0\left(p_1e^0+1-p_1\right)^{N-1}+N\left(N-1\right)p_1^2e^{2\times 0}\left(p_1e^0+1-p_1\right)^{N-2}-N^2p_1^2\nonumber\\
+  &=Np_1\left(p_1+1-p_1\right)^{N-1}+N\left(N-1\right)p_1^2\left(p_1+1-p_1\right)^{N-2}-N^2p_1^2\nonumber\\
+  &=Np_1+N\left(N-1\right)p_1^2-N^2p_1^2\nonumber\\
+  &=Np_1+N^2p_1^2-Np_1^2-N^2p_1^2\nonumber\\
+  &=Np_1-Np_1^2\nonumber\\
+  &=Np_1\left(1-p_1\right)\nonumber\\
+ \end{align}
+ \subsection{標準偏差}
+ \begin{align}
+  \sigma\left(X\right)&=\sqrt{V\left(X\right)}\nonumber\\
+  &=\sqrt{Np_1\left(1-p_1\right)}\nonumber\\
+ \end{align}
+ \subsection{平均周りの積率母関数}
+ \begin{align}
+  M_{X-E\left(X\right)}\left(t\right)&=E\left(e^{t\left(X-E\left(X\right)\right)}\right)\nonumber\\
+  &=E\left(e^{t\left(X-Np_1\right)}\right)\nonumber\\
+  &=\sum_{n=0}^Ne^{t\left(n-Np_1\right)}{}_NC_np_1^n\left(1-p_1\right)^{N-n}\nonumber\\
+  &=\sum_{n=0}^Ne^{nt}e^{-Np_1t}{}_NC_np_1^n\left(1-p_1\right)^{N-n}\nonumber\\
+  &=e^{-Np_1t}\sum_{n=0}^N{}_NC_n\left(p_1e^t\right)^n\left(1-p_1\right)^{N-n}\nonumber\\
+  &=e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
+ \end{align}
+ \subsection{歪度}
+ \subsection{尖度}
+ \subsection{エントロピー}
+ \subsection{確率母関数}
+ \subsection{特性関数}
+ \subsection{キュムラント母関数}
 \end{document}
 
