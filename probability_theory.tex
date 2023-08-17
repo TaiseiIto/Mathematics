@@ -18,6 +18,7 @@
 \date{\today}
 \begin{document}
  \maketitle
+ \tableofcontents
  \section{離散確率変数}
 $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0\right),\cdots,p\left(N-1\right)$で定まる変数がある．
  \begin{itemize}
@@ -438,6 +439,31 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=E\left(X\right)E\left(Y\right)
  \end{align}
 となる．
+ \section{標準偏差}
+確率変数$X$に対して，
+ \begin{align}
+  \sigma\left(X\right)&=\sqrt{V\left(X\right)}
+ \end{align}
+を$X$の標準偏差といい，$X$の確率分布の広がり具合を表す$X$と次元を同じくする量である．
+ \section{歪度}
+確率変数$X$に対して，
+ \begin{align}
+  S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}
+ \end{align}
+を$X$の歪度といい，$X$の確率分布の左右非対称具合を表す無次元量である．
+ \section{尖度}
+確率変数$X$に対して，
+ \begin{align}
+  K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}
+ \end{align}
+を$X$の尖度といい，$X$の確率分布の平均付近における尖り具合を表す無次元量である．
+ \section{エントロピー}
+確率変数$X$に対して，
+ \begin{align}
+  H\left(X\right)&=E\left(-p\left(X\right)\log_2p\left(X\right)\right)
+ \end{align}
+を$X$のエントロピーといい，$X$の値を確定することによって生じる情報量の平均ビット数を意味する．
+ただし$p$は離散確率変数であれば確率質量関数を意味し，連続確率変数であれば確率密度関数を意味する．
  \section{確率母関数}
 ある離散確率変数$X$に対し，その確率母関数$G_X$は，
  \begin{align}
