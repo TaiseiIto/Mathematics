@@ -852,7 +852,13 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   &=\sum_{n=0}^Ne^{t\left(n-Np_1\right)}{}_NC_np_1^n\left(1-p_1\right)^{N-n}\nonumber\\
   &=\sum_{n=0}^Ne^{nt}e^{-Np_1t}{}_NC_np_1^n\left(1-p_1\right)^{N-n}\nonumber\\
   &=e^{-Np_1t}\sum_{n=0}^N{}_NC_n\left(p_1e^t\right)^n\left(1-p_1\right)^{N-n}\nonumber\\
-  &=e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
+  &=e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\\
+  M_{X-E\left(X\right)}^{\left(1\right)}\left(t\right)&=\frac{d}{dt}e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
+  &=\left(\frac{d}{dt}e^{-Np_1t}\right)\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}\left(\frac{d}{dt}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
+  &=-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}\left(N-1\right)\left(p_1e^t+1-p_1\right)^{N-1}\frac{d}{dt}\left(p_1e^t+1-p_1\right)\nonumber\\
+  &=-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}\left(N-1\right)\left(p_1e^t+1-p_1\right)^{N-1}p_1e^t\nonumber\\
+  &=-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+\left(N-1\right)p_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
+  &=\left(N-1\right)p_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\\
  \end{align}
  \subsection{歪度}
  \subsection{尖度}
