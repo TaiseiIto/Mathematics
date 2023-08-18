@@ -975,6 +975,20 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   &=Np_1\left(2p_1^2-3p_1+1\right)\nonumber\\
   &=Np_1\left(1-p_1\right)\left(1-2p_1\right)
  \end{align}
+ \begin{align}
+  M_{X-E\left(X\right)}^{\left(4\right)}\left(t\right)&=-N^3p_1^3\frac{d}{dt}e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
+  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\frac{d}{dt}e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
+  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\frac{d}{dt}e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
+  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\frac{d}{dt}e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
+  &=-N^3p_1^3\left(\left(\frac{d}{dt}e^{-Np_1t}\right)\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
+  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\left(\left(\frac{d}{dt}e^{\left(1-Np_1\right)t}\right)\left(p_1e^t+1-p_1\right)^{N-1}+e^{\left(1-Np_1\right)t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^{N-1}\right)\nonumber\\
+  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\left(\left(\frac{d}{dt}e^{\left(2-Np_1\right)t}\right)\left(p_1e^t+1-p_1\right)^{N-2}+e^{\left(2-Np_1\right)t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^{N-2}\right)\nonumber\\
+  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(\left(\frac{d}{dt}e^{\left(3-Np_1\right)t}\right)\left(p_1e^t+1-p_1\right)^{N-3}+e^{\left(3-Np_1\right)t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^{N-3}\right)\nonumber\\
+  &=-N^3p_1^3\left(-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}N\left(p_1e^t+1-p_1\right)^{N-1}p_1e^t\right)\nonumber\\
+  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\left(\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+e^{\left(1-Np_1\right)t}\left(N-1\right)\left(p_1e^t+1-p_1\right)^{N-2}p_1e^t\right)\nonumber\\
+  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\left(\left(2-Np_1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}+e^{\left(2-Np_1\right)t}\left(N-2\right)\left(p_1e^t+1-p_1\right)^{N-3}p_1e^t\right)\nonumber\\
+  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(\left(3-Np_1\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}+e^{\left(3-Np_1\right)t}\left(N-3\right)\left(p_1e^t+1-p_1\right)^{N-4}p_1e^t\right)\nonumber\\
+ \end{align}
  \subsection{歪度}
  \begin{align}
   S\left(X\right)&=\frac{M_{X-E\left(X\right)}^{\left(3\right)}\left(0\right)}{\sigma\left(X\right)^3}\nonumber\\
