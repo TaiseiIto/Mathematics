@@ -860,6 +860,26 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   &=-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+\left(N-1\right)p_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
   &=\left(N-1\right)p_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\\
  \end{align}
+ \begin{align}
+  M_{X-E\left(X\right)}^{\left(2\right)}\left(t\right)&=\frac{d}{dt}\left(\left(N-1\right)p_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
+  &=\left(N-1\right)p_1\left(\frac{d}{dt}e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\right)-Np_1\left(\frac{d}{dt}e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
+  &=\left(N-1\right)p_1\left(\left(\frac{d}{dt}e^{\left(1-Np_1\right)t}\right)\left(p_1e^t+1-p_1\right)^{N-1}+e^{\left(1-Np_1\right)t}\left(\frac{d}{dt}\left(p_1e^t+1-p_1\right)^{N-1}\right)\right)\nonumber\\
+   &\quad-Np_1\left(\left(N-1\right)p_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
+  &=\left(N-1\right)p_1\left(\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+e^{\left(1-Np_1\right)t}\left(\left(N-1\right)\left(p_1e^t+1-p_1\right)^{N-2}\frac{d}{dt}\left(p_1e^t+1-p_1\right)\right)\right)\nonumber\\
+   &\quad-N\left(N-1\right)p_1^2e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
+  &=\left(N-1\right)p_1\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
+   &\quad+\left(N-1\right)p_1e^{\left(1-Np_1\right)t}\left(\left(N-1\right)\left(p_1e^t+1-p_1\right)^{N-2}p_1e^t\right)\nonumber\\
+   &\quad-N\left(N-1\right)p_1^2e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
+  &=\left(N-1\right)\left(1-Np_1\right)p_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
+   &\quad+\left(N-1\right)^2p_1^2e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
+   &\quad-N\left(N-1\right)p_1^2e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
+  &=N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
+   &\quad+\left(\left(N-1\right)\left(1-Np_1\right)-N\left(N-1\right)p_1\right)p_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
+   &\quad+\left(N-1\right)^2p_1^2e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
+  &=N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
+   &\quad+\left(2Np_1-1\right)\left(1-N\right)p_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
+   &\quad+\left(N-1\right)^2p_1^2e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
+ \end{align}
  \subsection{歪度}
  \subsection{尖度}
  \subsection{エントロピー}
