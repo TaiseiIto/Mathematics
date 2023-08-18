@@ -975,6 +975,7 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   &=Np_1\left(2p_1^2-3p_1+1\right)\nonumber\\
   &=Np_1\left(1-p_1\right)\left(1-2p_1\right)
  \end{align}
+どこかで計算ミスが起きている可能性が高い．
  \begin{align}
   M_{X-E\left(X\right)}^{\left(4\right)}\left(t\right)&=-N^3p_1^3\frac{d}{dt}e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
   &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\frac{d}{dt}e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
@@ -1045,10 +1046,12 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(-4Np_1+6\right)\nonumber\\
   &\quad+Np_1^4\left(N-1\right)\left(N-2\right)\left(N-3\right)\nonumber\\
   &=N^4p_1^4\nonumber\\
-  &\quad-4N^4p_1^4+7N^3p_1^3-4N^2p_1^2+Np_1\nonumber\\
+  &\quad-4N^4p_1^4+6N^3p_1^3-4N^2p_1^2+Np_1\nonumber\\
   &\quad+6N^4p_1^4-12N^3p_1^3+7N^2p_1^2-6N^3p_1^4+12N^2p_1^3-7Np_1^2\nonumber\\
   &\quad-4N^4p_1^4+6N^3p_1^3+12N^3p_1^4-18N^2p_1^3-8N^2p_1^4+12Np_1^3\nonumber\\
   &\quad+N^4p_1^4-6N^3p_1^4+11N^2p_1^4-6Np_1^4\nonumber\\
+  &=3N^2p_1^2+Np_1-6N^2p_1^3-7Np_1^2+3N^2p_1^4+12Np_1^3-6Np_1^4\nonumber\\
+  &=-6Np_1^4+12Np_1^3-7Np_1^2+Np_1
  \end{align}
  \subsection{歪度}
  \begin{align}
