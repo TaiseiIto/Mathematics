@@ -477,7 +477,7 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
  \section{エントロピー}
 確率変数$X$に対して，
  \begin{align}
-  H\left(X\right)&=E\left(-p\left(X\right)\log_2p\left(X\right)\right)
+  H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)
  \end{align}
 を$X$のエントロピーといい，$X$の値を確定することによって生じる情報量の平均ビット数を意味する．
 ただし$p$は離散確率変数であれば確率質量関数を意味し，連続確率変数であれば確率密度関数を意味する．
@@ -784,7 +784,7 @@ $\{0,1\}$を標本空間とし，確率質量関数を
  \subsection{尖度}
  \begin{align}
   K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}\nonumber\\
-  &=\frac{M_{X-E\left(X\right)}^{\left(3\right)}\left(0\right)}{\sqrt{p_1\left(1-p_1\right)}^4}\nonumber\\
+  &=\frac{M_{X-E\left(X\right)}^{\left(4\right)}\left(0\right)}{\sqrt{p_1\left(1-p_1\right)}^4}\nonumber\\
   &=\frac{p_1^4\left(1-p_1\right)e^{-p_10}+p_1\left(1-p_1\right)^4e^{\left(1-p_1\right)0}}{p_1^2\left(1-p_1\right)^2}\nonumber\\
   &=\frac{p_1^4\left(1-p_1\right)+p_1\left(1-p_1\right)^4}{p_1^2\left(1-p_1\right)^2}\nonumber\\
   &=\frac{p_1^3+\left(1-p_1\right)^3}{p_1\left(1-p_1\right)}\nonumber\\
@@ -794,10 +794,9 @@ $\{0,1\}$を標本空間とし，確率質量関数を
  \end{align}
  \subsection{エントロピー}
  \begin{align}
-  H\left(X\right)&=E\left(-p\left(X\right)\log_2p\left(X\right)\right)\nonumber\\
-  &=\left(-p\left(0\right)\log_2p\left(0\right)\right)p\left(0\right)+\left(-p\left(1\right)\log_2p\left(1\right)\right)p\left(1\right)\nonumber\\
-  &=\left(-\left(1-p_1\right)\log_2\left(1-p_1\right)\right)\left(1-p_1\right)+\left(-p_1\log_2p_1\right)p_1\nonumber\\
-  &=-\left(1-p_1\right)^2\log_2\left(1-p_1\right)-p_1^2\log_2p_1\nonumber\\
+  H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)\nonumber\\
+  &=\left(1-p_1\right)\left(-\log_2\left(1-p_1\right)\right)+p_1\left(-\log_2p_1\right)\nonumber\\
+  &=-\left(1-p_1\right)\log_2\left(1-p_1\right)-p_1\log_2p_1\nonumber\\
  \end{align}
  \subsection{確率母関数}
  \begin{align}
