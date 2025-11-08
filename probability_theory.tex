@@ -86,14 +86,18 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=\sum_{x\in S|f\left(x\right)\in T}f\left(x\right)p\left(x\right)\nonumber\\
   &=\sum_{x\in S}f\left(x\right)p\left(x\right)\label{DiscreteFunctionAverage}
  \end{align}
-となる．
+となる．この議論より分散は，
+ \begin{align}
+  V\left(X\right)=E\left(\left(X-E\left(X\right)\right)^2\right)
+ \end{align}
+と書けることが分かる．
  \subsubsection{分散}
 離散確率変数$f\left(X\right)$の分散は，
  \begin{align}
-  V\left(f\left(X\right)\right)&=\sum{y\in T}\left(y-E\left(f\left(X\right)\right)\right)^2q\left(y\right)\nonumber\\
-  &=\sum{y\in T}\left(y-E\left(f\left(X\right)\right)\right)^2\sum_{x\in S|f\left(x\right)=y}p\left(x\right)\nonumber\\
-  &=\sum{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(y-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
-  &=\sum{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
+  V\left(f\left(X\right)\right)&=\sum_{y\in T}\left(y-E\left(f\left(X\right)\right)\right)^2q\left(y\right)\nonumber\\
+  &=\sum_{y\in T}\left(y-E\left(f\left(X\right)\right)\right)^2\sum_{x\in S|f\left(x\right)=y}p\left(x\right)\nonumber\\
+  &=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(y-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
+  &=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
   &=\sum_{x\in S|f\left(x\right)\in T}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
   &=\sum_{x\in S}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)
  \end{align}
