@@ -165,7 +165,7 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
     \draw[dashed](3.61019,2.5)--(3.61019,-1)node[below]{$a_1+\Delta a_1$};
     \draw[dashed](6,2)--(6,0)node[below]{$a_2$};
     \draw[dashed](6.16621,2.5)--(6.16621,-0.5)node[below]{$a_2+\Delta a_2$};
-    \draw[dashed](6,2)--(-0.5,2)node[left]{$b$};
+    \draw[dashed](6.5,2)--(-0.5,2)node[left]{$b$};
     \draw[dashed](6.5,2.5)--(-0.5,2.5)node[left]{$b+\Delta b$};
    \end{tikzpicture}
    \caption{$b$の微小な変化による$\{x\in S|f\left(x\right)<b\}$の変化}\label{IntegrationRangeChange}
@@ -378,8 +378,8 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
  \begin{align}
   E\left(X+Y\right)&=\int_{-\infty}^\infty\sum_{x\in S}\left(x+y\right)p\left(x,y\right)dy\nonumber\\
   &=\int_{-\infty}^\infty\sum_{x\in S}\left(xp\left(x,y\right)+yp\left(x,y\right)\right)dy\nonumber\\
-  &=\int_{-\infty}^\infty\left(\sum_{x\in S}xp\left(x,y\right)+\infty\sum_{x\in S}yp\left(x,y\right)\right)dy\nonumber\\
-  &=\int_{-\infty}^\infty\sum_{x\in S}xp\left(x,y\right)dy+\int_{-\infty}^\infty\infty\sum_{x\in S}yp\left(x,y\right)dy\nonumber\\
+  &=\int_{-\infty}^\infty\left(\sum_{x\in S}xp\left(x,y\right)+\sum_{x\in S}yp\left(x,y\right)\right)dy\nonumber\\
+  &=\int_{-\infty}^\infty\sum_{x\in S}xp\left(x,y\right)dy+\int_{-\infty}^\infty\sum_{x\in S}yp\left(x,y\right)dy\nonumber\\
   &=E\left(X\right)+E\left(Y\right)
  \end{align}
 である．
@@ -395,14 +395,14 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
  \begin{align}
   E\left(aX\right)&=\sum_{x\in S}axp\left(x\right)\nonumber\\
   &=a\sum_{x\in S}xp\left(x\right)\nonumber\\
-  &=aE\left(aX\right)\nonumber\\
+  &=aE\left(X\right)\nonumber\\
  \end{align}
  \subsubsubsection{$X$が連続確率分布の場合}
 式(\ref{ContinuousFunctionAverate})より，
  \begin{align}
   E\left(aX\right)&=\int_{-\infty}^\infty axp\left(x\right)dx\nonumber\\
   &=a\int_{-\infty}^\infty xp\left(x\right)dx\nonumber\\
-  &=aE\left(aX\right)
+  &=aE\left(X\right)
  \end{align}
  \section{独立な確率変数の積の平均}
 互いに独立な2つの確率変数$X,Y$について，
