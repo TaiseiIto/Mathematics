@@ -101,7 +101,8 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
   &=\sum_{x\in S|f\left(x\right)\in T}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
   &=\sum_{x\in S}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
-  &=E\left(\left(f\left(X\right)-E\left(f\left(X\right)\right)\right)^2\right)
+  &=E\left(\left(f\left(X\right)-E\left(f\left(X\right)\right)\right)^2\right)\nonumber\\
+  &=E\left(\left(Y-E\left(Y\right)\right)^2\right)
  \end{align}
 となる．
  \section{連続確率変数}
@@ -253,7 +254,9 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=\int_{-\infty}^\infty\sum_{x\in S|f\left(x\right)=y}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2\frac{p\left(x\right)}{f'\left(x\right)}dy\nonumber\\
   &=\int_{-\infty}^\infty\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2\frac{p\left(x\right)}{f'\left(x\right)}\frac{dy}{dx}dx\nonumber\\
   &=\int_{-\infty}^\infty\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2\frac{p\left(x\right)}{f'\left(x\right)}f'\left(x\right)dx\nonumber\\
-  &=\int_{-\infty}^\infty\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)dx
+  &=\int_{-\infty}^\infty\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)dx\nonumber\\
+  &=E\left(\left(f\left(X\right)-E\left(f\left(X\right)\right)\right)^2\right)\nonumber\\
+  &=E\left(\left(Y-E\left(Y\right)\right)^2\right)
  \end{align}
 となる．
 ここで，$f'\left(x\right)=0$となる$x$は高々有限個しかないため，この積分の結果には影響しない．
