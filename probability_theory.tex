@@ -86,7 +86,8 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=\sum_{x\in S|f\left(x\right)\in T}f\left(x\right)p\left(x\right)\nonumber\\
   &=\sum_{x\in S}f\left(x\right)p\left(x\right)\label{DiscreteFunctionAverage}
  \end{align}
-となる．この議論より分散は，
+となる．
+この議論より分散は，
  \begin{align}
   V\left(X\right)=E\left(\left(X-E\left(X\right)\right)^2\right)
  \end{align}
@@ -99,7 +100,8 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(y-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
   &=\sum_{y\in T}\sum_{x\in S|f\left(x\right)=y}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
   &=\sum_{x\in S|f\left(x\right)\in T}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
-  &=\sum_{x\in S}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)
+  &=\sum_{x\in S}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)\nonumber\\
+  &=E\left(\left(f\left(X\right)-E\left(f\left(X\right)\right)\right)^2\right)
  \end{align}
 となる．
  \section{連続確率変数}
@@ -236,6 +238,12 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
  \end{align}
 となる．
 ここで，$f'\left(x\right)=0$となる$x$は高々有限個しかないため，この積分の結果には影響しない．
+この議論より分散は，
+ \begin{align}
+  V\left(X\right)=E\left(\left(X-E\left(X\right)\right)^2\right)
+ \end{align}
+と書けることが分かる．
+これは離散確率変数及び連続確率変数で共通して使用できる分散の定義となる．
  \subsubsection{分散}
 連続確率変数$f\left(X\right)$の分散は
  \begin{align}
