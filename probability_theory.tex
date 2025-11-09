@@ -741,6 +741,24 @@ $K_X$のマクローリン展開
   &=\frac{E\left(X\right)}{E\left(1\right)}\nonumber\\
   &=E\left(X\right)
  \end{align}
+ \subsection{キュムラントと分散の関係}
+ \begin{align}
+  \frac{d^2K_X\left(t\right)}{dt^2}&=\frac{d}{dt}\frac{E\left(Xe^{tX}\right)}{E\left(e^{tX}\right)}\nonumber\\
+  &=\frac{\frac{d}{dt}E\left(Xe^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(Xe^{tX}\right)\frac{d}{dt}E\left(e^{tX}\right)}{E\left(e^{tX}\right)^2}
+ \end{align}
+ここで，先程と同様に平均の線型性から微分と平均を交換できて，
+ \begin{align}
+  \frac{d^2K_X\left(t\right)}{dt^2}&=\frac{E\left(\frac{d}{dt}Xe^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(Xe^{tX}\right)E\left(\frac{d}{dt}e^{tX}\right)}{E\left(e^{tX}\right)^2}\nonumber\\
+&=\frac{E\left(X^2e^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(Xe^{tX}\right)^2}{E\left(e^{tX}\right)^2}
+ \end{align}
+これに$t=0$を代入すると，
+ \begin{align}
+  K^{\left(2\right)}_X\left(0\right)&=\frac{E\left(X^2e^{0X}\right)}{E\left(e^{0X}\right)}-\frac{E\left(Xe^{0X}\right)^2}{E\left(e^{0X}\right)^2}\nonumber\\
+  &=\frac{E\left(X^2e^0\right)}{E\left(e^0\right)}-\frac{E\left(Xe^0\right)^2}{E\left(e^0\right)^2}\nonumber\\
+  &=\frac{E\left(X^2\right)}{E\left(1\right)}-\frac{E\left(X\right)^2}{E\left(1\right)^2}\nonumber\\
+  &=E\left(X^2\right)-E\left(X\right)^2\nonumber\\
+  &=V\left(X\right)
+ \end{align}
  \section{ベルヌーイ分布}
 $\{0,1\}$を標本空間とし，確率質量関数を
  \begin{align}
