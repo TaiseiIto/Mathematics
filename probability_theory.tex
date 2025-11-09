@@ -720,6 +720,27 @@ $K_X$のマクローリン展開
   \end{cases}
  \end{align}
 となる．
+ \subsection{キュムラントと平均の関係}
+ \begin{align}
+  \frac{dK_X\left(t\right)}{dt}&=\frac{d\log M_X\left(t\right)}{dt}\nonumber\\
+  &=\frac{1}{M_X\left(t\right)}\frac{dM_X\left(t\right)}{dt}\nonumber\\
+  &=\frac{1}{E\left(e^{tX}\right)}\frac{dE\left(e^{tX}\right)}{dt}\nonumber\\
+  &=\frac{1}{E\left(e^{tX}\right)}\lim_{h\to 0}\frac{E\left(e^{\left(t+h\right)X}\right)-E\left(e^{tX}\right)}{h}
+ \end{align}
+ここで，平均の線形性より，
+ \begin{align}
+  \frac{dK_X\left(t\right)}{dt}&=\frac{1}{E\left(e^{tX}\right)}\lim_{h\to 0}E\left(\frac{e^{\left(t+h\right)X}-e^{tX}}{h}\right)\nonumber\\
+  &=\frac{1}{E\left(e^{tX}\right)}E\left(\lim_{h\to 0}\frac{e^{\left(t+h\right)X}-e^{tX}}{h}\right)\nonumber\\
+  &=\frac{1}{E\left(e^{tX}\right)}E\left(\frac{de^{tX}}{dt}\right)\nonumber\\
+  &=\frac{E\left(Xe^{tX}\right)}{E\left(e^{tX}\right)}
+ \end{align}
+これに$t=0$を代入すると，
+ \begin{align}
+  K^{\left(1\right)}_X\left(0\right)&=\frac{E\left(Xe^{0X}\right)}{E\left(e^{0X}\right)}\nonumber\\
+  &=\frac{E\left(Xe^0\right)}{E\left(e^0\right)}\nonumber\\
+  &=\frac{E\left(X\right)}{E\left(1\right)}\nonumber\\
+  &=E\left(X\right)
+ \end{align}
  \section{ベルヌーイ分布}
 $\{0,1\}$を標本空間とし，確率質量関数を
  \begin{align}
