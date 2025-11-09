@@ -662,7 +662,7 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
  \section{キュムラント母関数}
 確率変数$X$のキュムラント母関数$K_X$は，
  \begin{align}
-  K_X\left(t\right)&=\log M_X\left(t\right)
+  K_X\left(t\right)&=\log M_X\left(t\right)\label{CumulantGeneratingFunction}
  \end{align}
 と定義される．
 $K_X$のマクローリン展開
@@ -670,56 +670,25 @@ $K_X$のマクローリン展開
   K_X\left(t\right)&=\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}
  \end{align}
 における$K_X^{\left(k\right)}\left(0\right)$を確率変数$X$の$k$次キュムラントという．
- \subsection{キュムラントと積率の関係}
-キュムラント母関数の定義より，
+ \subsection{キュムラントから積率を求める}
+キュムラントの定義\ref{CumulantGeneratingFunction}より，
  \begin{align}
-  \log M_X\left(t\right)&=K_X\left(t\right)\nonumber\\
-  M_X\left(t\right)&=\exp K_X\left(t\right)\nonumber\\
-  \sum_{k=0}^\infty \frac{M_X^{\left(k\right)}\left(0\right)t^k}{k!}&=\exp\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}\nonumber\\
-  \frac{d}{dK_X^{\left(n\right)}\left(0\right)}\sum_{k=0}^\infty \frac{M_X^{\left(k\right)}\left(0\right)t^k}{k!}&=\frac{d}{dK_X^{\left(n\right)}\left(0\right)}\exp\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}\nonumber\\
-  \sum_{k=0}^\infty \frac{t^k}{k!}\frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}&=\left(\frac{d}{dK_X^{\left(n\right)}\left(0\right)}\sum_{k=0}^\infty\frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}\right)\left(\exp\sum_{k=0}^\infty\frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}\right)\nonumber\\
-  &=\left(\sum_{k=0}^\infty\frac{t^k}{k!}\frac{dK_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}\right)\left(\exp\sum_{k=0}^\infty\frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}\right)\nonumber\\
-  &=\left(\sum_{k=0}^\infty\frac{t^k}{k!}\frac{dK_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}\right)\exp K_X\left(t\right)\nonumber\\
-  &=\left(\sum_{k=0}^\infty\frac{t^k}{k!}\frac{dK_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}\right)M_X\left(t\right)\nonumber\\
-  &=\left(\sum_{k=0}^\infty\frac{t^k}{k!}\frac{dK_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}\right)\left(\sum_{k=0}^\infty\frac{M_X^{\left(k\right)}\left(0\right)t^k}{k!}\right)\nonumber
+  M_X\left(t\right)&=\exp\left(K_X\left(t\right)\right)\nonumber\\
+  \sum_{n=0}^\infty\frac{M_X^{\left(n\right)}\left(0\right)t^n}{n!}&=\sum_{n=0}^\infty\frac{K_X\left(t\right)^n}{n!}\nonumber\\
+  \sum_{n=0}^\infty\frac{M_X^{\left(n\right)}\left(0\right)t^n}{n!}&=\sum_{n=0}^\infty\frac{1}{n!}\left(\sum_{m=0}^\infty\frac{K_X^{\left(m\right)}\left(0\right)t^m}{m!}\right)^n
  \end{align}
-ここで，$K_X^{\left(k\right)}\left(0\right)$はキュムラント母関数のマクローリン展開による各項の係数である．
-マクローリン展開は任意の多項式を表現できるため，各行の係数は互いに独立なパラメータであると言える．
-よって，$k \ne n$のとき，$K_X^{\left(n\right)}\left(0\right)$から見て$K_X^{\left(k\right)}\left(0\right)$は定数とみなすことができるため，
+両辺の係数を比較する．
+左辺の$t^0$の項は$n=0$の項であり，右辺の$t^0$の項も$n=0$の項であるから，
  \begin{align}
-  \sum_{k=0}^\infty\frac{t^k}{k!}\frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}&=\left(\frac{t^n}{n!}\frac{dK_X^{\left(n\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}\right)\left(\sum_{k=0}^\infty\frac{M_X^{\left(k\right)}\left(0\right)t^k}{k!}\right)\nonumber\\
-  &=\frac{t^n}{n!}\sum_{k=0}^\infty\frac{M_X^{\left(k\right)}\left(0\right)t^k}{k!}\nonumber\\
-  &=\sum_{k=0}^\infty\frac{M_X^{\left(k\right)}\left(0\right)t^{k+n}}{k!n!}\nonumber\\
-  &=\sum_{k=n}^\infty\frac{M_X^{\left(k-n\right)}\left(0\right)t^k}{\left(k-n\right)!n!}\nonumber\\
-  \sum_{k=0}^\infty\frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}t^k&=\sum_{k=n}^\infty\frac{k!}{\left(k-n\right)!n!}M_X^{\left(k-n\right)}\left(0\right)t^k\nonumber\\
-  &=\sum_{k=n}^\infty{}_kC_{n}M_X^{\left(k-n\right)}\left(0\right)t^k\nonumber\\
+  \left.\frac{M_X^{\left(n\right)}\left(0\right)t^n}{n!}\right|_{n=0}&=\left.\frac{1}{n!}\left(\sum_{m=0}^\infty\frac{K_X^{\left(m\right)}\left(0\right)t^m}{m!}\right)^n\right|_{n=0}\nonumber\\
+  M_X\left(0\right)&=1
  \end{align}
-それぞれの項の係数を比較すると，$k<n$の場合，
+左辺の$t^1$の項は$n=1$の項であり，右辺の$t^0$の項は$n=1,m=1$の項であるから，
  \begin{align}
-  \frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}t^k&=0
+  \left.\frac{M_X^{\left(n\right)}\left(0\right)t^n}{n!}\right|_{n=1}&=\left.\frac{1}{n!}\left(\frac{K_X^{\left(m\right)}\left(0\right)t^m}{m!}\right)^n\right|_{n=1\land m=1}\nonumber\\
+  M_X^{\left(1\right)}\left(0\right)t&=K_X^{\left(1\right)}\left(0\right)t\nonumber\\
+  M_X^{\left(1\right)}\left(0\right)&=K_X^{\left(1\right)}\left(0\right)
  \end{align}
-これは，任意の実数$t$について成り立つ必要があるから，
- \begin{align}
-  \frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}&=0
- \end{align}
-となる．また，$n\le k$の場合，
- \begin{align}
-  \frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}t^k&={}_kC_{n}M_X^{\left(k-n\right)}\left(0\right)t^k
- \end{align}
-これも同様に任意の実数$t$について成り立つ必要があるから，
- \begin{align}
-  \frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}&={}_kC_{n}M_X^{\left(k-n\right)}\left(0\right)
- \end{align}
-である．
-以上をまとめると，
- \begin{align}
-  \frac{dM_X^{\left(k\right)}\left(0\right)}{dK_X^{\left(n\right)}\left(0\right)}&=
-  \begin{cases}
-   0&\left(k<n\right)\\
-   {}_kC_{n}M_X^{\left(k-n\right)}\left(0\right)&\left(n\le k\right)
-  \end{cases}
- \end{align}
-となる．
  \subsection{キュムラントと平均の関係}
  \begin{align}
   \frac{dK_X\left(t\right)}{dt}&=\frac{d\log M_X\left(t\right)}{dt}\nonumber\\
