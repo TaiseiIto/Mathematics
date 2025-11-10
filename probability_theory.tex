@@ -753,13 +753,42 @@ $S_i$の濃度は，
   &=\prod_{j\in J\left(i\right)}\frac{\left(i|J\left(i\right)|-ij+i\right)!}{\left(i|J\left(i\right)|-ij\right)!i!}\nonumber\\
   &=\frac{1}{\left(i!\right)^{|J\left(i\right)|}}\prod_{j\in J\left(i\right)}\frac{\left(i|J\left(i\right)|-ij+i\right)!}{\left(i|J\left(i\right)|-ij\right)!}\nonumber\\
   &=\frac{1}{\left(i!\right)^{|J\left(i\right)|}}\prod_{j\in J\left(i\right)}\prod_{k=1}^i\left(i|J\left(i\right)|-ij+k\right)\nonumber\\
-  &=\frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}}\label{BellDetailEnumeration}
+  &=\frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}}\label{BellDetailEnumerationWithDuplication}
+ \end{align}
+ただし，$S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序は区別しないため，これらの順序の個数で割る必要がある．
+$S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
+まず$|J\left(i\right)|$個の中から$1$個選ぶ場合の数は，
+ \begin{align}
+  \binom{|J\left(i\right)|}{1}=|J\left(i\right)|
+ \end{align}
+次に$|J\left(i\right)-1|$個の中から$1$個選ぶ場合の数は，
+ \begin{align}
+  \binom{|J\left(i\right)|-1}{1}=|J\left(i\right)|-1
+ \end{align}
+次に$|J\left(i\right)-2|$個の中から$1$個選ぶ場合の数は，
+ \begin{align}
+  \binom{|J\left(i\right)|-2}{1}=|J\left(i\right)|-2
+ \end{align}
+一般に$|J\left(i\right)-j+1|$個の中から$1$個選ぶ場合の数は，
+ \begin{align}
+  \binom{|J\left(i\right)|-j+1}{1}=|J\left(i\right)|-j+1
+ \end{align}
+一般に$|J\left(i\right)-|J\left(i\right)|+1|$個の中から$1$個選ぶ場合の数は，
+ \begin{align}
+  \binom{|J\left(i\right)|-|J\left(i\right)|+1}{1}=|J\left(i\right)|-|J\left(i\right)|+1
+ \end{align}
+これらの場合の数は，
+ \begin{align}
+  \prod_{j\in J\left(i\right)}\left(|J\left(i\right)|-j+1\right)=|J\left(i\right)|!\label{BellDetailEnumerationDuplication}
+ \end{align}
+\ref{BellDetailEnumerationWithDuplication}を\ref{BellDetailEnumerationDuplication}で割ると，
+ \begin{align}
+  \frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\label{BellDetailEnumeration}
  \end{align}
 \ref{BellOutlineEnumeration}および\ref{BellDetailEnumeration}を合わせると，場合の数は，
  \begin{align}
-  \prod_{i\in I}\binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}\frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}}
+  \prod_{i\in I}\binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}\frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}
  \end{align}
- \subsection{キュムラントから積率を求める}
  \subsection{キュムラントから積率を求める}
 キュムラントの定義\ref{CumulantGeneratingFunction}より，
  \begin{align}
