@@ -814,6 +814,15 @@ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
   \sum_{J\in J_k}\frac{|S|!}{\prod_{i\in I}\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\label{BellEnumaration}
  \end{align}
 となる．
+これは，Bellの多項式
+ \begin{align}
+  B_{n,k}\left(x_1,...,x_{|I|}\right)=\sum_{J\in J_k}n!\prod_{i\in I}\frac{1}{|J\left(i\right)|!}\left(\frac{x_i}{i!}\right)^{|J\left(i\right)|}
+ \end{align}
+を使って，
+ \begin{align}
+  B_{|S|,k}\left(1,...,1\right)=\sum_{J\in J_k}\frac{|S|!}{\prod_{i\in I}\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\label{BellEnumaration}
+ \end{align}
+と表現できる．
  \subsection{キュムラントから積率を求める}
 キュムラントの定義\ref{CumulantGeneratingFunction}より，
  \begin{align}
