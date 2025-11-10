@@ -677,7 +677,7 @@ $K_X$のマクローリン展開
  \end{align}
 を，集合
  \begin{align}
-  \{S_{ij}|i\in I=\{1,\cdots,|I|\}\land j\in J\left(i\right)=\{1,\cdots,|J\left(i\right)|\}\}
+  \{S_{ij}|i\in I=\{1,\cdots,|I|\}\land j\in J\left(i\right)=\{1,\cdots,|J\left(i\right)|\}\}\label{BellDividing}
  \end{align}
 に分けたい．
 但し，
@@ -798,8 +798,22 @@ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
   =&\left(\prod_{i\in I}\frac{1}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\right)\left(\prod_{m\in\{i|J\left(i\right)|-l+\sum_{k=1}^{i-1}k|J\left(k\right)||i\in I\land l\in\{1,\cdots,i|J\left(i\right)|\}\}}\left(|S|-m\right)\right)\nonumber\\
   =&\left(\prod_{i\in I}\frac{1}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\right)\left(\prod_{m=0}^{|S|-1}\left(|S|-m\right)\right)\nonumber\\
   =&\left(\prod_{i\in I}\frac{1}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\right)|S|!\nonumber\\
-  =&\frac{|S|!}{\prod_{i\in I}\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}
+  =&\frac{|S|!}{\prod_{i\in I}\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\label{BellEnumerationWithoutJ}
  \end{align}
+ここで，\ref{BellDividing}において，分ける個数を$k$とする場合，関数${}_{\max}J:I\to \mathbb{N}:i\mapsto|J\left(i\right)|$の可能な形の集合${}_{\max} J_k$は，
+ \begin{align}
+  {}_{\max} J_k=\{{}_{\max}J:I\to \mathbb{N}:i\mapsto|J\left(i\right)||\sum_{i\in I}|J\left(i\right)|=k\land\sum_{i\in I}i|J\left(i\right)|=|S|\}
+ \end{align}
+よって，関数$J:I\to 2^\mathbb{N}:i\mapsto\{1,\cdots,{}_{\max}J\left(i\right)\}$の可能な形の集合$J_k$は，
+ \begin{align}
+  J_k=\{J:I\to 2^\mathbb{N}:i\mapsto\{1,\cdots,{}_{\max}J\left(i\right)\}|{}_{\max}J\in{}_{\max} J_k\}
+ \end{align}
+となる．
+ここから関数$J$を選ぶ場合の数も考慮して\ref{BellEnumerationWithoutJ}を拡張すると，集合$S$を$k$個の部分集合に分割する場合の数は，
+ \begin{align}
+  \sum_{J\in J_k}\frac{|S|!}{\prod_{i\in I}\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\label{BellEnumaration}
+ \end{align}
+となる．
  \subsection{キュムラントから積率を求める}
 キュムラントの定義\ref{CumulantGeneratingFunction}より，
  \begin{align}
