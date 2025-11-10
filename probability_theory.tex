@@ -749,11 +749,15 @@ $S_i$の濃度は，
  \end{align}
 これらの場合の数は，
  \begin{align}
-  \prod_{j\in J\left(i\right)}\binom{i\left(|J\left(i\right)|-j+1\right)}{i}\label{BellDetailEnumeration}
+  \prod_{j\in J\left(i\right)}\binom{i\left(|J\left(i\right)|-j+1\right)}{i}&=\prod_{j\in J\left(i\right)}\binom{i|J\left(i\right)|-ij+i}{i}\nonumber\\
+  &=\prod_{j\in J\left(i\right)}\frac{\left(i|J\left(i\right)|-ij+i\right)!}{\left(i|J\left(i\right)|-ij\right)!i!}\nonumber\\
+  &=\frac{1}{\left(i!\right)^{|J\left(i\right)|}}\prod_{j\in J\left(i\right)}\frac{\left(i|J\left(i\right)|-ij+i\right)!}{\left(i|J\left(i\right)|-ij\right)!}\nonumber\\
+  &=\frac{1}{\left(i!\right)^{|J\left(i\right)|}}\prod_{j\in J\left(i\right)}\prod_{k=1}^i\left(i|J\left(i\right)|-ij+k\right)\nonumber\\
+  &=\frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}}\label{BellDetailEnumeration}
  \end{align}
 \ref{BellOutlineEnumeration}および\ref{BellDetailEnumeration}を合わせると，場合の数は，
  \begin{align}
-  \prod_{i\in I}\left(\binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}\prod_{j\in J\left(i\right)}\binom{i\left(|J\left(i\right)|-j+1\right)}{i}\right)
+  \prod_{i\in I}\binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}\frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}}
  \end{align}
  \subsection{キュムラントから積率を求める}
  \subsection{キュムラントから積率を求める}
