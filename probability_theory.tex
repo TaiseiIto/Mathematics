@@ -859,8 +859,8 @@ $C^\infty$級関数$f:\mathbb{R}\to\mathbb{R}$と，それを$k$乗した関数$
 だが，このとき$g\left(x\right)$の$m$次の項に対し，$f\left(x\right)$のマクローリン展開の$k$乗の展開から$m$次の項をかき集めることを考えると，これは大きさ$m$の集合の全ての可能な$k$個の部分集合への分割を考え，元の集合から分割された各部分集合の大きさ$n$に応じた値，即ち$f\left(x\right)$の$n$次の項の総積として再統合し，それを全ての分割方法に渡って総和を取った値である．
 ただし，Bellの多項式が部分集合同士の順番を考えていないのに対し，多項式の$k$乗の展開は，$k$個の順序付けられた多項式因子それぞれからひとつの項を因子として選択することによって展開後のひとつの項を計算することを考えると，ひとつの項を計算する際に選ばれた$k$個の因子の可能な全ての順番の数$k!$を掛ける必要があるから，
  \begin{align}
-  g\left(x\right)&=\sum_{m=0}^\infty k!B_{m,k}\left(\frac{f^{\left(0\right)}\left(0\right)}{0!}x^0,\cdots,\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n,\cdots,\frac{f^{\left(m-k+1\right)}\left(0\right)}{\left(m-k+1\right)!}x^{m-k+1}\right)\nonumber\\
-  &=k!\sum_{m=0}^\infty B_{m,k}\left(\frac{f^{\left(0\right)}\left(0\right)}{0!},\cdots,\frac{f^{\left(n\right)}\left(0\right)}{n!},\cdots,\frac{f^{\left(m-k+1\right)}\left(0\right)}{\left(m-k+1\right)!}\right)x^m
+  g\left(x\right)&=\left(\frac{f^{\left(0\right)}\left(0\right)}{0!}\right)^k+\sum_{m=1}^\infty k!B_{m,k}\left(\frac{f^{\left(1\right)}\left(0\right)}{1!}x^1,\cdots,\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n,\cdots,\frac{f^{\left(m-k+1\right)}\left(0\right)}{\left(m-k+1\right)!}x^{m-k+1}\right)\nonumber\\
+  &=\left(\frac{f^{\left(0\right)}\left(0\right)}{0!}\right)^k+k!\sum_{m=1}^\infty B_{m,k}\left(\frac{f^{\left(1\right)}\left(0\right)}{1!},\cdots,\frac{f^{\left(n\right)}\left(0\right)}{n!},\cdots,\frac{f^{\left(m-k+1\right)}\left(0\right)}{\left(m-k+1\right)!}\right)x^m
  \end{align}
 である．
  \subsection{Fa\`a di Brunoの公式}
