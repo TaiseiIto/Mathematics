@@ -816,27 +816,40 @@ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
 となる．
 ここで，部分集合$S_{ij}$の濃度に応じて何らかの実数を返す関数
  \begin{align}
-  &f:\{S_i|i\in I\}\to\mathbb{R}\\
-  &g:\{S_{ij}|i\in I\land j\in J\left(i\right)\}\to\mathbb{R}:S_{ij}\mapsto f\left(S_i\right)
+  &f:I\to\mathbb{R}\\
+  &g:\{S_{ij}|i\in I\land j\in J\left(i\right)\}\to\mathbb{R}:S_{ij}\mapsto f\left(i\right)
  \end{align}
 を考えた時，分けられた部分集合族に渡るそれらの総積
  \begin{align}
-  \prod_{i\in I\land j\in J\left(i\right)}g\left(S_{ij}\right)&=\prod_{i\in I\land j\in J\left(i\right)}f\left(S_i\right)\nonumber\\
-  &=\prod_{i\in I}f\left(S_i\right)^{|J\left(i\right)|}
+  \prod_{i\in I\land j\in J\left(i\right)}g\left(S_{ij}\right)&=\prod_{i\in I\land j\in J\left(i\right)}f\left(i\right)\nonumber\\
+  &=\prod_{i\in I}f\left(i\right)^{|J\left(i\right)|}
  \end{align}
 の，全ての分け方の場合に渡る総和がどうなるか考えよう．
 場合の数を数えた時にまず$i$を固定して$j$を変動させたときの場合の数を計算し，その後さらに$i$を変動させて場合の数を計算した．
 この流れに合わせて関数$f$を組み込むために，$i$を固定した形
  \begin{align}
-  f\left(S_i\right)^{|J\left(i\right)|}\label{BellWeight}
+  f\left(i\right)^{|J\left(i\right)|}\label{BellWeight}
  \end{align}
 を用いる．
 これは，ひとつの場合における関数の総積を各$i$ごとに因数分解し，$i$を固定して$j$を変動させたときの場合の数に組み込む形になるが，場合の数の算出において各$i$は積の形で再び合流するため，問題ない．
 \ref{BellWeight}を\ref{BellDetailEnumerationWithDuplication}に組み込むと，
  \begin{align}
-  \frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}}f\left(S_i\right)^{|J\left(i\right)|}&=\left(i|J\left(i\right)|\right)!\frac{f\left(S_i\right)^{|J\left(i\right)|}}{\left(i!\right)^{|J\left(i\right)|}}\nonumber\\
-  &=\left(i|J\left(i\right)|\right)!\left(\frac{f\left(S_i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}
+  \frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}}f\left(i\right)^{|J\left(i\right)|}&=\left(i|J\left(i\right)|\right)!\frac{f\left(i\right)^{|J\left(i\right)|}}{\left(i!\right)^{|J\left(i\right)|}}\nonumber\\
+  &=\left(i|J\left(i\right)|\right)!\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}
  \end{align}
+これを\ref{BellDetailEnumerationDuplication}で割ると，
+ \begin{align}
+  \frac{\left(i|J\left(i\right)|\right)!}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}
+ \end{align}
+これを\ref{BellOutlineEnumeration}に組み込むと，
+ \begin{align}
+  \prod_{i\in I}\binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}\frac{\left(i|J\left(i\right)|\right)!}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}=|S|!\prod_{i\in I}\frac{1}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}
+ \end{align}
+さらに$J$を選ぶ場合の数も考慮すると，
+ \begin{align}
+  B_{|S|,k}\left(f\left(1\right),\cdots,f\left(|I|\right)\right)=\sum_{J\in J_k}|S|!\prod_{i\in I}\frac{1}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}
+ \end{align}
+これがBellの多項式の定義である．
  \subsection{Fa\`a di Brunoの公式}
  \subsection{キュムラントから積率を求める}
 キュムラントの定義\ref{CumulantGeneratingFunction}より，
