@@ -835,19 +835,19 @@ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
 \ref{BellWeight}を\ref{BellDetailEnumerationWithDuplication}に組み込むと，
  \begin{align}
   \frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}}f\left(i\right)^{|J\left(i\right)|}&=\left(i|J\left(i\right)|\right)!\frac{f\left(i\right)^{|J\left(i\right)|}}{\left(i!\right)^{|J\left(i\right)|}}\nonumber\\
-  &=\left(i|J\left(i\right)|\right)!\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}
+  &=\left(i|J\left(i\right)|\right)!\left(\frac{f\left(i\right)}{i!}\right)^{|J\left(i\right)|}
  \end{align}
 これを\ref{BellDetailEnumerationDuplication}で割ると，
  \begin{align}
-  \frac{\left(i|J\left(i\right)|\right)!}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}
+  \frac{\left(i|J\left(i\right)|\right)!}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{i!}\right)^{|J\left(i\right)|}
  \end{align}
 これを\ref{BellOutlineEnumeration}に組み込むと，
  \begin{align}
-  \prod_{i\in I}\binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}\frac{\left(i|J\left(i\right)|\right)!}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}=|S|!\prod_{i\in I}\frac{1}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}
+  \prod_{i\in I}\binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}\frac{\left(i|J\left(i\right)|\right)!}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{i!}\right)^{|J\left(i\right)|}=|S|!\prod_{i\in I}\frac{1}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{i!}\right)^{|J\left(i\right)|}
  \end{align}
 さらに$J$を選ぶ場合の数も考慮すると，
  \begin{align}
-  B_{|S|,k}\left(f\left(1\right),\cdots,f\left(|I|=|S|-k+1\right)\right)=\sum_{J\in J_k}|S|!\prod_{i\in I}\frac{1}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}
+  B_{|S|,k}\left(f\left(1\right),\cdots,f\left(|I|=|S|-k+1\right)\right)=\sum_{J\in J_k}|S|!\prod_{i\in I}\frac{1}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{i!}\right)^{|J\left(i\right)|}
  \end{align}
 これがBellの多項式の定義であり，大きさ$|S|$の集合の全ての可能な$k$個の部分集合への分割方法を考え，元の集合から分割された各部分集合の大きさ$i$に応じた値$f\left(i\right)$の総積として再統合し，それを全ての分割方法に渡って総和を取った値を意味する．
  \subsubsection{マクローリン展開の$k$乗の展開}
