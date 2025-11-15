@@ -850,7 +850,7 @@ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
   B_{|S|,k}\left(f\left(1\right),\cdots,f\left(|I|=|S|-k+1\right)\right)=\sum_{J\in J_k}|S|!\prod_{i\in I}\frac{1}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{\left(i!\right)}\right)^{|J\left(i\right)|}
  \end{align}
 これがBellの多項式の定義であり，大きさ$|S|$の集合の全ての可能な$k$個の部分集合への分割方法を考え，元の集合から分割された各部分集合の大きさ$i$に応じた値$f\left(i\right)$の総積として再統合し，それを全ての分割方法に渡って総和を取った値を意味する．
- \subsubsection{応用}
+ \subsubsection{マクローリン展開の$k$乗の展開}
 $C^\infty$級関数$f:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=0$と，それを$k$乗した関数$g:\mathbb{R}\to\mathbb{R}:x\mapsto f\left(x\right)^k$の関係性について考えてみよう．
 それぞれをマクローリン展開すると，
  \begin{align}
@@ -863,6 +863,19 @@ $C^\infty$級関数$f:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=0$と，
   &=k!\sum_{m=1}^\infty B_{m,k}\left(\frac{f^{\left(1\right)}\left(0\right)}{1!},\cdots,\frac{f^{\left(n\right)}\left(0\right)}{n!},\cdots,\frac{f^{\left(m-k+1\right)}\left(0\right)}{\left(m-k+1\right)!}\right)x^m
  \end{align}
 である．
+ \subsubsection{マクローリン展開の合成関数}
+$C^\infty$級関数$f,g:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=g\left(0\right)=0$それぞれのマクローリン展開を
+ \begin{align}
+  f\left(x\right)&=\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n\\
+  g\left(x\right)&=\sum_{m=1}^\infty\frac{g^{\left(m\right)}\left(0\right)}{m!}x^m
+ \end{align}
+とするとき，これらの合成関数は，Bellの多項式を使って
+ \begin{align}
+  f\left(g\left(x\right)\right)&=\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}\left(\sum_{m=1}^\infty\frac{g^{\left(m\right)}\left(0\right)}{m!}x^m\right)^n\nonumber\\
+  &=\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}n!\sum_{m=1}^\infty B_{m,n}\left(\frac{g^{\left(1\right)\left(0\right)}}{1!},\cdots,\frac{g^{\left(m-n+1\right)}\left(0\right)}{\left(m-n+1\right)!}\right)x^m\nonumber\\
+  &=\sum_{m=1}^\infty\sum_{n=1}^m f^{\left(n\right)}\left(0\right)B_{m,n}\left(\frac{g^{\left(1\right)\left(0\right)}}{1!},\cdots,\frac{g^{\left(m-n+1\right)}\left(0\right)}{\left(m-n+1\right)!}\right)x^m\nonumber\\
+ \end{align}
+となる．
  \subsection{Fa\`a di Brunoの公式}
  \subsection{キュムラントから積率を求める}
 キュムラントの定義\ref{CumulantGeneratingFunction}より，
