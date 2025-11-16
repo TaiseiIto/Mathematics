@@ -917,7 +917,77 @@ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\left(f,g\right)\in C^\i
   &=f\left(0\right)+\sum_{n=1}^\infty\sum_{k=0}^\infty\frac{f^{\left(k\right)}\left(0\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(0\right),\cdots,g^{\left(n-k+1\right)}\left(0\right)\right)x^n\nonumber\\
   &=f\left(0\right)+\sum_{n=1}^\infty\sum_{k=0}^n\frac{f^{\left(k\right)}\left(0\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(0\right),\cdots,g^{\left(n-k+1\right)}\left(0\right)\right)x^n\nonumber\\
  \end{align}
- \subsection{Fa\`a di Brunoの公式}
+ \subsubsection{Fa\`a di Brunoの公式}
+$\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\forall\left(f,g\right)\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)^2$の合成関数の$n\in\mathbb{N}$回微分は，
+ \begin{align}
+  \frac{d^n}{dx^n}f\left(g\left(x\right)\right)=\sum_{k=1}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)
+ \end{align}
+である．
+これがFa\`a di Brunoの公式である．
+これを証明するために以下の補題
+ \begin{align}
+  \forall n\in\mathbb{N},\forall f\in C^n\left(\mathbb{R}^\mathbb{R}\right),\frac{d^nf\left(x\right)}{dx^n}=\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}
+ \end{align}
+を数学的帰納法により証明する．
+$n=1$の時，
+ \begin{align}
+  \frac{df\left(x\right)}{dx}&=\frac{df\left(x\right)}{d\left(x+y\right)}\frac{d\left(x+y\right)}{dx}\nonumber\\
+  &=\frac{df\left(x\right)}{d\left(x+y\right)}
+ \end{align}
+また，
+ \begin{align}
+  \exists n\in\mathbb{N},\frac{d^nf\left(x\right)}{dx^n}=\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}
+ \end{align}
+のとき，
+ \begin{align}
+  \frac{d^{n+1}f\left(x\right)}{dx^{n+1}}&=\frac{d}{dx}\frac{d^nf\left(x\right)}{dx^n}\nonumber\\
+  &=\frac{d}{dx}\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}\nonumber\\
+  &=\frac{d}{d\left(x+y\right)}\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}\frac{d\left(x+y\right)}{dx}\nonumber\\
+  &=\frac{d}{d\left(x+y\right)}\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}\nonumber\\
+  &=\frac{d^{n+1}f\left(x\right)}{d\left(x+y\right)^{n+1}}
+ \end{align}
+よって数学的帰納法により補題が成り立つ．
+これでFa\`a di Brunoの公式を証明する準備が整った．
+$\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\forall\left(f,g\right)\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)^2$をもとに，以下の関数を定義する．
+ \begin{align}
+  F\left(x,y\right)&=f\left(g\left(x\right)+y\right)\\
+  G\left(x,y\right)&=g\left(x+y\right)-g\left(x\right)
+ \end{align}
+ここで，$F\left(x,y\right)$を$y$周りでマクローリン展開すると，
+ \begin{align}
+  F\left(x,y\right)&=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\frac{\partial^nF\left(x,y\right)}{\partial y^n}\right|_{y=0}\right)y^k\nonumber\\
+  &=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\frac{\partial^nf\left(g\left(x\right)+y\right)}{\partial y^n}\right|_{y=0}\right)y^k\nonumber\\
+  &=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\frac{\partial^nf\left(g\left(x\right)+y\right)}{\partial\left(g\left(x\right)+y\right)^n}\right|_{y=0}\right)y^k\nonumber\\
+  &=\sum_{k=0}^\infty\frac{f^{\left(n\right)}\left(g\left(x\right)\right)}{k!}y^k\nonumber\\
+ \end{align}
+また，$G\left(x,y\right)$を$y$周りでマクローリン展開すると，
+ \begin{align}
+  G\left(x,y\right)&=\sum_{n=0}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nG\left(x,y\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
+  &=G\left(x,0\right)+\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nG\left(x,y\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
+  &=g\left(x\right)-g\left(x\right)+\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\frac{\partial^n\left(g\left(x+y\right)-g\left(x\right)\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
+  &=\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\frac{\partial^ng\left(x+y\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
+  &=\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\frac{\partial^ng\left(x+y\right)}{\partial\left(x+y\right)^n}\right|_{y=0}\right)y^n\nonumber\\
+  &=\sum_{n=1}^\infty\frac{g^{\left(n\right)}\left(x\right)}{n!}y^n
+ \end{align}
+これらを合成すると，
+ \begin{align}
+  F\left(x,G\left(x,y\right)\right)&=f\left(g\left(x\right)\right)+\sum_{n=1}^\infty\sum_{k=0}^n\frac{f^{\left(k\right)}\left(g\left(x\right)\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)y^n
+ \end{align}
+となる一方で，
+ \begin{align}
+  F\left(x,G\left(x,y\right)\right)&=f\left(g\left(x\right)+G\left(x,y\right)\right)\nonumber\\
+  &=f\left(g\left(x\right)+g\left(x+y\right)-g\left(x\right)\right)\nonumber\\
+  &=f\left(g\left(x+y\right)\right)\nonumber\\
+  &=\sum_{n=0}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nf\left(g\left(x+y\right)\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
+  &=\sum_{n=0}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nf\left(g\left(x+y\right)\right)}{\partial\left(x+y\right)^n}\right|_{y=0}\right)y^n\nonumber\\
+  &=\sum_{n=0}^\infty\frac{1}{n!}\frac{d^nf\left(g\left(x\right)\right)}{dx^n}y^n\nonumber\\
+ \end{align}
+とも展開できる．
+$\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
+ \begin{align}
+  \frac{1}{n!}\frac{d^nf\left(g\left(x\right)\right)}{dx^n}y^n&=\sum_{k=0}^n\frac{f^{\left(k\right)}\left(g\left(x\right)\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)y^n\nonumber\\
+  \frac{d^nf\left(g\left(x\right)\right)}{dx^n}&=\sum_{k=0}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)
+ \end{align}
  \subsection{キュムラントから積率を求める}
 キュムラントの定義\ref{CumulantGeneratingFunction}より，
  \begin{align}
