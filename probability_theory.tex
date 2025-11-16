@@ -800,13 +800,13 @@ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
   =&\left(\prod_{i\in I}\frac{1}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\right)|S|!\nonumber\\
   =&|S|!\prod_{i\in I}\frac{1}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\label{BellEnumerationWithoutJ}
  \end{align}
-ここで，\ref{BellDividing}において，分ける個数を$k$とする場合，関数${}_{\max}J:I\to \mathbb{N}:i\mapsto|J\left(i\right)|$の可能な形の集合${}_{\max} J_k$は，
+ここで，\ref{BellDividing}において，分ける個数を$k$とする場合，関数${}_{\max}J:I\to \mathbb{N};i\mapsto|J\left(i\right)|$の可能な形の集合${}_{\max} J_k$は，
  \begin{align}
-  {}_{\max} J_k=\{{}_{\max}J:I\to \mathbb{N}:i\mapsto|J\left(i\right)||\sum_{i\in I}|J\left(i\right)|=k\land\sum_{i\in I}i|J\left(i\right)|=|S|\}
+  {}_{\max} J_k=\{{}_{\max}J:I\to \mathbb{N};i\mapsto|J\left(i\right)||\sum_{i\in I}|J\left(i\right)|=k\land\sum_{i\in I}i|J\left(i\right)|=|S|\}
  \end{align}
-よって，関数$J:I\to 2^\mathbb{N}:i\mapsto\{1,\cdots,{}_{\max}J\left(i\right)\}$の可能な形の集合$J_k$は，
+よって，関数$J:I\to 2^\mathbb{N};i\mapsto\{1,\cdots,{}_{\max}J\left(i\right)\}$の可能な形の集合$J_k$は，
  \begin{align}
-  J_k=\{J:I\to 2^\mathbb{N}:i\mapsto\{1,\cdots,{}_{\max}J\left(i\right)\}|{}_{\max}J\in{}_{\max} J_k\}
+  J_k=\{J:I\to 2^\mathbb{N};i\mapsto\{1,\cdots,{}_{\max}J\left(i\right)\}|{}_{\max}J\in{}_{\max} J_k\}
  \end{align}
 となる．
 ここから関数$J$を選ぶ場合の数も考慮して\ref{BellEnumerationWithoutJ}を拡張すると，集合$S$を$k$個の部分集合に分割する場合の数は，
@@ -817,7 +817,7 @@ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
 ここで，部分集合$S_{ij}$の濃度に応じて何らかの実数を返す関数
  \begin{align}
   &f:I\to\mathbb{R}\\
-  &g:\{S_{ij}|i\in I\land j\in J\left(i\right)\}\to\mathbb{R}:S_{ij}\mapsto f\left(i\right)
+  &g:\{S_{ij}|i\in I\land j\in J\left(i\right)\}\to\mathbb{R};S_{ij}\mapsto f\left(i\right)
  \end{align}
 を考えた時，分けられた部分集合族に渡るそれらの総積
  \begin{align}
@@ -851,18 +851,54 @@ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
  \end{align}
 これがBellの多項式の定義であり，大きさ$|S|$の集合の全ての可能な$k$個の部分集合への分割方法を考え，元の集合から分割された各部分集合の大きさ$i$に応じた値$f\left(i\right)$の総積として再統合し，それを全ての分割方法に渡って総和を取った値を意味する．
  \subsubsection{マクローリン展開の$k$乗の展開}
-$C^\infty$級関数$f:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=0$と，それを$k$乗した関数$g:\mathbb{R}\to\mathbb{R}:x\mapsto f\left(x\right)^k$の関係性について考えてみよう．
-それぞれをマクローリン展開すると，
+$C^\infty$級関数$f:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=0$を$k$乗してみよう．
  \begin{align}
-  \left(\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k=f\left(x\right)^k=g\left(x\right)=\sum_{m=1}^\infty\frac{g^{\left(m\right)}\left(0\right)}{m!}x^m
+  f\left(x\right)^k&=\left(\sum_{n=0}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
+  &=\left(\frac{f^{\left(0\right)}\left(0\right)}{0!}x^0+\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
+  &=\left(\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
+  &=\sum_{n_1=1}^\infty\cdots\sum_{n_k=1}^\infty\prod_{m=1}^k\frac{f^{\left(n_m\right)}\left(0\right)}{n_m!}x^{n_m}\nonumber\\
+  &=\sum_{n=1}^\infty\sum_{\left(n_1,\cdots,n_k\right)\in\mathbb{N}^k|\sum_{j=1}^k n_j=n}\prod_{i\in\left(n_1,\cdots,n_k\right)}\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i
  \end{align}
-だが，このとき$g\left(x\right)$の$m$次の項に対し，$f\left(x\right)$のマクローリン展開の$k$乗の展開から$m$次の項をかき集めることを考えると，これは大きさ$m$の集合の全ての可能な$k$個の部分集合への分割を考え，元の集合から分割された各部分集合の大きさ$n$に応じた値，即ち$f\left(x\right)$の$n$次の項の総積として再統合し，それを全ての分割方法に渡って総和を取った値である．
-ただし，Bellの多項式が部分集合同士の順番を考えていないのに対し，多項式の$k$乗の展開は，$k$個の順序付けられた多項式因子それぞれからひとつの項を因子として選択することによって展開後のひとつの項を計算することを考えると，ひとつの項を計算する際に選ばれた$k$個の因子の可能な全ての順番の数$k!$を掛ける必要があるから，
+ここから，数列$\left(n_1,\cdots,n_k\right)$を，集合$\{n_1,\cdots,n_k\}$に書き換える．
+数列$\left(n_1,\cdots,n_k\right)$は値が等しくても場所が異なれば区別するのに対し，集合$\{n_1,\cdots,n_k\}$は等しい値を区別しない．
+従って，数列$\left(n_1,\cdots,n_k\right)$を集合$\{n_1,\cdots,n_k\}$に書き換えた際に式を保存するために，数列$\left(n_1,\cdots,n_k\right)$に登場する自然数を同じ値ごとに分類し，各値について同じ値がいくつ数列$\left(n_1,\cdots,n_k\right)$に現れるかを知っておく必要がある．
+そのために，
  \begin{align}
-  g\left(x\right)&=\sum_{m=1}^\infty k!B_{m,k}\left(\frac{f^{\left(1\right)}\left(0\right)}{1!}x^1,\cdots,\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n,\cdots,\frac{f^{\left(m-k+1\right)}\left(0\right)}{\left(m-k+1\right)!}x^{m-k+1}\right)\nonumber\\
-  &=k!\sum_{m=k}^\infty B_{m,k}\left(\frac{f^{\left(1\right)}\left(0\right)}{1!},\cdots,\frac{f^{\left(n\right)}\left(0\right)}{n!},\cdots,\frac{f^{\left(m-k+1\right)}\left(0\right)}{\left(m-k+1\right)!}\right)x^m
+  {}_{\max}J\left(i\right)=|\{j|n_j=i\}|
  \end{align}
-である．
+とすると，
+ \begin{align}
+  \sum_{i\in\{n_1,\cdots,n_k\}}{}_{\max}J\left(i\right)&=\sum_{i\in\{n_1,\cdots,n_k\}}|\{j|n_j=i\}|\nonumber\\
+  &=\sum_{i\in\left(n_1,\cdots,n_k\right)}1\nonumber\\
+  &=k
+ \end{align}
+また，
+ \begin{align}
+  \sum_{i\in\{n_1,\cdots,n_k\}}i{}_{\max}J\left(i\right)&=\sum_{i\in\{n_1,\cdots,n_k\}}i|\{j|n_j=i\}|\nonumber\\
+  &=\sum_{i\in\left(n_1,\cdots,n_k\right)}i\nonumber\\
+  &=\sum_{m=1}^kn_m\nonumber\\
+  &=n
+ \end{align}
+であり，これを用いて総積の範囲として現れている数列$\left(n_1,\cdots,n_k\right)$を集合$\{n_1,\cdots,n_k\}$に変えると，
+ \begin{align}
+  f\left(x\right)^k&=\sum_{n=1}^\infty\sum_{\left(n_1,\cdots,n_k\right)\in\mathbb{N}^k|\sum_{j=1}^k n_j=n}\prod_{i\in\left(n_1,\cdots,n_k\right)}\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\nonumber\\
+  &=\sum_{n=1}^\infty\sum_{\left(n_1,\cdots,n_k\right)\in\mathbb{N}^k|\sum_{j=1}^k n_j=n}\prod_{i\in\{n_1,\cdots,n_k\}}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\right)^{{}_{\max}J\left(i\right)}
+ \end{align}
+となる．
+次に総和の変数として現れている数列$\left(n_1,\cdots,n_k\right)$も集合$\{n_1,\cdots,n_k\}$として扱いたい．
+まず，集合$\{n_1,\cdots,n_k\}$から数列$\left(n_1,\cdots,n_k\right)$を見ると，$k$個の順番が与えられているので$k!$を掛ける必要がある．
+しかし，$n_{j_1}=n_{j_2}$であるような要素は集合$\{n_1,\cdots,n_k\}$においても数列$\left(n_1,\cdots,n_k\right)$においても順番を区別しないので，${}_{\max}J\left(i\right)!$で割る必要がある．
+さらに，数列$\left(n_1,\cdots,n_k\right)$が保証していた条件$\sum_{j=1}^k n_j=n$に関して，集合$\{n_1,\cdots,n_k\}$は値の等しい要素を区別する能力がないため，これと同値な条件を保証する能力はないことがわかる．
+代わりに，関数${}_{\max}J$を
+ \begin{align}
+  \mathbb{J}=\{{}_{\max}J:\{1,\cdots,n-k+1\}\to\{1,\cdots,n\};i\mapsto|\{j|n_j=i\}||\sum_{i\in\{n_1,\cdots,n_k\}}{}_{\max}J\left(i\right)=k\land\sum_{i\in\{n_1,\cdots,n_k\}}i{}_{\max}J\left(i\right)=n\}
+ \end{align}
+から選ぶようにすることで条件を保証する．
+これらを考慮すると，
+ \begin{align}
+  f\left(x\right)^k&=\sum_{n=1}^\infty\sum_{\left(n_1,\cdots,n_k\right)\in\mathbb{N}^k|\sum_{j=1}^k n_j=n}\prod_{i\in\{n_1,\cdots,n_k\}}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\right)^{{}_{\max}J\left(i\right)}\nonumber\\
+  &=\sum_{n=1}^\infty\sum_{{}_{\max}J\in\mathbb{J}}k!\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\right)^{{}_{\max}J\left(i\right)}
+ \end{align}
  \subsubsection{マクローリン展開の合成関数}
 $C^\infty$級関数$f,g:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=g\left(0\right)=0$それぞれのマクローリン展開を
  \begin{align}
