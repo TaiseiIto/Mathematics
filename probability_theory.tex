@@ -897,7 +897,15 @@ $C^\infty$級関数$f:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=0$を$k$
 これらを考慮すると，
  \begin{align}
   f\left(x\right)^k&=\sum_{n=1}^\infty\sum_{\left(n_1,\cdots,n_k\right)\in\mathbb{N}^k|\sum_{j=1}^k n_j=n}\prod_{i\in\{n_1,\cdots,n_k\}}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\right)^{{}_{\max}J\left(i\right)}\nonumber\\
-  &=\sum_{n=1}^\infty\sum_{{}_{\max}J\in\mathbb{J}}k!\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\right)^{{}_{\max}J\left(i\right)}
+  &=\sum_{n=1}^\infty\sum_{{}_{\max}J\in\mathbb{J}}k!\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\right)^{{}_{\max}J\left(i\right)}\nonumber\\
+  &=\sum_{n=1}^\infty\sum_{{}_{\max}J\in\mathbb{J}}k!\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}\right)^{{}_{\max}J\left(i\right)}x^{i{}_{\max}J\left(i\right)}\nonumber\\
+  &=\sum_{n=1}^\infty\sum_{{}_{\max}J\in\mathbb{J}}k!\left(\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}\right)^{{}_{\max}J\left(i\right)}\right)\left(\prod_{i\in\{n_1,\cdots,n_k\}}x^{i{}_{\max}J\left(i\right)}\right)\nonumber\\
+  &=\sum_{n=1}^\infty\sum_{{}_{\max}J\in\mathbb{J}}k!\left(\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}\right)^{{}_{\max}J\left(i\right)}\right)\left(x^{\sum_{i\in\{n_1,\cdots,n_k\}}i{}_{\max}J\left(i\right)}\right)\nonumber\\
+  &=\sum_{n=1}^\infty\sum_{{}_{\max}J\in\mathbb{J}}k!\left(\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}\right)^{{}_{\max}J\left(i\right)}\right)x^n\nonumber\\
+  &=\sum_{n=1}^\infty\left(\sum_{{}_{\max}J\in\mathbb{J}}k!\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}\right)^{{}_{\max}J\left(i\right)}\right)x^n\nonumber\\
+  &=\sum_{n=1}^\infty\left(\sum_{{}_{\max}J\in\mathbb{J}}\frac{k!}{n!}n!\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}\right)^{{}_{\max}J\left(i\right)}\right)x^n\nonumber\\
+  &=\sum_{n=1}^\infty\left(\frac{k!}{n!}\sum_{{}_{\max}J\in\mathbb{J}}n!\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}\right)^{{}_{\max}J\left(i\right)}\right)x^n\nonumber\\
+  &=\sum_{n=1}^\infty\frac{k!}{n!}B_{n,k}\left(f^{\left(1\right)}\left(0\right),\cdots,f^{\left(n-k+1\right)}\left(0\right)\right)x^n\nonumber\\
  \end{align}
  \subsubsection{マクローリン展開の合成関数}
 $C^\infty$級関数$f,g:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=g\left(0\right)=0$それぞれのマクローリン展開を
