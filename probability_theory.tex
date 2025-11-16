@@ -851,7 +851,7 @@ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
  \end{align}
 これがBellの多項式の定義であり，大きさ$|S|$の集合の全ての可能な$k$個の部分集合への分割方法を考え，元の集合から分割された各部分集合の大きさ$i$に応じた値$f\left(i\right)$の総積として再統合し，それを全ての分割方法に渡って総和を取った値を意味する．
  \subsubsection{マクローリン展開の$k$乗の展開}
-$C^\infty$級関数$f:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=0$を$k$乗してみよう．
+$\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$f\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)$ただし$f\left(0\right)=0$を$\forall k\in\mathbb{N}$乗してみよう．
  \begin{align}
   f\left(x\right)^k&=\left(\sum_{n=0}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
   &=\left(\frac{f^{\left(0\right)}\left(0\right)}{0!}x^0+\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
@@ -908,18 +908,15 @@ $C^\infty$級関数$f:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=0$を$k$
   &=\sum_{n=1}^\infty\frac{k!}{n!}B_{n,k}\left(f^{\left(1\right)}\left(0\right),\cdots,f^{\left(n-k+1\right)}\left(0\right)\right)x^n\nonumber\\
  \end{align}
  \subsubsection{マクローリン展開の合成関数}
-$C^\infty$級関数$f,g:\mathbb{R}\to\mathbb{R}$ただし$f\left(0\right)=g\left(0\right)=0$それぞれのマクローリン展開を
+$\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\left(f,g\right)\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)^2$ただし$g\left(0\right)=0$の合成は，
  \begin{align}
-  f\left(x\right)&=\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n\\
-  g\left(x\right)&=\sum_{m=1}^\infty\frac{g^{\left(m\right)}\left(0\right)}{m!}x^m
+  f\left(g\left(x\right)\right)&=\sum_{k=0}^\infty\frac{f^{\left(k\right)}\left(0\right)}{k!}\left(\sum_{n=0}^\infty\frac{g^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
+  &=f\left(0\right)+\sum_{k=0}^\infty\frac{f^{\left(k\right)}\left(0\right)}{k!}\left(g\left(0\right)+\sum_{n=1}^\infty\frac{g^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
+  &=f\left(0\right)+\sum_{k=0}^\infty\frac{f^{\left(k\right)}\left(0\right)}{k!}\left(\sum_{n=1}^\infty\frac{g^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
+  &=f\left(0\right)+\sum_{k=0}^\infty\frac{f^{\left(k\right)}\left(0\right)}{k!}\sum_{n=1}^\infty\frac{k!}{n!}B_{n,k}\left(g^{\left(1\right)}\left(0\right),\cdots,g^{\left(n-k+1\right)}\left(0\right)\right)x^n\nonumber\\
+  &=f\left(0\right)+\sum_{n=1}^\infty\sum_{k=0}^\infty\frac{f^{\left(k\right)}\left(0\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(0\right),\cdots,g^{\left(n-k+1\right)}\left(0\right)\right)x^n\nonumber\\
+  &=f\left(0\right)+\sum_{n=1}^\infty\sum_{k=0}^n\frac{f^{\left(k\right)}\left(0\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(0\right),\cdots,g^{\left(n-k+1\right)}\left(0\right)\right)x^n\nonumber\\
  \end{align}
-とするとき，これらの合成関数は，Bellの多項式を使って
- \begin{align}
-  f\left(g\left(x\right)\right)&=\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}\left(\sum_{m=1}^\infty\frac{g^{\left(m\right)}\left(0\right)}{m!}x^m\right)^n\nonumber\\
-  &=\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}n!\sum_{m=1}^\infty B_{m,n}\left(\frac{g^{\left(1\right)\left(0\right)}}{1!},\cdots,\frac{g^{\left(m-n+1\right)}\left(0\right)}{\left(m-n+1\right)!}\right)x^m\nonumber\\
-  &=\sum_{m=1}^\infty\sum_{n=1}^m f^{\left(n\right)}\left(0\right)B_{m,n}\left(\frac{g^{\left(1\right)\left(0\right)}}{1!},\cdots,\frac{g^{\left(m-n+1\right)}\left(0\right)}{\left(m-n+1\right)!}\right)x^m\nonumber\\
- \end{align}
-となる．
  \subsection{Fa\`a di Brunoの公式}
  \subsection{キュムラントから積率を求める}
 キュムラントの定義\ref{CumulantGeneratingFunction}より，
