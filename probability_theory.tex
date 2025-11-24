@@ -971,7 +971,9 @@ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\forall\left(f,g\right)\
 $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \begin{align}
   \frac{1}{n!}\frac{d^nf\left(g\left(x\right)\right)}{dx^n}y^n&=\sum_{k=0}^n\frac{f^{\left(k\right)}\left(g\left(x\right)\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)y^n\nonumber\\
-  \frac{d^nf\left(g\left(x\right)\right)}{dx^n}&=\sum_{k=0}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)
+  \frac{d^nf\left(g\left(x\right)\right)}{dx^n}&=\sum_{k=0}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)\nonumber\\
+  &=f^{\left(0\right)}\left(g\left(x\right)\right)B_{n,0}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n+1\right)}\left(x\right)\right)+\sum_{k=1}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)\nonumber\\
+  &=\sum_{k=1}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)\nonumber\\
  \end{align}
  \subsection{キュムラントから積率を求める}
 キュムラントの定義\ref{CumulantGeneratingFunction}より，
