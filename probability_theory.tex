@@ -1019,9 +1019,32 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=E\left(X^2\right)-E\left(X\right)^2\nonumber\\
   &=V\left(X\right)
  \end{align}
+ \subsection{キュムラントと標準偏差の関係}
+ \begin{align}
+  \sigma\left(X\right)&=\sqrt{V\left(X\right)}\nonumber\\
+  &=\sqrt{K_X^{\left(2\right)}\left(0\right)}\nonumber\\
+ \end{align}
  \subsection{キュムラントと歪度の関係}
  \begin{align}
   K_X^{\left(3\right)}\left(0\right)&=\sum_{k=1}^3\left(-1\right)^{k-1}\left(k-1\right)!B_{3,k}\left(M_X^{\left(1\right)}\left(0\right),\cdots,M_X^{\left(4-k\right)}\left(0\right)\right)\nonumber\\
+  &=B_{3,1}\left(M_X^{\left(1\right)}\left(0\right),M_X^{\left(2\right)}\left(0\right),M_X^{\left(3\right)}\left(0\right)\right)-B_{3,2}\left(M_X^{\left(1\right)}\left(0\right),M_X^{\left(2\right)}\left(0\right)\right)+2B_{3,3}\left(M_X^{\left(1\right)}\left(0\right)\right)\nonumber\\
+  &=M_X^{\left(3\right)}\left(0\right)-3M_X^{\left(1\right)}\left(0\right)M_X^{\left(2\right)}\left(0\right)+2M_X^{\left(1\right)}\left(0\right)^3\nonumber\\
+  &=E\left(X^3\right)-3E\left(X\right)E\left(X^2\right)+2E\left(X\right)^3
+ \end{align}
+一方で，
+ \begin{align}
+  E\left(\left(X-E\left(X\right)\right)^3\right)&=E\left(X^3-3X^2E\left(X\right)+3XE\left(X\right)^2-E\left(X\right)^3\right)\nonumber\\
+  &=E\left(X^3\right)-3E\left(X^2\right)E\left(X\right)+3E\left(X\right)E\left(X\right)^2-E\left(X\right)^3\nonumber\\
+  &=E\left(X^3\right)-3E\left(X^2\right)E\left(X\right)+2E\left(X\right)^3
+ \end{align}
+よって，
+ \begin{align}
+  K_X^{\left(3\right)}\left(0\right)&=E\left(\left(X-E\left(X\right)\right)^3\right)
+ \end{align}
+よって歪度は，
+ \begin{align}
+  S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
+  &=\frac{K_X^{\left(3\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^\frac{3}{2}}\nonumber\\
  \end{align}
  \subsection{キュムラントと尖度の関係}
  \begin{align}
