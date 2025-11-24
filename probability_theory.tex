@@ -1049,6 +1049,26 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \subsection{キュムラントと尖度の関係}
  \begin{align}
   K_X^{\left(4\right)}\left(0\right)&=\sum_{k=1}^4\left(-1\right)^{k-1}\left(k-1\right)!B_{4,k}\left(M_X^{\left(1\right)}\left(0\right),\cdots,M_X^{\left(5-k\right)}\left(0\right)\right)\nonumber\\
+  &=B_{4,1}\left(M_X^{\left(1\right)}\left(0\right),M_X^{\left(2\right)}\left(0\right),M_X^{\left(3\right)}\left(0\right),M_X^{\left(4\right)}\left(0\right),\right)\nonumber\\
+  &-B_{4,2}\left(M_X^{\left(1\right)}\left(0\right),M_X^{\left(2\right)}\left(0\right),M_X^{\left(3\right)}\left(0\right)\right)\nonumber\\
+  &+2B_{4,3}\left(M_X^{\left(1\right)}\left(0\right),M_X^{\left(2\right)}\left(0\right)\right)\nonumber\\
+  &-6B_{4,4}\left(M_X^{\left(1\right)}\left(0\right)\right)\nonumber\\
+  &=M_X^{\left(4\right)}\left(0\right)-4M_X^{\left(1\right)}\left(0\right)M_X^{\left(3\right)}\left(0\right)-3M_X^{\left(2\right)}\left(0\right)^2+12M_X^{\left(1\right)}\left(0\right)^2M_X^{\left(2\right)}\left(0\right)-6M_X^{\left(1\right)}\left(0\right)^4\nonumber\\
+  &=E\left(X^4\right)-4E\left(X\right)E\left(X^3\right)-3E\left(X^2\right)^2+12E\left(X\right)^2E\left(X^2\right)-6E\left(X\right)^4
+ \end{align}
+一方で，
+ \begin{align}
+  &E\left(\left(X-E\left(X\right)\right)^4\right)-3E\left(\left(X-E\left(X\right)\right)^2\right)^2\nonumber\\
+  &=E\left(X^4-4X^3E\left(X\right)+6X^2E\left(X\right)^2-4XE\left(X\right)^3+E\left(X\right)^4\right)-3E\left(X^2-2XE\left(X\right)+E\left(X\right)^2\right)^2\nonumber\\
+  &=E\left(X^4\right)-4E\left(X^3\right)E\left(X\right)+6E\left(X^2\right)E\left(X\right)^2-4E\left(X\right)E\left(X\right)^3+E\left(X\right)^4-3\left(E\left(X^2\right)-2E\left(X\right)E\left(X\right)+E\left(X\right)^2\right)^2\nonumber\\
+  &=E\left(X^4\right)-4E\left(X^3\right)E\left(X\right)+6E\left(X^2\right)E\left(X\right)^2-3E\left(X\right)^4-3\left(E\left(X^2\right)-E\left(X\right)^2\right)^2\nonumber\\
+  &=E\left(X^4\right)-4E\left(X^3\right)E\left(X\right)+6E\left(X^2\right)E\left(X\right)^2-3E\left(X\right)^4-3\left(E\left(X^2\right)^2-2E\left(X^2\right)E\left(X\right)^2+E\left(X\right)^4\right)\nonumber\\
+  &=E\left(X^4\right)-4E\left(X^3\right)E\left(X\right)+6E\left(X^2\right)E\left(X\right)^2-3E\left(X\right)^4-3E\left(X^2\right)^2+6E\left(X^2\right)E\left(X\right)^2-3E\left(X\right)^4\nonumber\\
+  &=E\left(X^4\right)-4E\left(X^3\right)E\left(X\right)+12E\left(X^2\right)E\left(X\right)^2-6E\left(X\right)^4-3E\left(X^2\right)^2\nonumber\\
+ \end{align}
+よって，
+ \begin{align}
+  K_X^{\left(4\right)}\left(0\right)&=E\left(\left(X-E\left(X\right)\right)^4\right)-3E\left(\left(X-E\left(X\right)\right)^2\right)^2
  \end{align}
  \section{ベルヌーイ分布}
 $\{0,1\}$を標本空間とし，確率質量関数を
