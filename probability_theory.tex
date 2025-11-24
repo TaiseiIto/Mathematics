@@ -993,6 +993,17 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \end{align}
  \subsection{キュムラントから積率を求める}
 キュムラントの定義\ref{CumulantGeneratingFunction}より，
+ \begin{align}
+  M_X\left(t\right)&=e^{K_X\left(t\right)}\nonumber\\
+  \sum_{n=0}^\infty\frac{t^n}{n!}M_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t!}{n!}\left(\left.\frac{d^ne^{K_X\left(t\right)}}{dt^n}\right|_{t=0}\right)\nonumber\\
+  M_X^{\left(n\right)}\left(0\right)&=\left.\frac{d^ne^{K_X\left(t\right)}}{dt^n}\right|_{t=0}\nonumber\\
+  &=\left.\sum_{k=1}^n\frac{d^ke^{K_X\left(t\right)}}{dK_X\left(t\right)^k}B_{n,k}\left(K_X^{\left(1\right)}\left(t\right),\cdots,K_X^{\left(n-k+1\right)}\left(t\right)\right)\right|_{t=0}\nonumber\\
+  &=\left.\sum_{k=1}^ne^{K_X\left(t\right)}B_{n,k}\left(K_X^{\left(1\right)}\left(t\right),\cdots,K_X^{\left(n-k+1\right)}\left(t\right)\right)\right|_{t=0}\nonumber\\
+  &=\left.\sum_{k=1}^nM_X\left(t\right)B_{n,k}\left(K_X^{\left(1\right)}\left(t\right),\cdots,K_X^{\left(n-k+1\right)}\left(t\right)\right)\right|_{t=0}\nonumber\\
+  &=\sum_{k=1}^nM_X\left(0\right)B_{n,k}\left(K_X^{\left(1\right)}\left(0\right),\cdots,K_X^{\left(n-k+1\right)}\left(0\right)\right)\nonumber\\
+  &=\sum_{k=1}^nB_{n,k}\left(K_X^{\left(1\right)}\left(0\right),\cdots,K_X^{\left(n-k+1\right)}\left(0\right)\right)\nonumber\\
+  &=B_{n}\left(K_X^{\left(1\right)}\left(0\right),\cdots,K_X^{\left(n\right)}\left(0\right)\right)\nonumber\\
+ \end{align}
  \subsection{キュムラントと平均の関係}
  \begin{align}
   \frac{dK_X\left(t\right)}{dt}&=\frac{d\log M_X\left(t\right)}{dt}\nonumber\\
