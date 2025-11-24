@@ -1006,79 +1006,26 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \end{align}
  \subsection{キュムラントと平均の関係}
  \begin{align}
-  \frac{dK_X\left(t\right)}{dt}&=\frac{d\log M_X\left(t\right)}{dt}\nonumber\\
-  &=\frac{1}{M_X\left(t\right)}\frac{dM_X\left(t\right)}{dt}\nonumber\\
-  &=\frac{1}{E\left(e^{tX}\right)}\frac{dE\left(e^{tX}\right)}{dt}\nonumber\\
-  &=\frac{1}{E\left(e^{tX}\right)}\lim_{h\to 0}\frac{E\left(e^{\left(t+h\right)X}\right)-E\left(e^{tX}\right)}{h}
- \end{align}
-ここで，平均の線形性より，
- \begin{align}
-  \frac{dK_X\left(t\right)}{dt}&=\frac{1}{E\left(e^{tX}\right)}\lim_{h\to 0}E\left(\frac{e^{\left(t+h\right)X}-e^{tX}}{h}\right)\nonumber\\
-  &=\frac{1}{E\left(e^{tX}\right)}E\left(\lim_{h\to 0}\frac{e^{\left(t+h\right)X}-e^{tX}}{h}\right)\nonumber\\
-  &=\frac{1}{E\left(e^{tX}\right)}E\left(\frac{de^{tX}}{dt}\right)\nonumber\\
-  &=\frac{E\left(Xe^{tX}\right)}{E\left(e^{tX}\right)}
- \end{align}
-これに$t=0$を代入すると，
- \begin{align}
-  K_X^{\left(1\right)}\left(0\right)&=\frac{E\left(Xe^{0X}\right)}{E\left(e^{0X}\right)}\nonumber\\
-  &=\frac{E\left(Xe^0\right)}{E\left(e^0\right)}\nonumber\\
-  &=\frac{E\left(X\right)}{E\left(1\right)}\nonumber\\
+  K_X^{\left(1\right)}\left(0\right)&=\sum_{k=1}^1\left(-1\right)^{k-1}\left(k-1\right)!B_{1,k}\left(M_X^{\left(1\right)}\left(0\right),\cdots,M_X^{\left(2-k\right)}\left(0\right)\right)\nonumber\\
+  &=B_{1,1}\left(M_X^{\left(1\right)}\left(0\right)\right)\nonumber\\
+  &=M_X^{\left(1\right)}\left(0\right)\nonumber\\
   &=E\left(X\right)
  \end{align}
  \subsection{キュムラントと分散の関係}
  \begin{align}
-  \frac{d^2K_X\left(t\right)}{dt^2}&=\frac{d}{dt}\frac{E\left(Xe^{tX}\right)}{E\left(e^{tX}\right)}\nonumber\\
-  &=\frac{\frac{d}{dt}E\left(Xe^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(Xe^{tX}\right)\frac{d}{dt}E\left(e^{tX}\right)}{E\left(e^{tX}\right)^2}
- \end{align}
-ここで，先程と同様に平均の線型性から微分と平均を交換できて，
- \begin{align}
-  \frac{d^2K_X\left(t\right)}{dt^2}&=\frac{E\left(\frac{d}{dt}Xe^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(Xe^{tX}\right)E\left(\frac{d}{dt}e^{tX}\right)}{E\left(e^{tX}\right)^2}\nonumber\\
-&=\frac{E\left(X^2e^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(Xe^{tX}\right)^2}{E\left(e^{tX}\right)^2}
- \end{align}
-これに$t=0$を代入すると，
- \begin{align}
-  K_X^{\left(2\right)}\left(0\right)&=\frac{E\left(X^2e^{0X}\right)}{E\left(e^{0X}\right)}-\frac{E\left(Xe^{0X}\right)^2}{E\left(e^{0X}\right)^2}\nonumber\\
-  &=\frac{E\left(X^2e^0\right)}{E\left(e^0\right)}-\frac{E\left(Xe^0\right)^2}{E\left(e^0\right)^2}\nonumber\\
-  &=\frac{E\left(X^2\right)}{E\left(1\right)}-\frac{E\left(X\right)^2}{E\left(1\right)^2}\nonumber\\
+  K_X^{\left(2\right)}\left(0\right)&=\sum_{k=1}^2\left(-1\right)^{k-1}\left(k-1\right)!B_{2,k}\left(M_X^{\left(1\right)}\left(0\right),\cdots,M_X^{\left(3-k\right)}\left(0\right)\right)\nonumber\\
+  &=B_{2,1}\left(M_X^{\left(1\right)}\left(0\right),M_X^{\left(2\right)}\left(0\right)\right)-B_{2,2}\left(M_X^{\left(1\right)}\left(0\right)\right)\nonumber\\
+  &=M_X^{\left(2\right)}\left(0\right)-M_X^{\left(1\right)}\left(0\right)^2\nonumber\\
   &=E\left(X^2\right)-E\left(X\right)^2\nonumber\\
   &=V\left(X\right)
  \end{align}
  \subsection{キュムラントと歪度の関係}
  \begin{align}
-  \frac{d^3K_X\left(t\right)}{dt^3}&=\frac{d}{dt}\left(\frac{E\left(X^2e^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(Xe^{tX}\right)^2}{E\left(e^{tX}\right)^2}\right)\nonumber\\
-  &=\frac{d}{dt}\frac{E\left(X^2e^{tX}\right)}{E\left(e^{tX}\right)}-\frac{d}{dt}\frac{E\left(Xe^{tX}\right)^2}{E\left(e^{tX}\right)^2}\nonumber\\
-  &=\left(\frac{\frac{d}{dt}E\left(X^2e^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(X^2e^{tX}\right)\frac{d}{dt}E\left(e^{tX}\right)}{E\left(e^{tX}\right)^2}\right)-\left(\frac{\frac{d}{dt}E\left(Xe^{tX}\right)^2}{E\left(e^{tX}\right)^2}-\frac{E\left(Xe^{tX}\right)^2\frac{d}{dt}E\left(e^{tX}\right)^2}{E\left(e^{tX}\right)^4}\right)\nonumber\\
-  &=\frac{\frac{d}{dt}E\left(X^2e^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(X^2e^{tX}\right)\frac{d}{dt}E\left(e^{tX}\right)}{E\left(e^{tX}\right)^2}-\frac{2E\left(Xe^{tX}\right)\frac{d}{dt}E\left(Xe^{tX}\right)}{E\left(e^{tX}\right)^2}+\frac{E\left(Xe^{tX}\right)^2 2E\left(e^{tX}\right)\frac{d}{dt}E\left(e^{tX}\right)}{E\left(e^{tX}\right)^4}
+  K_X^{\left(3\right)}\left(0\right)&=\sum_{k=1}^3\left(-1\right)^{k-1}\left(k-1\right)!B_{3,k}\left(M_X^{\left(1\right)}\left(0\right),\cdots,M_X^{\left(4-k\right)}\left(0\right)\right)\nonumber\\
  \end{align}
-ここで，先程と同様に平均の線型性から微分と平均を交換できて，
+ \subsection{キュムラントと尖度の関係}
  \begin{align}
-  \frac{d^3K_X\left(t\right)}{dt^3}&=\frac{E\left(\frac{d}{dt}X^2e^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(X^2e^{tX}\right)E\left(\frac{d}{dt}e^{tX}\right)}{E\left(e^{tX}\right)^2}-\frac{2E\left(Xe^{tX}\right)E\left(\frac{d}{dt}Xe^{tX}\right)}{E\left(e^{tX}\right)^2}+\frac{2E\left(Xe^{tX}\right)^2E\left(e^{tX}\right)E\left(\frac{d}{dt}e^{tX}\right)}{E\left(e^{tX}\right)^4}\nonumber\\
-  &=\frac{E\left(X^3e^{tX}\right)}{E\left(e^{tX}\right)}-\frac{E\left(X^2e^{tX}\right)E\left(Xe^{tX}\right)}{E\left(e^{tX}\right)^2}-\frac{2E\left(Xe^{tX}\right)E\left(X^2e^{tX}\right)}{E\left(e^{tX}\right)^2}+\frac{2E\left(Xe^{tX}\right)^2E\left(e^{tX}\right)E\left(Xe^{tX}\right)}{E\left(e^{tX}\right)^4}\nonumber\\
-  &=\frac{E\left(X^3e^{tX}\right)}{E\left(e^{tX}\right)}-\frac{3E\left(X^2e^{tX}\right)E\left(Xe^{tX}\right)}{E\left(e^{tX}\right)^2}+\frac{2E\left(Xe^{tX}\right)^3}{E\left(e^{tX}\right)^3}\nonumber\\
- \end{align}
-これに$t=0$を代入すると，
- \begin{align}
-  K_X^{\left(3\right)}\left(0\right)&=\frac{E\left(X^3e^{0X}\right)}{E\left(e^{0X}\right)}-\frac{3E\left(X^2e^{0X}\right)E\left(Xe^{0X}\right)}{E\left(e^{0X}\right)^2}+\frac{2E\left(Xe^{0X}\right)^3}{E\left(e^{0X}\right)^3}\nonumber\\
-  &=\frac{E\left(X^3e^0\right)}{E\left(e^0\right)}-\frac{3E\left(X^2e^0\right)E\left(Xe^0\right)}{E\left(e^0\right)^2}+\frac{2E\left(Xe^0\right)^3}{E\left(e^0\right)^3}\nonumber\\
-  &=\frac{E\left(X^3\right)}{E\left(1\right)}-\frac{3E\left(X^2\right)E\left(X\right)}{E\left(1\right)^2}+\frac{2E\left(X\right)^3}{E\left(1\right)^3}\nonumber\\
-  &=E\left(X^3\right)-3E\left(X^2\right)E\left(X\right)+2E\left(X\right)^3
- \end{align}
-一方で 平均の線形性より，
- \begin{align}
-  E\left(\left(X-E\left(X\right)\right)^3\right)&=E\left(X^3-3X^2E\left(X\right)-3XE\left(X\right)^2+E\left(X\right)^3\right)\nonumber\\
-  &=E\left(X^3\right)-3E\left(X^2\right)E\left(X\right)-3E\left(X\right)E\left(X\right)^2+E\left(X\right)^3\nonumber\\
-  &=E\left(X^3\right)-3E\left(X^2\right)E\left(X\right)-3E\left(X\right)^3+E\left(X\right)^3\nonumber\\
-  &=E\left(X^3\right)-3E\left(X^2\right)E\left(X\right)-2E\left(X\right)^3\nonumber\\
- \end{align}
-よって，
- \begin{align}
-  K_X^{\left(3\right)}\left(t\right)&=E\left(\left(X-E\left(X\right)\right)^3\right)
- \end{align}
-よって歪度は，
- \begin{align}
-  S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
-  &=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{V\left(X\right)^\frac{3}{2}}\nonumber\\
-  &=\frac{K_X^{\left(3\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^\frac{3}{2}}\nonumber\\
+  K_X^{\left(4\right)}\left(0\right)&=\sum_{k=1}^4\left(-1\right)^{k-1}\left(k-1\right)!B_{4,k}\left(M_X^{\left(1\right)}\left(0\right),\cdots,M_X^{\left(5-k\right)}\left(0\right)\right)\nonumber\\
  \end{align}
  \section{ベルヌーイ分布}
 $\{0,1\}$を標本空間とし，確率質量関数を
