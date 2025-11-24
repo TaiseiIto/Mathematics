@@ -456,7 +456,7 @@ $E\left(X\right)$が定数であることに注意して平均の線形性を使
  \section{尖度}
 確率変数$X$に対して，
  \begin{align}
-  K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}
+  K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3
  \end{align}
 を$X$の尖度といい，$X$の確率分布の平均付近における尖り具合を表す無次元量である．
  \section{エントロピー}
@@ -1058,7 +1058,7 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \end{align}
 一方で，
  \begin{align}
-  &E\left(\left(X-E\left(X\right)\right)^4\right)-3E\left(\left(X-E\left(X\right)\right)^2\right)^2\nonumber\\
+  &E\left(\left(X-E\left(X\right)\right)^4\right)-3V\left(X\right)^2=E\left(\left(X-E\left(X\right)\right)^4\right)-3E\left(\left(X-E\left(X\right)\right)^2\right)^2\nonumber\\
   &=E\left(X^4-4X^3E\left(X\right)+6X^2E\left(X\right)^2-4XE\left(X\right)^3+E\left(X\right)^4\right)-3E\left(X^2-2XE\left(X\right)+E\left(X\right)^2\right)^2\nonumber\\
   &=E\left(X^4\right)-4E\left(X^3\right)E\left(X\right)+6E\left(X^2\right)E\left(X\right)^2-4E\left(X\right)E\left(X\right)^3+E\left(X\right)^4-3\left(E\left(X^2\right)-2E\left(X\right)E\left(X\right)+E\left(X\right)^2\right)^2\nonumber\\
   &=E\left(X^4\right)-4E\left(X^3\right)E\left(X\right)+6E\left(X^2\right)E\left(X\right)^2-3E\left(X\right)^4-3\left(E\left(X^2\right)-E\left(X\right)^2\right)^2\nonumber\\
@@ -1068,7 +1068,14 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \end{align}
 よって，
  \begin{align}
-  K_X^{\left(4\right)}\left(0\right)&=E\left(\left(X-E\left(X\right)\right)^4\right)-3E\left(\left(X-E\left(X\right)\right)^2\right)^2
+  K_X^{\left(4\right)}\left(0\right)&=E\left(\left(X-E\left(X\right)\right)^4\right)-3V\left(X\right)^2
+ \end{align}
+よって尖度は，
+ \begin{align}
+  K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3\nonumber\\
+  &=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{V\left(X\right)^2}-3\nonumber\\
+  &=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)-3V\left(X\right)^2}{V\left(X\right)^2}\nonumber\\
+  &=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}\nonumber\\
  \end{align}
  \section{ベルヌーイ分布}
 $\{0,1\}$を標本空間とし，確率質量関数を
