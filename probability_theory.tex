@@ -491,27 +491,18 @@ $E\left(X\right)$が定数であることに注意して平均の線形性を使
   G_X^{\left(n\right)}\left(1\right)&=E\left(\frac{X!}{\left(X-n\right)!}\right)
  \end{align}
  \subsubsection{証明}
+確率母関数の定義を$t=1$でテイラー展開することで証明できる．
  \begin{align}
-  G_X^{\left(n\right)}\left(t\right)&=\frac{d^n}{dt^n}E\left(t^X\right)\nonumber\\
-  &=\frac{d^n}{dt^n}\sum_{x\in S}t^xp\left(x\right)\nonumber\\
-  &=\frac{d^n}{dt^n}\sum_{x\in S}p\left(x\right)t^x\nonumber\\
-  &=\frac{d^n}{dt^n}\sum_{x\in S}p\left(x\right)\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\frac{d^k}{dt^k}t^x\right|_{t=1}\right)\left(t-1\right)^k\nonumber\\
-  &=\frac{d^n}{dt^n}\sum_{x\in S}p\left(x\right)\sum_{k=0}^x\frac{1}{k!}\left(\left.\left(\prod_{l=0}^{k-1}\left(x-l\right)\right)t^{x-k}\right|_{t=1}\right)\left(t-1\right)^k\nonumber\\
-  &=\frac{d^n}{dt^n}\sum_{x\in S}p\left(x\right)\sum_{k=0}^x\frac{1}{k!}\left(\prod_{l=0}^{k-1}\left(x-l\right)\right)1^{x-k}\left(t-1\right)^k\nonumber\\
-  &=\frac{d^n}{dt^n}\sum_{x\in S}p\left(x\right)\sum_{k=0}^x\frac{1}{k!}\frac{x!}{\left(x-k\right)!}\left(t-1\right)^k\nonumber\\
-  &=\frac{d^n}{dt^n}\sum_{x\in S}p\left(x\right)\sum_{k=0}^x{}_xC_k\left(t-1\right)^k\nonumber\\
-  &=\frac{d^n}{dt^n}\sum_{x\in S}\sum_{k=0}^x{}_xC_kp\left(x\right)\left(t-1\right)^k\nonumber\\
-  &=\sum_{x\in S}\sum_{k=0}^x{}_xC_kp\left(x\right)\frac{d^n}{dt^n}\left(t-1\right)^k\nonumber\\
-  &=\sum_{x\in S}\sum_{k=n}^x{}_xC_kp\left(x\right)\frac{d^n}{dt^n}\left(t-1\right)^k\nonumber\\
-  &=\sum_{x\in S}\left({}_xC_np\left(x\right)\frac{d^n}{dt^n}\left(t-1\right)^n+\sum_{k=n+1}^x{}_xC_kp\left(x\right)\frac{d^n}{dt^n}\left(t-1\right)^k\right)\nonumber\\
-  &=\sum_{x\in S}\left({}_xC_np\left(x\right)\prod_{l=0}^{n-1}\left(n-l\right)+\sum_{k=n+1}^x{}_xC_kp\left(x\right)\left(\prod_{l=0}^{n-1}\left(k-l\right)\right)\left(t-1\right)^{k-n}\right)\nonumber\\
-  &=\sum_{x\in S}\left({}_xC_np\left(x\right)n!+\sum_{k=n+1}^x{}_xC_kp\left(x\right)\frac{k!}{\left(k-n\right)!}\left(t-1\right)^{k-n}\right)\nonumber\\
-  &=\sum_{x\in S}\left(\frac{x!}{n!\left(x-n\right)!}p\left(x\right)n!+\sum_{k=n+1}^x\frac{x!}{k!\left(x-k\right)!}p\left(x\right)\frac{k!}{\left(k-n\right)!}\left(t-1\right)^{k-n}\right)\nonumber\\
-  &=\sum_{x\in S}\left(\frac{x!}{\left(x-n\right)!}p\left(x\right)+\sum_{k=n+1}^x\frac{x!}{\left(x-k\right)!\left(k-n\right)!}p\left(x\right)\left(t-1\right)^{k-n}\right)\nonumber\\
-  G_X^{\left(n\right)}\left(1\right)&=\sum_{x\in S}\left(\frac{x!}{\left(x-n\right)!}p\left(x\right)+\sum_{k=n+1}^x\frac{x!}{\left(x-k\right)!\left(k-n\right)!}p\left(x\right)\left(1-1\right)^{k-n}\right)\nonumber\\
-  &=\sum_{x\in S}\frac{x!}{\left(x-n\right)!}p\left(x\right)\nonumber\\
+  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+  \sum_{n=0}^\infty\frac{\left(t-1\right)^n}{n!}G_X^{\left(n\right)}\left(1\right)&=\sum_{n=1}^\infty\frac{\left(t-1\right)^n}{n!}\left(\left.\frac{d^nE\left(t^X\right)}{dt^n}\right|_{t=1}\right)\nonumber\\
+  G_X^{\left(n\right)}\left(1\right)&=\left.\frac{d^nE\left(t^X\right)}{dt^n}\right|_{t=1}\nonumber\\
+  &=\left.\frac{d^n}{dt^n}\sum_{m=0}^\infty p\left(m\right)t^m\right|_{t=1}\nonumber\\
+  &=\left.\sum_{m=0}^\infty p\left(m\right)\frac{d^n}{dt^n}t^m\right|_{t=1}\nonumber\\
+  &=\left.\sum_{m=n}^\infty p\left(m\right)\frac{m!t^{m-n}}{\left(m-n\right)!}\right|_{t=1}\nonumber\\
+  &=\sum_{m=n}^\infty p\left(m\right)\frac{m!}{\left(m-n\right)!}\nonumber\\
   &=E\left(\frac{X!}{\left(X-n\right)!}\right)
  \end{align}
+$m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散することにより，項が0に収束するので問題ない．
  \section{積率母関数}
 ある確率変数$X$に対し，その積率母関数$M_X$は，
  \begin{align}
