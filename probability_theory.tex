@@ -479,17 +479,11 @@ $E\left(X\right)$が定数であることに注意して平均の線形性を使
   \frac{G_X^{\left(a\right)}\left(0\right)}{a!}&=p\left(a\right)
  \end{align}
  \subsubsection{証明}
+確率母関数の定義をマクローリン展開することで証明できる．
  \begin{align}
-  G_X^{\left(a\right)}\left(t\right)&=\frac{d^a}{dt^a}E\left(t^X\right)\nonumber\\
-  &=\frac{d^a}{dt^a}\sum_{x\in S}t^xp\left(x\right)\nonumber\\
-  &=\sum_{x\in S}p\left(x\right)\frac{d^a}{dt^a}t^x\nonumber\\
-  &=\sum_{x\in S|a\le x}p\left(x\right)\frac{d^a}{dt^a}t^x\nonumber\\
-  &=p\left(a\right)\frac{d^a}{dt^a}t^a+\sum_{x\in S|a<x}p\left(x\right)\frac{d^a}{dt^a}t^x\nonumber\\
-  &=p\left(a\right)\left(\prod_{k=0}^{a-1}\left(a-k\right)\right)+\sum_{x\in S|a<x}p\left(x\right)\left(\prod_{k=0}^{a-1}\left(x-k\right)\right)t^{x-a}\nonumber\\
-  &=p\left(a\right)a!+\sum_{x\in S|a<x}p\left(x\right)\frac{x!}{\left(x-a\right)!}t^{x-a}\nonumber\\
-  G_X^{\left(a\right)}\left(0\right)&=p\left(a\right)a!+\sum_{x\in S|a<x}p\left(x\right)\frac{x!}{\left(x-a\right)!}0^{x-a}\nonumber\\
-  G_X^{\left(a\right)}\left(0\right)&=p\left(a\right)a!\nonumber\\
-  \frac{G_X^{\left(a\right)}\left(0\right)}{a!}&=p\left(a\right)\nonumber\\
+  G_X\left(t\right)&=\sum_{x\in S}t^xp\left(x\right)\nonumber\\
+  \sum_{a=0}^\infty\frac{G_X^{\left(a\right)}\left(0\right)t^a}{a!}&=\sum_{a=0}^\infty p\left(a\right)t^a\nonumber\\
+  \frac{G_X^{\left(a\right)}\left(0\right)}{a!}&=p\left(a\right)
  \end{align}
  \subsection{確率母関数と階乗積率の関係}
 確率母関数$G_X$と$n$次階乗積率$E\left(\frac{X!}{\left(X-n\right)!}\right)$の間には，以下の関係が成り立つ．
