@@ -514,17 +514,21 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
   M_X^{\left(n\right)}\left(0\right)&=E\left(X^n\right)
  \end{align}
  \subsubsection{証明}
+積率母関数の定義をマクローリン展開することで証明できる．
  \begin{align}
-  M_X^{\left(n\right)}\left(t\right)&=\frac{d^n}{dt^n}E\left(e^{tX}\right)\nonumber\\
-  &=\frac{d^n}{dt^n}E\left(\sum_{k=0}^\infty \frac{X^k}{k!}t^k\right)\nonumber\\
-  &=\frac{d^n}{dt^n}\sum_{k=0}^\infty \frac{E\left(X^k\right)}{k!}t^k\nonumber\\
-  &=\sum_{k=0}^\infty \frac{E\left(X^k\right)}{k!}\frac{d^n}{dt^n}t^k\nonumber\\
-  &=\sum_{k=n}^\infty \frac{E\left(X^k\right)}{k!}\frac{d^n}{dt^n}t^k\nonumber\\
-  &=\frac{E\left(X^n\right)}{n!}\frac{d^n}{dt^n}t^n+\sum_{k=n+1}^\infty \frac{E\left(X^k\right)}{k!}\frac{d^n}{dt^n}t^k\nonumber\\
-  &=\frac{E\left(X^n\right)}{n!}n!+\sum_{k=n+1}^\infty \frac{E\left(X^k\right)}{k!}\frac{k!}{\left(k-n\right)!}t^{k-n}\nonumber\\
-  &=E\left(X^n\right)+\sum_{k=n+1}^\infty \frac{E\left(X^k\right)}{\left(k-n\right)!}t^{k-n}\nonumber\\
-  &=E\left(X^n\right)+\sum_{k=1}^\infty \frac{E\left(X^{k+n}\right)}{k!}t^k\nonumber\\
-  M_X^{\left(n\right)}\left(0\right)&=E\left(X^n\right)+\sum_{k=1}^\infty \frac{E\left(X^{k+n}\right)}{k!}0^k\nonumber\\
+  M_X\left(t\right)&=E\left(e^{tX}\right)\nonumber\\
+  \sum_{n=0}^\infty\frac{t^n}{n!}M_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\frac{d^n}{dt^n}E\left(e^{tX}\right)\right|_{t=0}\right)\nonumber\\
+  M_X^{\left(n\right)}\left(0\right)&=\left(\left.\frac{d^n}{dt^n}E\left(e^{tX}\right)\right|_{t=0}\right)\nonumber\\
+  &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\frac{d^me^{tX}}{dt^m}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
+  &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.X^me^{tX}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
+  &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}X^m\right)\right|_{t=0}\nonumber\\
+  &=\left.\frac{d^n}{dt^n}\sum_{m=0}^\infty\frac{t^m}{m!}E\left(X^m\right)\right|_{t=0}\nonumber\\
+  &=\left.\sum_{m=0}^\infty\frac{E\left(X^m\right)}{m!}\frac{d^nt^m}{dt^n}\right|_{t=0}\nonumber\\
+  &=\left.\sum_{m=n}^\infty\frac{E\left(X^m\right)}{m!}\frac{m!}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
+  &=\left.\sum_{m=n}^\infty\frac{E\left(X^m\right)}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
+  &=\left.\frac{E\left(X^n\right)}{\left(n-n\right)!}t^{n-n}+\sum_{m=n+1}^\infty\frac{E\left(X^m\right)}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
+  &=\left.E\left(X^n\right)+\sum_{m=1}^\infty\frac{E\left(X^{m+n}\right)}{m!}t^m\right|_{t=0}\nonumber\\
+  &=E\left(X^n\right)+\sum_{m=1}^\infty\frac{E\left(X^{m+n}\right)}{m!}0^m\nonumber\\
   &=E\left(X^n\right)
  \end{align}
  \subsubsection{平均と分散への応用}
