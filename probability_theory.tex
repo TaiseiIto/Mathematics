@@ -591,7 +591,7 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
  \section{特性関数}
 確率変数$X$の特性関数$\phi_X$は，
  \begin{align}
-  \phi_X\left(t\right)&=E\left(e^{itX}\right)
+  \phi_X\left(t\right)&=M_X\left(it\right)
  \end{align}
 で定義される．
  \subsection{特性関数と原点積率の関係}
@@ -601,7 +601,8 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
  \subsubsection{証明}
 特性関数の定義をマクローリン展開することで証明できる．
  \begin{align}
-  \phi_X\left(t\right)&=E\left(e^{itX}\right)\nonumber\\
+  \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
+  &=E\left(e^{itX}\right)\nonumber\\
   \sum_{n=0}^\infty\frac{t^n}{n!}\phi_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\frac{d^n}{dt^n}E\left(e^{itX}\right)\right|_{t=0}\right)\nonumber\\
   \phi_X^{\left(n\right)}\left(0\right)&=\left.\frac{d^n}{dt^n}E\left(e^{itX}\right)\right|_{t=0}\nonumber\\
   &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\frac{d^me^{itX}}{dt^m}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
@@ -626,7 +627,8 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
 である．
  \subsubsection{証明}
  \begin{align}
-  \phi_{aX+b}\left(t\right)&=E\left(e^{it\left(aX+b\right)}\right)\nonumber\\
+  \phi_{aX+b}\left(t\right)&=M_{aX+b}\left(it\right)\nonumber\\
+  &=E\left(e^{it\left(aX+b\right)}\right)\nonumber\\
   &=E\left(e^{iatX+ibt}\right)\nonumber\\
   &=E\left(e^{iatX}e^{ibt}\right)\nonumber\\
   &=e^{ibt}E\left(e^{iatX}\right)\nonumber\\
@@ -641,7 +643,8 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
  \subsubsection{証明}
 式(\ref{ProductAverage})を用いて証明する．
  \begin{align}
-  \phi_X\left(t\right)&=E\left(\exp\left(itX\right)\right)\nonumber\\
+  \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
+  &=E\left(\exp\left(itX\right)\right)\nonumber\\
   &=E\left(\exp\left(it\sum_{n=0}^{N-1}X_n\right)\right)\nonumber\\
   &=E\left(\exp\left(\sum_{n=0}^{N-1}itX_n\right)\right)\nonumber\\
   &=E\left(\prod_{n=0}^{N-1}\exp\left(itX_n\right)\right)\nonumber
@@ -1114,9 +1117,7 @@ $\{0,1\}$を標本空間とし，確率質量関数を
  \end{align}
  \subsection{特性関数}
  \begin{align}
-  \phi_X\left(t\right)&=E\left(e^{itX}\right)\nonumber\\
-  &=\left(1-p\right)e^{it0}+pe^{it1}\nonumber\\
-  &=\left(1-p\right)+pe^{it}\nonumber\\
+  \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
   &=pe^{it}+1-p
  \end{align}
  \subsection{キュムラント母関数}
@@ -1195,5 +1196,32 @@ $N$個の中から$n$個選ぶ場合の数は$\binom{N}{n}$で，選ばれた$n$
   p\left(n\right)&=\binom{N}{n}p^n\left(1-p\right)^{N-n}
  \end{align}
 である．
+ \subsection{確率母関数}
+ \begin{align}
+  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+  &=\sum_{n=0}^Np\left(n\right)t^n\nonumber\\
+  &=\sum_{n=0}^N\binom{N}{n}p^n\left(1-p\right)^{N-n}t^n\nonumber\\
+  &=\sum_{n=0}^N\binom{N}{n}\left(pt\right)^n\left(1-p\right)^{N-n}\nonumber\\
+  &=\left(pt+1-p\right)^N
+ \end{align}
+ \subsection{積率母関数}
+ \begin{align}
+  M_X\left(t\right)&=E\left(e^{tX}\right)\nonumber\\
+  &=\sum_{n=0}^Np\left(n\right)e^{tn}\nonumber\\
+  &=\sum_{n=0}^N\binom{N}{n}p^n\left(1-p\right)^{N-n}e^{tn}\nonumber\\
+  &=\sum_{n=0}^N\binom{N}{n}\left(pe^t\right)^n\left(1-p\right)^{N-n}\nonumber\\
+  &=\left(pe^t+1-p\right)^N
+ \end{align}
+ \subsection{特性関数}
+ \begin{align}
+  \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
+  &=\left(pe^{it}+1-p\right)^N
+ \end{align}
+ \subsection{キュムラント母関数}
+ \begin{align}
+  K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
+  &=\log\left(pe^t+1-p\right)^N\nonumber\\
+  &=N\log\left(pe^t+1-p\right)\nonumber\\
+ \end{align}
 \end{document}
 
