@@ -518,6 +518,24 @@ $E\left(X\right)$が定数であることに注意して平均の線形性を使
   &=E\left(\frac{X!}{\left(X-n\right)!}\right)
  \end{align}
 $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散することにより，項が0に収束するので問題ない．
+ \subsection{互いに独立な確率変数の和の確率母関数}
+互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$の確率母関数$G_X$は，
+ \begin{align}
+  G_X\left(t\right)&=\prod_{n=1}^NG_{X_n}\left(t\right)\label{SummationProbabilityGeneratingFunction}
+ \end{align}
+である．
+ \subsubsection{証明}
+式(\ref{ProductAverage})を用いて証明する．
+ \begin{align}
+  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+  &=E\left(t^{\sum_{n=1}^NX_n}\right)\nonumber\\
+  &=E\left(\prod_{n=1}^Nt^{X_n}\right)\nonumber\\
+ \end{align}
+ここで，$X_1,\cdots,X_N$は互いに独立だから式(\ref{ProductAverage})により，
+ \begin{align}
+  G_X\left(t\right)&=\prod_{n=1}^NE\left(t^{X_n}\right)\nonumber\\
+  &=\prod_{n=1}^NG_{X_n}\left(t\right)
+ \end{align}
  \section{積率母関数}
 ある確率変数$X$に対し，その積率母関数$M_X$は，
  \begin{align}
@@ -572,26 +590,17 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
   &=e^{bt}M_X\left(at\right)\nonumber\\
  \end{align}
  \subsection{互いに独立な確率変数の和の積率母関数}
-互いに独立な$N$個の確率変数$X_0,\cdots,X_{N-1}$の和$X=\sum_{n=0}^{N-1}X_n$の積率母関数$M_X$は，
+互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$の積率母関数$M_X$は，
  \begin{align}
-  M_X\left(t\right)&=\prod_{n=0}^{N-1}M_{X_n}\left(t\right)
+  M_X\left(t\right)&=\prod_{n=1}^NM_{X_n}\left(t\right)
  \end{align}
 である．
  \subsubsection{証明}
-式(\ref{ProductAverage})を用いて証明する．
+式(\ref{SummationProbabilityGeneratingFunction})より，
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
-  &=E\left(e^{tX}\right)\nonumber\\
-  &=E\left(\exp\left(tX\right)\right)\nonumber\\
-  &=E\left(\exp\left(t\sum_{n=0}^{N-1}X_n\right)\right)\nonumber\\
-  &=E\left(\exp\left(\sum_{n=0}^{N-1}tX_n\right)\right)\nonumber\\
-  &=E\left(\prod_{n=0}^{N-1}\exp\left(tX_n\right)\right)\nonumber
- \end{align}
-ここで，$X_0,\cdots,X_{N-1}$は互いに独立だから式(\ref{ProductAverage})により，
- \begin{align}
-  M_X\left(t\right)&=\prod_{n=0}^{N-1}E\left(\exp\left(tX_n\right)\right)\nonumber\\
-  &=\prod_{n=0}^{N-1}G_{X_n}\left(\exp\left(t\right)\right)\nonumber\\
-  &=\prod_{n=0}^{N-1}M_{X_n}\left(t\right)
+  &=\prod_{n=1}^NG_{X_n}\left(e^t\right)\nonumber\\
+  &=\prod_{n=1}^NM_{X_n}\left(t\right)
  \end{align}
  \section{特性関数}
 確率変数$X$の特性関数$\phi_X$は，
