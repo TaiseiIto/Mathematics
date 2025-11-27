@@ -1260,13 +1260,20 @@ $X_1,\cdots,X_N$は互いに独立なので，
   K_X\left(t\right)&=K_{\sum_{n=1}^NX_n}\left(t\right)\nonumber\\
   &=\sum_{n=1}^NK_{X_n}\left(t\right)\nonumber\\
   &=\sum_{n=1}^N\log\left(pe^t+1-p\right)\nonumber\\
-  &=N\log\left(pe^t+1-p\right)\\
+  &=N\log\left(pe^t+1-p\right)
+ \end{align}
+ \begin{align}
   K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}K_X\left(t\right)\nonumber\\
   &=\frac{d}{dt}N\log\left(pe^t+1-p\right)\nonumber\\
   &=N\frac{d}{dt}\log\left(pe^t+1-p\right)\nonumber\\
   &=N\frac{\frac{d}{dt}\left(pe^t+1-p\right)}{pe^t+1-p}\nonumber\\
   &=N\frac{pe^t}{pe^t+1-p}\nonumber\\
   &=Np\frac{e^t}{pe^t+1-p}\\
+  K_X^{\left(1\right)}\left(0\right)&=Np\frac{e^0}{pe^0+1-p}\nonumber\\
+  &=Np\frac{1}{p+1-p}\nonumber\\
+  &=Np
+ \end{align}
+ \begin{align}
   K_X^{\left(2\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(1\right)}\left(t\right)\nonumber\\
   &=\frac{d}{dt}Np\frac{e^t}{pe^t+1-p}\nonumber\\
   &=Np\frac{d}{dt}\frac{e^t}{pe^t+1-p}\nonumber\\
@@ -1274,7 +1281,10 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=Np\frac{e^t\left(pe^t+1-p\right)-e^tpe^t}{\left(pe^t+1-p\right)^2}\nonumber\\
   &=Np\frac{pe^{2t}+e^t-pe^t-pe^{2t}}{\left(pe^t+1-p\right)^2}\nonumber\\
   &=Np\frac{e^t-pe^t}{\left(pe^t+1-p\right)^2}\nonumber\\
-  &=Np\left(1-p\right)\frac{e^t}{\left(pe^t+1-p\right)^2}
+  &=Np\left(1-p\right)\frac{e^t}{\left(pe^t+1-p\right)^2}\\
+  K_X^{\left(2\right)}\left(0\right)&=Np\left(1-p\right)\frac{e^0}{\left(pe^0+1-p\right)^2}\nonumber\\
+  &=Np\left(1-p\right)\frac{1}{\left(p+1-p\right)^2}\nonumber\\
+  &=Np\left(1-p\right)
  \end{align}
  \begin{align}
   K_X^{\left(3\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(2\right)}\left(t\right)\nonumber\\
@@ -1286,7 +1296,10 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)^2-2\left(pe^t+1-p\right)pe^{2t}}{\left(pe^t+1-p\right)^4}\nonumber\\
   &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)-2pe^{2t}}{\left(pe^t+1-p\right)^3}\nonumber\\
   &=Np\left(1-p\right)\frac{pe^{2t}+e^t-pe^t-2pe^{2t}}{\left(pe^t+1-p\right)^3}\nonumber\\
-  &=Np\left(1-p\right)\frac{\left(1-p\right)e^t-pe^{2t}}{\left(pe^t+1-p\right)^3}
+  &=Np\left(1-p\right)\frac{\left(1-p\right)e^t-pe^{2t}}{\left(pe^t+1-p\right)^3}\\
+  K_X^{\left(3\right)}\left(0\right)&=Np\left(1-p\right)\frac{\left(1-p\right)e^0-pe^{2\cdot 0}}{\left(pe^0+1-p\right)^3}\nonumber\\
+  &=Np\left(1-p\right)\frac{\left(1-p\right)-p}{\left(p+1-p\right)^3}\nonumber\\
+  &=Np\left(1-p\right)\left(1-2p\right)
  \end{align}
  \begin{align}
   K_X^{\left(4\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(3\right)}\left(t\right)\nonumber\\
@@ -1299,21 +1312,23 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=Np\left(1-p\right)\frac{\left(\left(1-p\right)e^t-2pe^{2t}\right)\left(pe^t+1-p\right)^3-3\left(\left(1-p\right)e^t-pe^{2t}\right)\left(pe^t+1-p\right)^2pe^t}{\left(pe^t+1-p\right)^6}\nonumber\\
   &=Np\left(1-p\right)\frac{\left(\left(1-p\right)e^t-2pe^{2t}\right)\left(pe^t+1-p\right)-3\left(\left(1-p\right)e^t-pe^{2t}\right)pe^t}{\left(pe^t+1-p\right)^4}\nonumber\\
   &=Np\left(1-p\right)\frac{\left(1-p\right)^2e^t-p\left(1-p\right)e^{2t}-2p^2e^{3t}-3p\left(1-p\right)e^{2t}+3p^2e^{3t}}{\left(pe^t+1-p\right)^4}\nonumber\\
-  &=Np\left(1-p\right)\frac{\left(1-p\right)^2e^t-4p\left(1-p\right)e^{2t}+p^2e^{3t}}{\left(pe^t+1-p\right)^4}\nonumber\\
+  &=Np\left(1-p\right)\frac{\left(1-p\right)^2e^t-4p\left(1-p\right)e^{2t}+p^2e^{3t}}{\left(pe^t+1-p\right)^4}\\
+  K_X^{\left(4\right)}\left(0\right)&=Np\left(1-p\right)\frac{\left(1-p\right)^2e^0-4p\left(1-p\right)e^{2\cdot 0}+p^2e^{3\cdot 0}}{\left(pe^0+1-p\right)^4}\nonumber\\
+  &=Np\left(1-p\right)\frac{\left(1-p\right)^2-4p\left(1-p\right)+p^2}{\left(p+1-p\right)^4}\nonumber\\
+  &=Np\left(1-p\right)\left(1-6p+6p^2\right)\nonumber\\
+  &=Np\left(1-p\right)\left(1-6p\left(1-p\right)\right)\nonumber\\
  \end{align}
  \subsection{平均}
  \begin{align}
   E\left(X\right)&=K_X^{\left(1\right)}\left(0\right)\nonumber\\
-  &=Np\frac{e^0}{pe^0+1-p}\nonumber\\
-  &=Np\frac{1}{p+1-p}\nonumber\\
   &=Np
  \end{align}
  \subsection{分散}
  \begin{align}
   V\left(X\right)&=K_X^{\left(2\right)}\left(0\right)\nonumber\\
-  &=Np\left(1-p\right)\frac{e^0}{\left(pe^0+1-p\right)^2}\nonumber\\
-  &=Np\left(1-p\right)\frac{1}{\left(p+1-p\right)^2}\nonumber\\
   &=Np\left(1-p\right)
  \end{align}
+ \subsection{歪度}
+ \subsection{尖度}
 \end{document}
 
