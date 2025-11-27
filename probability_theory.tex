@@ -1272,7 +1272,18 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=Np\frac{e^t\left(pe^t+1-p\right)-e^tpe^t}{\left(pe^t+1-p\right)^2}\nonumber\\
   &=Np\frac{pe^{2t}+e^t-pe^t-pe^{2t}}{\left(pe^t+1-p\right)^2}\nonumber\\
   &=Np\frac{e^t-pe^t}{\left(pe^t+1-p\right)^2}\nonumber\\
-  &=Np\left(1-p\right)\frac{e^t}{\left(pe^t+1-p\right)^2}\nonumber\\
+  &=Np\left(1-p\right)\frac{e^t}{\left(pe^t+1-p\right)^2}
+ \end{align}
+ \begin{align}
+  K_X^{\left(3\right)}\left(t\right)&=\frac{d}{dt}Np\left(1-p\right)\frac{e^t}{\left(pe^t+1-p\right)^2}\nonumber\\
+  &=Np\left(1-p\right)\frac{d}{dt}\frac{e^t}{\left(pe^t+1-p\right)^2}\nonumber\\
+  &=Np\left(1-p\right)\frac{\left(\frac{d}{dt}e^t\right)\left(pe^t+1-p\right)^2-e^t\left(\frac{d}{dt}\left(pe^t+1-p\right)^2\right)}{\left(pe^t+1-p\right)^4}\nonumber\\
+  &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)^2-e^t\left(2\left(pe^t+1-p\right)\frac{d}{dt}\left(pe^t+1-p\right)\right)}{\left(pe^t+1-p\right)^4}\nonumber\\
+  &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)^2-e^t\left(2\left(pe^t+1-p\right)pe^t\right)}{\left(pe^t+1-p\right)^4}\nonumber\\
+  &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)^2-2\left(pe^t+1-p\right)pe^{2t}}{\left(pe^t+1-p\right)^4}\nonumber\\
+  &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)-2pe^{2t}}{\left(pe^t+1-p\right)^3}\nonumber\\
+  &=Np\left(1-p\right)\frac{pe^{2t}+e^t-pe^t-2pe^{2t}}{\left(pe^t+1-p\right)^3}\nonumber\\
+  &=Np\left(1-p\right)\frac{e^t-pe^t-pe^{2t}}{\left(pe^t+1-p\right)^3}\nonumber\\
  \end{align}
 \end{document}
 
