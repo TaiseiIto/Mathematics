@@ -1060,7 +1060,7 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
 よって歪度は，
  \begin{align}
   S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
-  &=\frac{K_X^{\left(3\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^\frac{3}{2}}\nonumber\\
+  &=\frac{K_X^{\left(3\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^\frac{3}{2}}
  \end{align}
  \subsection{キュムラントと尖度の関係}
  \begin{align}
@@ -1091,7 +1091,7 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3\nonumber\\
   &=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{V\left(X\right)^2}-3\nonumber\\
   &=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)-3V\left(X\right)^2}{V\left(X\right)^2}\nonumber\\
-  &=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}\nonumber\\
+  &=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}
  \end{align}
  \subsection{確率変数の一次式のキュムラント母関数}
 確率変数$X$の一次式$aX+b$のキュムラント母関数$K_{aX+b}\left(t\right)$は，
@@ -1316,7 +1316,7 @@ $X_1,\cdots,X_N$は互いに独立なので，
   K_X^{\left(4\right)}\left(0\right)&=Np\left(1-p\right)\frac{\left(1-p\right)^2e^0-4p\left(1-p\right)e^{2\cdot 0}+p^2e^{3\cdot 0}}{\left(pe^0+1-p\right)^4}\nonumber\\
   &=Np\left(1-p\right)\frac{\left(1-p\right)^2-4p\left(1-p\right)+p^2}{\left(p+1-p\right)^4}\nonumber\\
   &=Np\left(1-p\right)\left(1-6p+6p^2\right)\nonumber\\
-  &=Np\left(1-p\right)\left(1-6p\left(1-p\right)\right)\nonumber\\
+  &=Np\left(1-p\right)\left(1-6p\left(1-p\right)\right)
  \end{align}
  \subsection{平均}
  \begin{align}
@@ -1329,6 +1329,16 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=Np\left(1-p\right)
  \end{align}
  \subsection{歪度}
+ \begin{align}
+  S\left(X\right)&=\frac{K_X^{\left(3\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^\frac{3}{2}}\nonumber\\
+  &=\frac{Np\left(1-p\right)\left(1-2p\right)}{\left(Np\left(1-p\right)\right)^\frac{3}{2}}\nonumber\\
+  &=\frac{1-2p}{\sqrt{Np\left(1-p\right)}}\nonumber\\
+ \end{align}
  \subsection{尖度}
+ \begin{align}
+  K\left(X\right)&=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}\nonumber\\
+  &=\frac{Np\left(1-p\right)\left(1-6p\left(1-p\right)\right)}{\left(Np\left(1-p\right)\right)^2}\nonumber\\
+  &=\frac{1-6p\left(1-p\right)}{Np\left(1-p\right)}\nonumber\\
+ \end{align}
 \end{document}
 
