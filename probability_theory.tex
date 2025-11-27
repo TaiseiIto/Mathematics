@@ -521,7 +521,7 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
  \section{積率母関数}
 ある確率変数$X$に対し，その積率母関数$M_X$は，
  \begin{align}
-  M_X\left(t\right)&=E\left(e^{tX}\right)
+  M_X\left(t\right)&=G_X\left(e^t\right)
  \end{align}
 と定義される．
  \subsection{積率母関数と原点積率の関係}
@@ -531,7 +531,8 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
  \subsubsection{証明}
 積率母関数の定義をマクローリン展開することで証明できる．
  \begin{align}
-  M_X\left(t\right)&=E\left(e^{tX}\right)\nonumber\\
+  M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
+  &=E\left(e^{tX}\right)\nonumber\\
   \sum_{n=0}^\infty\frac{t^n}{n!}M_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\frac{d^n}{dt^n}E\left(e^{tX}\right)\right|_{t=0}\right)\nonumber\\
   M_X^{\left(n\right)}\left(0\right)&=\left(\left.\frac{d^n}{dt^n}E\left(e^{tX}\right)\right|_{t=0}\right)\nonumber\\
   &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\frac{d^me^{tX}}{dt^m}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
@@ -562,10 +563,12 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
 である．
  \subsubsection{証明}
  \begin{align}
-  M_{aX+b}\left(t\right)&=E\left(e^{t\left(aX+b\right)}\right)\nonumber\\
+  M_{aX+b}\left(t\right)&=G_{aX+b}\left(e^t\right)\nonumber\\
+  &=E\left(e^{t\left(aX+b\right)}\right)\nonumber\\
   &=E\left(e^{atX+bt}\right)\nonumber\\
   &=E\left(e^{atX}e^{bt}\right)\nonumber\\
   &=e^{bt}E\left(e^{atX}\right)\nonumber\\
+  &=e^{bt}G_X\left(e^{at}\right)\nonumber\\
   &=e^{bt}M_X\left(at\right)\nonumber\\
  \end{align}
  \subsection{互いに独立な確率変数の和の積率母関数}
@@ -577,7 +580,8 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
  \subsubsection{証明}
 式(\ref{ProductAverage})を用いて証明する．
  \begin{align}
-  M_X\left(t\right)&=E\left(e^{tX}\right)\nonumber\\
+  M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
+  &=E\left(e^{tX}\right)\nonumber\\
   &=E\left(\exp\left(tX\right)\right)\nonumber\\
   &=E\left(\exp\left(t\sum_{n=0}^{N-1}X_n\right)\right)\nonumber\\
   &=E\left(\exp\left(\sum_{n=0}^{N-1}tX_n\right)\right)\nonumber\\
@@ -586,6 +590,7 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
 ここで，$X_0,\cdots,X_{N-1}$は互いに独立だから式(\ref{ProductAverage})により，
  \begin{align}
   M_X\left(t\right)&=\prod_{n=0}^{N-1}E\left(\exp\left(tX_n\right)\right)\nonumber\\
+  &=\prod_{n=0}^{N-1}G_{X_n}\left(\exp\left(t\right)\right)\nonumber\\
   &=\prod_{n=0}^{N-1}M_{X_n}\left(t\right)
  \end{align}
  \section{特性関数}
@@ -602,6 +607,7 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
 特性関数の定義をマクローリン展開することで証明できる．
  \begin{align}
   \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
+  &=G_X\left(e^{it}\right)\nonumber\\
   &=E\left(e^{itX}\right)\nonumber\\
   \sum_{n=0}^\infty\frac{t^n}{n!}\phi_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\frac{d^n}{dt^n}E\left(e^{itX}\right)\right|_{t=0}\right)\nonumber\\
   \phi_X^{\left(n\right)}\left(0\right)&=\left.\frac{d^n}{dt^n}E\left(e^{itX}\right)\right|_{t=0}\nonumber\\
@@ -628,10 +634,13 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
  \subsubsection{証明}
  \begin{align}
   \phi_{aX+b}\left(t\right)&=M_{aX+b}\left(it\right)\nonumber\\
+  &=G_{aX+b}\left(e^{it}\right)\nonumber\\
   &=E\left(e^{it\left(aX+b\right)}\right)\nonumber\\
   &=E\left(e^{iatX+ibt}\right)\nonumber\\
   &=E\left(e^{iatX}e^{ibt}\right)\nonumber\\
   &=e^{ibt}E\left(e^{iatX}\right)\nonumber\\
+  &=e^{ibt}G_X\left(e^{iat}\right)\nonumber\\
+  &=e^{ibt}M_X\left(iat\right)\nonumber\\
   &=e^{ibt}\phi_{X}\left(at\right)
  \end{align}
  \subsection{互いに独立な確率変数の和の特性関数}
@@ -644,6 +653,7 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
 式(\ref{ProductAverage})を用いて証明する．
  \begin{align}
   \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
+  &=G_X\left(\exp\left(e^{it}\right)\right)\nonumber\\
   &=E\left(\exp\left(itX\right)\right)\nonumber\\
   &=E\left(\exp\left(it\sum_{n=0}^{N-1}X_n\right)\right)\nonumber\\
   &=E\left(\exp\left(\sum_{n=0}^{N-1}itX_n\right)\right)\nonumber\\
@@ -652,6 +662,8 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
 ここで，$X_0,\cdots,X_{N-1}$は互いに独立だから式(\ref{ProductAverage})により，
  \begin{align}
   \phi_X\left(t\right)&=\prod_{n=0}^{N-1}E\left(\exp\left(itX_n\right)\right)\nonumber\\
+  &=\prod_{n=0}^{N-1}G_{X_n}\left(e^{it}\right)\nonumber\\
+  &=\prod_{n=0}^{N-1}M_{X_n}\left(it\right)\nonumber\\
   &=\prod_{n=0}^{N-1}\phi_{X_n}\left(t\right)
  \end{align}
  \section{キュムラント母関数}
@@ -665,6 +677,8 @@ $K_X$のマクローリン展開
   K_X\left(t\right)&=\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}
  \end{align}
 における$K_X^{\left(k\right)}\left(0\right)$を確率変数$X$の$k$次キュムラントという．
+ \subsection{確率変数の一次式のキュムラント母関数}
+ \subsection{互いに独立な確率変数の和のキュムラント母関数}
  \subsection{Bellの多項式}
 集合
  \begin{align}
