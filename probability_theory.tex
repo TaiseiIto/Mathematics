@@ -1074,97 +1074,98 @@ $\{0,1\}$を標本空間とし，確率質量関数を
  \begin{align}
   p\left(x\right)&=
   \begin{cases}
-   p_1&\left(x=1\right)\\
-   1-p_1&\left(x=0\right)
+   p&\left(x=1\right)\\
+   1-p&\left(x=0\right)
   \end{cases}
  \end{align}
 とする離散確率分布をベルヌーイ分布という．
-ただし，$0\le p_1\le 1$である．
+ただし，$0\le p\le 1$である．
  \subsection{原点周りの積率母関数}
  \begin{align}
   M_X\left(t\right)&=E\left(e^{tX}\right)\nonumber\\
-  &=e^{t0}\left(1-p_1\right)+e^{t1}p_1\nonumber\\
-  &=e^0\left(1-p_1\right)+e^tp_1\nonumber\\
-  &=\left(1-p_1\right)+e^tp_1\nonumber\\
-  &=p_1e^t+1-p_1\\
-  M_X^{\left(1\right)}\left(t\right)&=p_1e^t\\
-  M_X^{\left(2\right)}\left(t\right)&=p_1e^t
+  &=e^{t0}\left(1-p\right)+e^{t1}p\nonumber\\
+  &=e^0\left(1-p\right)+e^tp\nonumber\\
+  &=\left(1-p\right)+e^tp\nonumber\\
+  &=pe^t+1-p\\
+  M_X^{\left(1\right)}\left(t\right)&=pe^t\\
+  M_X^{\left(2\right)}\left(t\right)&=pe^t
  \end{align}
  \subsection{平均}
  \begin{align}
   E\left(X\right)&=M_X^{\left(1\right)}\left(0\right)\nonumber\\
-  &=p_1e^0\nonumber\\
-  &=p_1
+  &=pe^0\nonumber\\
+  &=p
  \end{align}
  \subsection{分散}
  \begin{align}
   V\left(X\right)&=E\left(X^2\right)-E\left(X\right)^2\nonumber\\
-  &=M_X^{\left(2\right)}\left(0\right)-p_1^2\nonumber\\
-  &=p_1e^0-p_1^2\nonumber\\
-  &=p_1-p_1^2\nonumber\\
-  &=p_1\left(1-p_1\right)
+  &=M_X^{\left(2\right)}\left(0\right)-p^2\nonumber\\
+  &=pe^0-p^2\nonumber\\
+  &=p-p^2\nonumber\\
+  &=p\left(1-p\right)
  \end{align}
  \subsection{標準偏差}
  \begin{align}
   \sigma\left(X\right)&=\sqrt{V\left(X\right)}\nonumber\\
-  &=\sqrt{p_1\left(1-p_1\right)}
+  &=\sqrt{p\left(1-p\right)}
  \end{align}
  \subsection{平均周りの積率母関数}
  \begin{align}
   M_{X-E\left(X\right)}\left(t\right)&=E\left(e^{t\left(X-E\left(X\right)\right)}\right)\nonumber\\
-  &=E\left(e^{t\left(X-p_1\right)}\right)\nonumber\\
-  &=e^{t\left(0-p_1\right)}\left(1-p_1\right)+e^{t\left(1-p_1\right)}p_1\nonumber\\
-  &=\left(1-p_1\right)e^{-p_1t}+p_1e^{\left(1-p_1\right)t}\nonumber\\
-  M_{X-E\left(X\right)}^{\left(1\right)}\left(t\right)&=p_1\left(p_1-1\right)e^{-p_1t}+p_1\left(1-p_1\right)e^{\left(1-p_1\right)t}\\
-  M_{X-E\left(X\right)}^{\left(2\right)}\left(t\right)&=p_1^2\left(1-p_1\right)e^{-p_1t}+p_1\left(1-p_1\right)^2e^{\left(1-p_1\right)t}\\
-  M_{X-E\left(X\right)}^{\left(3\right)}\left(t\right)&=p_1^3\left(p_1-1\right)e^{-p_1t}+p_1\left(1-p_1\right)^3e^{\left(1-p_1\right)t}\\
-  M_{X-E\left(X\right)}^{\left(4\right)}\left(t\right)&=p_1^4\left(1-p_1\right)e^{-p_1t}+p_1\left(1-p_1\right)^4e^{\left(1-p_1\right)t}
+  &=E\left(e^{t\left(X-p\right)}\right)\nonumber\\
+  &=e^{t\left(0-p\right)}\left(1-p\right)+e^{t\left(1-p\right)}p\nonumber\\
+  &=\left(1-p\right)e^{-pt}+pe^{\left(1-p\right)t}\nonumber\\
+  M_{X-E\left(X\right)}^{\left(1\right)}\left(t\right)&=p\left(p-1\right)e^{-pt}+p\left(1-p\right)e^{\left(1-p\right)t}\\
+  M_{X-E\left(X\right)}^{\left(2\right)}\left(t\right)&=p^2\left(1-p\right)e^{-pt}+p\left(1-p\right)^2e^{\left(1-p\right)t}\\
+  M_{X-E\left(X\right)}^{\left(3\right)}\left(t\right)&=p^3\left(p-1\right)e^{-pt}+p\left(1-p\right)^3e^{\left(1-p\right)t}\\
+  M_{X-E\left(X\right)}^{\left(4\right)}\left(t\right)&=p^4\left(1-p\right)e^{-pt}+p\left(1-p\right)^4e^{\left(1-p\right)t}
  \end{align}
  \subsection{歪度}
  \begin{align}
   S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
-  &=\frac{M_{X-E\left(X\right)}^{\left(3\right)}\left(0\right)}{\sqrt{p_1\left(1-p_1\right)}^3}\nonumber\\
-  &=\frac{p_1^3\left(p_1-1\right)e^{-p_10}+p_1\left(1-p_1\right)^3e^{\left(1-p_1\right)0}}{p_1\left(1-p_1\right)\sqrt{p_1\left(1-p_1\right)}}\nonumber\\
-  &=\frac{p_1^3\left(p_1-1\right)+p_1\left(1-p_1\right)^3}{p_1\left(1-p_1\right)\sqrt{p_1\left(1-p_1\right)}}\nonumber\\
-  &=\frac{-p_1^2+\left(1-p_1\right)^2}{\sqrt{p_1\left(1-p_1\right)}}\nonumber\\
-  &=\frac{-p_1^2+1-2p_1+p_1^2}{\sqrt{p_1\left(1-p_1\right)}}\nonumber\\
-  &=\frac{1-2p_1}{\sqrt{p_1\left(1-p_1\right)}}
+  &=\frac{M_{X-E\left(X\right)}^{\left(3\right)}\left(0\right)}{\sqrt{p\left(1-p\right)}^3}\nonumber\\
+  &=\frac{p^3\left(p-1\right)e^{-p0}+p\left(1-p\right)^3e^{\left(1-p\right)0}}{p\left(1-p\right)\sqrt{p\left(1-p\right)}}\nonumber\\
+  &=\frac{p^3\left(p-1\right)+p\left(1-p\right)^3}{p\left(1-p\right)\sqrt{p\left(1-p\right)}}\nonumber\\
+  &=\frac{-p^2+\left(1-p\right)^2}{\sqrt{p\left(1-p\right)}}\nonumber\\
+  &=\frac{-p^2+1-2p+p^2}{\sqrt{p\left(1-p\right)}}\nonumber\\
+  &=\frac{1-2p}{\sqrt{p\left(1-p\right)}}
  \end{align}
  \subsection{尖度}
  \begin{align}
-  K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}\nonumber\\
-  &=\frac{M_{X-E\left(X\right)}^{\left(4\right)}\left(0\right)}{\sqrt{p_1\left(1-p_1\right)}^4}\nonumber\\
-  &=\frac{p_1^4\left(1-p_1\right)e^{-p_10}+p_1\left(1-p_1\right)^4e^{\left(1-p_1\right)0}}{p_1^2\left(1-p_1\right)^2}\nonumber\\
-  &=\frac{p_1^4\left(1-p_1\right)+p_1\left(1-p_1\right)^4}{p_1^2\left(1-p_1\right)^2}\nonumber\\
-  &=\frac{p_1^3+\left(1-p_1\right)^3}{p_1\left(1-p_1\right)}\nonumber\\
-  &=\frac{p_1^3+1-3p_1+3p_1^2-p_1^3}{p_1\left(1-p_1\right)}\nonumber\\
-  &=\frac{1-3p_1+3p_1^2}{p_1\left(1-p_1\right)}\nonumber\\
-  &=\frac{1-3p_1\left(1-p_1\right)}{p_1\left(1-p_1\right)}\nonumber\\
+  K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3\nonumber\\
+  &=\frac{M_{X-E\left(X\right)}^{\left(4\right)}\left(0\right)}{\sqrt{p\left(1-p\right)}^4}-3\nonumber\\
+  &=\frac{p^4\left(1-p\right)e^{-p0}+p\left(1-p\right)^4e^{\left(1-p\right)0}}{p^2\left(1-p\right)^2}-3\nonumber\\
+  &=\frac{p^4\left(1-p\right)+p\left(1-p\right)^4}{p^2\left(1-p\right)^2}-3\nonumber\\
+  &=\frac{p^3+\left(1-p\right)^3}{p\left(1-p\right)}-3\nonumber\\
+  &=\frac{p^3+1-3p+3p^2-p^3}{p\left(1-p\right)}-3\nonumber\\
+  &=\frac{1-3p+3p^2}{p\left(1-p\right)}-3\nonumber\\
+  &=\frac{1-3p\left(1-p\right)}{p\left(1-p\right)}-3\nonumber\\
+  &=\frac{1-6p\left(1-p\right)}{p\left(1-p\right)}\nonumber\\
  \end{align}
  \subsection{エントロピー}
  \begin{align}
   H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)\nonumber\\
-  &=\left(1-p_1\right)\left(-\log_2\left(1-p_1\right)\right)+p_1\left(-\log_2p_1\right)\nonumber\\
-  &=-\left(1-p_1\right)\log_2\left(1-p_1\right)-p_1\log_2p_1\nonumber\\
+  &=\left(1-p\right)\left(-\log_2\left(1-p\right)\right)+p\left(-\log_2p\right)\nonumber\\
+  &=-\left(1-p\right)\log_2\left(1-p\right)-p\log_2p\nonumber\\
  \end{align}
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
-  &=\left(1-p_1\right)t^0+p_1t^1\nonumber\\
-  &=\left(1-p_1\right)+p_1t\nonumber\\
-  &=p_1t+1-p_1
+  &=\left(1-p\right)t^0+pt^1\nonumber\\
+  &=\left(1-p\right)+pt\nonumber\\
+  &=pt+1-p
  \end{align}
  \subsection{特性関数}
  \begin{align}
   \phi_X\left(t\right)&=E\left(e^{itX}\right)\nonumber\\
-  &=\left(1-p_1\right)e^{it0}+p_1e^{it1}\nonumber\\
-  &=\left(1-p_1\right)+p_1e^{it}\nonumber\\
-  &=p_1e^{it}+1-p_1
+  &=\left(1-p\right)e^{it0}+pe^{it1}\nonumber\\
+  &=\left(1-p\right)+pe^{it}\nonumber\\
+  &=pe^{it}+1-p
  \end{align}
  \subsection{キュムラント母関数}
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
-  &=\log\left(p_1e^t+1-p_1\right)
+  &=\log\left(pe^t+1-p\right)
  \end{align}
  \section{二項分布}
 ベルヌーイ分布に従う$N$個の確率変数$X_0,\cdots,X_{N-1}$の和
@@ -1173,255 +1174,255 @@ $\{0,1\}$を標本空間とし，確率質量関数を
  \end{align}
 を二項分布といい，その標本空間は$S=\{0,\cdots,N\}$であり，その確率質量関数は
  \begin{align}
-  p\left(n\right)&={}_NC_np_1^n\left(1-p_1\right)^{N-n}
+  p\left(n\right)&={}_NC_np^n\left(1-p\right)^{N-n}
  \end{align}
 である．
  \subsection{原点周りの積率母関数}
  \begin{align}
   M_X\left(t\right)&=E\left(e^{tX}\right)\nonumber\\
-  &=\sum_{n=0}^Ne^{tn}{}_NC_np_1^n\left(1-p_1\right)^{N-n}\nonumber\\
-  &=\sum_{n=0}^N{}_NC_n\left(p_1e^t\right)^n\left(1-p_1\right)^{N-n}\nonumber\\
-  &=\left(p_1e^t+1-p_1\right)^N\\
-  M_X^{\left(1\right)}\left(t\right)&=Np_1e^t\left(p_1e^t+1-p_1\right)^{N-1}\\
-  M_X^{\left(2\right)}\left(t\right)&=Np_1e^t\left(p_1e^t+1-p_1\right)^{N-1}+N\left(N-1\right)p_1^2e^2t\left(p_1e^t+1-p_1\right)^{N-2}
+  &=\sum_{n=0}^Ne^{tn}{}_NC_np^n\left(1-p\right)^{N-n}\nonumber\\
+  &=\sum_{n=0}^N{}_NC_n\left(pe^t\right)^n\left(1-p\right)^{N-n}\nonumber\\
+  &=\left(pe^t+1-p\right)^N\\
+  M_X^{\left(1\right)}\left(t\right)&=Npe^t\left(pe^t+1-p\right)^{N-1}\\
+  M_X^{\left(2\right)}\left(t\right)&=Npe^t\left(pe^t+1-p\right)^{N-1}+N\left(N-1\right)p^2e^2t\left(pe^t+1-p\right)^{N-2}
  \end{align}
  \subsection{平均}
  \begin{align}
   E\left(X\right)&=M_X^{\left(1\right)}\left(0\right)\nonumber\\
-  &=Np_1e^0\left(p_1e^0+1-p_1\right)^{N-1}\nonumber\\
-  &=Np_1\left(p_1+1-p_1\right)^{N-1}\nonumber\\
-  &=Np_1
+  &=Npe^0\left(pe^0+1-p\right)^{N-1}\nonumber\\
+  &=Np\left(p+1-p\right)^{N-1}\nonumber\\
+  &=Np
  \end{align}
  \subsection{分散}
  \begin{align}
   V\left(X\right)&=E\left(X^2\right)-E\left(X\right)^2\nonumber\\
-  &=M_X^{\left(2\right)}\left(0\right)-\left(Np_1\right)^2\nonumber\\
-  &=Np_1e^0\left(p_1e^0+1-p_1\right)^{N-1}+N\left(N-1\right)p_1^2e^{2\times 0}\left(p_1e^0+1-p_1\right)^{N-2}-N^2p_1^2\nonumber\\
-  &=Np_1\left(p_1+1-p_1\right)^{N-1}+N\left(N-1\right)p_1^2\left(p_1+1-p_1\right)^{N-2}-N^2p_1^2\nonumber\\
-  &=Np_1+N\left(N-1\right)p_1^2-N^2p_1^2\nonumber\\
-  &=Np_1+N^2p_1^2-Np_1^2-N^2p_1^2\nonumber\\
-  &=Np_1-Np_1^2\nonumber\\
-  &=Np_1\left(1-p_1\right)\nonumber\\
+  &=M_X^{\left(2\right)}\left(0\right)-\left(Np\right)^2\nonumber\\
+  &=Npe^0\left(pe^0+1-p\right)^{N-1}+N\left(N-1\right)p^2e^{2\times 0}\left(pe^0+1-p\right)^{N-2}-N^2p^2\nonumber\\
+  &=Np\left(p+1-p\right)^{N-1}+N\left(N-1\right)p^2\left(p+1-p\right)^{N-2}-N^2p^2\nonumber\\
+  &=Np+N\left(N-1\right)p^2-N^2p^2\nonumber\\
+  &=Np+N^2p^2-Np^2-N^2p^2\nonumber\\
+  &=Np-Np^2\nonumber\\
+  &=Np\left(1-p\right)\nonumber\\
  \end{align}
  \subsection{標準偏差}
  \begin{align}
   \sigma\left(X\right)&=\sqrt{V\left(X\right)}\nonumber\\
-  &=\sqrt{Np_1\left(1-p_1\right)}\nonumber\\
+  &=\sqrt{Np\left(1-p\right)}\nonumber\\
  \end{align}
  \subsection{平均周りの積率母関数}
  \begin{align}
   M_{X-E\left(X\right)}\left(t\right)&=E\left(e^{t\left(X-E\left(X\right)\right)}\right)\nonumber\\
-  &=E\left(e^{t\left(X-Np_1\right)}\right)\nonumber\\
-  &=\sum_{n=0}^Ne^{t\left(n-Np_1\right)}{}_NC_np_1^n\left(1-p_1\right)^{N-n}\nonumber\\
-  &=\sum_{n=0}^Ne^{nt}e^{-Np_1t}{}_NC_np_1^n\left(1-p_1\right)^{N-n}\nonumber\\
-  &=e^{-Np_1t}\sum_{n=0}^N{}_NC_n\left(p_1e^t\right)^n\left(1-p_1\right)^{N-n}\nonumber\\
-  &=e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\\
-  M_{X-E\left(X\right)}\left(0\right)&=e^{-Np_10}\left(p_1e^0+1-p_1\right)^N\nonumber\\
-  &=e^0\left(p_1e^0+1-p_1\right)^N\nonumber\\
-  &=\left(p_1+1-p_1\right)^N\nonumber\\
+  &=E\left(e^{t\left(X-Np\right)}\right)\nonumber\\
+  &=\sum_{n=0}^Ne^{t\left(n-Np\right)}{}_NC_np^n\left(1-p\right)^{N-n}\nonumber\\
+  &=\sum_{n=0}^Ne^{nt}e^{-Npt}{}_NC_np^n\left(1-p\right)^{N-n}\nonumber\\
+  &=e^{-Npt}\sum_{n=0}^N{}_NC_n\left(pe^t\right)^n\left(1-p\right)^{N-n}\nonumber\\
+  &=e^{-Npt}\left(pe^t+1-p\right)^N\\
+  M_{X-E\left(X\right)}\left(0\right)&=e^{-Np0}\left(pe^0+1-p\right)^N\nonumber\\
+  &=e^0\left(pe^0+1-p\right)^N\nonumber\\
+  &=\left(p+1-p\right)^N\nonumber\\
   &=1^N\nonumber\\
   &=1
  \end{align}
  \begin{align}
-  M_{X-E\left(X\right)}^{\left(1\right)}\left(t\right)&=\frac{d}{dt}e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &=\left(\frac{d}{dt}e^{-Np_1t}\right)\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}\left(\frac{d}{dt}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
-  &=-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}N\left(p_1e^t+1-p_1\right)^{N-1}\frac{d}{dt}\left(p_1e^t+1-p_1\right)\nonumber\\
-  &=-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}N\left(p_1e^t+1-p_1\right)^{N-1}p_1e^t\nonumber\\
-  &=-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+Np_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &=Np_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\\
-  M_{X-E\left(X\right)}^{\left(1\right)}\left(0\right)&=Np_1e^{\left(1-Np_1\right)0}\left(p_1e^0+1-p_1\right)^{N-1}-Np_1e^{-Np_10}\left(p_1e^0+1-p_1\right)^N\nonumber\\
-  &=Np_1e^0\left(p_1e^0+1-p_1\right)^{N-1}-Np_1e^0\left(p_1e^0+1-p_1\right)^N\nonumber\\
-  &=Np_1\left(p_1+1-p_1\right)^{N-1}-Np_1\left(p_1+1-p_1\right)^N\nonumber\\
-  &=Np_11^{N-1}-Np_11^N\nonumber\\
-  &=Np_11-Np_11\nonumber\\
-  &=Np_1-Np_1\nonumber\\
+  M_{X-E\left(X\right)}^{\left(1\right)}\left(t\right)&=\frac{d}{dt}e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &=\left(\frac{d}{dt}e^{-Npt}\right)\left(pe^t+1-p\right)^N+e^{-Npt}\left(\frac{d}{dt}\left(pe^t+1-p\right)^N\right)\nonumber\\
+  &=-Npe^{-Npt}\left(pe^t+1-p\right)^N+e^{-Npt}N\left(pe^t+1-p\right)^{N-1}\frac{d}{dt}\left(pe^t+1-p\right)\nonumber\\
+  &=-Npe^{-Npt}\left(pe^t+1-p\right)^N+e^{-Npt}N\left(pe^t+1-p\right)^{N-1}pe^t\nonumber\\
+  &=-Npe^{-Npt}\left(pe^t+1-p\right)^N+Npe^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &=Npe^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}-Npe^{-Npt}\left(pe^t+1-p\right)^N\\
+  M_{X-E\left(X\right)}^{\left(1\right)}\left(0\right)&=Npe^{\left(1-Np\right)0}\left(pe^0+1-p\right)^{N-1}-Npe^{-Np0}\left(pe^0+1-p\right)^N\nonumber\\
+  &=Npe^0\left(pe^0+1-p\right)^{N-1}-Npe^0\left(pe^0+1-p\right)^N\nonumber\\
+  &=Np\left(p+1-p\right)^{N-1}-Np\left(p+1-p\right)^N\nonumber\\
+  &=Np1^{N-1}-Np1^N\nonumber\\
+  &=Np1-Np1\nonumber\\
+  &=Np-Np\nonumber\\
   &=0
  \end{align}
  \begin{align}
-  M_{X-E\left(X\right)}^{\left(2\right)}\left(t\right)&=\frac{d}{dt}\left(Np_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
-  &=Np_1\frac{d}{dt}e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}-Np_1\frac{d}{dt}e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &=Np_1\left(\left(\frac{d}{dt}e^{\left(1-Np_1\right)t}\right)\left(p_1e^t+1-p_1\right)^{N-1}+e^{\left(1-Np_1\right)t}\left(\frac{d}{dt}\left(p_1e^t+1-p_1\right)^{N-1}\right)\right)\nonumber\\
-  &\quad-Np_1\left(Np_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
-  &=Np_1\left(\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+e^{\left(1-Np_1\right)t}\left(N-1\right)\left(p_1e^t+1-p_1\right)^{N-2}p_1e^t\right)\nonumber\\
-  &\quad-Np_1\left(Np_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
-  &=Np_1\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+Np_1^2\left(N-1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad-N^2p_1^2e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &=N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad-N^2p_1^2e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &=N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+\left(Np_1\left(1-Np_1\right)-N^2p_1^2\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &=N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+\left(Np_1-N^2p_1^2-N^2p_1^2\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &=N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+\left(Np_1-2N^2p_1^2\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &=N^2p_1^2e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}
+  M_{X-E\left(X\right)}^{\left(2\right)}\left(t\right)&=\frac{d}{dt}\left(Npe^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}-Npe^{-Npt}\left(pe^t+1-p\right)^N\right)\nonumber\\
+  &=Np\frac{d}{dt}e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}-Np\frac{d}{dt}e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &=Np\left(\left(\frac{d}{dt}e^{\left(1-Np\right)t}\right)\left(pe^t+1-p\right)^{N-1}+e^{\left(1-Np\right)t}\left(\frac{d}{dt}\left(pe^t+1-p\right)^{N-1}\right)\right)\nonumber\\
+  &\quad-Np\left(Npe^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}-Npe^{-Npt}\left(pe^t+1-p\right)^N\right)\nonumber\\
+  &=Np\left(\left(1-Np\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}+e^{\left(1-Np\right)t}\left(N-1\right)\left(pe^t+1-p\right)^{N-2}pe^t\right)\nonumber\\
+  &\quad-Np\left(Npe^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}-Npe^{-Npt}\left(pe^t+1-p\right)^N\right)\nonumber\\
+  &=Np\left(1-Np\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}+Np^2\left(N-1\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad-N^2p^2e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}+N^2p^2e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &=N^2p^2e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+Np\left(1-Np\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad-N^2p^2e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &=N^2p^2e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+\left(Np\left(1-Np\right)-N^2p^2\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &=N^2p^2e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+\left(Np-N^2p^2-N^2p^2\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &=N^2p^2e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+\left(Np-2N^2p^2\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &=N^2p^2e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+Np\left(1-2Np\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}
  \end{align}
  \begin{align}
-  M_{X-E\left(X\right)}^{\left(2\right)}\left(0\right)&=N^2p_1^2e^{-Np_10}\left(p_1e^0+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)e^{\left(1-Np_1\right)0}\left(p_1e^0+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)e^{\left(2-Np_1\right)0}\left(p_1e^0+1-p_1\right)^{N-2}\nonumber\\
-  &=N^2p_1^2e^0\left(p_1e^0+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)e^0\left(p_1e^0+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)e^0\left(p_1e^0+1-p_1\right)^{N-2}\nonumber\\
-  &=N^2p_1^2\left(p_1+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)\left(p_1+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\left(p_1+1-p_1\right)^{N-2}\nonumber\\
-  &=N^2p_1^21^N\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)1^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)1^{N-2}\nonumber\\
-  &=N^2p_1^2+Np_1\left(1-2Np_1\right)+Np_1^2\left(N-1\right)\nonumber\\
-  &=Np_1\left(Np_1+1-2Np_1+Np_1-p_1\right)\nonumber\\
-  &=Np_1\left(1-p_1\right)\nonumber\\
+  M_{X-E\left(X\right)}^{\left(2\right)}\left(0\right)&=N^2p^2e^{-Np0}\left(pe^0+1-p\right)^N\nonumber\\
+  &\quad+Np\left(1-2Np\right)e^{\left(1-Np\right)0}\left(pe^0+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)e^{\left(2-Np\right)0}\left(pe^0+1-p\right)^{N-2}\nonumber\\
+  &=N^2p^2e^0\left(pe^0+1-p\right)^N\nonumber\\
+  &\quad+Np\left(1-2Np\right)e^0\left(pe^0+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)e^0\left(pe^0+1-p\right)^{N-2}\nonumber\\
+  &=N^2p^2\left(p+1-p\right)^N\nonumber\\
+  &\quad+Np\left(1-2Np\right)\left(p+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)\left(p+1-p\right)^{N-2}\nonumber\\
+  &=N^2p^21^N\nonumber\\
+  &\quad+Np\left(1-2Np\right)1^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)1^{N-2}\nonumber\\
+  &=N^2p^2+Np\left(1-2Np\right)+Np^2\left(N-1\right)\nonumber\\
+  &=Np\left(Np+1-2Np+Np-p\right)\nonumber\\
+  &=Np\left(1-p\right)\nonumber\\
  \end{align}
  \begin{align}
-  M_{X-E\left(X\right)}^{\left(3\right)}\left(t\right)&=N^2p_1^2\frac{d}{dt}e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)\frac{d}{dt}e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\frac{d}{dt}e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &=N^2p_1^2\left(\left(\frac{d}{dt}e^{-Np_1t}\right)\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)\left(\left(\frac{d}{dt}e^{\left(1-Np_1\right)t}\right)\left(p_1e^t+1-p_1\right)^{N-1}+e^{\left(1-Np_1\right)t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^{N-1}\right)\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\left(\left(\frac{d}{dt}e^{\left(2-Np_1\right)t}\right)\left(p_1e^t+1-p_1\right)^{N-2}+e^{\left(2-Np_1\right)t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^{N-2}\right)\nonumber\\
-  &=N^2p_1^2\left(-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}N\left(p_1e^t+1-p_1\right)^{N-1}p_1e^t\right)\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)\left(\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+e^{\left(1-Np_1\right)t}\left(N-1\right)\left(p_1e^t+1-p_1\right)^{N-2}p_1e^t\right)\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\left(\left(2-Np_1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}+e^{\left(2-Np_1\right)t}\left(N-2\right)\left(p_1e^t+1-p_1\right)^{N-3}p_1e^t\right)\nonumber\\
-  &=N^2p_1^2\left(-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+Np_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\right)\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)\left(\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+\left(N-1\right)p_1e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\right)\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\left(\left(2-Np_1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}+\left(N-2\right)p_1e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\right)\nonumber\\
-  &=-N^3p_1^3e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+N^3p_1^3e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1\left(1-2Np_1\right)\left(N-1\right)p_1e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\left(2-Np_1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &=-N^3p_1^3e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+\left(N^3p_1^3+Np_1\left(1-2Np_1\right)\left(1-Np_1\right)\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+\left(Np_1\left(1-2Np_1\right)\left(N-1\right)p_1+Np_1^2\left(N-1\right)\left(2-Np_1\right)\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &=-N^3p_1^3e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(N^2p_1^2+\left(1-2Np_1\right)\left(1-Np_1\right)\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(\left(1-2Np_1\right)\left(N-1\right)+\left(N-1\right)\left(2-Np_1\right)\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &=-N^3p_1^3e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
+  M_{X-E\left(X\right)}^{\left(3\right)}\left(t\right)&=N^2p^2\frac{d}{dt}e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+Np\left(1-2Np\right)\frac{d}{dt}e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)\frac{d}{dt}e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &=N^2p^2\left(\left(\frac{d}{dt}e^{-Npt}\right)\left(pe^t+1-p\right)^N+e^{-Npt}\frac{d}{dt}\left(pe^t+1-p\right)^N\right)\nonumber\\
+  &\quad+Np\left(1-2Np\right)\left(\left(\frac{d}{dt}e^{\left(1-Np\right)t}\right)\left(pe^t+1-p\right)^{N-1}+e^{\left(1-Np\right)t}\frac{d}{dt}\left(pe^t+1-p\right)^{N-1}\right)\nonumber\\
+  &\quad+Np^2\left(N-1\right)\left(\left(\frac{d}{dt}e^{\left(2-Np\right)t}\right)\left(pe^t+1-p\right)^{N-2}+e^{\left(2-Np\right)t}\frac{d}{dt}\left(pe^t+1-p\right)^{N-2}\right)\nonumber\\
+  &=N^2p^2\left(-Npe^{-Npt}\left(pe^t+1-p\right)^N+e^{-Npt}N\left(pe^t+1-p\right)^{N-1}pe^t\right)\nonumber\\
+  &\quad+Np\left(1-2Np\right)\left(\left(1-Np\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}+e^{\left(1-Np\right)t}\left(N-1\right)\left(pe^t+1-p\right)^{N-2}pe^t\right)\nonumber\\
+  &\quad+Np^2\left(N-1\right)\left(\left(2-Np\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}+e^{\left(2-Np\right)t}\left(N-2\right)\left(pe^t+1-p\right)^{N-3}pe^t\right)\nonumber\\
+  &=N^2p^2\left(-Npe^{-Npt}\left(pe^t+1-p\right)^N+Npe^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\right)\nonumber\\
+  &\quad+Np\left(1-2Np\right)\left(\left(1-Np\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}+\left(N-1\right)pe^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\right)\nonumber\\
+  &\quad+Np^2\left(N-1\right)\left(\left(2-Np\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}+\left(N-2\right)pe^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\right)\nonumber\\
+  &=-N^3p^3e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+N^3p^3e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np\left(1-2Np\right)\left(1-Np\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np\left(1-2Np\right)\left(N-1\right)pe^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^2\left(N-1\right)\left(2-Np\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &=-N^3p^3e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+\left(N^3p^3+Np\left(1-2Np\right)\left(1-Np\right)\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+\left(Np\left(1-2Np\right)\left(N-1\right)p+Np^2\left(N-1\right)\left(2-Np\right)\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &=-N^3p^3e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+Np\left(N^2p^2+\left(1-2Np\right)\left(1-Np\right)\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(\left(1-2Np\right)\left(N-1\right)+\left(N-1\right)\left(2-Np\right)\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &=-N^3p^3e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
  \end{align}
  \begin{align}
-  M_{X-E\left(X\right)}^{\left(3\right)}\left(0\right)&=-N^3p_1^3e^{-Np_10}\left(p_1e^0+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)e^{\left(1-Np_1\right)0}\left(p_1e^0+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)e^{\left(2-Np_1\right)0}\left(p_1e^0+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)e^{\left(3-Np_1\right)0}\left(p_1e^0+1-p_1\right)^{N-3}\nonumber\\
-  &=-N^3p_1^3e^0\left(p_1e^0+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)e^0\left(p_1e^0+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)e^0\left(p_1e^0+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)e^0\left(p_1e^0+1-p_1\right)^{N-3}\nonumber\\
-  &=-N^3p_1^3\left(p_1+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\left(p_1+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\left(p_1+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(p_1+1-p_1\right)^{N-3}\nonumber\\
-  &=-N^3p_1^31^N\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)1^{N-1}\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)1^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)1^{N-3}\nonumber\\
-  &=-N^3p_1^3\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\nonumber\\
-  &=Np_1\left(-N^2p_1^2+\left(3N^2p_1^2-3Np_1+1\right)+3p_1\left(N-1\right)\left(1-Np_1\right)+p_1^2\left(N-1\right)\left(N-2\right)\right)\nonumber\\
-  &=Np_1\left(-N^2p_1^2+\left(3N^2p_1^2-3Np_1+1\right)+\left(3Np_1-3N^2p_1^2-3p+3Np_1^2\right)+\left(N^2p_1^2-3Np_1^2+2p^2\right)\right)\nonumber\\
-  &=Np_1\left(2p_1^2-3p_1+1\right)\nonumber\\
-  &=Np_1\left(1-p_1\right)\left(1-2p_1\right)
+  M_{X-E\left(X\right)}^{\left(3\right)}\left(0\right)&=-N^3p^3e^{-Np0}\left(pe^0+1-p\right)^N\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)e^{\left(1-Np\right)0}\left(pe^0+1-p\right)^{N-1}\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)e^{\left(2-Np\right)0}\left(pe^0+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)e^{\left(3-Np\right)0}\left(pe^0+1-p\right)^{N-3}\nonumber\\
+  &=-N^3p^3e^0\left(pe^0+1-p\right)^N\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)e^0\left(pe^0+1-p\right)^{N-1}\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)e^0\left(pe^0+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)e^0\left(pe^0+1-p\right)^{N-3}\nonumber\\
+  &=-N^3p^3\left(p+1-p\right)^N\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)\left(p+1-p\right)^{N-1}\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)\left(p+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(p+1-p\right)^{N-3}\nonumber\\
+  &=-N^3p^31^N\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)1^{N-1}\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)1^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)1^{N-3}\nonumber\\
+  &=-N^3p^3\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\nonumber\\
+  &=Np\left(-N^2p^2+\left(3N^2p^2-3Np+1\right)+3p\left(N-1\right)\left(1-Np\right)+p^2\left(N-1\right)\left(N-2\right)\right)\nonumber\\
+  &=Np\left(-N^2p^2+\left(3N^2p^2-3Np+1\right)+\left(3Np-3N^2p^2-3p+3Np^2\right)+\left(N^2p^2-3Np^2+2p^2\right)\right)\nonumber\\
+  &=Np\left(2p^2-3p+1\right)\nonumber\\
+  &=Np\left(1-p\right)\left(1-2p\right)
  \end{align}
 どこかで計算ミスが起きている可能性が高い．
  \begin{align}
-  M_{X-E\left(X\right)}^{\left(4\right)}\left(t\right)&=-N^3p_1^3\frac{d}{dt}e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\frac{d}{dt}e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\frac{d}{dt}e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\frac{d}{dt}e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &=-N^3p_1^3\left(\left(\frac{d}{dt}e^{-Np_1t}\right)\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^N\right)\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\left(\left(\frac{d}{dt}e^{\left(1-Np_1\right)t}\right)\left(p_1e^t+1-p_1\right)^{N-1}+e^{\left(1-Np_1\right)t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^{N-1}\right)\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\left(\left(\frac{d}{dt}e^{\left(2-Np_1\right)t}\right)\left(p_1e^t+1-p_1\right)^{N-2}+e^{\left(2-Np_1\right)t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^{N-2}\right)\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(\left(\frac{d}{dt}e^{\left(3-Np_1\right)t}\right)\left(p_1e^t+1-p_1\right)^{N-3}+e^{\left(3-Np_1\right)t}\frac{d}{dt}\left(p_1e^t+1-p_1\right)^{N-3}\right)\nonumber\\
-  &=-N^3p_1^3\left(-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+e^{-Np_1t}N\left(p_1e^t+1-p_1\right)^{N-1}p_1e^t\right)\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\left(\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+e^{\left(1-Np_1\right)t}\left(N-1\right)\left(p_1e^t+1-p_1\right)^{N-2}p_1e^t\right)\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\left(\left(2-Np_1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}+e^{\left(2-Np_1\right)t}\left(N-2\right)\left(p_1e^t+1-p_1\right)^{N-3}p_1e^t\right)\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(\left(3-Np_1\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}+e^{\left(3-Np_1\right)t}\left(N-3\right)\left(p_1e^t+1-p_1\right)^{N-4}p_1e^t\right)\nonumber\\
-  &=-N^3p_1^3\left(-Np_1e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N+Np_1e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\right)\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\left(\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}+\left(N-1\right)p_1e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\right)\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\left(\left(2-Np_1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}+\left(N-2\right)p_1e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\right)\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(\left(3-Np_1\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}+\left(N-3\right)p_1e^{\left(4-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-4}\right)\nonumber\\
-  &=N^4p_1^4e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad-N^4p_1^4e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\left(1-Np_1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1\left(3N^2p_1^2-3Np_1+1\right)\left(N-1\right)p_1e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\left(2-Np_1\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\left(N-2\right)p_1e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(3-Np_1\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(N-3\right)p_1e^{\left(4-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-4}\nonumber\\
-  &=N^4p_1^4e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+\left(Np_1\left(3N^2p_1^2-3Np_1+1\right)\left(1-Np_1\right)-N^4p_1^4\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+\left(Np_1\left(3N^2p_1^2-3Np_1+1\right)\left(N-1\right)p_1+3Np_1^2\left(N-1\right)\left(1-Np_1\right)\left(2-Np_1\right)\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+\left(3Np_1^2\left(N-1\right)\left(1-Np_1\right)\left(N-2\right)p_1+Np_1^3\left(N-1\right)\left(N-2\right)\left(3-Np_1\right)\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(N-3\right)p_1e^{\left(4-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-4}\nonumber\\
+  M_{X-E\left(X\right)}^{\left(4\right)}\left(t\right)&=-N^3p^3\frac{d}{dt}e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)\frac{d}{dt}e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)\frac{d}{dt}e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\frac{d}{dt}e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &=-N^3p^3\left(\left(\frac{d}{dt}e^{-Npt}\right)\left(pe^t+1-p\right)^N+e^{-Npt}\frac{d}{dt}\left(pe^t+1-p\right)^N\right)\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)\left(\left(\frac{d}{dt}e^{\left(1-Np\right)t}\right)\left(pe^t+1-p\right)^{N-1}+e^{\left(1-Np\right)t}\frac{d}{dt}\left(pe^t+1-p\right)^{N-1}\right)\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)\left(\left(\frac{d}{dt}e^{\left(2-Np\right)t}\right)\left(pe^t+1-p\right)^{N-2}+e^{\left(2-Np\right)t}\frac{d}{dt}\left(pe^t+1-p\right)^{N-2}\right)\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(\left(\frac{d}{dt}e^{\left(3-Np\right)t}\right)\left(pe^t+1-p\right)^{N-3}+e^{\left(3-Np\right)t}\frac{d}{dt}\left(pe^t+1-p\right)^{N-3}\right)\nonumber\\
+  &=-N^3p^3\left(-Npe^{-Npt}\left(pe^t+1-p\right)^N+e^{-Npt}N\left(pe^t+1-p\right)^{N-1}pe^t\right)\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)\left(\left(1-Np\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}+e^{\left(1-Np\right)t}\left(N-1\right)\left(pe^t+1-p\right)^{N-2}pe^t\right)\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)\left(\left(2-Np\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}+e^{\left(2-Np\right)t}\left(N-2\right)\left(pe^t+1-p\right)^{N-3}pe^t\right)\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(\left(3-Np\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}+e^{\left(3-Np\right)t}\left(N-3\right)\left(pe^t+1-p\right)^{N-4}pe^t\right)\nonumber\\
+  &=-N^3p^3\left(-Npe^{-Npt}\left(pe^t+1-p\right)^N+Npe^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\right)\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)\left(\left(1-Np\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}+\left(N-1\right)pe^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\right)\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)\left(\left(2-Np\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}+\left(N-2\right)pe^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\right)\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(\left(3-Np\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}+\left(N-3\right)pe^{\left(4-Np\right)t}\left(pe^t+1-p\right)^{N-4}\right)\nonumber\\
+  &=N^4p^4e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad-N^4p^4e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)\left(1-Np\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np\left(3N^2p^2-3Np+1\right)\left(N-1\right)pe^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)\left(2-Np\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+3Np^2\left(N-1\right)\left(1-Np\right)\left(N-2\right)pe^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(3-Np\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(N-3\right)pe^{\left(4-Np\right)t}\left(pe^t+1-p\right)^{N-4}\nonumber\\
+  &=N^4p^4e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+\left(Np\left(3N^2p^2-3Np+1\right)\left(1-Np\right)-N^4p^4\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+\left(Np\left(3N^2p^2-3Np+1\right)\left(N-1\right)p+3Np^2\left(N-1\right)\left(1-Np\right)\left(2-Np\right)\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+\left(3Np^2\left(N-1\right)\left(1-Np\right)\left(N-2\right)p+Np^3\left(N-1\right)\left(N-2\right)\left(3-Np\right)\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(N-3\right)pe^{\left(4-Np\right)t}\left(pe^t+1-p\right)^{N-4}\nonumber\\
  \end{align}
  \begin{align}
-  &=N^4p_1^4e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(\left(3N^2p_1^2-3Np_1+1\right)\left(1-Np_1\right)-N^3p_1^3\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+N\left(N-1\right)p_1^2\left(\left(3N^2p_1^2-3Np_1+1\right)+3\left(1-Np_1\right)\left(2-Np_1\right)\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+N\left(N-1\right)\left(N-2\right)p_1^3\left(3\left(1-Np_1\right)+\left(3-Np_1\right)\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(N-3\right)p_1e^{\left(4-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-4}\nonumber\\
-  &=N^4p_1^4e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(-3N^3p_1^3+6N^2p_1^2-4Np_1+1-N^3p_1^3\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+N\left(N-1\right)p_1^2\left(3N^2p_1^2-3Np_1+1+3N^2p_1^2-9Np_1+6\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+N\left(N-1\right)\left(N-2\right)p_1^3\left(-4Np_1+6\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(N-3\right)p_1e^{\left(4-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-4}\nonumber\\
-  &=N^4p_1^4e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(-4N^3p_1^3+6N^2p_1^2-4Np_1+1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\left(6N^2p_1^2-12Np_1+7\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(-4Np_1+6\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &\quad+Np_1^4\left(N-1\right)\left(N-2\right)\left(N-3\right)e^{\left(4-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-4}\nonumber\\
-  &=N^4p_1^4e^{-Np_1t}\left(p_1e^t+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(2Np_1-1\right)\left(-2N^2p_1^2+2Np_1-1\right)e^{\left(1-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\left(6N^2p_1^2-12Np_1+7\right)e^{\left(2-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(-4Np_1+6\right)e^{\left(3-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-3}\nonumber\\
-  &\quad+Np_1^4\left(N-1\right)\left(N-2\right)\left(N-3\right)e^{\left(4-Np_1\right)t}\left(p_1e^t+1-p_1\right)^{N-4}\nonumber\\
+  &=N^4p^4e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+Np\left(\left(3N^2p^2-3Np+1\right)\left(1-Np\right)-N^3p^3\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+N\left(N-1\right)p^2\left(\left(3N^2p^2-3Np+1\right)+3\left(1-Np\right)\left(2-Np\right)\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+N\left(N-1\right)\left(N-2\right)p^3\left(3\left(1-Np\right)+\left(3-Np\right)\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(N-3\right)pe^{\left(4-Np\right)t}\left(pe^t+1-p\right)^{N-4}\nonumber\\
+  &=N^4p^4e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+Np\left(-3N^3p^3+6N^2p^2-4Np+1-N^3p^3\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+N\left(N-1\right)p^2\left(3N^2p^2-3Np+1+3N^2p^2-9Np+6\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+N\left(N-1\right)\left(N-2\right)p^3\left(-4Np+6\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(N-3\right)pe^{\left(4-Np\right)t}\left(pe^t+1-p\right)^{N-4}\nonumber\\
+  &=N^4p^4e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+Np\left(-4N^3p^3+6N^2p^2-4Np+1\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)\left(6N^2p^2-12Np+7\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(-4Np+6\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &\quad+Np^4\left(N-1\right)\left(N-2\right)\left(N-3\right)e^{\left(4-Np\right)t}\left(pe^t+1-p\right)^{N-4}\nonumber\\
+  &=N^4p^4e^{-Npt}\left(pe^t+1-p\right)^N\nonumber\\
+  &\quad+Np\left(2Np-1\right)\left(-2N^2p^2+2Np-1\right)e^{\left(1-Np\right)t}\left(pe^t+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)\left(6N^2p^2-12Np+7\right)e^{\left(2-Np\right)t}\left(pe^t+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(-4Np+6\right)e^{\left(3-Np\right)t}\left(pe^t+1-p\right)^{N-3}\nonumber\\
+  &\quad+Np^4\left(N-1\right)\left(N-2\right)\left(N-3\right)e^{\left(4-Np\right)t}\left(pe^t+1-p\right)^{N-4}\nonumber\\
  \end{align}
  \begin{align}
-  M_{X-E\left(X\right)}^{\left(4\right)}\left(0\right)&=N^4p_1^4e^{-Np_10}\left(p_1e^0+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(2Np_1-1\right)\left(-2N^2p_1^2+2Np_1-1\right)e^{\left(1-Np_1\right)0}\left(p_1e^0+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\left(6N^2p_1^2-12Np_1+7\right)e^{\left(2-Np_1\right)0}\left(p_1e^0+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(-4Np_1+6\right)e^{\left(3-Np_1\right)0}\left(p_1e^0+1-p_1\right)^{N-3}\nonumber\\
-  &\quad+Np_1^4\left(N-1\right)\left(N-2\right)\left(N-3\right)e^{\left(4-Np_1\right)0}\left(p_1e^0+1-p_1\right)^{N-4}\nonumber\\
-  &=N^4p_1^4\left(p_1+1-p_1\right)^N\nonumber\\
-  &\quad+Np_1\left(2Np_1-1\right)\left(-2N^2p_1^2+2Np_1-1\right)\left(p_1+1-p_1\right)^{N-1}\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\left(6N^2p_1^2-12Np_1+7\right)\left(p_1+1-p_1\right)^{N-2}\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(-4Np_1+6\right)\left(p_1+1-p_1\right)^{N-3}\nonumber\\
-  &\quad+Np_1^4\left(N-1\right)\left(N-2\right)\left(N-3\right)\left(p_1+1-p_1\right)^{N-4}\nonumber\\
-  &=N^4p_1^4\nonumber\\
-  &\quad+Np_1\left(2Np_1-1\right)\left(-2N^2p_1^2+2Np_1-1\right)\nonumber\\
-  &\quad+Np_1^2\left(N-1\right)\left(6N^2p_1^2-12Np_1+7\right)\nonumber\\
-  &\quad+Np_1^3\left(N-1\right)\left(N-2\right)\left(-4Np_1+6\right)\nonumber\\
-  &\quad+Np_1^4\left(N-1\right)\left(N-2\right)\left(N-3\right)\nonumber\\
-  &=N^4p_1^4\nonumber\\
-  &\quad-4N^4p_1^4+6N^3p_1^3-4N^2p_1^2+Np_1\nonumber\\
-  &\quad+6N^4p_1^4-12N^3p_1^3+7N^2p_1^2-6N^3p_1^4+12N^2p_1^3-7Np_1^2\nonumber\\
-  &\quad-4N^4p_1^4+6N^3p_1^3+12N^3p_1^4-18N^2p_1^3-8N^2p_1^4+12Np_1^3\nonumber\\
-  &\quad+N^4p_1^4-6N^3p_1^4+11N^2p_1^4-6Np_1^4\nonumber\\
-  &=3N^2p_1^2+Np_1-6N^2p_1^3-7Np_1^2+3N^2p_1^4+12Np_1^3-6Np_1^4\nonumber\\
-  &=-6Np_1^4+12Np_1^3-7Np_1^2+Np_1
+  M_{X-E\left(X\right)}^{\left(4\right)}\left(0\right)&=N^4p^4e^{-Np0}\left(pe^0+1-p\right)^N\nonumber\\
+  &\quad+Np\left(2Np-1\right)\left(-2N^2p^2+2Np-1\right)e^{\left(1-Np\right)0}\left(pe^0+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)\left(6N^2p^2-12Np+7\right)e^{\left(2-Np\right)0}\left(pe^0+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(-4Np+6\right)e^{\left(3-Np\right)0}\left(pe^0+1-p\right)^{N-3}\nonumber\\
+  &\quad+Np^4\left(N-1\right)\left(N-2\right)\left(N-3\right)e^{\left(4-Np\right)0}\left(pe^0+1-p\right)^{N-4}\nonumber\\
+  &=N^4p^4\left(p+1-p\right)^N\nonumber\\
+  &\quad+Np\left(2Np-1\right)\left(-2N^2p^2+2Np-1\right)\left(p+1-p\right)^{N-1}\nonumber\\
+  &\quad+Np^2\left(N-1\right)\left(6N^2p^2-12Np+7\right)\left(p+1-p\right)^{N-2}\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(-4Np+6\right)\left(p+1-p\right)^{N-3}\nonumber\\
+  &\quad+Np^4\left(N-1\right)\left(N-2\right)\left(N-3\right)\left(p+1-p\right)^{N-4}\nonumber\\
+  &=N^4p^4\nonumber\\
+  &\quad+Np\left(2Np-1\right)\left(-2N^2p^2+2Np-1\right)\nonumber\\
+  &\quad+Np^2\left(N-1\right)\left(6N^2p^2-12Np+7\right)\nonumber\\
+  &\quad+Np^3\left(N-1\right)\left(N-2\right)\left(-4Np+6\right)\nonumber\\
+  &\quad+Np^4\left(N-1\right)\left(N-2\right)\left(N-3\right)\nonumber\\
+  &=N^4p^4\nonumber\\
+  &\quad-4N^4p^4+6N^3p^3-4N^2p^2+Np\nonumber\\
+  &\quad+6N^4p^4-12N^3p^3+7N^2p^2-6N^3p^4+12N^2p^3-7Np^2\nonumber\\
+  &\quad-4N^4p^4+6N^3p^3+12N^3p^4-18N^2p^3-8N^2p^4+12Np^3\nonumber\\
+  &\quad+N^4p^4-6N^3p^4+11N^2p^4-6Np^4\nonumber\\
+  &=3N^2p^2+Np-6N^2p^3-7Np^2+3N^2p^4+12Np^3-6Np^4\nonumber\\
+  &=-6Np^4+12Np^3-7Np^2+Np
  \end{align}
  \subsection{歪度}
  \begin{align}
   S\left(X\right)&=\frac{M_{X-E\left(X\right)}^{\left(3\right)}\left(0\right)}{\sigma\left(X\right)^3}\nonumber\\
-  &=\frac{Np_1\left(1-p_1\right)\left(1-2p_1\right)}{\sqrt{Np_1\left(1-p_1\right)}^3}\nonumber\\
-  &=\frac{Np_1\left(1-p_1\right)\left(1-2p_1\right)}{Np_1\left(1-p_1\right)\sqrt{Np_1\left(1-p_1\right)}}\nonumber\\
-  &=\frac{1-2p_1}{\sqrt{Np_1\left(1-p_1\right)}}\nonumber\\
+  &=\frac{Np\left(1-p\right)\left(1-2p\right)}{\sqrt{Np\left(1-p\right)}^3}\nonumber\\
+  &=\frac{Np\left(1-p\right)\left(1-2p\right)}{Np\left(1-p\right)\sqrt{Np\left(1-p\right)}}\nonumber\\
+  &=\frac{1-2p}{\sqrt{Np\left(1-p\right)}}\nonumber\\
  \end{align}
  \subsection{尖度}
  \subsection{エントロピー}
