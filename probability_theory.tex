@@ -671,8 +671,6 @@ $K_X$のマクローリン展開
   K_X\left(t\right)&=\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}
  \end{align}
 における$K_X^{\left(k\right)}\left(0\right)$を確率変数$X$の$k$次キュムラントという．
- \subsection{確率変数の一次式のキュムラント母関数}
- \subsection{互いに独立な確率変数の和のキュムラント母関数}
  \subsection{Bellの多項式}
 集合
  \begin{align}
@@ -1095,6 +1093,21 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)-3V\left(X\right)^2}{V\left(X\right)^2}\nonumber\\
   &=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}\nonumber\\
  \end{align}
+ \subsection{確率変数の一次式のキュムラント母関数}
+確率変数$X$の一次式$aX+b$のキュムラント母関数$K_{aX+b}\left(t\right)$は，
+ \begin{align}
+  K_{aX+b}\left(t\right)&=bt+K_X\left(at\right)
+ \end{align}
+である．
+ \subsubsection{証明}
+式(\ref{LinearMomentGeneratingFunction})より，
+ \begin{align}
+  K_{aX+b}\left(t\right)&=\log M_{aX+b}\left(t\right)\nonumber\\
+  &=\log\left(e^{bt}M_X\left(at\right)\right)\nonumber\\
+  &=\log e^{bt}+\log M_X\left(at\right)\nonumber\\
+  &=bt+K_X\left(at\right)\nonumber\\
+ \end{align}
+ \subsection{互いに独立な確率変数の和のキュムラント母関数}
  \section{ベルヌーイ分布}
 $\{0,1\}$を標本空間とし，確率質量関数を
  \begin{align}
