@@ -1183,13 +1183,16 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   &=-\left(1-p\right)\log_2\left(1-p\right)-p\log_2p\nonumber\\
  \end{align}
  \section{二項分布}
-ベルヌーイ分布に従う互いに独立な$N$個の確率変数$X_0,\cdots,X_{N-1}$の和
+ベルヌーイ分布に従う互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和
  \begin{align}
-  X&=\sum_{n=0}^{N-1} X_n
+  X&=\sum_{n=1}^NX_n
  \end{align}
-を二項分布といい，その標本空間は$S=\{0,\cdots,N\}$であり，その確率質量関数は
+を二項分布といい，その標本空間は$S=\{0,\cdots,N\}$である．
+$X$の確率質量関数$p$について考えよう．
+$X$の値が$n$になるということは，$X_1,\cdots,X_N$のうち$n$個が$1$となり，$N-n$個が0になるということだ．
+$N$個の中から$n$個選ぶ場合の数は$\binom{N}{n}$で，選ばれた$n$個が全て$1$になる確率は$p_n$，残りの$N-n$個が全て$0$になる確率は$\left(1-p\right)^{N-n}$であるから，$X=n$となる確率は，
  \begin{align}
-  p\left(n\right)&={}_NC_np^n\left(1-p\right)^{N-n}
+  p\left(n\right)&=\binom{N}{n}p^n\left(1-p\right)^{N-n}
  \end{align}
 である．
 \end{document}
