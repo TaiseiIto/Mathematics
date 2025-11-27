@@ -590,7 +590,7 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
   &=e^{bt}M_X\left(at\right)\nonumber\\
  \end{align}
  \subsection{互いに独立な確率変数の和の積率母関数}
-互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$の積率母関数$M_X$は，
+互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$の積率母関数$M_X\left(t\right)$は，
  \begin{align}
   M_X\left(t\right)&=\prod_{n=1}^NM_{X_n}\left(t\right)\label{SummationMomentGeneratingFunction}
  \end{align}
@@ -1108,6 +1108,19 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=bt+K_X\left(at\right)\nonumber\\
  \end{align}
  \subsection{互いに独立な確率変数の和のキュムラント母関数}
+互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$のキュムラント母関数$K_X\left(t\right)$は，
+ \begin{align}
+  K_X\left(t\right)&=\sum_{n=1}^NK_{X_n}\left(t\right)\label{SummationCumulantGeneratingFunction}
+ \end{align}
+である．
+ \subsubsection{証明}
+式(\ref{SummationMomentGeneratingFunction})より，
+ \begin{align}
+  K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
+  &=\log\prod_{n=1}^NM_{X_n}\left(t\right)\nonumber\\
+  &=\sum_{n=1}^N\log M_{X_n}\left(t\right)\nonumber\\
+  &=\sum_{n=1}^NK_{X_n}\left(t\right)\nonumber\\
+ \end{align}
  \section{ベルヌーイ分布}
 $\{0,1\}$を標本空間とし，確率質量関数を
  \begin{align}
