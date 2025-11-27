@@ -1231,31 +1231,36 @@ $N$個の中から$n$個選ぶ場合の数は$\binom{N}{n}$で，選ばれた$n$
  \end{align}
 である．
  \subsection{確率母関数}
+$X_1,\cdots,X_N$は互いに独立なので，
  \begin{align}
-  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
-  &=\sum_{n=0}^Np\left(n\right)t^n\nonumber\\
-  &=\sum_{n=0}^N\binom{N}{n}p^n\left(1-p\right)^{N-n}t^n\nonumber\\
-  &=\sum_{n=0}^N\binom{N}{n}\left(pt\right)^n\left(1-p\right)^{N-n}\nonumber\\
+  G_X\left(t\right)&=G_{\sum_{n=1}^NX_n}\left(t\right)\nonumber\\
+  &=\prod_{n=1}^NG_{X_n}\left(t\right)\nonumber\\
+  &=\prod_{n=1}^N\left(pt+1-p\right)\nonumber\\
   &=\left(pt+1-p\right)^N
  \end{align}
  \subsection{積率母関数}
+$X_1,\cdots,X_N$は互いに独立なので，
  \begin{align}
-  M_X\left(t\right)&=E\left(e^{tX}\right)\nonumber\\
-  &=\sum_{n=0}^Np\left(n\right)e^{tn}\nonumber\\
-  &=\sum_{n=0}^N\binom{N}{n}p^n\left(1-p\right)^{N-n}e^{tn}\nonumber\\
-  &=\sum_{n=0}^N\binom{N}{n}\left(pe^t\right)^n\left(1-p\right)^{N-n}\nonumber\\
+  M_X\left(t\right)&=M_{\sum_{n=1}^NX_n}\left(t\right)\nonumber\\
+  &=\prod_{n=1}^NM_{X_n}\left(t\right)\nonumber\\
+  &=\prod_{n=1}^N\left(pe^t+1-p\right)\nonumber\\
   &=\left(pe^t+1-p\right)^N
  \end{align}
  \subsection{特性関数}
+$X_1,\cdots,X_N$は互いに独立なので，
  \begin{align}
-  \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
+  \phi_X\left(t\right)&=\phi_{\sum_{n=1}^NX_n}\left(t\right)\nonumber\\
+  &=\prod_{n=1}^N\phi_{X_n}\left(t\right)\nonumber\\
+  &=\prod_{n=1}^N\left(pe^{it}+1-p\right)\nonumber\\
   &=\left(pe^{it}+1-p\right)^N
  \end{align}
  \subsection{キュムラント母関数}
+$X_1,\cdots,X_N$は互いに独立なので，
  \begin{align}
-  K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
-  &=\log\left(pe^t+1-p\right)^N\nonumber\\
-  &=N\log\left(pe^t+1-p\right)\nonumber\\
+  K_X\left(t\right)&=K_{\sum_{n=1}^NX_n}\left(t\right)\nonumber\\
+  &=\sum_{n=1}^NK_{X_n}\left(t\right)\nonumber\\
+  &=\sum_{n=1}^N\log\left(pe^t+1-p\right)\nonumber\\
+  &=N\log\left(pe^t+1-p\right)
  \end{align}
 \end{document}
 
