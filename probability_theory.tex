@@ -1213,34 +1213,10 @@ $\{0,1\}$を標本空間とし，確率質量関数を
  \end{align}
  \subsection{エントロピー}
  \begin{align}
-  H&=-\log_2p\left(X\right)
- \end{align}
-とすると，その積率母関数$M_H\left(t\right)$は，
- \begin{align}
-  M_H\left(t\right)&=E\left(e^{tH}\right)\nonumber\\
-  &=E\left(e^{-t\log_2p\left(X\right)}\right)\nonumber\\
-  &=E\left(\left(2^{\log_2e}\right)^{-t\log_2p\left(X\right)}\right)\nonumber\\
-  &=E\left(2^{-t\left(\log_2e\right)\log_2p\left(X\right)}\right)\nonumber\\
-  &=E\left(2^{\log_2p\left(X\right)^{-t\log_2e}}\right)\nonumber\\
-  &=E\left(p\left(X\right)^{-t\log_2e}\right)\nonumber\\
-  &=\left(1-p\right)^{-t\log_2e}\left(1-p\right)+p^{-t\log_2e}p\nonumber\\
-  &=\left(1-p\right)^{1-t\log_2e}+p^{1-t\log_2e}\nonumber\\
-  M_H^{\left(1\right)}\left(t\right)&=\frac{d}{dt}\left(\left(1-p\right)^{1-t\log_2e}+p^{1-t\log_2e}\right)\nonumber\\
-  &=\frac{d}{dt}\left(1-p\right)^{1-t\log_2e}+\frac{d}{dt}p^{1-t\log_2e}\nonumber\\
-  &=\frac{d}{dt}\left(e^{\log\left(1-p\right)}\right)^{1-t\log_2e}+\frac{d}{dt}\left(e^{\log p}\right)^{1-t\log_2e}\nonumber\\
-  &=\frac{d}{dt}e^{\left(\log\left(1-p\right)\right)\left(1-t\log_2e\right)}+\frac{d}{dt}e^{\left(\log p\right)\left(1-t\log_2e\right)}\nonumber\\
-  &=\frac{d}{dt}e^{\left(\log\left(1-p\right)\right)-\left(\log_2e\right)\left(\log\left(1-p\right)\right)t}+\frac{d}{dt}e^{\left(\log p\right)-\left(\log_2e\right)\left(\log p\right)t}\nonumber\\
-  &=\frac{d}{dt}e^{\left(\log\left(1-p\right)\right)-\left(\log_2\left(1-p\right)\right)t}+\frac{d}{dt}e^{\left(\log p\right)-\left(\log_2p\right)t}\nonumber\\
-  &=-\left(\log_2\left(1-p\right)\right)e^{\left(\log\left(1-p\right)\right)-\left(\log_2\left(1-p\right)\right)t}-\left(\log_2p\right)e^{\left(\log p\right)-\left(\log_2p\right)t}\nonumber\\
-  M_H^{\left(1\right)}\left(0\right)&=-\left(\log_2\left(1-p\right)\right)e^{\left(\log\left(1-p\right)\right)}-\left(\log_2p\right)e^{\left(\log p\right)}\nonumber\\
-  &=-\left(\log_2\left(1-p\right)\right)\left(1-p\right)-\left(\log_2p\right)p\nonumber\\
-  &=-\log_2\left(1-p\right)^{1-p}-\left(\log_2p^p\right)\nonumber\\
-  &=-\left(\log_2\left(1-p\right)^{1-p}+\left(\log_2p^p\right)\right)\nonumber\\
-  &=-\log_2\left(\left(1-p\right)^{1-p}p^p\right)
- \end{align}
-よってエントロピー$H\left(X\right)$は，
- \begin{align}
-  H\left(X\right)&=-\log_2\left(\left(1-p\right)^{1-p}p^p\right)
+  H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)\nonumber\\
+  &=-\left(1-p\right)\log_2\left(1-p\right)-p\log_2p\nonumber\\
+  &=-\log_2\left(1-p\right)^{1-p}-\log_2p^p\nonumber\\
+  &=-\log_2\left(1-p\right)^{1-p}p^p\nonumber\\
  \end{align}
  \section{二項分布}
 ベルヌーイ分布に従う互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和
@@ -1369,6 +1345,14 @@ $X_1,\cdots,X_N$は互いに独立なので，
   K\left(X\right)&=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}\nonumber\\
   &=\frac{Np\left(1-p\right)\left(1-6p\left(1-p\right)\right)}{\left(Np\left(1-p\right)\right)^2}\nonumber\\
   &=\frac{1-6p\left(1-p\right)}{Np\left(1-p\right)}\nonumber\\
+ \end{align}
+ \subsection{エントロピー}
+ \begin{align}
+  H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)\nonumber\\
+  &=-\sum_{n=0}^Np\left(n\right)\log_2p\left(n\right)\nonumber\\
+  &=-\sum_{n=0}^N\log_2p\left(n\right)^{p\left(n\right)}\nonumber\\
+  &=-\log_2\prod_{n=0}^Np\left(n\right)^{p\left(n\right)}\nonumber\\
+  &=-\log_2\prod_{n=0}^N\left(\binom{N}{n}p^n\left(1-p\right)^{N-n}\right)^{\binom{N}{n}p^n\left(1-p\right)^{N-n}}
  \end{align}
 \end{document}
 
