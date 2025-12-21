@@ -1216,6 +1216,9 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)\nonumber\\
   &=\left(1-p\right)\left(-\log_2\left(1-p\right)\right)+p\left(-\log_2p\right)\nonumber\\
   &=-\left(1-p\right)\log_2\left(1-p\right)-p\log_2p\nonumber\\
+  &=-\log_2\left(1-p\right)^{\left(1-p\right)}-\log_2p^p\nonumber\\
+  &=-\left(\log_2\left(1-p\right)^{\left(1-p\right)}+\log_2p^p\right)\nonumber\\
+  &=-\log_2\left(1-p\right)^{\left(1-p\right)}p^p
  \end{align}
  \section{二項分布}
 ベルヌーイ分布に従う互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和
