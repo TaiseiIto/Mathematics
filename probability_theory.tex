@@ -1133,9 +1133,26 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \end{align}
 とする離散確率変数$X$の分布を離散一様分布という．
  \subsection{確率母関数}
+ \begin{align}
+  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+  &=\sum_{x\in S\left(X\right)}t^xp\left(x\right)\nonumber\\
+  &=\sum_{x=a}^b\frac{t^x}{n}
+ \end{align}
  \subsection{積率母関数}
+ \begin{align}
+  M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
+  &=\sum_{x=a}^b\frac{e^{tx}}{n}
+ \end{align}
  \subsection{特性関数}
+ \begin{align}
+  \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
+  &=\sum_{x=a}^b\frac{e^{itx}}{n}
+ \end{align}
  \subsection{キュムラント母関数}
+ \begin{align}
+  K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
+  &=\log\sum_{x=a}^b\frac{e^{tx}}{n}
+ \end{align}
  \subsection{平均}
  \subsection{分散}
  \subsection{標準偏差}
