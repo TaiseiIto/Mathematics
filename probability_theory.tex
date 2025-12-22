@@ -1141,7 +1141,11 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \subsection{積率母関数}
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
-  &=\sum_{x=a}^b\frac{e^{tx}}{n}
+  &=\sum_{x=a}^b\frac{e^{tx}}{n}\\
+  M_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}\sum_{x=a}^b\frac{e^{tx}}{n}\nonumber\\
+  &=\sum_{x=a}^b\frac{d}{dt}\frac{e^{tx}}{n}\nonumber\\
+  &=\sum_{x=a}^b\frac{1}{n}\frac{de^{tx}}{dt}\nonumber\\
+  &=\sum_{x=a}^b\frac{xe^{tx}}{n}
  \end{align}
  \subsection{特性関数}
  \begin{align}
@@ -1154,6 +1158,13 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=\log\sum_{x=a}^b\frac{e^{tx}}{n}
  \end{align}
  \subsection{平均}
+ \begin{align}
+  E\left(X\right)&=M_X^{\left(1\right)}\left(0\right)\nonumber\\
+  &=\sum_{x=a}^b\frac{x}{n}\nonumber\\
+  &=\frac{1}{n}\sum_{x=a}^bx\nonumber\\
+  &=\frac{1}{n}\frac{n\left(a+b\right)}{2}\nonumber\\
+  &=\frac{a+b}{2}
+ \end{align}
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
