@@ -1132,7 +1132,27 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   \forall x\in S\left(X\right),p\left(x\right)=\frac{1}{n}
  \end{align}
 とする離散確率変数$X$の分布を離散一様分布という．
+ \subsection{確率母関数}
+ \subsection{積率母関数}
+ \subsection{特性関数}
+ \subsection{キュムラント母関数}
+ \subsection{平均}
+ \subsection{分散}
+ \subsection{標準偏差}
+ \subsection{歪度}
+ \subsection{尖度}
+ \subsection{エントロピー}
  \section{連続一様分布}
+ \subsection{確率母関数}
+ \subsection{積率母関数}
+ \subsection{特性関数}
+ \subsection{キュムラント母関数}
+ \subsection{平均}
+ \subsection{分散}
+ \subsection{標準偏差}
+ \subsection{歪度}
+ \subsection{尖度}
+ \subsection{エントロピー}
  \section{ベルヌーイ分布}
 $\{0,1\}$を標本空間とし，確率質量関数を
  \begin{align}
@@ -1144,22 +1164,19 @@ $\{0,1\}$を標本空間とし，確率質量関数を
  \end{align}
 とする離散確率分布をベルヌーイ分布という．
 ただし，$0\le p\le 1$である．
- \subsection{積率母関数}
- \begin{align}
-  M_X\left(t\right)&=E\left(e^{tX}\right)\nonumber\\
-  &=e^{t0}\left(1-p\right)+e^{t1}p\nonumber\\
-  &=e^0\left(1-p\right)+e^tp\nonumber\\
-  &=\left(1-p\right)+e^tp\nonumber\\
-  &=pe^t+1-p\\
-  M_X^{\left(1\right)}\left(t\right)&=pe^t\\
-  M_X^{\left(2\right)}\left(t\right)&=pe^t
- \end{align}
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
   &=\left(1-p\right)t^0+pt^1\nonumber\\
   &=\left(1-p\right)+pt\nonumber\\
   &=pt+1-p
+ \end{align}
+ \subsection{積率母関数}
+ \begin{align}
+  M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
+  &=pe^t+1-p\\
+  M_X^{\left(1\right)}\left(t\right)&=pe^t\\
+  M_X^{\left(2\right)}\left(t\right)&=pe^t
  \end{align}
  \subsection{特性関数}
  \begin{align}
@@ -1368,13 +1385,63 @@ $X_1,\cdots,X_N$は互いに独立なので，
  \end{align}
  \section{幾何分布}
 幾何分布は，ベルヌーイ思考を繰り返して初めて成功するまでの試行回数が従う分布である．
+ \subsection{確率母関数}
+ \subsection{積率母関数}
+ \subsection{特性関数}
+ \subsection{キュムラント母関数}
+ \subsection{平均}
+ \subsection{分散}
+ \subsection{標準偏差}
+ \subsection{歪度}
+ \subsection{尖度}
+ \subsection{エントロピー}
  \section{ポアソン分布}
 ポアソン分布は，二項分布の拡張である．
+ \subsection{確率母関数}
+ \subsection{積率母関数}
+ \subsection{特性関数}
+ \subsection{キュムラント母関数}
+ \subsection{平均}
+ \subsection{分散}
+ \subsection{標準偏差}
+ \subsection{歪度}
+ \subsection{尖度}
+ \subsection{エントロピー}
  \section{指数分布}
 指数分布は，ポアソン過程における事象発生の時間間隔を表す．
+ \subsection{確率母関数}
+ \subsection{積率母関数}
+ \subsection{特性関数}
+ \subsection{キュムラント母関数}
+ \subsection{平均}
+ \subsection{分散}
+ \subsection{標準偏差}
+ \subsection{歪度}
+ \subsection{尖度}
+ \subsection{エントロピー}
  \section{正規分布}
 正規分布は，ポアソン分布の拡張である．
+ \subsection{確率母関数}
+ \subsection{積率母関数}
+ \subsection{特性関数}
+ \subsection{キュムラント母関数}
+ \subsection{平均}
+ \subsection{分散}
+ \subsection{標準偏差}
+ \subsection{歪度}
+ \subsection{尖度}
+ \subsection{エントロピー}
  \section{$\chi^2$分布}
 $\chi^2$分布は，独立に正規分布に従う確率変数の二乗の和である．
+ \subsection{確率母関数}
+ \subsection{積率母関数}
+ \subsection{特性関数}
+ \subsection{キュムラント母関数}
+ \subsection{平均}
+ \subsection{分散}
+ \subsection{標準偏差}
+ \subsection{歪度}
+ \subsection{尖度}
+ \subsection{エントロピー}
 \end{document}
 
