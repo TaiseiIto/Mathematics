@@ -1159,6 +1159,17 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \end{align}
  \subsection{平均}
  \subsubsection{パスカルの三角形}
+ \begin{align}
+  \binom{n+1}{m+1}&=\binom{n}{m}+\binom{n}{m+1}
+ \end{align}
+証明
+ \begin{align}
+  \binom{n}{m}+\binom{n}{m+1}&=\frac{n!}{m!\left(n-m\right)!}+\frac{n!}{\left(m+1\right)!\left(n-m-1\right)!}\nonumber\\
+  &=\frac{n!\left(m+1\right)+n!\left(n-m\right)}{\left(m+1\right)!\left(n-m\right)!}\nonumber\\
+  &=\frac{n!\left(n+1\right)}{\left(m+1\right)!\left(n-m\right)!}\nonumber\\
+  &=\frac{\left(n+1\right)!}{\left(m+1\right)!\left(n-m\right)!}\nonumber\\
+  &=\binom{n+1}{m+1}
+ \end{align}
  \subsubsection{二項展開}
  \begin{align}
   \forall \left(a,b,n\right)\in\mathbb{Z}\times\mathbb{Z}\times\mathbb{N}_0,\left(a+b\right)^n&=\sum_{m=0}^n\binom{n}{m}a^mb^{n-m}
