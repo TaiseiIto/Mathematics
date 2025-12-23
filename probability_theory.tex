@@ -1147,7 +1147,8 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   M_X^{\left(m\right)}\left(t\right)&=\frac{d^m}{dt^m}\frac{1}{n}\sum_{x=1}^ne^{tx}\nonumber\\
   &=\frac{1}{n}\sum_{x=1}^n\frac{d^me^{tx}}{dt^m}\nonumber\\
   &=\frac{1}{n}\sum_{x=1}^nx^me^{tx}\\
-  M_X^{\left(m\right)}\left(0\right)&=\frac{1}{n}\sum_{x=1}^nx^m
+  M_X^{\left(m\right)}\left(0\right)&=\frac{1}{n}\sum_{x=1}^nx^m\nonumber\\
+  E\left(X^m\right)&=\frac{1}{n}\sum_{x=1}^nx^m
  \end{align}
  \subsection{特性関数}
  \begin{align}
@@ -1210,8 +1211,7 @@ $n=0$のとき，式は成立する．
  \end{align}
  \subsubsection{本証明}
  \begin{align}
-  E\left(X\right)&=M_X^{\left(1\right)}\left(0\right)\nonumber\\
-  &=\frac{1}{n}\sum_{x=1}^nx\nonumber\\
+  E\left(X\right)&=\frac{1}{n}\sum_{x=1}^nx\nonumber\\
   &=\frac{1}{n}\frac{1}{2}n\left(n+1\right)\nonumber\\
   &=\frac{n+1}{2}\nonumber\\
  \end{align}
@@ -1252,12 +1252,14 @@ $n=0$のとき，式は成立する．
   M_{X-E\left(X\right)}\left(t\right)&=G_{X-E\left(X\right)}\left(e^t\right)\nonumber\\
   &=G_{X-\frac{n+1}{2}}\left(e^t\right)\nonumber\\
   &=E\left(e^{\left(X-\frac{n+1}{2}\right)t}\right)\nonumber\\
-  &=E\left(e^{Xt-\frac{n+1}{2}t}\right)\nonumber\\
-  &=E\left(e^{Xt}e^{-\frac{n+1}{2}t}\right)\nonumber\\
-  &=e^{-\frac{n+1}{2}t}E\left(e^{Xt}\right)\nonumber\\
-  &=e^{-\frac{n+1}{2}t}\sum_{x=1}^1p\left(x\right)e^{xt}\nonumber\\
-  &=e^{-\frac{n+1}{2}t}\sum_{x=1}^1\frac{1}{n}e^{xt}\nonumber\\
-  &=\frac{1}{n}e^{-\frac{n+1}{2}t}\sum_{x=1}^1e^{xt}\nonumber\\
+  &=\sum_{x=1}^np\left(x\right)e^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
+  &=\sum_{x=1}^n\frac{1}{n}e^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
+  &=\frac{1}{n}\sum_{x=1}^ne^{\left(x-\frac{n+1}{2}\right)t}\\
+  M_{X-E\left(X\right)}^{\left(m\right)}\left(t\right)&=\frac{d^m}{dt^m}\frac{1}{n}\sum_{x=1}^ne^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
+  &=\frac{1}{n}\sum_{x=1}^n\frac{d^m}{dt^m}e^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
+  &=\frac{1}{n}\sum_{x=1}^n\left(x-\frac{n+1}{2}\right)^me^{\left(x-\frac{n+1}{2}\right)t}\\
+  M_{X-E\left(X\right)}^{\left(m\right)}\left(0\right)&=\frac{1}{n}\sum_{x=1}^n\left(x-\frac{n+1}{2}\right)^m\\
+  E\left(\left(X-E\left(X\right)\right)^m\right)&=\frac{1}{n}\sum_{x=1}^n\left(x-\frac{n+1}{2}\right)^m\\
  \end{align}
  \subsection{歪度}
  \subsection{尖度}
