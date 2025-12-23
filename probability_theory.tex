@@ -1272,10 +1272,18 @@ $n=0$のとき，式は成立する．
   \left(n+1\right)^4-1&=4\left(\sum_{x=1}^nx^3\right)+\left(2n^3+3n^2+n\right)+\left(2n^2+2n\right)+n\nonumber\\
   n^4+4n^3+6n^2+4n&=4\left(\sum_{x=1}^nx^3\right)+2n^3+5n^2+4n\nonumber\\
   4\left(\sum_{x=1}^nx^3\right)&=n^4+2n^3+n^2\nonumber\\
-  \sum_{x=1}^nx^3&=\frac{n^2\left(n+1\right)^2}{4}\nonumber\\
+  \sum_{x=1}^nx^3&=\frac{n^2\left(n+1\right)^2}{4}
  \end{align}
  \subsection{尖度}
  \subsubsection{自然数の4乗の和}
+ \begin{align}
+  \left(x+1\right)^5&=x^5+5x^4+10x^3+10x^2+5x+1\nonumber\\
+  \left(x+1\right)^5-x^5&=5x^4+10x^3+10x^2+5x+1\nonumber\\
+  \sum_{x=1}^n\left(\left(x+1\right)^5-x^5\right)&=\sum_{x=1}^n\left(5x^4+10x^3+10x^2+5x+1\right)\nonumber\\
+  \left(\sum_{x=1}^n\left(x+1\right)^5\right)-\left(\sum_{x=1}^nx^5\right)&=\left(\sum_{x=1}^n5x^4\right)+\left(\sum_{x=1}^n10x^3\right)+\left(\sum_{x=1}^n10x^2\right)+\left(\sum_{x=1}^n5x\right)+\left(\sum_{x=1}^n1\right)\nonumber\\
+  \left(\sum_{x=2}^{n+1}x^5\right)-\left(\sum_{x=1}^nx^5\right)&=5\left(\sum_{x=1}^nx^4\right)+10\left(\sum_{x=1}^nx^3\right)+10\left(\sum_{x=1}^nx^2\right)+5\left(\sum_{x=1}^nx\right)+n\nonumber\\
+  \left(n+1\right)^5-1&=5\left(\sum_{x=1}^nx^4\right)+10\left(\frac{n^2\left(n+1\right)^2}{4}\right)+10\left(\frac{1}{6}n\left(n+1\right)\left(2n+1\right)\right)+5\left(\frac{1}{2}n\left(n+1\right)\right)+n\nonumber\\
+ \end{align}
  \subsection{エントロピー}
  \section{連続一様分布}
  \subsection{確率母関数}
