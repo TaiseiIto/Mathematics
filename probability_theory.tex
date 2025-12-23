@@ -1229,6 +1229,18 @@ $n=0$のとき，式は成立する．
   6\left(\sum_{x=1}^nx^2\right)&=n\left(n+1\right)\left(2n+1\right)\nonumber\\
   \sum_{x=1}^nx^2&=\frac{1}{6}n\left(n+1\right)\left(2n+1\right)
  \end{align}
+ \subsubsection{本証明}
+ \begin{align}
+  V\left(X\right)&=E\left(X^2\right)-E\left(X\right)^2\nonumber\\
+  &=M_X^{\left(2\right)}\left(0\right)-\left(\frac{n+1}{2}\right)^2\nonumber\\
+  &=\frac{1}{n}\sum_{x=1}^nx^2-\frac{\left(n+1\right)^2}{2^2}\nonumber\\
+  &=\frac{1}{n}\frac{1}{6}n\left(n+1\right)\left(2n+1\right)-\frac{n^2+2n+1}{4}\nonumber\\
+  &=\frac{1}{6}\left(2n^2+3n+1\right)-\frac{n^2+2n+1}{4}\nonumber\\
+  12V\left(X\right)&=2\left(2n^2+3n+1\right)-3\left(n^2+2n+1\right)\nonumber\\
+  &=4n^2+6n+2-3n^2-6n-3\nonumber\\
+  &=n^2-1\nonumber\\
+  V\left(X\right)&=\frac{n^2-1}{12}
+ \end{align}
  \subsection{標準偏差}
  \subsection{歪度}
  \subsection{尖度}
