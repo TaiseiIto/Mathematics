@@ -1142,6 +1142,7 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \subsection{積率母関数}
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
+  &=E\left(e^{tX}\right)\nonumber\\
   &=\frac{1}{n}\sum_{x=1}^ne^{tx}\\
   M_X^{\left(m\right)}\left(t\right)&=\frac{d^m}{dt^m}\frac{1}{n}\sum_{x=1}^ne^{tx}\nonumber\\
   &=\frac{1}{n}\sum_{x=1}^n\frac{d^me^{tx}}{dt^m}\nonumber\\
@@ -1242,6 +1243,22 @@ $n=0$のとき，式は成立する．
   V\left(X\right)&=\frac{n^2-1}{12}
  \end{align}
  \subsection{標準偏差}
+ \begin{align}
+  \sigma\left(X\right)&=\sqrt{V\left(X\right)}\nonumber\\
+  &=\sqrt{\frac{n^2-1}{12}}\nonumber\\
+ \end{align}
+ \subsection{平均周りの積率母関数}
+ \begin{align}
+  M_{X-E\left(X\right)}\left(t\right)&=G_{X-E\left(X\right)}\left(e^t\right)\nonumber\\
+  &=G_{X-\frac{n+1}{2}}\left(e^t\right)\nonumber\\
+  &=E\left(e^{\left(X-\frac{n+1}{2}\right)t}\right)\nonumber\\
+  &=E\left(e^{Xt-\frac{n+1}{2}t}\right)\nonumber\\
+  &=E\left(e^{Xt}e^{-\frac{n+1}{2}t}\right)\nonumber\\
+  &=e^{-\frac{n+1}{2}t}E\left(e^{Xt}\right)\nonumber\\
+  &=e^{-\frac{n+1}{2}t}\sum_{x=1}^1p\left(x\right)e^{xt}\nonumber\\
+  &=e^{-\frac{n+1}{2}t}\sum_{x=1}^1\frac{1}{n}e^{xt}\nonumber\\
+  &=\frac{1}{n}e^{-\frac{n+1}{2}t}\sum_{x=1}^1e^{xt}\nonumber\\
+ \end{align}
  \subsection{歪度}
  \subsection{尖度}
  \subsection{エントロピー}
