@@ -1143,10 +1143,10 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
   &=\frac{1}{n}\sum_{x=1}^ne^{tx}\\
-  M_X^{\left(n\right)}\left(t\right)&=\frac{d^n}{dt^n}\frac{1}{n}\sum_{x=1}^ne^{tx}\nonumber\\
-  &=\frac{1}{n}\sum_{x=1}^n\frac{d^ne^{tx}}{dt^n}\nonumber\\
-  &=\frac{1}{n}\sum_{x=1}^nx^ne^{tx}\\
-  M_X^{\left(n\right)}\left(0\right)&=\frac{1}{n}\sum_{x=1}^nx^n
+  M_X^{\left(m\right)}\left(t\right)&=\frac{d^m}{dt^m}\frac{1}{n}\sum_{x=1}^ne^{tx}\nonumber\\
+  &=\frac{1}{n}\sum_{x=1}^n\frac{d^me^{tx}}{dt^m}\nonumber\\
+  &=\frac{1}{n}\sum_{x=1}^nx^me^{tx}\\
+  M_X^{\left(m\right)}\left(0\right)&=\frac{1}{n}\sum_{x=1}^nx^m
  \end{align}
  \subsection{特性関数}
  \begin{align}
@@ -1212,7 +1212,7 @@ $n=0$のとき，式は成立する．
   E\left(X\right)&=M_X^{\left(1\right)}\left(0\right)\nonumber\\
   &=\frac{1}{n}\sum_{x=1}^nx\nonumber\\
   &=\frac{1}{n}\frac{1}{2}n\left(n+1\right)\nonumber\\
-  &=\frac{1}{2}\left(n+1\right)\nonumber\\
+  &=\frac{n+1}{2}\nonumber\\
  \end{align}
  \subsection{分散}
  \subsubsection{自然数の2乗の和}
