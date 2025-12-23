@@ -1136,26 +1136,27 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
   &=\sum_{x\in S\left(X\right)}t^xp\left(x\right)\nonumber\\
-  &=\sum_{x=a}^b\frac{t^x}{n}
+  &=\sum_{x=a}^b\frac{t^x}{n}\nonumber\\
+  &=\frac{1}{n}\sum_{x=a}^bt^x
  \end{align}
  \subsection{積率母関数}
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
-  &=\sum_{x=a}^b\frac{e^{tx}}{n}\\
-  M_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}\sum_{x=a}^b\frac{e^{tx}}{n}\nonumber\\
-  &=\sum_{x=a}^b\frac{d}{dt}\frac{e^{tx}}{n}\nonumber\\
-  &=\sum_{x=a}^b\frac{1}{n}\frac{de^{tx}}{dt}\nonumber\\
-  &=\sum_{x=a}^b\frac{xe^{tx}}{n}
+  &=\frac{1}{n}\sum_{x=a}^be^{tx}\\
+  M_X^{\left(n\right)}\left(t\right)&=\frac{d^n}{dt^n}\frac{1}{n}\sum_{x=a}^be^{tx}\nonumber\\
+  &=\frac{1}{n}\sum_{x=a}^b\frac{d^ne^{tx}}{dt^n}\nonumber\\
+  &=\frac{1}{n}\sum_{x=a}^bx^ne^{tx}\\
+  M_X^{\left(n\right)}\left(0\right)&=\frac{1}{n}\sum_{x=a}^bx^n
  \end{align}
  \subsection{特性関数}
  \begin{align}
   \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
-  &=\sum_{x=a}^b\frac{e^{itx}}{n}
+  &=\frac{1}{n}\sum_{x=a}^be^{itx}
  \end{align}
  \subsection{キュムラント母関数}
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
-  &=\log\sum_{x=a}^b\frac{e^{tx}}{n}
+  &=\log\frac{1}{n}\sum_{x=a}^be^{tx}
  \end{align}
  \subsection{平均}
  \subsubsection{パスカルの三角形}
@@ -1209,9 +1210,12 @@ $n=0$のとき，式は成立する．
  \subsubsection{本証明}
  \begin{align}
   E\left(X\right)&=M_X^{\left(1\right)}\left(0\right)\nonumber\\
-  &=\sum_{x=a}^b\frac{x}{n}\nonumber\\
-  &=\frac{1}{n}\sum_{x=a}^bx\nonumber\\
-  &=\frac{1}{n}\frac{n\left(a+b\right)}{2}\nonumber\\
+  &=\frac{1}{n}\sum_{n=a}^bn\nonumber\\
+  &=\frac{1}{n}\left(\left(\sum_{n=1}^bn\right)-\left(\sum_{n=1}^{a-1}n\right)\right)\nonumber\\
+  &=\frac{1}{n}\left(\frac{1}{2}b\left(b+1\right)-\frac{1}{2}\left(a-1\right)a\right)\nonumber\\
+  &=\frac{1}{2n}\left(b\left(b+1\right)-\left(a-1\right)a\right)\nonumber\\
+  &=\frac{1}{2n}\left(b^2+b-a^2+a\right)\nonumber\\
+  &=\frac{1}{2\left(b-a+1\right)}\left(b-a+1\right)\left(a+b\right)\nonumber\\
   &=\frac{a+b}{2}
  \end{align}
  \subsection{分散}
