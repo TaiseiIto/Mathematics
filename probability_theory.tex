@@ -1158,6 +1158,31 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=\log\sum_{x=a}^b\frac{e^{tx}}{n}
  \end{align}
  \subsection{平均}
+ \subsubsection{パスカルの三角形}
+ \subsubsection{二項展開}
+ \begin{align}
+  \forall \left(a,b,n\right)\in\mathbb{Z}\times\mathbb{Z}\times\mathbb{N}_0,\left(a+b\right)^n&=\sum_{m=0}^n\binom{n}{m}a^mb^{n-m}
+ \end{align}
+数学的帰納法により証明する．
+$n=0$のとき，式は成立する．
+ \begin{align}
+  \left(a+b\right)^n&=\sum_{m=0}^n\binom{n}{m}a^mb^{n-m}
+ \end{align}
+が成り立つ時，
+ \begin{align}
+  \left(a+b\right)^{n+1}&=\left(a+b\right)\left(a+b\right)^n\nonumber\\
+  &=\left(a+b\right)\sum_{m=0}^n\binom{n}{m}a^mb^{n-m}\nonumber\\
+  &=\left(\sum_{m=0}^n\binom{n}{m}a^{m+1}b^{n-m}\right)+\left(\sum_{m=0}^n\binom{n}{m}a^mb^{n-m+1}\right)\nonumber\\
+  &=\left(a^{n+1}+\sum_{m=0}^{n-1}\binom{n}{m}a^{m+1}b^{n-m}\right)+\left(b^{n+1}+\sum_{m=1}^n\binom{n}{m}a^mb^{n-m+1}\right)\nonumber\\
+  &=a^{n+1}+\left(\sum_{m=0}^{n-1}\binom{n}{m}a^{m+1}b^{n-m}\right)+\left(\sum_{m=1}^n\binom{n}{m}a^mb^{n-m+1}\right)+b^{n+1}\nonumber\\
+  &=a^{n+1}+\left(\sum_{m=0}^{n-1}\binom{n}{m}a^{m+1}b^{n-m}\right)+\left(\sum_{m=0}^{n-1}\binom{n}{m+1}a^{m+1}b^{n-m}\right)+b^{n+1}\nonumber\\
+  &=a^{n+1}+\left(\sum_{m=0}^{n-1}\left(\binom{n}{m}+\binom{n}{m+1}\right)a^{m+1}b^{n-m}\right)+b^{n+1}\nonumber\\
+  &=a^{n+1}+\left(\sum_{m=0}^{n-1}\binom{n+1}{m+1}a^{m+1}b^{n-m}\right)+b^{n+1}\nonumber\\
+  &=a^{n+1}+\left(\sum_{m=1}^n\binom{n+1}{m}a^mb^{n+1-m}\right)+b^{n+1}\nonumber\\
+  &=\sum_{m=0}^{n+1}\binom{n+1}{m}a^mb^{n+1-m}\nonumber\\
+ \end{align}
+よって成り立つ．
+ \subsubsection{自然数の和}
  \begin{align}
   E\left(X\right)&=M_X^{\left(1\right)}\left(0\right)\nonumber\\
   &=\sum_{x=a}^b\frac{x}{n}\nonumber\\
@@ -1166,7 +1191,6 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=\frac{a+b}{2}
  \end{align}
  \subsection{分散}
- \subsubsection{自然数の和}
  \subsubsection{自然数の2乗の和}
  \begin{align}
   \left(x+1\right)^3&=x^3+3x^2+3x+1\nonumber\\
