@@ -1355,6 +1355,14 @@ $n=0$のとき，式は成立する．
  \end{align}
 とする確率変数$X$の分布を連続一様分布という．
  \subsection{確率母関数}
+ \begin{align}
+  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+  &=\int_{S\left(X\right)}p\left(x\right)t^xdx\nonumber\\
+  &=\int_0^a\frac{1}{a}e^{x\log t}dx\nonumber\\
+  &=\left[\frac{e^{x\log t}}{a\log t}\right]_{x=0}^{x=a}\nonumber\\
+  &=\frac{e^{a\log t}}{a\log t}-\frac{e^0}{a\log t}\nonumber\\
+  &=\frac{e^{a\log t}-1}{a\log t}\nonumber\\
+ \end{align}
  \subsection{積率母関数}
  \subsection{特性関数}
  \subsection{キュムラント母関数}
