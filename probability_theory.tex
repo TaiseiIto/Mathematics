@@ -1378,20 +1378,38 @@ $n=0$のとき，式は成立する．
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
   &=\log\frac{e^{at}-1}{at}\nonumber\\
-  &=\log\left(e^{at}-1\right)-\log t-\log a
- \end{align}
- \subsection{平均}
- \begin{align}
+  &=\log\left(e^{at}-1\right)-\log t-\log a\nonumber\\
   K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}K_X\left(t\right)\nonumber\\
   &=\frac{d}{dt}\left(\log\left(e^{at}-1\right)-\log t-\log a\right)\nonumber\\
   &=\frac{d}{dt}\log\left(e^{at}-1\right)-\frac{d}{dt}\log t-\frac{d}{dt}\log a\nonumber\\
   &=\frac{\frac{d}{dt}\left(e^{at}-1\right)}{e^{at}-1}-\frac{1}{t}\nonumber\\
-  &=\frac{ae^{at}}{e^{at}-1}-\frac{1}{t}\nonumber\\
+  &=\frac{ae^{at}}{e^{at}-1}-\frac{1}{t}
  \end{align}
-よって平均は，
+これでは$t=0$を代入できないため，方針を変える．
+積率母関数をマクローリン展開すると，
  \begin{align}
-  E\left(X\right)&=K_X^{\left(1\right)}\left(0\right)
+  \frac{d^n}{dt^n}e^{at}&=a^ne^{at}\nonumber\\
+  \left[\frac{d^n}{dt^n}e^{at}\right]_{t=0}&=a^n\nonumber\\
+  e^{at}&=\sum_{n=0}^\infty\frac{a^nt^n}{n!}\nonumber\\
+  e^{at}-1&=\sum_{n=1}^\infty\frac{a^nt^n}{n!}\nonumber\\
+  \frac{e^{at}-1}{at}&=\sum_{n=1}^\infty\frac{a^{n-1}t^{n-1}}{n!}\nonumber\\
+  M_X\left(t\right)&=\sum_{n=0}^\infty\frac{a^nt^n}{\left(n+1\right)!}
  \end{align}
+また，対数関数のテイラー展開は，
+ \begin{align}
+  \frac{d^n}{dx^n}\log\left(x+1\right)&=-\left(-1\right)^n\left(n-1\right)!\left(x+1\right)^{-n}\nonumber\\
+  \left[\frac{d^n}{dx^n}\log\left(x+1\right)\right]_{x=0}&=-\left(-1\right)^n\left(n-1\right)!\nonumber\\
+  \log\left(x+1\right)&=-\sum_{n=0}^\infty\left(-1\right)^n\left(n-1\right)!\frac{x^n}{n!}\nonumber\\
+  &=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}x^n\nonumber\\
+  \log x&=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}\left(x-1\right)^n
+ \end{align}
+だから，
+ \begin{align}
+  K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
+  &=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}\left(\left(\sum_{m=0}^\infty\frac{a^mt^m}{\left(m+1\right)!}\right)-1\right)^n\nonumber\\
+  &=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}\left(\sum_{m=1}^\infty\frac{a^mt^m}{\left(m+1\right)!}\right)^n
+ \end{align}
+ \subsection{平均}
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
