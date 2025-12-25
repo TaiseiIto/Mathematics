@@ -1366,11 +1366,19 @@ $n=0$のとき，式は成立する．
  \subsection{積率母関数}
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
-  &=\frac{e^{a\log e^t}-1}{a\log t}\nonumber\\
-  &=\frac{e^{at}-1}{a\log t}\nonumber\\
+  &=\frac{e^{a\log e^t}-1}{a\log e^t}\nonumber\\
+  &=\frac{e^{at}-1}{at}\nonumber\\
  \end{align}
  \subsection{特性関数}
+ \begin{align}
+  \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
+  &=\frac{e^{ati}-1}{ati}\nonumber\\
+ \end{align}
  \subsection{キュムラント母関数}
+ \begin{align}
+  K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
+  &=\log\frac{e^{at}-1}{at}\nonumber\\
+ \end{align}
  \subsection{平均}
  \subsection{分散}
  \subsection{標準偏差}
