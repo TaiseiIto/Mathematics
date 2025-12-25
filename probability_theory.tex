@@ -1259,7 +1259,6 @@ $n=0$のとき，式は成立する．
   &=\frac{1}{n}\sum_{x=1}^n\frac{d^m}{dt^m}e^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
   &=\frac{1}{n}\sum_{x=1}^n\left(x-\frac{n+1}{2}\right)^me^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
   M_{X-E\left(X\right)}^{\left(m\right)}\left(0\right)&=\frac{1}{n}\sum_{x=1}^n\left(x-\frac{n+1}{2}\right)^m\nonumber\\
-  E\left(\left(X-E\left(X\right)\right)^m\right)&=\frac{1}{n}\sum_{x=1}^n\sum_{k=1}^m\binom{m}{k}x^k\left(-\frac{n+1}{2}\right)^{m-k}
  \end{align}
  \subsection{歪度}
  \subsubsection{自然数の3乗の和}
@@ -1275,6 +1274,13 @@ $n=0$のとき，式は成立する．
   \sum_{x=1}^nx^3&=\frac{1}{4}n^2\left(n+1\right)^2
  \end{align}
  \subsubsection{本証明}
+ \begin{align}
+  E\left(\left(X-E\left(X\right)\right)^3\right)&=M_{X-E\left(X\right)}^{\left(3\right)}\left(0\right)\nonumber\\
+  &=\frac{1}{n}\sum_{x=1}^n\left(x-\frac{n+1}{2}\right)^3\nonumber\\
+  &=\frac{1}{n}\sum_{x=1}^n\left(x^3-3x^2\frac{n+1}{2}+3x\left(\frac{n+1}{2}\right)^2-\left(\frac{n+1}{2}\right)^3\right)\nonumber\\
+  &=\frac{1}{n}\sum_{x=1}^n\left(x^3-\frac{3}{2}\left(n+1\right)x^2+\frac{3}{4}\left(n+1\right)^2x-\frac{1}{8}\left(n+1\right)^3\right)\nonumber\\
+  &=\frac{1}{n}\left(\left(\sum_{x=1}^nx^3\right)-\frac{3}{2}\left(n+1\right)\left(\sum_{x=1}^nx^2\right)+\frac{3}{4}\left(n+1\right)^2\left(\sum_{x=1}^nx\right)-\frac{1}{8}\left(n+1\right)^3\left(\sum_{x=1}^n1\right)\right)\nonumber\\
+ \end{align}
  \subsection{尖度}
  \subsubsection{自然数の4乗の和}
  \begin{align}
