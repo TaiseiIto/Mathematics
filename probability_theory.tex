@@ -1407,7 +1407,8 @@ $n=0$のとき，式は成立する．
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
   &=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}\left(\left(\sum_{m=0}^\infty\frac{a^mt^m}{\left(m+1\right)!}\right)-1\right)^n\nonumber\\
-  &=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}\left(\sum_{m=1}^\infty\frac{a^mt^m}{\left(m+1\right)!}\right)^n
+  &=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}\left(\sum_{m=1}^\infty\frac{a^mt^m}{\left(m+1\right)!}\right)^n\nonumber\\
+  &=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}\sum_{m=1}^\infty\frac{n!}{m!}B_{m,n}\left(\frac{a^1}{1+1},\cdots,\frac{a^{m-n+1}}{m-n+1+1}\right)t^m\nonumber\\
  \end{align}
  \subsection{平均}
  \subsection{分散}
