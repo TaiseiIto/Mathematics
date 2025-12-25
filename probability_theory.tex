@@ -467,13 +467,13 @@ $E\left(X\right)$が定数であることに注意して平均の線形性を使
 結果的に3乗の影響で分布が全体的に正の方向にずれるので，その平均$E\left(\left(X-E\left(X\right)\right)^3\right)$も正の方向にずれる．
 これは確率変数$X$の平均周りの左右非対称具合を表していると言える．
 最後に，次元を無くすために$X$の分布の広がり具合と連動し，$X$の3乗の次元を持つ$\sigma\left(X\right)^3$で割れば，歪度の定義が現れる．
- \section{尖度}
+ \section{超過尖度}
 確率変数$X$に対して，
  \begin{align}
   K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3
  \end{align}
-を$X$の尖度といい，分散よりも外れ値への反応をより敏感にした指標であり，分布の裾の重さを表す．
-尖度という名称から分布の平均周りの尖り具合を表していると誤解されやすいが，尖り具合を表してはいない．
+を$X$の超過尖度といい，分散よりも外れ値への反応をより敏感にした指標であり，分布の裾の重さを表す．
+超過尖度という名称から分布の平均周りの尖り具合を表していると誤解されやすいが，尖り具合を表してはいない．
  \section{エントロピー}
 確率変数$X$に対して，
  \begin{align}
@@ -1062,7 +1062,7 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
   &=\frac{K_X^{\left(3\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^\frac{3}{2}}
  \end{align}
- \subsection{キュムラントと尖度の関係}
+ \subsection{キュムラントと超過尖度の関係}
  \begin{align}
   K_X^{\left(4\right)}\left(0\right)&=\sum_{k=1}^4\left(-1\right)^{k-1}\left(k-1\right)!B_{4,k}\left(M_X^{\left(1\right)}\left(0\right),\cdots,M_X^{\left(5-k\right)}\left(0\right)\right)\nonumber\\
   &=B_{4,1}\left(M_X^{\left(1\right)}\left(0\right),M_X^{\left(2\right)}\left(0\right),M_X^{\left(3\right)}\left(0\right),M_X^{\left(4\right)}\left(0\right),\right)\nonumber\\
@@ -1086,7 +1086,7 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \begin{align}
   K_X^{\left(4\right)}\left(0\right)&=E\left(\left(X-E\left(X\right)\right)^4\right)-3V\left(X\right)^2
  \end{align}
-よって尖度は，
+よって超過尖度は，
  \begin{align}
   K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3\nonumber\\
   &=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{V\left(X\right)^2}-3\nonumber\\
@@ -1247,7 +1247,7 @@ $n=0$のとき，式は成立する．
   \sigma\left(X\right)&=\sqrt{V\left(X\right)}\nonumber\\
   &=\sqrt{\frac{n^2-1}{12}}\nonumber\\
  \end{align}
- \subsection{平均周りの積率母関数}
+ \subsection{中心積率母関数}
  \begin{align}
   M_{X-E\left(X\right)}\left(t\right)&=G_{X-E\left(X\right)}\left(e^t\right)\nonumber\\
   &=G_{X-\frac{n+1}{2}}\left(e^t\right)\nonumber\\
@@ -1292,7 +1292,7 @@ $n=0$のとき，式は成立する．
   S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
   &=0
  \end{align}
- \subsection{尖度}
+ \subsection{超過尖度}
  \subsubsection{自然数の4乗の和}
  \begin{align}
   \left(x+1\right)^5&=x^5+5x^4+10x^3+10x^2+5x+1\nonumber\\
@@ -1328,7 +1328,7 @@ $n=0$のとき，式は成立する．
   &=\frac{n+1}{240}\left(3n^3-3n^2-7n+7\right)\nonumber\\
   &=\frac{1}{240}\left(n+1\right)\left(n-1\right)\left(3n^2-7\right)
  \end{align}
-よって尖度は，
+よって超過尖度は，
  \begin{align}
   K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3\nonumber\\
   &=\frac{\frac{1}{240}\left(n+1\right)\left(n-1\right)\left(3n^2-7\right)}{\left(\frac{n^2-1}{12}\right)^2}-3\nonumber\\
@@ -1353,7 +1353,7 @@ $n=0$のとき，式は成立する．
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
- \subsection{尖度}
+ \subsection{超過尖度}
  \subsection{エントロピー}
  \section{ベルヌーイ分布}
 $\{0,1\}$を標本空間とし，確率質量関数を
@@ -1409,7 +1409,7 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   \sigma\left(X\right)&=\sqrt{V\left(X\right)}\nonumber\\
   &=\sqrt{p\left(1-p\right)}
  \end{align}
- \subsection{平均周りの積率母関数}
+ \subsection{中心積率母関数}
  \begin{align}
   M_{X-E\left(X\right)}\left(t\right)&=E\left(e^{t\left(X-E\left(X\right)\right)}\right)\nonumber\\
   &=E\left(e^{t\left(X-p\right)}\right)\nonumber\\
@@ -1430,7 +1430,7 @@ $\{0,1\}$を標本空間とし，確率質量関数を
   &=\frac{-p^2+1-2p+p^2}{\sqrt{p\left(1-p\right)}}\nonumber\\
   &=\frac{1-2p}{\sqrt{p\left(1-p\right)}}
  \end{align}
- \subsection{尖度}
+ \subsection{超過尖度}
  \begin{align}
   K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3\nonumber\\
   &=\frac{M_{X-E\left(X\right)}^{\left(4\right)}\left(0\right)}{\sqrt{p\left(1-p\right)}^4}-3\nonumber\\
@@ -1571,7 +1571,7 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=\frac{Np\left(1-p\right)\left(1-2p\right)}{\left(Np\left(1-p\right)\right)^\frac{3}{2}}\nonumber\\
   &=\frac{1-2p}{\sqrt{Np\left(1-p\right)}}\nonumber\\
  \end{align}
- \subsection{尖度}
+ \subsection{超過尖度}
  \begin{align}
   K\left(X\right)&=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}\nonumber\\
   &=\frac{Np\left(1-p\right)\left(1-6p\left(1-p\right)\right)}{\left(Np\left(1-p\right)\right)^2}\nonumber\\
@@ -1595,7 +1595,7 @@ $X_1,\cdots,X_N$は互いに独立なので，
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
- \subsection{尖度}
+ \subsection{超過尖度}
  \subsection{エントロピー}
  \section{ポアソン分布}
 ポアソン分布は，二項分布の拡張である．
@@ -1607,7 +1607,7 @@ $X_1,\cdots,X_N$は互いに独立なので，
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
- \subsection{尖度}
+ \subsection{超過尖度}
  \subsection{エントロピー}
  \section{指数分布}
 指数分布は，ポアソン過程における事象発生の時間間隔を表す．
@@ -1619,7 +1619,7 @@ $X_1,\cdots,X_N$は互いに独立なので，
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
- \subsection{尖度}
+ \subsection{超過尖度}
  \subsection{エントロピー}
  \section{正規分布}
 正規分布は，ポアソン分布の拡張である．
@@ -1631,7 +1631,7 @@ $X_1,\cdots,X_N$は互いに独立なので，
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
- \subsection{尖度}
+ \subsection{超過尖度}
  \subsection{エントロピー}
  \section{$\chi^2$分布}
 $\chi^2$分布は，独立に正規分布に従う確率変数の二乗の和である．
@@ -1643,7 +1643,7 @@ $\chi^2$分布は，独立に正規分布に従う確率変数の二乗の和で
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
- \subsection{尖度}
+ \subsection{超過尖度}
  \subsection{エントロピー}
 \end{document}
 
