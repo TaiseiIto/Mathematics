@@ -1308,15 +1308,17 @@ $n=0$のとき，式は成立する．
   30\left(\sum_{x=1}^nx^4\right)&=6n^5+30n^4+60n^3+60n^2+30n-15n^4-50n^3-60n^2-31n\nonumber\\
   &=6n^5+15n^4+10n^3-n\nonumber\\
   &=n\left(n+1\right)\left(2n+1\right)\left(3n^2+3n-1\right)\nonumber\\
-  \sum_{x=1}^nx^4&=\frac{1}{30}n\left(n+1\right)\left(2n+1\right)\left(3n^2+3n-1\right)\nonumber\\
+  \sum_{x=1}^nx^4&=\frac{1}{30}n\left(n+1\right)\left(2n+1\right)\left(3n^2+3n-1\right)
  \end{align}
  \subsubsection{本証明}
  \begin{align}
-  E\left(\left(X-E\left(X\right)\right)^4\right)&=M_{X-E\left(X\right)}^{\left(4\right)}\left(0\right)\nonumber\\
+  &E\left(\left(X-E\left(X\right)\right)^4\right)\nonumber\\
+  &=M_{X-E\left(X\right)}^{\left(4\right)}\left(0\right)\nonumber\\
   &=\frac{1}{n}\sum_{x=1}^n\left(x-\frac{n+1}{2}\right)^4\nonumber\\
   &=\frac{1}{n}\sum_{x=1}^n\left(x^4-4\frac{n+1}{2}x^3+6\left(\frac{n+1}{2}\right)^2x^2-4\left(\frac{n+1}{2}\right)^3x+\left(\frac{n+1}{2}\right)^4\right)\nonumber\\
   &=\frac{1}{n}\sum_{x=1}^n\left(x^4-2\left(n+1\right)x^3+\frac{3}{2}\left(n+1\right)^2x^2-\frac{1}{2}\left(n+1\right)^3x+\frac{1}{16}\left(n+1\right)^4\right)\nonumber\\
   &=\frac{1}{n}\left(\left(\sum_{x=1}^nx^4\right)-2\left(n+1\right)\left(\sum_{x=1}^nx^3\right)+\frac{3}{2}\left(n+1\right)^2\left(\sum_{x=1}^nx^2\right)-\frac{1}{2}\left(n+1\right)^3\left(\sum_{x=1}^nx\right)+\frac{1}{16}\left(n+1\right)^4\left(\sum_{x=1}^n1\right)\right)\nonumber\\
+  &=\frac{1}{n}\left(\frac{1}{30}n\left(n+1\right)\left(2n+1\right)\left(3n^2+3n-1\right)-2\left(n+1\right)\frac{1}{4}n^2\left(n+1\right)^2+\frac{3}{2}\left(n+1\right)^2\frac{1}{6}n\left(n+1\right)\left(2n+1\right)-\frac{1}{2}\left(n+1\right)^3\frac{1}{2}n\left(n+1\right)+\frac{1}{16}\left(n+1\right)^4n\right)\nonumber\\
  \end{align}
  \subsection{エントロピー}
  \section{連続一様分布}
