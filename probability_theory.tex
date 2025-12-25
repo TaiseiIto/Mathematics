@@ -1378,8 +1378,20 @@ $n=0$のとき，式は成立する．
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
   &=\log\frac{e^{at}-1}{at}\nonumber\\
+  &=\log\left(e^{at}-1\right)-\log t-\log a
  \end{align}
  \subsection{平均}
+ \begin{align}
+  K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}K_X\left(t\right)\nonumber\\
+  &=\frac{d}{dt}\left(\log\left(e^{at}-1\right)-\log t-\log a\right)\nonumber\\
+  &=\frac{d}{dt}\log\left(e^{at}-1\right)-\frac{d}{dt}\log t-\frac{d}{dt}\log a\nonumber\\
+  &=\frac{\frac{d}{dt}\left(e^{at}-1\right)}{e^{at}-1}-\frac{1}{t}\nonumber\\
+  &=\frac{ae^{at}}{e^{at}-1}-\frac{1}{t}\nonumber\\
+ \end{align}
+よって平均は，
+ \begin{align}
+  E\left(X\right)&=K_X^{\left(1\right)}\left(0\right)
+ \end{align}
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
