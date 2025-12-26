@@ -1945,7 +1945,7 @@ $X$の分布を幾何分布という．
 とすると，
  \begin{align}
   \int_{S\left(X\right)}p\left(x\right)dx&=\int_0^\infty\lambda e^{-\lambda x}dx\nonumber\\
-  &=\left[-e^{-\lambda x}\right]_0^\infty\nonumber\\
+  &=\left[-e^{-\lambda x}\right]_{x=0}^{x=\infty}\nonumber\\
   &=-e^{-\lambda \infty}+e^{-\lambda 0}\nonumber\\
   &=-e^{-\infty}+e^0\nonumber\\
   &=1
@@ -1953,6 +1953,33 @@ $X$の分布を幾何分布という．
 なので，$X$は連続確率変数である．
 指数分布は，ポアソン過程における事象発生の時間間隔を表す．
  \subsection{確率母関数}
+ \begin{align}
+  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+  &=\int_{S\left(X\right)}p\left(x\right)t^xdx\nonumber\\
+  &=\int_0^\infty\lambda e^{-\lambda x}t^xdx\nonumber\\
+  &=\lambda\int_0^\infty e^{-\lambda x}e^{x\log t}dx\nonumber\\
+  &=\lambda\int_0^\infty e^{x\log t-\lambda x}dx\nonumber\\
+  &=\lambda\int_0^\infty e^{\left(\log t-\lambda\right)x}dx\nonumber\\
+  &=\lambda\left[\frac{e^{\left(\log t-\lambda\right)x}}{\log t-\lambda}\right]_{x=0}^{x=\infty}\nonumber\\
+  &=\frac{\lambda}{\log t-\lambda}\left[e^{\left(\log t-\lambda\right)x}\right]_{x=0}^{x=\infty}\nonumber\\
+  &=\frac{\lambda\left(e^{\left(\log t-\lambda\right)\infty}-e^{\left(\log t-\lambda\right)0}\right)}{\log t-\lambda}\nonumber\\
+  &=\frac{\lambda\left(e^{\left(\log t-\lambda\right)\infty}-1\right)}{\log t-\lambda}
+ \end{align}
+ここで，
+ \begin{align}
+  &\log t-\lambda<0\nonumber\\
+  \iff&\log t<\lambda\nonumber\\
+  \iff&0<t<e^\lambda\nonumber\\
+  \iff&t\in\left(0,e^\lambda\right)
+ \end{align}
+とすると，
+ \begin{align}
+  G_X\left(t\right)&=\frac{\lambda\left(e^{\left(\log t-\lambda\right)\infty}-1\right)}{\log t-\lambda}\nonumber\\
+  &=\frac{\lambda\left(e^{-\infty}-1\right)}{\log t-\lambda}\nonumber\\
+  &=\frac{\lambda\left(0-1\right)}{\log t-\lambda}\nonumber\\
+  &=-\frac{\lambda}{\log t-\lambda}\nonumber\\
+  &=\frac{\lambda}{\lambda-\log t}\nonumber\\
+ \end{align}
  \subsection{積率母関数}
  \subsection{特性関数}
  \subsection{キュムラント母関数}
