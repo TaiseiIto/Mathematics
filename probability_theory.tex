@@ -1743,6 +1743,39 @@ $X_1,\cdots,X_N$は互いに独立なので，
  \end{align}
  \section{幾何分布}
 幾何分布は，ベルヌーイ思考を繰り返して初めて成功するまでの試行回数が従う分布である．
+標本空間を
+ \begin{align}
+  S\left(X\right)=\mathbb{N}
+ \end{align}
+とし，ある$0\le p\le 1$に対して，確率質量関数を，
+ \begin{align}
+  \forall x\in S\left(X\right),p\left(x\right)=\left(1-p\right)^{x-1}p
+ \end{align}
+とすると，
+ \begin{align}
+  \sum_{x\in S\left(X\right)}p\left(x\right)&=\sum_{x=1}^\infty\left(1-p\right)^{x-1}p\nonumber\\
+  &=p\sum_{x=1}^\infty\left(1-p\right)^{x-1}\nonumber\\
+  &=p\sum_{x=0}^\infty\left(1-p\right)^x\nonumber\\
+  &=p\frac{\left(1-p\right)^{\infty+1}-1}{1-p-1}\nonumber\\
+  &=p\frac{-1}{-p}\nonumber\\
+  &=1
+ \end{align}
+なので，$X$は離散確率変数である．
+$X$の分布を幾何分布という．
+ \subsection{等比数列の和}
+上の計算で等比数列の和の公式を使った．
+等比数列の和の公式は以下のように証明される．
+ \begin{align}
+  x&=\sum_{m=0}^na^m\nonumber\\
+  ax&=a\sum_{m=0}^na^m\nonumber\\
+  &=\sum_{m=0}^na^{m+1}\nonumber\\
+  &=\sum_{m=1}^{n+1}a^m\nonumber\\
+  &=a^{n+1}-1+\sum_{n=0}^na^m\nonumber\\
+  &=a^{n+1}-1+x\nonumber\\
+  ax-x&=a^{n+1}-1\nonumber\\
+  \left(a-1\right)x&=a^{n+1}-1\nonumber\\
+  x&=\frac{a^{n+1}-1}{a-1}\nonumber\\
+ \end{align}
  \subsection{確率母関数}
  \subsection{積率母関数}
  \subsection{特性関数}
