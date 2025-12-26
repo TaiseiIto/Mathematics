@@ -1131,7 +1131,13 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \begin{align}
   \forall x\in S\left(X\right),p\left(x\right)=\frac{1}{n}
  \end{align}
-とする離散確率変数$X$の分布を離散一様分布という．
+とすると，
+ \begin{align}
+  \sum_{x\in S\left(X\right)}p\left(x\right)&=\sum_{x=1}^n\frac{1}{n}\nonumber\\
+  &=1
+ \end{align}
+より，$X$は離散確率変数であると言える．
+$X$の分布を離散一様分布という．
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
@@ -1353,7 +1359,14 @@ $n=0$のとき，式は成立する．
  \begin{align}
   \forall x\in S\left(X\right),p\left(x\right)&=\frac{1}{a}
  \end{align}
-とする確率変数$X$の分布を連続一様分布という．
+とすると，
+ \begin{align}
+  \int_{S\left(X\right)}p\left(x\right)dx&=\int_0^a\frac{1}{a}dx\nonumber\\
+  &=\left[\frac{x}{a}\right]_{x=0}^{x=a}\nonumber\\
+  &=1
+ \end{align}
+より，$X$は連続確率変数であると言える．
+$X$の分布を連続一様分布という．
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
