@@ -1500,7 +1500,7 @@ $X$の分布を連続一様分布という．
  \begin{align}
   S\left(X\right)&=\{0,1\}
  \end{align}
-とし，ある$0\le p\le 1$に対して確率質量関数を
+とし，ある$p\in\left(0,1\right)$に対して確率質量関数を
  \begin{align}
   p\left(x\right)&=
   \begin{cases}
@@ -1742,12 +1742,11 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=-\log_2\prod_{n=0}^N\left(\binom{N}{n}p^n\left(1-p\right)^{N-n}\right)^{\binom{N}{n}p^n\left(1-p\right)^{N-n}}
  \end{align}
  \section{幾何分布}
-幾何分布は，ベルヌーイ思考を繰り返して初めて成功するまでの試行回数が従う分布である．
 標本空間を
  \begin{align}
   S\left(X\right)=\mathbb{N}
  \end{align}
-とし，ある$0\le p\le 1$に対して，確率質量関数を，
+とし，ある$p\in\left(0,1\right)$に対して，確率質量関数を，
  \begin{align}
   \forall x\in S\left(X\right),p\left(x\right)=\left(1-p\right)^{x-1}p
  \end{align}
@@ -1762,6 +1761,7 @@ $X_1,\cdots,X_N$は互いに独立なので，
  \end{align}
 なので，$X$は離散確率変数である．
 $X$の分布を幾何分布という．
+幾何分布は，ベルヌーイ思考を繰り返して初めて成功するまでの試行回数が従う分布である．
  \subsection{等比数列の和}
 上の計算で等比数列の和の公式を使った．
 等比数列の和の公式は以下のように証明される．
@@ -1777,7 +1777,32 @@ $X$の分布を幾何分布という．
   x&=\frac{a^{n+1}-1}{a-1}\nonumber\\
  \end{align}
  \subsection{確率母関数}
+ \begin{align}
+  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+  &=\sum_{x\in S\left(X\right)}p\left(x\right)t^x\nonumber\\
+  &=\sum_{x=1}^\infty\left(1-p\right)^{x-1}pt^x\nonumber\\
+  &=\sum_{x=0}^\infty\left(1-p\right)^xpt^{x+1}\nonumber\\
+  &=pt\sum_{x=0}^\infty\left(1-p\right)^xt^x\nonumber\\
+  &=pt\sum_{x=0}^\infty\left(\left(1-p\right)t\right)^x\nonumber\\
+  &=pt\frac{\left(\left(1-p\right)t\right)^{\infty+1}-1}{\left(1-p\right)t-1}
+ \end{align}
+上の式より，この確率母関数は
+ \begin{align}
+  -1<\left(1-p\right)t<1\nonumber\\
+  -\frac{1}{1-p}<t<\frac{1}{1-p}\nonumber\\
+  t\in\left(-\frac{1}{1-p},\frac{1}{1-p}\right)
+ \end{align}
+において定義されることが分かる．
+よって，
+ \begin{align}
+  G_X\left(t\right)&=pt\frac{\left(\left(1-p\right)t\right)^{\infty+1}-1}{\left(1-p\right)t-1}\nonumber\\
+  &=pt\frac{-1}{\left(1-p\right)t-1}\nonumber\\
+  &=\frac{pt}{1-\left(1-p\right)t}\nonumber\\
+ \end{align}
  \subsection{積率母関数}
+ \begin{align}
+  M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
+ \end{align}
  \subsection{特性関数}
  \subsection{キュムラント母関数}
  \subsection{平均}
