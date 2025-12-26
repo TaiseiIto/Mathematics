@@ -1844,9 +1844,15 @@ $X$の分布を幾何分布という．
  \end{align}
  \subsection{分散}
  \begin{align}
+  f\left(t\right)=\left(1-p\right)e^t
+ \end{align}
+とすると，
+ \begin{align}
   K_X^{\left(2\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(1\right)}\left(t\right)\nonumber\\
   &=\frac{d}{dt}\frac{1}{1-\left(1-p\right)e^t}\nonumber\\
-  &=-\frac{\frac{d}{dt}\left(1-\left(1-p\right)e^t\right)}{\left(1-\left(1-p\right)e^t\right)^2}\nonumber\\
+  &=\frac{d}{dt}\frac{1}{1-f\left(t\right)}\nonumber\\
+  &=-\frac{\frac{d}{dt}\left(1-f\left(t\right)\right)}{\left(1-f\left(t\right)\right)^2}\nonumber\\
+  &=\frac{f\left(t\right)}{\left(1-f\left(t\right)\right)^2}\nonumber\\
   &=\frac{\left(1-p\right)e^t}{\left(1-\left(1-p\right)e^t\right)^2}
  \end{align}
 よって，
