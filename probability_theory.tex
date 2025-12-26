@@ -1914,7 +1914,7 @@ $X$の分布を幾何分布という．
   &=\left(1-p\right)\frac{1-2p+p^2+4-4p+1}{p^4}\nonumber\\
   &=\left(1-p\right)\frac{p^2-6p+6}{p^4}\nonumber\\
   &=\frac{p^2-6p+6-p^3+6p^2-6p}{p^4}\nonumber\\
-  &=\frac{-p^3+7p^2-12p+6}{p^4}\nonumber\\
+  &=\frac{-p^3+7p^2-12p+6}{p^4}
  \end{align}
 よって，
  \begin{align}
@@ -1922,9 +1922,17 @@ $X$の分布を幾何分布という．
   &=\frac{-p^3+7p^2-12p+6}{p^4}\left(\frac{p^2}{1-p}\right)^2\nonumber\\
   &=\frac{-p^3+7p^2-12p+6}{\left(1-p\right)^2}\nonumber\\
   &=\frac{\left(p-1\right)\left(-p^2+6p-6\right)}{\left(1-p\right)^2}\nonumber\\
-  &=\frac{p^2-6p+6}{1-p}\nonumber\\
+  &=\frac{p^2-6p+6}{1-p}
  \end{align}
  \subsection{エントロピー}
+ \begin{align}
+  H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)\nonumber\\
+  &=-E\left(\log_2\left(\left(1-p\right)^{X-1}p\right)\right)\nonumber\\
+  &=-E\left(\log_2p+\left(X-1\right)\log_2\left(1-p\right)\right)\nonumber\\
+  &=-\log_2p-\left(E\left(X\right)-1\right)\log_2\left(1-p\right)\nonumber\\
+  &=-\log_2p-\left(\frac{1}{p}-1\right)\log_2\left(1-p\right)\nonumber\\
+  &=-\log_2p-\frac{1-p}{p}\log_2\left(1-p\right)\nonumber\\
+ \end{align}
  \section{指数分布}
 指数分布は，ポアソン過程における事象発生の時間間隔を表す．
  \subsection{確率母関数}
