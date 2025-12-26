@@ -1136,7 +1136,7 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   \sum_{x\in S\left(X\right)}p\left(x\right)&=\sum_{x=1}^n\frac{1}{n}\nonumber\\
   &=1
  \end{align}
-より，$X$は離散確率変数であると言える．
+より，$X$は離散確率変数である．
 $X$の分布を離散一様分布という．
  \subsection{確率母関数}
  \begin{align}
@@ -1365,7 +1365,7 @@ $n=0$のとき，式は成立する．
   &=\left[\frac{x}{a}\right]_{x=0}^{x=a}\nonumber\\
   &=1
  \end{align}
-より，$X$は連続確率変数であると言える．
+より，$X$は連続確率変数である．
 $X$の分布を連続一様分布という．
  \subsection{確率母関数}
  \begin{align}
@@ -1496,7 +1496,11 @@ $X$の分布を連続一様分布という．
   &=\log_2a\nonumber\\
  \end{align}
  \section{ベルヌーイ分布}
-$\{0,1\}$を標本空間とし，確率質量関数を
+標本空間を
+ \begin{align}
+  S\left(X\right)&=\{0,1\}
+ \end{align}
+とし，ある$0\le p\le 1$に対して確率質量関数を
  \begin{align}
   p\left(x\right)&=
   \begin{cases}
@@ -1504,8 +1508,12 @@ $\{0,1\}$を標本空間とし，確率質量関数を
    1-p&\left(x=0\right)
   \end{cases}
  \end{align}
-とする離散確率分布をベルヌーイ分布という．
-ただし，$0\le p\le 1$である．
+とすると，
+ \begin{align}
+  \sum_{x\in S\left(X\right)}p\left(x\right)&=1
+ \end{align}
+より，$X$は離散確率変数である．
+$X$の分布をベルヌーイ分布という．
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
@@ -1594,12 +1602,20 @@ $\{0,1\}$を標本空間とし，確率質量関数を
  \begin{align}
   X&=\sum_{n=1}^NX_n
  \end{align}
-を二項分布といい，その標本空間は$S=\{0,\cdots,N\}$である．
+を二項分布といい，その標本空間は$S\left(X\right)=\{0,\cdots,N\}$である．
 $X$の確率質量関数$p$について考えよう．
 $X$の値が$n$になるということは，$X_1,\cdots,X_N$のうち$n$個が$1$となり，$N-n$個が0になるということだ．
 $N$個の中から$n$個選ぶ場合の数は$\binom{N}{n}$で，選ばれた$n$個が全て$1$になる確率は$p^n$，残りの$N-n$個が全て$0$になる確率は$\left(1-p\right)^{N-n}$であるから，$X=n$となる確率は，
  \begin{align}
   p\left(n\right)&=\binom{N}{n}p^n\left(1-p\right)^{N-n}
+ \end{align}
+である．
+このとき，確かに
+ \begin{align}
+  \sum_{x\in S\left(X\right)}p\left(x\right)&=\sum_{x=0}^N\binom{N}{x}p^x\left(1-p\right)^{N-x}\nonumber\\
+  &=\left(p+1-p\right)^N\nonumber\\
+  &=1^N\nonumber\\
+  &=1
  \end{align}
 である．
  \subsection{確率母関数}
