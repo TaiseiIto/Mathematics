@@ -1905,6 +1905,16 @@ $X$の分布を幾何分布という．
   &=-f\left(t\right)\frac{f\left(t\right)^3+3f\left(t\right)^2-3f\left(t\right)-1}{\left(1-f\left(t\right)\right)^5}\nonumber\\
   &=-f\left(t\right)\frac{\left(f\left(t\right)-1\right)\left(f\left(t\right)^2+4f\left(t\right)+1\right)}{\left(1-f\left(t\right)\right)^5}\nonumber\\
   &=f\left(t\right)\frac{f\left(t\right)^2+4f\left(t\right)+1}{\left(1-f\left(t\right)\right)^4}\nonumber\\
+  &=\left(1-p\right)e^t\frac{\left(\left(1-p\right)e^t\right)^2+4\left(1-p\right)e^t+1}{\left(1-\left(1-p\right)e^t\right)^4}
+ \end{align}
+よって，
+ \begin{align}
+  E\left(\left(X-E\left(X\right)\right)^4\right)&=K_X^{\left(4\right)}\left(0\right)\nonumber\\
+  &=\left(1-p\right)\frac{\left(1-p\right)^2+4\left(1-p\right)+1}{\left(1-\left(1-p\right)\right)^4}\nonumber\\
+  &=\left(1-p\right)\frac{1-2p+p^2+4-4p+1}{p^4}\nonumber\\
+  &=\left(1-p\right)\frac{p^2-6p+6}{p^4}\nonumber\\
+  &=\frac{p^2-6p+6-p^3+6p^2-6p}{p^4}\nonumber\\
+  &=\frac{-p^3+7p^2-12p+6}{p^4}\nonumber\\
  \end{align}
 よって，
  \begin{align}
