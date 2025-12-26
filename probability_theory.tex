@@ -1840,9 +1840,21 @@ $X$の分布を幾何分布という．
  \begin{align}
   E\left(X\right)&=K_X^{\left(1\right)}\left(0\right)\nonumber\\
   &=\frac{1}{1-\left(1-p\right)}\nonumber\\
-  &=\frac{1}{p}\nonumber\\
+  &=\frac{1}{p}
  \end{align}
  \subsection{分散}
+ \begin{align}
+  K_X^{\left(2\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(1\right)}\left(t\right)\nonumber\\
+  &=\frac{d}{dt}\frac{1}{1-\left(1-p\right)e^t}\nonumber\\
+  &=-\frac{\frac{d}{dt}\left(1-\left(1-p\right)e^t\right)}{\left(1-\left(1-p\right)e^t\right)^2}\nonumber\\
+  &=\frac{\left(1-p\right)e^t}{\left(1-\left(1-p\right)e^t\right)^2}
+ \end{align}
+よって，
+ \begin{align}
+  V\left(X\right)&=K_X^{\left(2\right)}\left(0\right)\nonumber\\
+  &=\frac{1-p}{\left(1-\left(1-p\right)\right)^2}\nonumber\\
+  &=\frac{1-p}{p^2}
+ \end{align}
  \subsection{標準偏差}
  \subsection{歪度}
  \subsection{超過尖度}
