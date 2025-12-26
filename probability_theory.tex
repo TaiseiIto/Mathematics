@@ -1862,6 +1862,17 @@ $X$の分布を幾何分布という．
   &=\frac{\sqrt{1-p}}{p}
  \end{align}
  \subsection{歪度}
+ \begin{align}
+  K_X^{\left(3\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(2\right)}\left(t\right)\nonumber\\
+  &=\frac{d}{dt}\frac{\left(1-p\right)e^t}{\left(1-\left(1-p\right)e^t\right)^2}\nonumber\\
+  &=\frac{\frac{d\left(1-p\right)e^t}{dt}\left(1-\left(1-p\right)e^t\right)^2-\left(1-p\right)e^t\frac{d\left(1-\left(1-p\right)e^t\right)^2}{dt}}{\left(1-\left(1-p\right)e^t\right)^4}\nonumber\\
+  &=\frac{\left(1-p\right)e^t\left(1-\left(1-p\right)e^t\right)^2-\left(1-p\right)e^t2\left(1-\left(1-p\right)e^t\right)\frac{d\left(1-\left(1-p\right)e^t\right)}{dt}}{\left(1-\left(1-p\right)e^t\right)^4}\nonumber\\
+  &=\frac{\left(1-p\right)e^t\left(1-\left(1-p\right)e^t\right)^2+2\left(1-p\right)e^t\left(1-\left(1-p\right)e^t\right)\left(1-p\right)e^t}{\left(1-\left(1-p\right)e^t\right)^4}\nonumber\\
+ \end{align}
+よって，
+ \begin{align}
+  S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
+ \end{align}
  \subsection{超過尖度}
  \subsection{エントロピー}
  \section{指数分布}
