@@ -2004,9 +2004,18 @@ $X$の分布を幾何分布という．
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
   &=\log\frac{\lambda}{\lambda-t}\nonumber\\
-  &=\log\lambda-\log\left(\lambda-t\right)\nonumber\\
+  &=\log\lambda-\log\left(\lambda-t\right)
  \end{align}
  \subsection{平均}
+ \begin{align}
+  K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}K_X\left(t\right)\nonumber\\
+  &=\frac{d}{dt}\left(\log\lambda-\log\left(\lambda-t\right)\right)\nonumber\\
+  &=\frac{d\log\lambda}{dt}-\frac{d\log\left(\lambda-t\right)}{dt}\nonumber\\
+  &=-\frac{1}{\lambda-t}\frac{d\left(\lambda-t\right)}{dt}\nonumber\\
+  &=\frac{1}{\lambda-t}\nonumber\\
+  E\left(X\right)&=K_X^{\left(1\right)}\left(0\right)\nonumber\\
+  &=\frac{1}{\lambda}
+ \end{align}
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
