@@ -1788,9 +1788,9 @@ $X$の分布を幾何分布という．
  \end{align}
 上の式より，この確率母関数は
  \begin{align}
-  -1<\left(1-p\right)t<1\nonumber\\
-  -\frac{1}{1-p}<t<\frac{1}{1-p}\nonumber\\
-  t\in\left(-\frac{1}{1-p},\frac{1}{1-p}\right)
+  &-1<\left(1-p\right)t<1\nonumber\\
+  &-\frac{1}{1-p}<t<\frac{1}{1-p}\nonumber\\
+  &t\in\left(-\frac{1}{1-p},\frac{1}{1-p}\right)
  \end{align}
 において定義されることが分かる．
 よって，
@@ -1802,7 +1802,18 @@ $X$の分布を幾何分布という．
  \subsection{積率母関数}
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
+  &=\frac{pe^t}{1-\left(1-p\right)e^t}\nonumber\\
  \end{align}
+また，確率母関数の定義域より，積率母関数の定義域は，
+ \begin{align}
+  e^t&\in\left(-\frac{1}{1-p},\frac{1}{1-p}\right)\nonumber\\
+  t&\in\log\left(-\frac{1}{1-p},\frac{1}{1-p}\right)\nonumber\\
+  &=\log\left(0,\frac{1}{1-p}\right)\nonumber\\
+  &=\left(-\infty,\log\frac{1}{1-p}\right)\nonumber\\
+  &=\left(-\infty,-\log\left(1-p\right)\right)\nonumber\\
+  t&<-\log\left(1-p\right)
+ \end{align}
+である．
  \subsection{特性関数}
  \subsection{キュムラント母関数}
  \subsection{平均}
