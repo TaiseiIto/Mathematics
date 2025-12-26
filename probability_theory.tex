@@ -1774,7 +1774,7 @@ $X$の分布を幾何分布という．
   &=a^{n+1}-1+x\nonumber\\
   ax-x&=a^{n+1}-1\nonumber\\
   \left(a-1\right)x&=a^{n+1}-1\nonumber\\
-  x&=\frac{a^{n+1}-1}{a-1}\nonumber\\
+  x&=\frac{a^{n+1}-1}{a-1}
  \end{align}
  \subsection{確率母関数}
  \begin{align}
@@ -1797,12 +1797,12 @@ $X$の分布を幾何分布という．
  \begin{align}
   G_X\left(t\right)&=pt\frac{\left(\left(1-p\right)t\right)^{\infty+1}-1}{\left(1-p\right)t-1}\nonumber\\
   &=pt\frac{-1}{\left(1-p\right)t-1}\nonumber\\
-  &=\frac{pt}{1-\left(1-p\right)t}\nonumber\\
+  &=\frac{pt}{1-\left(1-p\right)t}
  \end{align}
  \subsection{積率母関数}
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
-  &=\frac{pe^t}{1-\left(1-p\right)e^t}\nonumber\\
+  &=\frac{pe^t}{1-\left(1-p\right)e^t}
  \end{align}
 また，確率母関数の定義域より，積率母関数の定義域は，
  \begin{align}
@@ -1817,16 +1817,31 @@ $X$の分布を幾何分布という．
  \subsection{特性関数}
  \begin{align}
   \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
-  &=\frac{pe^{it}}{1-\left(1-p\right)e^{it}}\nonumber\\
+  &=\frac{pe^{it}}{1-\left(1-p\right)e^{it}}
  \end{align}
  \subsection{キュムラント母関数}
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
   &=\log\frac{pe^t}{1-\left(1-p\right)e^t}\nonumber\\
   &=\log p+\log e^t-\log\left(1-\left(1-p\right)e^t\right)\nonumber\\
-  &=t+\log p-\log\left(1-\left(1-p\right)e^t\right)\nonumber\\
+  &=t+\log p-\log\left(1-\left(1-p\right)e^t\right)
  \end{align}
  \subsection{平均}
+ \begin{align}
+  K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}K_X\left(t\right)\nonumber\\
+  &=\frac{d}{dt}\left(t+\log p-\log\left(1-\left(1-p\right)e^t\right)\right)\nonumber\\
+  &=\frac{d}{dt}t+\frac{d}{dt}\log p-\frac{d}{dt}\left(\log\left(1-\left(1-p\right)e^t\right)\right)\nonumber\\
+  &=1-\frac{\frac{d}{dt}\left(1-\left(1-p\right)e^t\right)}{1-\left(1-p\right)e^t}\nonumber\\
+  &=1+\frac{\left(1-p\right)e^t}{1-\left(1-p\right)e^t}\nonumber\\
+  &=\frac{1-\left(1-p\right)e^t+\left(1-p\right)e^t}{1-\left(1-p\right)e^t}\nonumber\\
+  &=\frac{1}{1-\left(1-p\right)e^t}
+ \end{align}
+よって，
+ \begin{align}
+  E\left(X\right)&=K_X^{\left(1\right)}\left(0\right)\nonumber\\
+  &=\frac{1}{1-\left(1-p\right)}\nonumber\\
+  &=\frac{1}{p}\nonumber\\
+ \end{align}
  \subsection{分散}
  \subsection{標準偏差}
  \subsection{歪度}
