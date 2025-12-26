@@ -1870,14 +1870,26 @@ $X$の分布を幾何分布という．
  \subsection{歪度}
  \begin{align}
   K_X^{\left(3\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(2\right)}\left(t\right)\nonumber\\
-  &=\frac{d}{dt}\frac{\left(1-p\right)e^t}{\left(1-\left(1-p\right)e^t\right)^2}\nonumber\\
-  &=\frac{\frac{d\left(1-p\right)e^t}{dt}\left(1-\left(1-p\right)e^t\right)^2-\left(1-p\right)e^t\frac{d\left(1-\left(1-p\right)e^t\right)^2}{dt}}{\left(1-\left(1-p\right)e^t\right)^4}\nonumber\\
-  &=\frac{\left(1-p\right)e^t\left(1-\left(1-p\right)e^t\right)^2-\left(1-p\right)e^t2\left(1-\left(1-p\right)e^t\right)\frac{d\left(1-\left(1-p\right)e^t\right)}{dt}}{\left(1-\left(1-p\right)e^t\right)^4}\nonumber\\
-  &=\frac{\left(1-p\right)e^t\left(1-\left(1-p\right)e^t\right)^2+2\left(1-p\right)e^t\left(1-\left(1-p\right)e^t\right)\left(1-p\right)e^t}{\left(1-\left(1-p\right)e^t\right)^4}\nonumber\\
+  &=\frac{d}{dt}\frac{f\left(t\right)}{\left(1-f\left(t\right)\right)^2}\nonumber\\
+  &=\frac{\frac{df\left(t\right)}{dt}\left(1-f\left(t\right)\right)^2-f\left(t\right)\frac{d\left(1-f\left(t\right)\right)^2}{dt}}{\left(1-f\left(t\right)\right)^4}\nonumber\\
+  &=\frac{f\left(t\right)\left(1-f\left(t\right)\right)^2+2f\left(t\right)^2\left(1-f\left(t\right)\right)}{\left(1-f\left(t\right)\right)^4}\nonumber\\
+  &=\frac{f\left(t\right)\left(1-2f\left(t\right)+f\left(t\right)^2\right)+2f\left(t\right)^2\left(1-f\left(t\right)\right)}{\left(1-f\left(t\right)\right)^4}\nonumber\\
+  &=\frac{f\left(t\right)-2f\left(t\right)^2+f\left(t\right)^3+2f\left(t\right)^2-2f\left(t\right)^3}{\left(1-f\left(t\right)\right)^4}\nonumber\\
+  &=\frac{f\left(t\right)-f\left(t\right)^3}{\left(1-f\left(t\right)\right)^4}\nonumber\\
+  &=\frac{\left(1-p\right)e^t-\left(\left(1-p\right)e^t\right)^3}{\left(1-\left(1-p\right)e^t\right)^4}\nonumber\\
+  K_X^{\left(3\right)}\left(0\right)&=\frac{\left(1-p\right)-\left(1-p\right)^3}{\left(1-\left(1-p\right)\right)^4}\nonumber\\
+  &=\frac{\left(1-p\right)-\left(1-3p+3p^2-p^3\right)}{p^4}\nonumber\\
+  &=\frac{1-p-1+3p-3p^2+p^3}{p^4}\nonumber\\
+  &=\frac{2p-3p^2+p^3}{p^4}\nonumber\\
+  &=\frac{p^2-3p+2}{p^3}\nonumber\\
+  E\left(\left(X-E\left(X\right)\right)^3\right)&=\frac{\left(p-1\right)\left(p-2\right)}{p^3}
  \end{align}
 よって，
  \begin{align}
   S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
+  &=\frac{\left(p-1\right)\left(p-2\right)}{p^3\left(\frac{\sqrt{1-p}}{p}\right)^3}\nonumber\\
+  &=\frac{\left(p-1\right)\left(p-2\right)}{\left(1-p\right)\sqrt{1-p}}\nonumber\\
+  &=\frac{2-p}{\sqrt{1-p}}
  \end{align}
  \subsection{超過尖度}
  \subsection{エントロピー}
