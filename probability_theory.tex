@@ -1978,13 +1978,13 @@ $X$の分布を幾何分布という．
   &=\frac{\lambda\left(e^{-\infty}-1\right)}{\log t-\lambda}\nonumber\\
   &=\frac{\lambda\left(0-1\right)}{\log t-\lambda}\nonumber\\
   &=-\frac{\lambda}{\log t-\lambda}\nonumber\\
-  &=\frac{\lambda}{\lambda-\log t}\nonumber\\
+  &=\frac{\lambda}{\lambda-\log t}
  \end{align}
  \subsection{積率母関数}
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
   &=\frac{\lambda}{\lambda-\log e^t}\nonumber\\
-  &=\frac{\lambda}{\lambda-t}\nonumber\\
+  &=\frac{\lambda}{\lambda-t}
  \end{align}
 定義域は，確率母関数の定義域より，
  \begin{align}
@@ -1992,11 +1992,20 @@ $X$の分布を幾何分布という．
   \iff&0<e^t<e^\lambda\nonumber\\
   \iff&e^t<e^\lambda\nonumber\\
   \iff&t<\lambda\nonumber\\
-  \iff&t\in\left(-\infty,\lambda\right)\nonumber\\
+  \iff&t\in\left(-\infty,\lambda\right)
  \end{align}
 である．
  \subsection{特性関数}
+ \begin{align}
+  \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
+  &=\frac{\lambda}{\lambda-it}
+ \end{align}
  \subsection{キュムラント母関数}
+ \begin{align}
+  K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
+  &=\log\frac{\lambda}{\lambda-t}\nonumber\\
+  &=\log\lambda-\log\left(\lambda-t\right)\nonumber\\
+ \end{align}
  \subsection{平均}
  \subsection{分散}
  \subsection{標準偏差}
