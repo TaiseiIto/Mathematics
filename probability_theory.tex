@@ -2070,7 +2070,27 @@ $X$の分布を幾何分布という．
   &=\log_2e-\log_2\lambda
  \end{align}
  \section{ポアソン分布}
-ポアソン分布は，二項分布の拡張である．
+二項分布
+ \begin{align}
+  \forall n\in\{n\in\mathbb{N}|0\le n\le n\},p\left(n\right)&=\binom{N}{n}p^n\left(1-p\right)^{N-n}
+ \end{align}
+において，平均を
+ \begin{align}
+  \lambda=E\left(X\right)=Np
+ \end{align}
+とすると，
+ \begin{align}
+  p=\frac{\lambda}{N}
+ \end{align}
+であるから，
+ \begin{align}
+  \forall n\in\{n\in\mathbb{N}|0\le n\le n\},p\left(n\right)&=\binom{N}{n}\left(\frac{\lambda}{N}\right)^n\left(1-\frac{\lambda}{N}\right)^{N-n}
+ \end{align}
+ここで，
+ \begin{align}
+  N=\infty
+ \end{align}
+とすると，
  \subsection{確率母関数}
  \subsection{積率母関数}
  \subsection{特性関数}
