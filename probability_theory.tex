@@ -2116,15 +2116,28 @@ $X$の分布を幾何分布という．
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
-  &=\sum_{n\in S\left(X\right)}t^xp\left(n\right)\nonumber\\
+  &=\sum_{n\in S\left(X\right)}t^np\left(n\right)\nonumber\\
   &=\sum_{n=0}^\infty \frac{t^n\lambda^n}{n!e^\lambda}\nonumber\\
   &=\frac{1}{e^\lambda}\sum_{n=0}^\infty \frac{\left(t\lambda\right)^n}{n!}\nonumber\\
   &=\frac{e^{t\lambda}}{e^\lambda}\nonumber\\
   &=e^{\lambda\left(t-1\right)}
  \end{align}
  \subsection{積率母関数}
+ \begin{align}
+  M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
+  &=e^{\lambda\left(e^t-1\right)}
+ \end{align}
  \subsection{特性関数}
+ \begin{align}
+  \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
+  &=e^{\lambda\left(e^{it}-1\right)}
+ \end{align}
  \subsection{キュムラント母関数}
+ \begin{align}
+  K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
+  &=\log e^{\lambda\left(e^{it}-1\right)}\nonumber\\
+  &=\lambda\left(e^{it}-1\right)\nonumber\\
+ \end{align}
  \subsection{平均}
  \subsection{分散}
  \subsection{標準偏差}
