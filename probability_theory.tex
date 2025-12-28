@@ -2135,14 +2135,50 @@ $X$の分布を幾何分布という．
  \subsection{キュムラント母関数}
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
-  &=\log e^{\lambda\left(e^{it}-1\right)}\nonumber\\
-  &=\lambda\left(e^{it}-1\right)\nonumber\\
+  &=\log e^{\lambda\left(e^t-1\right)}\nonumber\\
+  &=\lambda\left(e^t-1\right)
  \end{align}
  \subsection{平均}
+ \begin{align}
+  K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}\lambda\left(e^t-1\right)\nonumber\\
+  &=\lambda\frac{d}{dt}\left(e^t-1\right)\nonumber\\
+  &=\lambda e^t
+ \end{align}
+よって平均は，
+ \begin{align}
+  E\left(X\right)&=K_X^{\left(1\right)}\left(0\right)\nonumber\\
+  &=\lambda e^0\nonumber\\
+  &=\lambda
+ \end{align}
  \subsection{分散}
+ \begin{align}
+  K_X^{\left(2\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(1\right)}\left(t\right)\nonumber\\
+  &=\frac{d}{dt}\lambda e^t\nonumber\\
+  &=\lambda e^t
+ \end{align}
+よって分散は，
+ \begin{align}
+  V\left(X\right)&=K_X^{\left(2\right)}\left(0\right)\nonumber\\
+  &=\lambda e^0\nonumber\\
+  &=\lambda
+ \end{align}
  \subsection{標準偏差}
+ \begin{align}
+  \sigma\left(X\right)&=\sqrt{V\left(X\right)}\nonumber\\
+  &=\sqrt{\lambda}
+ \end{align}
  \subsection{歪度}
+ \begin{align}
+  K_X^{\left(3\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(2\right)}\left(t\right)\nonumber\\
+  &=\frac{d}{dt}\lambda e^t\nonumber\\
+  &=\lambda e^t
+ \end{align}
  \subsection{超過尖度}
+ \begin{align}
+  K_X^{\left(4\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(3\right)}\left(t\right)\nonumber\\
+  &=\frac{d}{dt}\lambda e^t\nonumber\\
+  &=\lambda e^t
+ \end{align}
  \subsection{エントロピー}
  \section{正規分布}
 正規分布は，ポアソン分布の拡張である．
