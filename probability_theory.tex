@@ -2114,6 +2114,14 @@ $X$の分布を幾何分布という．
  \end{align}
 である．
  \subsection{確率母関数}
+ \begin{align}
+  G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+  &=\sum_{n\in S\left(X\right)}t^xp\left(n\right)\nonumber\\
+  &=\sum_{n=0}^\infty \frac{t^n\lambda^n}{n!e^\lambda}\nonumber\\
+  &=\frac{1}{e^\lambda}\sum_{n=0}^\infty \frac{\left(t\lambda\right)^n}{n!}\nonumber\\
+  &=\frac{e^{t\lambda}}{e^\lambda}\nonumber\\
+  &=e^{\lambda\left(t-1\right)}
+ \end{align}
  \subsection{積率母関数}
  \subsection{特性関数}
  \subsection{キュムラント母関数}
