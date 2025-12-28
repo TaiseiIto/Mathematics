@@ -2078,19 +2078,20 @@ $X$の分布を幾何分布という．
  \begin{align}
   \lambda=E\left(X\right)=Np
  \end{align}
-とすると，
+とする．
  \begin{align}
   p=\frac{\lambda}{N}
  \end{align}
-であるから，
+を使って二項分布の確率質量関数を$p$を使わずに表現すると，
  \begin{align}
-  \forall n\in\{n\in\mathbb{N}|0\le n\le n\},p\left(n\right)&=\binom{N}{n}\left(\frac{\lambda}{N}\right)^n\left(1-\frac{\lambda}{N}\right)^{N-n}
+  \forall n\in\{n\in\mathbb{N}|0\le n\le N\},p\left(n\right)&=\binom{N}{n}\left(\frac{\lambda}{N}\right)^n\left(1-\frac{\lambda}{N}\right)^{N-n}
  \end{align}
-ここで，
+となる．
+さらに，$N$を無限に増大させると，
  \begin{align}
-  N=\infty
+  p\left(n\right)&=\lim_{N\to\infty}\binom{N}{n}\left(\frac{\lambda}{N}\right)^n\left(1-\frac{\lambda}{N}\right)^{N-n}\nonumber\\
+  &=\lim_{N\to\infty}\frac{N!}{\left(N-n\right)!n!}\frac{\lambda^n}{N^n}\left(1-\frac{\lambda}{N}\right)^N\left(1-\frac{\lambda}{N}\right)^{-n}\nonumber\\
  \end{align}
-とすると，
  \subsection{確率母関数}
  \subsection{積率母関数}
  \subsection{特性関数}
