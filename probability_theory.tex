@@ -2091,13 +2091,14 @@ $X$の分布を幾何分布という．
  \begin{align}
   p\left(n\right)&=\lim_{N\to\infty}\binom{N}{n}\left(\frac{\lambda}{N}\right)^n\left(1-\frac{\lambda}{N}\right)^{N-n}\nonumber\\
   &=\lim_{N\to\infty}\frac{N!}{\left(N-n\right)!n!}\frac{\lambda^n}{N^n}\left(1-\frac{\lambda}{N}\right)^N\left(1-\frac{\lambda}{N}\right)^{-n}\nonumber\\
-  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{\frac{N}{\lambda}}\right)^\lambda\left(1-\frac{\lambda}{N}\right)^{-n}\frac{N!}{\left(N-n\right)!N^n}\nonumber\\
-  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{\frac{N}{\lambda}}\right)^\lambda\left(1-\frac{\lambda}{N}\right)^{-n}\prod_{m=1}^n\frac{N-n+m}{N}\nonumber\\
-  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{\frac{N}{\lambda}}\right)^\lambda\left(1-\frac{\lambda}{N}\right)^{-n}\prod_{m=1}^n\left(1+\frac{m-n}{N}\right)\nonumber\\
-  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{\frac{N}{\lambda}}\right)^\lambda\prod_{m=1}^n\frac{1+\frac{m-n}{N}}{1-\frac{\lambda}{N}}\nonumber\\
-  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{\frac{N}{\lambda}}\right)^\lambda\prod_{m=1}^n\frac{N+m-n}{N-\lambda}\nonumber\\
-  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{\frac{N}{\lambda}}\right)^\lambda\prod_{m=1}^n\left(1+\frac{\lambda+m-n}{N-\lambda}\right)\nonumber\\
-  &=\frac{\lambda^ne^\lambda}{n!}
+  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{-\frac{N}{\lambda}}\right)^{-\lambda}\left(1-\frac{\lambda}{N}\right)^{-n}\frac{N!}{\left(N-n\right)!N^n}\nonumber\\
+  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{-\frac{N}{\lambda}}\right)^{-\lambda}\left(1-\frac{\lambda}{N}\right)^{-n}\prod_{m=1}^n\frac{N-n+m}{N}\nonumber\\
+  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{-\frac{N}{\lambda}}\right)^{-\lambda}\left(1-\frac{\lambda}{N}\right)^{-n}\prod_{m=1}^n\left(1+\frac{m-n}{N}\right)\nonumber\\
+  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{-\frac{N}{\lambda}}\right)^{-\lambda}\prod_{m=1}^n\frac{1+\frac{m-n}{N}}{1-\frac{\lambda}{N}}\nonumber\\
+  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{-\frac{N}{\lambda}}\right)^{-\lambda}\prod_{m=1}^n\frac{N+m-n}{N-\lambda}\nonumber\\
+  &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{-\frac{N}{\lambda}}\right)^{-\lambda}\prod_{m=1}^n\left(1+\frac{\lambda+m-n}{N-\lambda}\right)\nonumber\\
+  &=\frac{\lambda^ne^{-\lambda}}{n!}\nonumber\\
+  &=\frac{\lambda^n}{n!e^\lambda}
  \end{align}
 これがポアソン分布の確率質量関数であり，$N$を無限大に増大させたために，その標本空間は，
  \begin{align}
@@ -2106,8 +2107,12 @@ $X$の分布を幾何分布という．
 である．
 確かに，
  \begin{align}
-  \sum_{n\in S\left(X\right)}p\left(n\right)&=\sum_{n=0}^\infty\frac{\lambda^ne^\lambda}{n!}\nonumber\\
+  \sum_{n\in S\left(X\right)}p\left(n\right)&=\sum_{n=0}^\infty\frac{\lambda^n}{n!e^\lambda}\nonumber\\
+  &=\frac{1}{e^\lambda}\sum_{n=0}^\infty\frac{\lambda^n}{n!}\nonumber\\
+  &=\frac{e^\lambda}{e^\lambda}\nonumber\\
+  &=1
  \end{align}
+である．
  \subsection{確率母関数}
  \subsection{積率母関数}
  \subsection{特性関数}
