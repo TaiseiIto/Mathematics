@@ -1602,7 +1602,7 @@ $X$の分布をベルヌーイ分布という．
  \begin{align}
   X&=\sum_{n=1}^NX_n
  \end{align}
-を二項分布といい，その標本空間は$S\left(X\right)=\{0,\cdots,N\}$である．
+を二項分布といい，その標本空間は$S\left(X\right)=\{n\in\mathbb{N}|0\le n\le N\}$である．
 $X$の確率質量関数$p$について考えよう．
 $X$の値が$n$になるということは，$X_1,\cdots,X_N$のうち$n$個が$1$となり，$N-n$個が0になるということだ．
 $N$個の中から$n$個選ぶ場合の数は$\binom{N}{n}$で，選ばれた$n$個が全て$1$になる確率は$p^n$，残りの$N-n$個が全て$0$になる確率は$\left(1-p\right)^{N-n}$であるから，$X=n$となる確率は，
@@ -2098,6 +2098,15 @@ $X$の分布を幾何分布という．
   &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{\frac{N}{\lambda}}\right)^\lambda\prod_{m=1}^n\frac{N+m-n}{N-\lambda}\nonumber\\
   &=\lim_{N\to\infty}\frac{\lambda^n}{n!}\left(\left(1-\frac{\lambda}{N}\right)^{\frac{N}{\lambda}}\right)^\lambda\prod_{m=1}^n\left(1+\frac{\lambda+m-n}{N-\lambda}\right)\nonumber\\
   &=\frac{\lambda^ne^\lambda}{n!}
+ \end{align}
+これがポアソン分布の確率質量関数であり，$N$を無限大に増大させたために，その標本空間は，
+ \begin{align}
+  S\left(X\right)=\lim_{N\to\infty}\{n\in\mathbb{N}|0\le n\le N\}=\mathbb{N}_0
+ \end{align}
+である．
+確かに，
+ \begin{align}
+  \sum_{n\in S\left(X\right)}p\left(n\right)&=\sum_{n=0}^\infty\frac{\lambda^ne^\lambda}{n!}\nonumber\\
  \end{align}
  \subsection{確率母関数}
  \subsection{積率母関数}
