@@ -2193,6 +2193,15 @@ $X$の分布を幾何分布という．
   &=\lambda^{-1}
  \end{align}
  \subsection{エントロピー}
+ \begin{align}
+  H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)\nonumber\\
+  &=-E\left(\log_2\frac{\lambda^X}{X!e^\lambda}\right)\nonumber\\
+  &=-E\left(\log_2\frac{2^{X\log_2\lambda}}{X!2^{\lambda\log_2e}}\right)\nonumber\\
+  &=-E\left(X\log_2\lambda-\log_2X!-\lambda\log_2e\right)\nonumber\\
+  &=-E\left(X\log_2\lambda-\lambda\log_2e-\log_2\prod_{m=1}^Xm\right)\nonumber\\
+  &=-E\left(X\log_2\lambda-\lambda\log_2e-\sum_{m=1}^X\log_2m\right)\nonumber\\
+  &=-E\left(X\right)\log_2\lambda+\lambda\log_2e+E\left(\sum_{m=1}^X\log_2m\right)\nonumber\\
+ \end{align}
  \section{正規分布}
 正規分布は，ポアソン分布の拡張である．
  \subsection{確率母関数}
