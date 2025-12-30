@@ -51,7 +51,9 @@
     &=\lim_{h\to 0}\frac{\left(h\frac{f\left(x+h\right)-f\left(x\right)}{h}+f\left(x\right)\right)\left(h\frac{g\left(x+h\right)-g\left(x\right)}{h}+g\left(x\right)\right)-f\left(x\right)g\left(x\right)}{h}\nonumber\\
     &=\lim_{h\to 0}\frac{h\frac{f\left(x+h\right)-f\left(x\right)}{h}h\frac{g\left(x+h\right)-g\left(x\right)}{h}+h\frac{f\left(x+h\right)-f\left(x\right)}{h}g\left(x\right)+f\left(x\right)h\frac{g\left(x+h\right)-g\left(x\right)}{h}+f\left(x\right)g\left(x\right)-f\left(x\right)g\left(x\right)}{h}\nonumber\\
     &=\lim_{h\to 0}\frac{h\frac{f\left(x+h\right)-f\left(x\right)}{h}h\frac{g\left(x+h\right)-g\left(x\right)}{h}+h\frac{f\left(x+h\right)-f\left(x\right)}{h}g\left(x\right)+f\left(x\right)h\frac{g\left(x+h\right)-g\left(x\right)}{h}}{h}\nonumber\\
-    &=\left(\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}\right)g\left(x\right)+f\left(x\right)\left(\lim_{h\to 0}\frac{g\left(x+h\right)-g\left(x\right)}{h}\right)\nonumber\\
+    &=\lim_{h\to 0}h\frac{f\left(x+h\right)-f\left(x\right)}{h}\frac{g\left(x+h\right)-g\left(x\right)}{h}+\frac{f\left(x+h\right)-f\left(x\right)}{h}g\left(x\right)+f\left(x\right)\frac{g\left(x+h\right)-g\left(x\right)}{h}\nonumber\\
+    &=\left(\lim_{h\to 0}h\right)\left(\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}\right)\left(\lim_{h\to 0}\frac{g\left(x+h\right)-g\left(x\right)}{h}\right)+\left(\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}\right)g\left(x\right)+f\left(x\right)\left(\lim_{h\to 0}\frac{g\left(x+h\right)-g\left(x\right)}{h}\right)\nonumber\\
+    &=0\dv{f\left(x\right)}{x}\dv{g\left(x\right)}{x}+\dv{f\left(x\right)}{x}g\left(x\right)+f\left(x\right)\dv{g\left(x\right)}{x}\nonumber\\
     &=\dv{f\left(x\right)}{x}g\left(x\right)+f\left(x\right)\dv{g\left(x\right)}{x}
    \end{align}
  \section{積分}
