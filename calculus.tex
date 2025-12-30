@@ -49,6 +49,25 @@
     &=\lim_{h\to 0}-\frac{1}{x\left(x+h\right)}\nonumber\\
     &=-\frac{1}{x^2}
    \end{align}
+  \subsection{指数関数の微分}
+   自然対数の底の定義
+   \begin{align}
+    e&=\lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x\nonumber\\
+    &=\lim_{h\to 0}\left(1+h\right)^{\frac{1}{h}}
+   \end{align}
+   より，
+   \begin{align}
+    \dv{e^x}{x}&=\lim_{h\to 0}\frac{e^{x+h}-e^x}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{e^xe^h-e^x}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{e^x\left(e^h-1\right)}{h}\nonumber\\
+    &=e^x\lim_{h\to 0}\frac{e^h-1}{h}\nonumber\\
+    &=e^x\lim_{h\to 0}\frac{\left(\left(1+h\right)^{\frac{1}{h}}\right)^h-1}{h}\nonumber\\
+    &=e^x\lim_{h\to 0}\frac{\left(1+h\right)^{\frac{h}{h}}-1}{h}\nonumber\\
+    &=e^x\lim_{h\to 0}\frac{\left(1+h\right)-1}{h}\nonumber\\
+    &=e^x\lim_{h\to 0}\frac{h}{h}\nonumber\\
+    &=e^x\lim_{h\to 0}1\nonumber\\
+    &=e^x
+   \end{align}
   \subsection{和の微分}
    \begin{align}
     \dv{\left(f\left(x\right)+g\left(x\right)\right)}{x}&=\lim_{h\to 0}\frac{\left(f\left(x+h\right)+g\left(x+h\right)\right)-\left(f\left(x\right)+g\left(x\right)\right)}{h}\nonumber\\
