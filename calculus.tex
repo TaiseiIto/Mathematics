@@ -44,6 +44,14 @@
     &=\left(\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}\right)+\left(\lim_{h\to 0}\frac{g\left(x+h\right)-g\left(x\right)}{h}\right)\nonumber\\
     &=\dv{f\left(x\right)}{x}+\dv{g\left(x\right)}{x}\nonumber\\
    \end{align}
+  \subsection{積の微分}
+   \begin{align}
+    \dv{f\left(x\right)g\left(x\right)}{x}&=\lim_{h\to 0}\frac{f\left(x+h\right)g\left(x+h\right)-f\left(x\right)g\left(x\right)}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{\left(f\left(x+h\right)-f\left(x\right)+f\left(x\right)\right)\left(g\left(x+h\right)-g\left(x\right)+g\left(x\right)\right)-f\left(x\right)g\left(x\right)}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{\left(h\frac{f\left(x+h\right)-f\left(x\right)}{h}+f\left(x\right)\right)\left(h\frac{g\left(x+h\right)-g\left(x\right)}{h}+g\left(x\right)\right)-f\left(x\right)g\left(x\right)}{h}\nonumber\\
+    &=\left(\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}\right)g\left(x\right)+f\left(x\right)\left(\lim_{h\to 0}\frac{g\left(x+h\right)-g\left(x\right)}{h}\right)\nonumber\\
+    &=\dv{f\left(x\right)}{x}g\left(x\right)+f\left(x\right)\dv{g\left(x\right)}{x}
+   \end{align}
  \section{積分}
 \end{document}
 
