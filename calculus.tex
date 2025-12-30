@@ -68,6 +68,27 @@
     &=e^x\lim_{h\to 0}1\nonumber\\
     &=e^x
    \end{align}
+  \subsection{対数関数の微分}
+   \begin{align}
+    \dv{\log x}{x}&=\lim_{h\to 0}\frac{\log\left(x+h\right)-\log x}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{\log\frac{x+h}{x}}{h}\nonumber\\
+    &=\lim_{h\to 0}\log\left(\frac{x+h}{x}\right)^{\frac{1}{h}}\nonumber\\
+    &=\log\lim_{h\to 0}\left(\frac{x}{x}+\frac{h}{x}\right)^{\frac{1}{h}}\nonumber\\
+    &=\log\lim_{h\to 0}\left(1+\frac{h}{x}\right)^{\frac{1}{h}}
+   \end{align}
+   ここで，
+   \begin{align}
+    g=\frac{h}{x}
+   \end{align}
+   とすると，
+   \begin{align}
+    \dv{\log x}{x}&=\log\lim_{h\to 0}\left(1+\frac{h}{x}\right)^{\frac{1}{h}}\nonumber\\
+    &=\log\lim_{g\to 0}\left(1+g\right)^{\frac{1}{gx}}\nonumber\\
+    &=\log\lim_{g\to 0}\left(\left(1+g\right)^{\frac{1}{g}}\right)^{\frac{1}{x}}\nonumber\\
+    &=\log\left(\lim_{g\to 0}\left(1+g\right)^{\frac{1}{g}}\right)^{\frac{1}{x}}\nonumber\\
+    &=\log e^{\frac{1}{x}}\nonumber\\
+    &=\frac{1}{x}\nonumber\\
+   \end{align}
   \subsection{和の微分}
    \begin{align}
     \dv{\left(f\left(x\right)+g\left(x\right)\right)}{x}&=\lim_{h\to 0}\frac{\left(f\left(x+h\right)+g\left(x+h\right)\right)-\left(f\left(x\right)+g\left(x\right)\right)}{h}\nonumber\\
