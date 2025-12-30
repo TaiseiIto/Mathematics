@@ -35,5 +35,15 @@
     &=\lim_{h\to 0}1\nonumber\\
     &=1
    \end{align}
+  \subsection{和の微分}
+   \begin{align}
+    \dv{\left(f\left(x\right)+g\left(x\right)\right)}{x}&=\lim_{h\to 0}\frac{\left(f\left(x+h\right)+g\left(x+h\right)\right)-\left(f\left(x\right)+g\left(x\right)\right)}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{f\left(x+h\right)+g\left(x+h\right)-f\left(x\right)-g\left(x\right)}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)+g\left(x+h\right)-g\left(x\right)}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}+\frac{g\left(x+h\right)-g\left(x\right)}{h}\nonumber\\
+    &=\left(\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}\right)+\left(\lim_{h\to 0}\frac{g\left(x+h\right)-g\left(x\right)}{h}\right)\nonumber\\
+    &=\dv{f\left(x\right)}{x}+\dv{g\left(x\right)}{x}\nonumber\\
+   \end{align}
+ \section{積分}
 \end{document}
 
