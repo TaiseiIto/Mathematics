@@ -93,6 +93,7 @@
     &=\frac{1}{x}\nonumber\\
    \end{align}
   \subsection{$\sin$の微分}
+   \subsubsection{三平方の定理}
    \subsubsection{余弦定理}
     $\triangle ABC$があり，頂点$A$から辺$BC$へ垂線を引き，その足を点$D$とする．
     \begin{figure}[H]
@@ -117,7 +118,24 @@
     \end{figure}
     直角三角形$\triangle ABD$について，三平方の定理より，
     \begin{align}
-     \left|\vec{AD}\right|^2+\left|\vec{BD}\right|^2=\left|\vec{AB}\right|^2
+     \left|\vec{AD}\right|^2+\left|\vec{BD}\right|^2&=\left|\vec{AB}\right|^2\nonumber\\
+     \left|\vec{AD}\right|^2&=\left|\vec{AB}\right|^2-\left|\vec{BD}\right|^2
+    \end{align}
+    また，直角三角形$\triangle ACD$について，三平方の定理より，
+    \begin{align}
+     \left|\vec{AD}\right|^2+\left|\vec{CD}\right|^2&=\left|\vec{AC}\right|^2\nonumber\\
+     \left|\vec{AD}\right|^2&=\left|\vec{AC}\right|^2-\left|\vec{CD}\right|^2
+    \end{align}
+    よって，
+    \begin{align}
+     \left|\vec{AB}\right|^2-\left|\vec{BD}\right|^2&=\left|\vec{AD}\right|^2=\left|\vec{AC}\right|^2-\left|\vec{CD}\right|^2\nonumber\\
+     \left|\vec{AB}\right|^2-\left|\vec{BD}\right|^2&=\left|\vec{AC}\right|^2-\left|\vec{CD}\right|^2\nonumber\\
+     \left|\vec{AB}\right|^2-\left|\vec{BD}\right|^2&=\left|\vec{AC}\right|^2-\left(\left|\vec{BC}\right|-\left|\vec{BD}\right|\right)^2\nonumber\\
+     \left|\vec{AB}\right|^2-\left(\left|\vec{AB}\right|\cos\angle ABC\right)^2&=\left|\vec{AC}\right|^2-\left(\left|\vec{BC}\right|-\left|\vec{AB}\right|\cos\angle ABC\right)^2\nonumber\\
+     \left|\vec{AB}\right|^2-\left|\vec{AB}\right|^2\cos^2\angle ABC&=\left|\vec{AC}\right|^2-\left(\left|\vec{BC}\right|^2-2\left|\vec{BC}\right|\left|\vec{AB}\right|\cos\angle ABC+\left|\vec{AB}\right|^2\cos^2\angle ABC\right)\nonumber\\
+     \left|\vec{AB}\right|^2-\left|\vec{AB}\right|^2\cos^2\angle ABC&=\left|\vec{AC}\right|^2-\left|\vec{BC}\right|^2+2\left|\vec{BC}\right|\left|\vec{AB}\right|\cos\angle ABC-\left|\vec{AB}\right|^2\cos^2\angle ABC\nonumber\\
+     \left|\vec{AB}\right|^2&=\left|\vec{AC}\right|^2-\left|\vec{BC}\right|^2+2\left|\vec{BC}\right|\left|\vec{AB}\right|\cos\angle ABC\nonumber\\
+     \left|\vec{AB}\right|^2+\left|\vec{BC}\right|^2-\left|\vec{AC}\right|^2&=2\left|\vec{AB}\right|\left|\vec{BC}\right|\cos\angle ABC
     \end{align}
    \subsubsection{加法定理}
    \subsubsection{$\sin$の極限}
