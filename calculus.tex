@@ -94,6 +94,46 @@
    \end{align}
   \subsection{$\sin$の微分}
    \subsubsection{三平方の定理}
+    \begin{figure}[H]
+     \begin{center}
+      \begin{tikzpicture}
+       \coordinate(BottomLeft)at(0,0);
+       \coordinate(Left)at(0,1);
+       \coordinate(TopLeft)at(0,3);
+       \coordinate(Top)at(1,3);
+       \coordinate(TopRight)at(3,3);
+       \coordinate(Right)at(3,2);
+       \coordinate(BottomRight)at(3,0);
+       \coordinate(Bottom)at(2,0);
+       \draw(TopLeft)--(Top)node[midway, above]{$a$};
+       \draw(Top)--(TopRight)node[midway, above]{$b$};
+       \draw(TopRight)--(Right)node[midway, right]{$a$};
+       \draw(Right)--(BottomRight)node[midway, right]{$b$};
+       \draw(BottomRight)--(Bottom)node[midway, below]{$a$};
+       \draw(Bottom)--(BottomLeft)node[midway, below]{$b$};
+       \draw(BottomLeft)--(Left)node[midway, left]{$a$};
+       \draw(Left)--(TopLeft)node[midway, left]{$b$};
+       \pic[draw,angle radius=2mm]{right angle=TopLeft--TopRight--BottomRight};
+       \pic[draw,angle radius=2mm]{right angle=TopRight--BottomRight--BottomLeft};
+       \pic[draw,angle radius=2mm]{right angle=BottomRight--BottomLeft--TopLeft};
+       \pic[draw,angle radius=2mm]{right angle=BottomLeft--TopLeft--TopRight};
+       \draw(Top)--(Right)node[midway, below]{$c$};
+       \draw(Right)--(Bottom)node[midway, left]{$c$};
+       \draw(Bottom)--(Left)node[midway, above]{$c$};
+       \draw(Left)--(Top)node[midway, right]{$c$};
+       \pic[draw,angle radius=2mm]{right angle=Top--Right--Bottom};
+       \pic[draw,angle radius=2mm]{right angle=Right--Bottom--Left};
+       \pic[draw,angle radius=2mm]{right angle=Bottom--Left--Top};
+       \pic[draw,angle radius=2mm]{right angle=Left--Top--Right};
+      \end{tikzpicture}
+     \end{center}
+     \caption{三平方の定理の証明}
+    \end{figure}
+    \begin{align}
+     \left(a+b\right)^2&=c^2+4\frac{ab}{2}\nonumber\\
+     a^2+2ab+b^2&=c^2+2ab\nonumber\\
+     a^2+b^2&=c^2
+    \end{align}
    \subsubsection{余弦定理}
     $\triangle ABC$があり，頂点$A$から辺$BC$へ垂線を引き，その足を点$D$とする．
     \begin{figure}[H]
@@ -107,10 +147,10 @@
        \node[below left]at(B){$B$};
        \node[below right]at(C){$C$};
        \node[below]at(D){$D$};
-       \draw(A) -- (B);
-       \draw(B) -- (C);
-       \draw(C) -- (A);
-       \draw(A) -- (D);
+       \draw(A)--(B);
+       \draw(B)--(C);
+       \draw(C)--(A);
+       \draw(A)--(D);
        \pic[draw,angle radius=2mm]{right angle=A--D--C};
       \end{tikzpicture}
      \end{center}
