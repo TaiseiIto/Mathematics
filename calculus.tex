@@ -35,6 +35,20 @@
     &=\lim_{h\to 0}1\nonumber\\
     &=1
    \end{align}
+  \subsection{逆数の微分}
+   \begin{align}
+    f\left(x\right)=\frac{1}{x}
+   \end{align}
+   のとき，
+   \begin{align}
+    \dv{f\left(x\right)}{x}&=\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{\frac{1}{x+h}-\frac{1}{x}}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{\frac{x}{x\left(x+h\right)}-\frac{x+h}{x\left(x+h\right)}}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{x-x-h}{hx\left(x+h\right)}\nonumber\\
+    &=\lim_{h\to 0}-\frac{h}{hx\left(x+h\right)}\nonumber\\
+    &=\lim_{h\to 0}-\frac{1}{x\left(x+h\right)}\nonumber\\
+    &=-\frac{1}{x^2}
+   \end{align}
   \subsection{和の微分}
    \begin{align}
     \dv{\left(f\left(x\right)+g\left(x\right)\right)}{x}&=\lim_{h\to 0}\frac{\left(f\left(x+h\right)+g\left(x+h\right)\right)-\left(f\left(x\right)+g\left(x\right)\right)}{h}\nonumber\\
@@ -56,6 +70,8 @@
     &=0\dv{f\left(x\right)}{x}\dv{g\left(x\right)}{x}+\dv{f\left(x\right)}{x}g\left(x\right)+f\left(x\right)\dv{g\left(x\right)}{x}\nonumber\\
     &=\dv{f\left(x\right)}{x}g\left(x\right)+f\left(x\right)\dv{g\left(x\right)}{x}
    \end{align}
+  \subsection{合成関数の微分}
+  \subsection{商の微分}
  \section{積分}
 \end{document}
 
