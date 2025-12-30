@@ -242,6 +242,17 @@
      \caption{$\sin$の極限}
     \end{figure}
    \subsubsection{$\cos$の極限}
+    \begin{align}
+     \lim_{\theta\to 0}\frac{\sin\theta}{\theta}&=1\nonumber\\
+     \lim_{\theta\to 0}\frac{\sin^2\theta}{\theta^2}&=1\nonumber\\
+     \lim_{\theta\to 0}\frac{1-\cos^2\theta}{\theta^2}&=1\nonumber\\
+     \lim_{\theta\to 0}\frac{\left(1-\cos\theta\right)\left(1+\cos\theta\right)}{\theta^2}&=1\nonumber\\
+     \left(\lim_{\theta\to 0}\frac{1-\cos\theta}{\theta^2}\right)\left(\lim_{\theta\to 0}\left(1+\cos\theta\right)\right)&=1\nonumber\\
+     \left(\lim_{\theta\to 0}\frac{1-\cos\theta}{\theta^2}\right)\left(1+\lim_{\theta\to 0}\cos\theta\right)&=1\nonumber\\
+     \left(\lim_{\theta\to 0}\frac{1-\cos\theta}{\theta^2}\right)\left(1+1\right)&=1\nonumber\\
+     \left(\lim_{\theta\to 0}\frac{1-\cos\theta}{\theta^2}\right)2&=1\nonumber\\
+     \lim_{\theta\to 0}\frac{1-\cos\theta}{\theta^2}&=\frac{1}{2}\nonumber\\
+    \end{align}
    \subsubsection{本証明}
     \begin{align}
      \dv{\sin x}{x}&=\lim_{h\to 0}\frac{\sin\left(x+h\right)-\sin x}{h}\nonumber\\
@@ -250,7 +261,7 @@
      &=\lim_{h\to 0}\sin x\frac{\cos h-1}{h} +\cos x\frac{\sin h}{h}\nonumber\\
      &=\lim_{h\to 0}h\frac{\cos h-1}{h^2}\sin x +\frac{\sin h}{h}\cos x\nonumber\\
      &=\left(\lim_{h\to 0}h\right)\left(\lim_{h\to 0}\frac{\cos h-1}{h^2}\right)\sin x +\left(\lim_{h\to 0}\frac{\sin h}{h}\right)\cos x\nonumber\\
-     &=0\frac{1}{2}\sin x +1\cos x\nonumber\\
+     &=0\left(-\frac{1}{2}\right)\sin x +1\cos x\nonumber\\
      &=\cos x
     \end{align}
   \subsection{$\cos$の微分}
