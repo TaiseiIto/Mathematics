@@ -1,5 +1,8 @@
 \documentclass[dvipdfmx]{jsarticle}
+\usepackage{here}
 \usepackage{physics}
+\usepackage{tikz}
+\usetikzlibrary{angles}
 \title{微積分}
 \author{伊藤 太清}
 \date{\today}
@@ -90,20 +93,46 @@
     &=\frac{1}{x}\nonumber\\
    \end{align}
   \subsection{$\sin$の微分}
+   \subsubsection{余弦定理}
+    $\triangle ABC$があり，頂点$A$から辺$BC$へ垂線を引き，その足を点$D$とする．
+    \begin{figure}[H]
+     \begin{center}
+      \begin{tikzpicture}
+       \coordinate(A)at(1,2);
+       \coordinate(B)at(0,0);
+       \coordinate(C)at(2,0);
+       \coordinate(D)at(1,0);
+       \node[above]at(A){$A$};
+       \node[below left]at(B){$B$};
+       \node[below right]at(C){$C$};
+       \node[below]at(D){$D$};
+       \draw(A) -- (B);
+       \draw(B) -- (C);
+       \draw(C) -- (A);
+       \draw(A) -- (D);
+       \pic[draw,angle radius=2mm]{right angle=A--D--C};
+      \end{tikzpicture}
+     \end{center}
+     \caption{$\triangle ABC$}
+    \end{figure}
+    直角三角形$\triangle ABD$について，三平方の定理より，
+    \begin{align}
+     \left|\vec{AD}\right|^2+\left|\vec{BD}\right|^2=\left|\vec{AB}\right|^2
+    \end{align}
    \subsubsection{加法定理}
    \subsubsection{$\sin$の極限}
    \subsubsection{$\cos$の極限}
    \subsubsection{本証明}
-   \begin{align}
-    \dv{\sin x}{x}&=\lim_{h\to 0}\frac{\sin\left(x+h\right)-\sin x}{h}\nonumber\\
-    &=\lim_{h\to 0}\frac{\sin x\cos h +\cos x\sin h-\sin x}{h}\nonumber\\
-    &=\lim_{h\to 0}\frac{\sin x\left(\cos h-1\right) +\cos x\sin h}{h}\nonumber\\
-    &=\lim_{h\to 0}\sin x\frac{\cos h-1}{h} +\cos x\frac{\sin h}{h}\nonumber\\
-    &=\lim_{h\to 0}h\frac{\cos h-1}{h^2}\sin x +\frac{\sin h}{h}\cos x\nonumber\\
-    &=\left(\lim_{h\to 0}h\right)\left(\lim_{h\to 0}\frac{\cos h-1}{h^2}\right)\sin x +\left(\lim_{h\to 0}\frac{\sin h}{h}\right)\cos x\nonumber\\
-    &=0\frac{1}{2}\sin x +1\cos x\nonumber\\
-    &=\cos x
-   \end{align}
+    \begin{align}
+     \dv{\sin x}{x}&=\lim_{h\to 0}\frac{\sin\left(x+h\right)-\sin x}{h}\nonumber\\
+     &=\lim_{h\to 0}\frac{\sin x\cos h +\cos x\sin h-\sin x}{h}\nonumber\\
+     &=\lim_{h\to 0}\frac{\sin x\left(\cos h-1\right) +\cos x\sin h}{h}\nonumber\\
+     &=\lim_{h\to 0}\sin x\frac{\cos h-1}{h} +\cos x\frac{\sin h}{h}\nonumber\\
+     &=\lim_{h\to 0}h\frac{\cos h-1}{h^2}\sin x +\frac{\sin h}{h}\cos x\nonumber\\
+     &=\left(\lim_{h\to 0}h\right)\left(\lim_{h\to 0}\frac{\cos h-1}{h^2}\right)\sin x +\left(\lim_{h\to 0}\frac{\sin h}{h}\right)\cos x\nonumber\\
+     &=0\frac{1}{2}\sin x +1\cos x\nonumber\\
+     &=\cos x
+    \end{align}
   \subsection{$\cos$の微分}
    \begin{align}
     \dv{\cos x}{x}&=\lim_{h\to 0}\frac{\cos\left(x+h\right)-\cos x}{h}\nonumber\\
@@ -137,6 +166,8 @@
     &=\dv{f\left(x\right)}{x}g\left(x\right)+f\left(x\right)\dv{g\left(x\right)}{x}
    \end{align}
   \subsection{累乗の微分}
+   \subsubsection{正の整数乗の微分}
+   \subsubsection{負の整数乗の微分}
   \subsection{逆関数の微分}
   \subsection{合成関数の微分}
   \subsection{商の微分}
