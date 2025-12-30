@@ -89,6 +89,21 @@
     &=\log e^{\frac{1}{x}}\nonumber\\
     &=\frac{1}{x}\nonumber\\
    \end{align}
+  \subsection{$\sin$の微分}
+   \subsubsection{加法定理}
+   \subsubsection{$\sin$の極限}
+   \subsubsection{$\cos$の極限}
+   \subsubsection{本証明}
+   \begin{align}
+    \dv{\sin x}{x}&=\lim_{h\to 0}\frac{\sin\left(x+h\right)-\sin x}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{\sin x\cos h +\cos x\sin h-\sin x}{h}\nonumber\\
+    &=\lim_{h\to 0}\frac{\sin x\left(\cos h-1\right) +\cos x\sin h}{h}\nonumber\\
+    &=\lim_{h\to 0}\sin x\frac{\cos h-1}{h} +\cos x\frac{\sin h}{h}\nonumber\\
+    &=\lim_{h\to 0}h\frac{\cos h-1}{h^2}\sin x +\frac{\sin h}{h}\cos x\nonumber\\
+    &=\left(\lim_{h\to 0}h\right)\left(\lim_{h\to 0}\frac{\cos h-1}{h^2}\right)\sin x +\left(\lim_{h\to 0}\frac{\sin h}{h}\right)\cos x\nonumber\\
+    &=0\frac{1}{2}\sin x +1\cos x\nonumber\\
+    &=\cos x
+   \end{align}
   \subsection{和の微分}
    \begin{align}
     \dv{\left(f\left(x\right)+g\left(x\right)\right)}{x}&=\lim_{h\to 0}\frac{\left(f\left(x+h\right)+g\left(x+h\right)\right)-\left(f\left(x\right)+g\left(x\right)\right)}{h}\nonumber\\
@@ -110,6 +125,8 @@
     &=0\dv{f\left(x\right)}{x}\dv{g\left(x\right)}{x}+\dv{f\left(x\right)}{x}g\left(x\right)+f\left(x\right)\dv{g\left(x\right)}{x}\nonumber\\
     &=\dv{f\left(x\right)}{x}g\left(x\right)+f\left(x\right)\dv{g\left(x\right)}{x}
    \end{align}
+  \subsection{累乗の微分}
+  \subsection{逆関数の微分}
   \subsection{合成関数の微分}
   \subsection{商の微分}
  \section{積分}
