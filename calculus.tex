@@ -219,6 +219,28 @@
      \end{pmatrix}
     \end{align}
    \subsubsection{$\sin$の極限}
+    \begin{figure}[H]
+     \begin{center}
+      \begin{tikzpicture}
+       \pgfmathsetmacro{\theta}{60};
+       \coordinate(O)at(0,0);
+       \coordinate(A)at(1,0);
+       \coordinate(B)at({cos(\theta)},{sin(\theta)});
+       \coordinate(C)at(1,{tan(\theta)});
+       \node[below left]at(O){$O$};
+       \node[below right]at(A){$A$};
+       \node[above left]at(B){$B$};
+       \node[above]at(C){$C$};
+       \draw(O)--(A);
+       \draw(O)--(C);
+       \draw(A)--(B);
+       \draw(A)--(C);
+       \draw([shift={(0,0)}]0:1)arc[radius=1,start angle=0,end angle={\theta}];
+       \pic[draw,angle radius=2mm]{right angle=O--A--C};
+      \end{tikzpicture}
+     \end{center}
+     \caption{$\sin$の極限}
+    \end{figure}
    \subsubsection{$\cos$の極限}
    \subsubsection{本証明}
     \begin{align}
