@@ -1393,10 +1393,10 @@
     K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
     &=\log\frac{e^{at}-1}{at}\nonumber\\
     &=\log\left(e^{at}-1\right)-\log t-\log a\nonumber\\
-    K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}K_X\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\left(\log\left(e^{at}-1\right)-\log t-\log a\right)\nonumber\\
-    &=\frac{d}{dt}\log\left(e^{at}-1\right)-\frac{d}{dt}\log t-\frac{d}{dt}\log a\nonumber\\
-    &=\frac{\frac{d}{dt}\left(e^{at}-1\right)}{e^{at}-1}-\frac{1}{t}\nonumber\\
+    K_X^{\left(1\right)}\left(t\right)&=\dv{t}K_X\left(t\right)\nonumber\\
+    &=\dv{t}\left(\log\left(e^{at}-1\right)-\log t-\log a\right)\nonumber\\
+    &=\dv{t}\log\left(e^{at}-1\right)-\dv{t}\log t-\dv{t}\log a\nonumber\\
+    &=\frac{\dv{t}\left(e^{at}-1\right)}{e^{at}-1}-\frac{1}{t}\nonumber\\
     &=\frac{ae^{at}}{e^{at}-1}-\frac{1}{t}
    \end{align}
    これでは$t=0$を代入できないため，方針を変える．
@@ -1652,10 +1652,10 @@
     &=N\log\left(pe^t+1-p\right)
    \end{align}
    \begin{align}
-    K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}K_X\left(t\right)\nonumber\\
-    &=\frac{d}{dt}N\log\left(pe^t+1-p\right)\nonumber\\
-    &=N\frac{d}{dt}\log\left(pe^t+1-p\right)\nonumber\\
-    &=N\frac{\frac{d}{dt}\left(pe^t+1-p\right)}{pe^t+1-p}\nonumber\\
+    K_X^{\left(1\right)}\left(t\right)&=\dv{t}K_X\left(t\right)\nonumber\\
+    &=\dv{t}N\log\left(pe^t+1-p\right)\nonumber\\
+    &=N\dv{t}\log\left(pe^t+1-p\right)\nonumber\\
+    &=N\frac{\dv{t}\left(pe^t+1-p\right)}{pe^t+1-p}\nonumber\\
     &=N\frac{pe^t}{pe^t+1-p}\nonumber\\
     &=Np\frac{e^t}{pe^t+1-p}\\
     K_X^{\left(1\right)}\left(0\right)&=Np\frac{e^0}{pe^0+1-p}\nonumber\\
@@ -1663,10 +1663,10 @@
     &=Np
    \end{align}
    \begin{align}
-    K_X^{\left(2\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(1\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}Np\frac{e^t}{pe^t+1-p}\nonumber\\
-    &=Np\frac{d}{dt}\frac{e^t}{pe^t+1-p}\nonumber\\
-    &=Np\frac{\left(\frac{d}{dt}e^t\right)\left(pe^t+1-p\right)-e^t\left(\frac{d}{dt}\left(pe^t+1-p\right)\right)}{\left(pe^t+1-p\right)^2}\nonumber\\
+    K_X^{\left(2\right)}\left(t\right)&=\dv{t}K_X^{\left(1\right)}\left(t\right)\nonumber\\
+    &=\dv{t}Np\frac{e^t}{pe^t+1-p}\nonumber\\
+    &=Np\dv{t}\frac{e^t}{pe^t+1-p}\nonumber\\
+    &=Np\frac{\left(\dv{t}e^t\right)\left(pe^t+1-p\right)-e^t\left(\dv{t}\left(pe^t+1-p\right)\right)}{\left(pe^t+1-p\right)^2}\nonumber\\
     &=Np\frac{e^t\left(pe^t+1-p\right)-e^tpe^t}{\left(pe^t+1-p\right)^2}\nonumber\\
     &=Np\frac{pe^{2t}+e^t-pe^t-pe^{2t}}{\left(pe^t+1-p\right)^2}\nonumber\\
     &=Np\frac{e^t-pe^t}{\left(pe^t+1-p\right)^2}\nonumber\\
@@ -1676,11 +1676,11 @@
     &=Np\left(1-p\right)
    \end{align}
    \begin{align}
-    K_X^{\left(3\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(2\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}Np\left(1-p\right)\frac{e^t}{\left(pe^t+1-p\right)^2}\nonumber\\
-    &=Np\left(1-p\right)\frac{d}{dt}\frac{e^t}{\left(pe^t+1-p\right)^2}\nonumber\\
-    &=Np\left(1-p\right)\frac{\left(\frac{d}{dt}e^t\right)\left(pe^t+1-p\right)^2-e^t\left(\frac{d}{dt}\left(pe^t+1-p\right)^2\right)}{\left(pe^t+1-p\right)^4}\nonumber\\
-    &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)^2-e^t\left(2\left(pe^t+1-p\right)\frac{d}{dt}\left(pe^t+1-p\right)\right)}{\left(pe^t+1-p\right)^4}\nonumber\\
+    K_X^{\left(3\right)}\left(t\right)&=\dv{t}K_X^{\left(2\right)}\left(t\right)\nonumber\\
+    &=\dv{t}Np\left(1-p\right)\frac{e^t}{\left(pe^t+1-p\right)^2}\nonumber\\
+    &=Np\left(1-p\right)\dv{t}\frac{e^t}{\left(pe^t+1-p\right)^2}\nonumber\\
+    &=Np\left(1-p\right)\frac{\left(\dv{t}e^t\right)\left(pe^t+1-p\right)^2-e^t\left(\dv{t}\left(pe^t+1-p\right)^2\right)}{\left(pe^t+1-p\right)^4}\nonumber\\
+    &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)^2-e^t\left(2\left(pe^t+1-p\right)\dv{t}\left(pe^t+1-p\right)\right)}{\left(pe^t+1-p\right)^4}\nonumber\\
     &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)^2-e^t\left(2\left(pe^t+1-p\right)pe^t\right)}{\left(pe^t+1-p\right)^4}\nonumber\\
     &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)^2-2\left(pe^t+1-p\right)pe^{2t}}{\left(pe^t+1-p\right)^4}\nonumber\\
     &=Np\left(1-p\right)\frac{e^t\left(pe^t+1-p\right)-2pe^{2t}}{\left(pe^t+1-p\right)^3}\nonumber\\
@@ -1691,12 +1691,12 @@
     &=Np\left(1-p\right)\left(1-2p\right)
    \end{align}
    \begin{align}
-    K_X^{\left(4\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(3\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}Np\left(1-p\right)\frac{\left(1-p\right)e^t-pe^{2t}}{\left(pe^t+1-p\right)^3}\nonumber\\
-    &=Np\left(1-p\right)\frac{d}{dt}\frac{\left(1-p\right)e^t-pe^{2t}}{\left(pe^t+1-p\right)^3}\nonumber\\
-    &=Np\left(1-p\right)\frac{\left(\frac{d}{dt}\left(\left(1-p\right)e^t-pe^{2t}\right)\right)\left(pe^t+1-p\right)^3-\left(\left(1-p\right)e^t-pe^{2t}\right)\left(\frac{d}{dt}\left(pe^t+1-p\right)^3\right)}{\left(pe^t+1-p\right)^6}\nonumber\\
-    &=Np\left(1-p\right)\frac{\left(\frac{d}{dt}\left(\left(1-p\right)e^t-pe^{2t}\right)\right)\left(pe^t+1-p\right)^3-\left(\left(1-p\right)e^t-pe^{2t}\right)\left(\frac{d}{dt}\left(pe^t+1-p\right)^3\right)}{\left(pe^t+1-p\right)^6}\nonumber\\
-    &=Np\left(1-p\right)\frac{\left(\left(1-p\right)e^t-2pe^{2t}\right)\left(pe^t+1-p\right)^3-\left(\left(1-p\right)e^t-pe^{2t}\right)\left(3\left(pe^t+1-p\right)^2\frac{d}{dt}\left(pe^t+1-p\right)\right)}{\left(pe^t+1-p\right)^6}\nonumber\\
+    K_X^{\left(4\right)}\left(t\right)&=\dv{t}K_X^{\left(3\right)}\left(t\right)\nonumber\\
+    &=\dv{t}Np\left(1-p\right)\frac{\left(1-p\right)e^t-pe^{2t}}{\left(pe^t+1-p\right)^3}\nonumber\\
+    &=Np\left(1-p\right)\dv{t}\frac{\left(1-p\right)e^t-pe^{2t}}{\left(pe^t+1-p\right)^3}\nonumber\\
+    &=Np\left(1-p\right)\frac{\left(\dv{t}\left(\left(1-p\right)e^t-pe^{2t}\right)\right)\left(pe^t+1-p\right)^3-\left(\left(1-p\right)e^t-pe^{2t}\right)\left(\dv{t}\left(pe^t+1-p\right)^3\right)}{\left(pe^t+1-p\right)^6}\nonumber\\
+    &=Np\left(1-p\right)\frac{\left(\dv{t}\left(\left(1-p\right)e^t-pe^{2t}\right)\right)\left(pe^t+1-p\right)^3-\left(\left(1-p\right)e^t-pe^{2t}\right)\left(\dv{t}\left(pe^t+1-p\right)^3\right)}{\left(pe^t+1-p\right)^6}\nonumber\\
+    &=Np\left(1-p\right)\frac{\left(\left(1-p\right)e^t-2pe^{2t}\right)\left(pe^t+1-p\right)^3-\left(\left(1-p\right)e^t-pe^{2t}\right)\left(3\left(pe^t+1-p\right)^2\dv{t}\left(pe^t+1-p\right)\right)}{\left(pe^t+1-p\right)^6}\nonumber\\
     &=Np\left(1-p\right)\frac{\left(\left(1-p\right)e^t-2pe^{2t}\right)\left(pe^t+1-p\right)^3-\left(\left(1-p\right)e^t-pe^{2t}\right)\left(3\left(pe^t+1-p\right)^2pe^t\right)}{\left(pe^t+1-p\right)^6}\nonumber\\
     &=Np\left(1-p\right)\frac{\left(\left(1-p\right)e^t-2pe^{2t}\right)\left(pe^t+1-p\right)^3-3\left(\left(1-p\right)e^t-pe^{2t}\right)\left(pe^t+1-p\right)^2pe^t}{\left(pe^t+1-p\right)^6}\nonumber\\
     &=Np\left(1-p\right)\frac{\left(\left(1-p\right)e^t-2pe^{2t}\right)\left(pe^t+1-p\right)-3\left(\left(1-p\right)e^t-pe^{2t}\right)pe^t}{\left(pe^t+1-p\right)^4}\nonumber\\
@@ -1829,10 +1829,10 @@
    \end{align}
   \subsection{平均}
    \begin{align}
-    K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}K_X\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\left(t+\log p-\log\left(1-\left(1-p\right)e^t\right)\right)\nonumber\\
-    &=\frac{d}{dt}t+\frac{d}{dt}\log p-\frac{d}{dt}\left(\log\left(1-\left(1-p\right)e^t\right)\right)\nonumber\\
-    &=1-\frac{\frac{d}{dt}\left(1-\left(1-p\right)e^t\right)}{1-\left(1-p\right)e^t}\nonumber\\
+    K_X^{\left(1\right)}\left(t\right)&=\dv{t}K_X\left(t\right)\nonumber\\
+    &=\dv{t}\left(t+\log p-\log\left(1-\left(1-p\right)e^t\right)\right)\nonumber\\
+    &=\dv{t}t+\dv{t}\log p-\dv{t}\left(\log\left(1-\left(1-p\right)e^t\right)\right)\nonumber\\
+    &=1-\frac{\dv{t}\left(1-\left(1-p\right)e^t\right)}{1-\left(1-p\right)e^t}\nonumber\\
     &=1+\frac{\left(1-p\right)e^t}{1-\left(1-p\right)e^t}\nonumber\\
     &=\frac{1-\left(1-p\right)e^t+\left(1-p\right)e^t}{1-\left(1-p\right)e^t}\nonumber\\
     &=\frac{1}{1-\left(1-p\right)e^t}
@@ -1849,10 +1849,10 @@
    \end{align}
    とすると，
    \begin{align}
-    K_X^{\left(2\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(1\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\frac{1}{1-\left(1-p\right)e^t}\nonumber\\
-    &=\frac{d}{dt}\frac{1}{1-f\left(t\right)}\nonumber\\
-    &=-\frac{\frac{d}{dt}\left(1-f\left(t\right)\right)}{\left(1-f\left(t\right)\right)^2}\nonumber\\
+    K_X^{\left(2\right)}\left(t\right)&=\dv{t}K_X^{\left(1\right)}\left(t\right)\nonumber\\
+    &=\dv{t}\frac{1}{1-\left(1-p\right)e^t}\nonumber\\
+    &=\dv{t}\frac{1}{1-f\left(t\right)}\nonumber\\
+    &=-\frac{\dv{t}\left(1-f\left(t\right)\right)}{\left(1-f\left(t\right)\right)^2}\nonumber\\
     &=\frac{f\left(t\right)}{\left(1-f\left(t\right)\right)^2}\nonumber\\
     &=\frac{\left(1-p\right)e^t}{\left(1-\left(1-p\right)e^t\right)^2}
    \end{align}
@@ -1870,8 +1870,8 @@
    \end{align}
   \subsection{歪度}
    \begin{align}
-    K_X^{\left(3\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(2\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\frac{f\left(t\right)}{\left(1-f\left(t\right)\right)^2}\nonumber\\
+    K_X^{\left(3\right)}\left(t\right)&=\dv{t}K_X^{\left(2\right)}\left(t\right)\nonumber\\
+    &=\dv{t}\frac{f\left(t\right)}{\left(1-f\left(t\right)\right)^2}\nonumber\\
     &=\frac{\frac{df\left(t\right)}{dt}\left(1-f\left(t\right)\right)^2-f\left(t\right)\frac{d\left(1-f\left(t\right)\right)^2}{dt}}{\left(1-f\left(t\right)\right)^4}\nonumber\\
     &=\frac{f\left(t\right)\left(1-f\left(t\right)\right)^2+2f\left(t\right)^2\left(1-f\left(t\right)\right)}{\left(1-f\left(t\right)\right)^4}\nonumber\\
     &=\frac{f\left(t\right)\left(1-2f\left(t\right)+f\left(t\right)^2\right)+2f\left(t\right)^2\left(1-f\left(t\right)\right)}{\left(1-f\left(t\right)\right)^4}\nonumber\\
@@ -1894,8 +1894,8 @@
    \end{align}
   \subsection{超過尖度}
    \begin{align}
-    K_X^{\left(4\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(3\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\frac{f\left(t\right)-f\left(t\right)^3}{\left(1-f\left(t\right)\right)^4}\nonumber\\
+    K_X^{\left(4\right)}\left(t\right)&=\dv{t}K_X^{\left(3\right)}\left(t\right)\nonumber\\
+    &=\dv{t}\frac{f\left(t\right)-f\left(t\right)^3}{\left(1-f\left(t\right)\right)^4}\nonumber\\
     &=\frac{\frac{d\left(f\left(t\right)-f\left(t\right)^3\right)}{dt}\left(1-f\left(t\right)\right)^4-\left(f\left(t\right)-f\left(t\right)^3\right)\frac{d\left(1-f\left(t\right)\right)^4}{dt}}{\left(1-f\left(t\right)\right)^8}\nonumber\\
     &=\frac{\left(\frac{d\left(f\left(t\right)\right)}{dt}-\frac{df\left(t\right)^3}{dt}\right)\left(1-f\left(t\right)\right)^4-\left(f\left(t\right)-f\left(t\right)^3\right)4\left(1-f\left(t\right)\right)^3\frac{d\left(1-f\left(t\right)\right)}{dt}}{\left(1-f\left(t\right)\right)^8}\nonumber\\
     &=\frac{\left(f\left(t\right)-3f\left(t\right)^3\right)\left(1-f\left(t\right)\right)^4+4\left(f\left(t\right)-f\left(t\right)^3\right)\left(1-f\left(t\right)\right)^3f\left(t\right)}{\left(1-f\left(t\right)\right)^8}\nonumber\\
@@ -2008,8 +2008,8 @@
    \end{align}
   \subsection{平均}
    \begin{align}
-    K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}K_X\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\left(\log\lambda-\log\left(\lambda-t\right)\right)\nonumber\\
+    K_X^{\left(1\right)}\left(t\right)&=\dv{t}K_X\left(t\right)\nonumber\\
+    &=\dv{t}\left(\log\lambda-\log\left(\lambda-t\right)\right)\nonumber\\
     &=\frac{d\log\lambda}{dt}-\frac{d\log\left(\lambda-t\right)}{dt}\nonumber\\
     &=-\frac{1}{\lambda-t}\frac{d\left(\lambda-t\right)}{dt}\nonumber\\
     &=\frac{1}{\lambda-t}\nonumber\\
@@ -2018,8 +2018,8 @@
    \end{align}
   \subsection{分散}
    \begin{align}
-    K_X^{\left(2\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(1\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\frac{1}{\lambda-t}\nonumber\\
+    K_X^{\left(2\right)}\left(t\right)&=\dv{t}K_X^{\left(1\right)}\left(t\right)\nonumber\\
+    &=\dv{t}\frac{1}{\lambda-t}\nonumber\\
     &=-\frac{1}{\left(\lambda-t\right)^2}\frac{d\left(\lambda-t\right)}{dt}\nonumber\\
     &=\frac{1}{\left(\lambda-t\right)^2}\nonumber\\
     V\left(X\right)&=K_X^{\left(2\right)}\left(0\right)\nonumber\\
@@ -2033,8 +2033,8 @@
    \end{align}
   \subsection{歪度}
    \begin{align}
-    K_X^{\left(3\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(2\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\frac{1}{\left(\lambda-t\right)^2}\nonumber\\
+    K_X^{\left(3\right)}\left(t\right)&=\dv{t}K_X^{\left(2\right)}\left(t\right)\nonumber\\
+    &=\dv{t}\frac{1}{\left(\lambda-t\right)^2}\nonumber\\
     &=-\frac{2}{\left(\lambda-t\right)^3}\frac{d\left(\lambda-t\right)}{dt}\nonumber\\
     &=\frac{2}{\left(\lambda-t\right)^3}\nonumber\\
     K_X^{\left(3\right)}\left(0\right)&=\frac{2}{\lambda^3}
@@ -2047,8 +2047,8 @@
    \end{align}
   \subsection{超過尖度}
    \begin{align}
-    K_X^{\left(4\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(3\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\frac{2}{\left(\lambda-t\right)^3}\nonumber\\
+    K_X^{\left(4\right)}\left(t\right)&=\dv{t}K_X^{\left(3\right)}\left(t\right)\nonumber\\
+    &=\dv{t}\frac{2}{\left(\lambda-t\right)^3}\nonumber\\
     &=-\frac{6}{\left(\lambda-t\right)^4}\frac{d\left(\lambda-t\right)}{dt}\nonumber\\
     &=\frac{6}{\left(\lambda-t\right)^4}\nonumber\\
     K_X^{\left(4\right)}\left(0\right)&=\frac{6}{\lambda^4}
@@ -2141,8 +2141,8 @@
    \end{align}
   \subsection{平均}
    \begin{align}
-    K_X^{\left(1\right)}\left(t\right)&=\frac{d}{dt}\lambda\left(e^t-1\right)\nonumber\\
-    &=\lambda\frac{d}{dt}\left(e^t-1\right)\nonumber\\
+    K_X^{\left(1\right)}\left(t\right)&=\dv{t}\lambda\left(e^t-1\right)\nonumber\\
+    &=\lambda\dv{t}\left(e^t-1\right)\nonumber\\
     &=\lambda e^t
    \end{align}
    よって平均は，
@@ -2153,8 +2153,8 @@
    \end{align}
   \subsection{分散}
    \begin{align}
-    K_X^{\left(2\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(1\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\lambda e^t\nonumber\\
+    K_X^{\left(2\right)}\left(t\right)&=\dv{t}K_X^{\left(1\right)}\left(t\right)\nonumber\\
+    &=\dv{t}\lambda e^t\nonumber\\
     &=\lambda e^t
    \end{align}
    よって分散は，
@@ -2170,8 +2170,8 @@
    \end{align}
   \subsection{歪度}
    \begin{align}
-    K_X^{\left(3\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(2\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\lambda e^t\nonumber\\
+    K_X^{\left(3\right)}\left(t\right)&=\dv{t}K_X^{\left(2\right)}\left(t\right)\nonumber\\
+    &=\dv{t}\lambda e^t\nonumber\\
     &=\lambda e^t
    \end{align}
    よって歪度は，
@@ -2183,8 +2183,8 @@
    \end{align}
   \subsection{超過尖度}
    \begin{align}
-    K_X^{\left(4\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(3\right)}\left(t\right)\nonumber\\
-    &=\frac{d}{dt}\lambda e^t\nonumber\\
+    K_X^{\left(4\right)}\left(t\right)&=\dv{t}K_X^{\left(3\right)}\left(t\right)\nonumber\\
+    &=\dv{t}\lambda e^t\nonumber\\
     &=\lambda e^t
    \end{align}
    よって超過尖度は，
