@@ -396,11 +396,11 @@
     &=aE\left(X\right)
    \end{align}
  \section{平均と分散の関係に関する定理}
-   任意の確率変数$X$について，
-   \begin{align}
-    V\left(X\right)=E\left(X^2\right)-E\left(X\right)^2
-   \end{align}
-   が成り立つ．
+  任意の確率変数$X$について，
+  \begin{align}
+   V\left(X\right)=E\left(X^2\right)-E\left(X\right)^2
+  \end{align}
+  が成り立つ．
   \subsection{証明}
    $E\left(X\right)$が定数であることに注意して平均の線形性を使えば証明できる．
    \begin{align}
@@ -412,12 +412,12 @@
     &=E\left(X^2\right)-E\left(X\right)^2
    \end{align}
  \section{独立な確率変数の積の平均}
-   互いに独立な2つの確率変数$X,Y$について，
-   \begin{align}
-    E\left(XY\right)&=E\left(X\right)E\left(Y\right)\label{ProductAverage}
-   \end{align}
-   が成り立つ．
-   ただし，2つの確率変数が互いに独立であるということは，それらの組$(X,Y)$の確率質量関数若しくは確率密度関数を，それぞれの確率質量関数若しくは確率密度関数の積で表すことができることを意味する．
+  互いに独立な2つの確率変数$X,Y$について，
+  \begin{align}
+   E\left(XY\right)&=E\left(X\right)E\left(Y\right)\label{ProductAverage}
+  \end{align}
+  が成り立つ．
+  ただし，2つの確率変数が互いに独立であるということは，それらの組$(X,Y)$の確率質量関数若しくは確率密度関数を，それぞれの確率質量関数若しくは確率密度関数の積で表すことができることを意味する．
   \subsection{証明}
    \subsubsection{独立な離散確率変数同士の積の平均}
    互いに独立な2つの離散確率変数$X,Y$があり，それぞれの標本空間を$S,T$とし，それぞれの確率質量関数を$p,q$とすると，
@@ -447,47 +447,47 @@
    \end{align}
    となる．
  \section{標準偏差}
-   確率変数$X$に対して，
-   \begin{align}
-    \sigma\left(X\right)&=\sqrt{V\left(X\right)}
-   \end{align}
-   を$X$の標準偏差といい，$X$の確率分布の広がり具合を表す$X$と次元を同じくする量である．
+  確率変数$X$に対して，
+  \begin{align}
+   \sigma\left(X\right)&=\sqrt{V\left(X\right)}
+  \end{align}
+  を$X$の標準偏差といい，$X$の確率分布の広がり具合を表す$X$と次元を同じくする量である．
  \section{歪度}
-   確率変数$X$に対して，
-   \begin{align}
-    S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}
-   \end{align}
-   を$X$の歪度といい，$X$の確率分布の平均周りの左右非対称具合を表す無次元量である．
-   歪度の定義式の直感的理解について述べる．
-   確率変数$X$の平均を原点に合わせるため，平均を引くと$X-E\left(X\right)$となる．
-   さらにこれを3乗すると，分布の平均に近い部分はより平均に近く寄せられ，平均から遠い部分はより平均から遠く伸ばされる．
-   分布が左右対称な確率変数$X$の場合その平均$E\left(\left(X-E\left(X\right)\right)^3\right)$をとっても0になる．
-   一方で，例えば平均より小さい方では分布が平均近くによっているのに対し，平均より大きい方では分布が遠くに引き伸ばされているような確率変数$X$を考えてみよう．
-   確率変数$\left(X-E\left(X\right)\right)^3$の分布は，平均より小さい側の平均近くの盛り上がりがより平均近くに寄せられ，平均より大きい側の伸びはより平均から遠くに伸ばされる．
-   結果的に3乗の影響で分布が全体的に正の方向にずれるので，その平均$E\left(\left(X-E\left(X\right)\right)^3\right)$も正の方向にずれる．
-   これは確率変数$X$の平均周りの左右非対称具合を表していると言える．
-   最後に，次元を無くすために$X$の分布の広がり具合と連動し，$X$の3乗の次元を持つ$\sigma\left(X\right)^3$で割れば，歪度の定義が現れる．
+  確率変数$X$に対して，
+  \begin{align}
+   S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}
+  \end{align}
+  を$X$の歪度といい，$X$の確率分布の平均周りの左右非対称具合を表す無次元量である．
+  歪度の定義式の直感的理解について述べる．
+  確率変数$X$の平均を原点に合わせるため，平均を引くと$X-E\left(X\right)$となる．
+  さらにこれを3乗すると，分布の平均に近い部分はより平均に近く寄せられ，平均から遠い部分はより平均から遠く伸ばされる．
+  分布が左右対称な確率変数$X$の場合その平均$E\left(\left(X-E\left(X\right)\right)^3\right)$をとっても0になる．
+  一方で，例えば平均より小さい方では分布が平均近くによっているのに対し，平均より大きい方では分布が遠くに引き伸ばされているような確率変数$X$を考えてみよう．
+  確率変数$\left(X-E\left(X\right)\right)^3$の分布は，平均より小さい側の平均近くの盛り上がりがより平均近くに寄せられ，平均より大きい側の伸びはより平均から遠くに伸ばされる．
+  結果的に3乗の影響で分布が全体的に正の方向にずれるので，その平均$E\left(\left(X-E\left(X\right)\right)^3\right)$も正の方向にずれる．
+  これは確率変数$X$の平均周りの左右非対称具合を表していると言える．
+  最後に，次元を無くすために$X$の分布の広がり具合と連動し，$X$の3乗の次元を持つ$\sigma\left(X\right)^3$で割れば，歪度の定義が現れる．
  \section{超過尖度}
-   確率変数$X$に対して，
-   \begin{align}
-    K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3
-   \end{align}
-   を$X$の超過尖度といい，分散よりも外れ値への反応をより敏感にした指標であり，分布の裾の重さを表す．
-   超過尖度という名称から分布の平均周りの尖り具合を表していると誤解されやすいが，尖り具合を表してはいない．
+  確率変数$X$に対して，
+  \begin{align}
+   K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3
+  \end{align}
+  を$X$の超過尖度といい，分散よりも外れ値への反応をより敏感にした指標であり，分布の裾の重さを表す．
+  超過尖度という名称から分布の平均周りの尖り具合を表していると誤解されやすいが，尖り具合を表してはいない．
  \section{エントロピー}
-   確率変数$X$に対して，
-   \begin{align}
-    H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)
-   \end{align}
-   を$X$のエントロピーといい，$X$の値を確定することによって生じる情報量の平均ビット数を意味する．
-   ただし$p$は離散確率変数であれば確率質量関数を意味し，連続確率変数であれば確率密度関数を意味する．
+  確率変数$X$に対して，
+  \begin{align}
+   H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)
+  \end{align}
+  を$X$のエントロピーといい，$X$の値を確定することによって生じる情報量の平均ビット数を意味する．
+  ただし$p$は離散確率変数であれば確率質量関数を意味し，連続確率変数であれば確率密度関数を意味する．
  \section{確率母関数}
-   ある離散確率変数$X$に対し，その確率母関数$G_X$は，
-   \begin{align}
-    G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
-    &=\sum_{x\in S}t^xp\left(x\right)
-   \end{align}
-   と定義される．
+  ある離散確率変数$X$に対し，その確率母関数$G_X$は，
+  \begin{align}
+   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
+   &=\sum_{x\in S}t^xp\left(x\right)
+  \end{align}
+  と定義される．
   \subsection{確率母関数と確率質量関数の関係}
    確率母関数$G_X$と確率質量関数$p$の間には，以下の関係が成り立つ．
    \begin{align}
@@ -661,16 +661,16 @@
     &=\prod_{n=1}^N\phi_{X_n}\left(t\right)
    \end{align}
  \section{キュムラント母関数}
-   確率変数$X$のキュムラント母関数$K_X$は，
-   \begin{align}
-    K_X\left(t\right)&=\log M_X\left(t\right)\label{CumulantGeneratingFunction}
-   \end{align}
-   と定義される．
-   $K_X$のマクローリン展開
-   \begin{align}
-    K_X\left(t\right)&=\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}
-   \end{align}
-   における$K_X^{\left(k\right)}\left(0\right)$を確率変数$X$の$k$次キュムラントという．
+  確率変数$X$のキュムラント母関数$K_X$は，
+  \begin{align}
+   K_X\left(t\right)&=\log M_X\left(t\right)\label{CumulantGeneratingFunction}
+  \end{align}
+  と定義される．
+  $K_X$のマクローリン展開
+  \begin{align}
+   K_X\left(t\right)&=\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}
+  \end{align}
+  における$K_X^{\left(k\right)}\left(0\right)$を確率変数$X$の$k$次キュムラントという．
   \subsection{Bellの多項式}
    集合
    \begin{align}
@@ -1122,22 +1122,22 @@
     &=\sum_{n=1}^NK_{X_n}\left(t\right)\nonumber\\
    \end{align}
  \section{離散一様分布}
-   標本空間を
-   \begin{align}
-    S\left(X\right)&=\{1,\cdots,n\}\subset\mathbb{Z}\\
-    |S\left(X\right)|&=n
-   \end{align}
-   とし，確率質量関数を
-   \begin{align}
-    \forall x\in S\left(X\right),p\left(x\right)=\frac{1}{n}
-   \end{align}
-   とすると，
-   \begin{align}
-    \sum_{x\in S\left(X\right)}p\left(x\right)&=\sum_{x=1}^n\frac{1}{n}\nonumber\\
-    &=1
-   \end{align}
-   より，$X$は離散確率変数である．
-   $X$の分布を離散一様分布という．
+  標本空間を
+  \begin{align}
+   S\left(X\right)&=\{1,\cdots,n\}\subset\mathbb{Z}\\
+   |S\left(X\right)|&=n
+  \end{align}
+  とし，確率質量関数を
+  \begin{align}
+   \forall x\in S\left(X\right),p\left(x\right)=\frac{1}{n}
+  \end{align}
+  とすると，
+  \begin{align}
+   \sum_{x\in S\left(X\right)}p\left(x\right)&=\sum_{x=1}^n\frac{1}{n}\nonumber\\
+   &=1
+  \end{align}
+  より，$X$は離散確率変数である．
+  $X$の分布を離散一様分布という．
   \subsection{確率母関数}
    \begin{align}
     G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
@@ -1351,22 +1351,22 @@
     &=\log_2n\nonumber\\
    \end{align}
  \section{連続一様分布}
-   標本空間を
-   \begin{align}
-    S\left(X\right)&=\left[0,a\right]\subset\mathbb{R}
-   \end{align}
-   とし，確率密度関数を
-   \begin{align}
-    \forall x\in S\left(X\right),p\left(x\right)&=\frac{1}{a}
-   \end{align}
-   とすると，
-   \begin{align}
-    \int_{S\left(X\right)}p\left(x\right)dx&=\int_0^a\frac{1}{a}dx\nonumber\\
-    &=\left[\frac{x}{a}\right]_{x=0}^{x=a}\nonumber\\
-    &=1
-   \end{align}
-   より，$X$は連続確率変数である．
-   $X$の分布を連続一様分布という．
+  標本空間を
+  \begin{align}
+   S\left(X\right)&=\left[0,a\right]\subset\mathbb{R}
+  \end{align}
+  とし，確率密度関数を
+  \begin{align}
+   \forall x\in S\left(X\right),p\left(x\right)&=\frac{1}{a}
+  \end{align}
+  とすると，
+  \begin{align}
+   \int_{S\left(X\right)}p\left(x\right)dx&=\int_0^a\frac{1}{a}dx\nonumber\\
+   &=\left[\frac{x}{a}\right]_{x=0}^{x=a}\nonumber\\
+   &=1
+  \end{align}
+  より，$X$は連続確率変数である．
+  $X$の分布を連続一様分布という．
   \subsection{確率母関数}
    \begin{align}
     G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
@@ -1496,24 +1496,24 @@
     &=\log_2a\nonumber\\
    \end{align}
  \section{ベルヌーイ分布}
-   標本空間を
-   \begin{align}
-    S\left(X\right)&=\{0,1\}
-   \end{align}
-   とし，ある$p\in\left(0,1\right)$に対して確率質量関数を
-   \begin{align}
-    p\left(x\right)&=
-    \begin{cases}
-     p&\left(x=1\right)\\
-     1-p&\left(x=0\right)
-    \end{cases}
-   \end{align}
-   とすると，
-   \begin{align}
-    \sum_{x\in S\left(X\right)}p\left(x\right)&=1
-   \end{align}
-   より，$X$は離散確率変数である．
-   $X$の分布をベルヌーイ分布という．
+  標本空間を
+  \begin{align}
+   S\left(X\right)&=\{0,1\}
+  \end{align}
+  とし，ある$p\in\left(0,1\right)$に対して確率質量関数を
+  \begin{align}
+   p\left(x\right)&=
+   \begin{cases}
+    p&\left(x=1\right)\\
+    1-p&\left(x=0\right)
+   \end{cases}
+  \end{align}
+  とすると，
+  \begin{align}
+   \sum_{x\in S\left(X\right)}p\left(x\right)&=1
+  \end{align}
+  より，$X$は離散確率変数である．
+  $X$の分布をベルヌーイ分布という．
   \subsection{確率母関数}
    \begin{align}
     G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
@@ -2215,6 +2215,18 @@
     \lim_{\lambda\to\infty}\frac{X-\lambda}{\sqrt{\lambda}}
    \end{align}
    は標準正規分布に従う連続確率変数である．
+  \subsection{確率母関数}
+  \subsection{積率母関数}
+  \subsection{特性関数}
+  \subsection{キュムラント母関数}
+  \subsection{平均}
+  \subsection{分散}
+  \subsection{標準偏差}
+  \subsection{歪度}
+  \subsection{超過尖度}
+  \subsection{エントロピー}
+ \section{正規分布}
+  標準正規分布の平均及び標準偏差に自由度を与えたものが正規分布である．
   \subsection{確率母関数}
   \subsection{積率母関数}
   \subsection{特性関数}
