@@ -368,30 +368,30 @@
     \dv{g\left(x\right)}{x}&=\lim_{\Delta x\to 0}\frac{g\left(x+\Delta x\right)-g\left(x\right)}{\Delta x}\nonumber\\
     &=\lim_{\Delta x\to 0}\frac{g\left(x+\Delta x\right)-g\left(x\right)}{\Delta x}-\Delta x\nonumber\\
     &=\lim_{\Delta x\to 0}\frac{g\left(x+\Delta x\right)-g\left(x\right)-\Delta x^2}{\Delta x}\nonumber\\
-    \lim_{\Delta x\to 0}\Delta x\dv{g\left(x\right)}{x}&=\lim_{\Delta x\to 0}g\left(x+\Delta x\right)-g\left(x\right)-\Delta x^2\nonumber\\
-    \lim_{\Delta x\to 0}g\left(x+\Delta x\right)&=\lim_{\Delta x\to 0}g\left(x\right)+\Delta x\dv{g\left(x\right)}{x}+\Delta x^2\nonumber\\
-    \lim_{\Delta x\to 0}g\left(x+\Delta x\right)&=\lim_{\Delta x\to 0}g\left(x\right)+\Delta x\left(\dv{g\left(x\right)}{x}+\Delta x\right)\nonumber\\
+    \lim_{\Delta x\to 0}\dv{g\left(x\right)}{x}\Delta x&=\lim_{\Delta x\to 0}g\left(x+\Delta x\right)-g\left(x\right)-\Delta x^2\nonumber\\
+    \lim_{\Delta x\to 0}g\left(x+\Delta x\right)&=\lim_{\Delta x\to 0}g\left(x\right)+\dv{g\left(x\right)}{x}\Delta x+\Delta x^2\nonumber\\
+    \lim_{\Delta x\to 0}g\left(x+\Delta x\right)&=\lim_{\Delta x\to 0}g\left(x\right)+\left(\dv{g\left(x\right)}{x}+\Delta x\right)\Delta x\nonumber\\
    \end{align}
    また，
    \begin{align}
     \dv{f\left(y\right)}{y}&=\lim_{\Delta y\to 0}\frac{f\left(y+\Delta y\right)-f\left(y\right)}{\Delta y}\nonumber\\
-    \lim_{\Delta y\to 0}\Delta y\dv{f\left(y\right)}{y}&=\lim_{\Delta y\to 0}f\left(y+\Delta y\right)-f\left(y\right)\nonumber\\
-    \lim_{\Delta y\to 0}f\left(y+\Delta y\right)&=\lim_{\Delta y\to 0}\Delta y\dv{f\left(y\right)}{y}+f\left(y\right)\nonumber\\
+    \lim_{\Delta y\to 0}\dv{f\left(y\right)}{y}\Delta y&=\lim_{\Delta y\to 0}f\left(y+\Delta y\right)-f\left(y\right)\nonumber\\
+    \lim_{\Delta y\to 0}f\left(y+\Delta y\right)&=\lim_{\Delta y\to 0}\dv{f\left(y\right)}{y}\Delta y+f\left(y\right)\nonumber\\
    \end{align}
    ここで，
    \begin{align}
-    \Delta y = \Delta x\left(\dv{g\left(x\right)}{x}+\Delta x\right)
+    \Delta y = \left(\dv{g\left(x\right)}{x}+\Delta x\right)\Delta x
    \end{align}
    とすると，
    \begin{align}
     \dv{f\left(g\left(x\right)\right)}{x}&=\lim_{\Delta x\to 0}\frac{f\left(g\left(x+\Delta x\right)\right)-f\left(g\left(x\right)\right)}{\Delta x}\nonumber\\
-    &=\lim_{\Delta x\to 0}\frac{f\left(g\left(x\right)+\Delta x\left(\dv{g\left(x\right)}{x}+\Delta x\right)\right)-f\left(g\left(x\right)\right)}{\Delta x}\nonumber\\
+    &=\lim_{\Delta x\to 0}\frac{f\left(g\left(x\right)+\left(\dv{g\left(x\right)}{x}+\Delta x\right)\Delta x\right)-f\left(g\left(x\right)\right)}{\Delta x}\nonumber\\
     &=\lim_{\Delta x\to 0}\frac{f\left(g\left(x\right)+\Delta y\right)-f\left(g\left(x\right)\right)}{\Delta x}\nonumber\\
-    &=\lim_{\Delta x\to 0}\frac{\Delta y\dv{f\left(y\right)}{y}+f\left(y\right)-f\left(g\left(x\right)\right)}{\Delta x}\nonumber\\
-    &=\lim_{\Delta x\to 0}\frac{\Delta x\left(\dv{g\left(x\right)}{x}+\Delta x\right)\dv{f\left(y\right)}{y}+f\left(g\left(x\right)\right)-f\left(g\left(x\right)\right)}{\Delta x}\nonumber\\
-    &=\lim_{\Delta x\to 0}\frac{\Delta x\left(\dv{g\left(x\right)}{x}+\Delta x\right)\dv{f\left(y\right)}{y}}{\Delta x}\nonumber\\
-    &=\lim_{\Delta x\to 0}\left(\dv{g\left(x\right)}{x}+\Delta x\right)\dv{f\left(y\right)}{y}\nonumber\\
-    &=\dv{g\left(x\right)}{x}\dv{f\left(y\right)}{y}\nonumber\\
+    &=\lim_{\Delta x\to 0}\frac{\dv{f\left(y\right)}{y}\Delta y+f\left(y\right)-f\left(g\left(x\right)\right)}{\Delta x}\nonumber\\
+    &=\lim_{\Delta x\to 0}\frac{\dv{f\left(y\right)}{y}\left(\dv{g\left(x\right)}{x}+\Delta x\right)\Delta x+f\left(g\left(x\right)\right)-f\left(g\left(x\right)\right)}{\Delta x}\nonumber\\
+    &=\lim_{\Delta x\to 0}\frac{\dv{f\left(y\right)}{y}\left(\dv{g\left(x\right)}{x}+\Delta x\right)\Delta x}{\Delta x}\nonumber\\
+    &=\lim_{\Delta x\to 0}\dv{f\left(y\right)}{y}\left(\dv{g\left(x\right)}{x}+\Delta x\right)\nonumber\\
+    &=\dv{f\left(y\right)}{y}\dv{g\left(x\right)}{x}\nonumber\\
    \end{align}
   \subsection{商の微分}
    \begin{align}
