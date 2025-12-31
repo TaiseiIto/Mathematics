@@ -274,106 +274,106 @@
    である．
    \subsubsection{証明}
     \subsubsubsection{離散確率変数同士の和の平均}
-    互いに独立とは限らない2つの離散確率変数$X$と$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率質量変数が$p\left(x,y\right)$の形で与えられている．
-    この時，$X$単独の確率質量関数$p_X$は，
-    \begin{align}
-     p_X\left(x\right)&=\sum_{y\in T}p\left(x,y\right)
-    \end{align}
-    であり，その平均$E\left(X\right)$は，
-    \begin{align}
-     E\left(X\right)&=\sum_{x\in S}xp_X\left(x\right)\nonumber\\
-     &=\sum_{x\in S}x\sum_{y\in T}p\left(x,y\right)\nonumber\\
-     &=\sum_{x\in S}\sum_{y\in T}xp\left(x,y\right)\nonumber\\
-     &=\sum_{y\in T}\sum_{x\in S}xp\left(x,y\right)
-    \end{align}
-    である．
-    同様に，$Y$単独の確率質量関数$p_Y$は，
-    \begin{align}
-     p_Y\left(y\right)&=\sum_{x\in S}p\left(x,y\right)
-    \end{align}
-    であり，その平均$E\left(Y\right)$は，
-    \begin{align}
-     E\left(Y\right)&=\sum_{y\in T}yp_Y\left(y\right)\nonumber\\
-     &=\sum_{y\in T}y\sum_{x\in S}p\left(x,y\right)\nonumber\\
-     &=\sum_{y\in T}\sum_{x\in S}yp\left(x,y\right)
-    \end{align}
-    である．
-    一方$X+Y$の平均$E\left(X+Y\right)$は，
-    \begin{align}
-     E\left(X+Y\right)&=\sum_{y\in T}\sum_{x\in S}\left(x+y\right)p\left(x,y\right)\nonumber\\
-     &=\sum_{y\in T}\sum_{x\in S}\left(xp\left(x,y\right)+yp\left(x,y\right)\right)\nonumber\\
-     &=\sum_{y\in T}\left(\left(\sum_{x\in S}xp\left(x,y\right)\right)+\left(\sum_{x\in S}yp\left(x,y\right)\right)\right)\nonumber\\
-     &=\left(\sum_{y\in T}\sum_{x\in S}xp\left(x,y\right)\right)+\left(\sum_{y\in T}\sum_{x\in S}yp\left(x,y\right)\right)\nonumber\\
-     &=E\left(X\right)+E\left(Y\right)
-    \end{align}
-    である．
+     互いに独立とは限らない2つの離散確率変数$X$と$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率質量変数が$p\left(x,y\right)$の形で与えられている．
+     この時，$X$単独の確率質量関数$p_X$は，
+     \begin{align}
+      p_X\left(x\right)&=\sum_{y\in T}p\left(x,y\right)
+     \end{align}
+     であり，その平均$E\left(X\right)$は，
+     \begin{align}
+      E\left(X\right)&=\sum_{x\in S}xp_X\left(x\right)\nonumber\\
+      &=\sum_{x\in S}x\sum_{y\in T}p\left(x,y\right)\nonumber\\
+      &=\sum_{x\in S}\sum_{y\in T}xp\left(x,y\right)\nonumber\\
+      &=\sum_{y\in T}\sum_{x\in S}xp\left(x,y\right)
+     \end{align}
+     である．
+     同様に，$Y$単独の確率質量関数$p_Y$は，
+     \begin{align}
+      p_Y\left(y\right)&=\sum_{x\in S}p\left(x,y\right)
+     \end{align}
+     であり，その平均$E\left(Y\right)$は，
+     \begin{align}
+      E\left(Y\right)&=\sum_{y\in T}yp_Y\left(y\right)\nonumber\\
+      &=\sum_{y\in T}y\sum_{x\in S}p\left(x,y\right)\nonumber\\
+      &=\sum_{y\in T}\sum_{x\in S}yp\left(x,y\right)
+     \end{align}
+     である．
+     一方$X+Y$の平均$E\left(X+Y\right)$は，
+     \begin{align}
+      E\left(X+Y\right)&=\sum_{y\in T}\sum_{x\in S}\left(x+y\right)p\left(x,y\right)\nonumber\\
+      &=\sum_{y\in T}\sum_{x\in S}\left(xp\left(x,y\right)+yp\left(x,y\right)\right)\nonumber\\
+      &=\sum_{y\in T}\left(\left(\sum_{x\in S}xp\left(x,y\right)\right)+\left(\sum_{x\in S}yp\left(x,y\right)\right)\right)\nonumber\\
+      &=\left(\sum_{y\in T}\sum_{x\in S}xp\left(x,y\right)\right)+\left(\sum_{y\in T}\sum_{x\in S}yp\left(x,y\right)\right)\nonumber\\
+      &=E\left(X\right)+E\left(Y\right)
+     \end{align}
+     である．
     \subsubsubsection{連続確率変数同士の和の平均}
-    互いに独立とは限らない2つの連続確率変数$X$と$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
-    この時，$X$単独の確率密度関数$p_X$は，
-    \begin{align}
-     p_X\left(x\right)&=\int_{-\infty}^\infty p\left(x,y\right)dy
-    \end{align}
-    であり，その平均$E\left(X\right)$は，
-    \begin{align}
-     E\left(X\right)&=\int_{-\infty}^\infty xp_X\left(x\right)dx\nonumber\\
-     &=\int_{-\infty}^\infty x\int_{-\infty}^\infty p\left(x,y\right)dydx\nonumber\\
-     &=\int_{-\infty}^\infty \int_{-\infty}^\infty xp\left(x,y\right)dydx\nonumber\\
-     &=\int_{-\infty}^\infty \int_{-\infty}^\infty xp\left(x,y\right)dxdy\nonumber\\
-    \end{align}
-    である．
-    同様に，$Y$単独の確率密度関数$p_Y$は，
-    \begin{align}
-     p_Y\left(y\right)&=\int_{-\infty}^\infty p\left(x,y\right)dx
-    \end{align}
-    であり，その平均$E\left(Y\right)$は，
-    \begin{align}
-     E\left(Y\right)&=\int_{-\infty}^\infty yp_Y\left(y\right)dy\nonumber\\
-     &=\int_{-\infty}^\infty y\int_{-\infty}^\infty p\left(x,y\right)dxdy\nonumber\\
-     &=\int_{-\infty}^\infty \int_{-\infty}^\infty yp\left(x,y\right)dxdy\nonumber\\
-    \end{align}
-    である．
-    一方$X+Y$の平均$E\left(X+Y\right)$は，
-    \begin{align}
-     E\left(X+Y\right)&=\int_{-\infty}^\infty\int_{-\infty}^\infty\left(x+y\right)p\left(x,y\right)dxdy\nonumber\\
-     &=\int_{-\infty}^\infty\int_{-\infty}^\infty\left(xp\left(x,y\right)+yp\left(x,y\right)\right)dxdy\nonumber\\
-     &=\int_{-\infty}^\infty\left(\int_{-\infty}^\infty xp\left(x,y\right)dx+\int_{-\infty}^\infty yp\left(x,y\right)dx\right)dy\nonumber\\
-     &=\int_{-\infty}^\infty\int_{-\infty}^\infty xp\left(x,y\right)dxdy+\int_{-\infty}^\infty\int_{-\infty}^\infty yp\left(x,y\right)dxdy\nonumber\\
-     &=E\left(X\right)+E\left(Y\right)
-    \end{align}
+     互いに独立とは限らない2つの連続確率変数$X$と$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
+     この時，$X$単独の確率密度関数$p_X$は，
+     \begin{align}
+      p_X\left(x\right)&=\int_{-\infty}^\infty p\left(x,y\right)dy
+     \end{align}
+     であり，その平均$E\left(X\right)$は，
+     \begin{align}
+      E\left(X\right)&=\int_{-\infty}^\infty xp_X\left(x\right)dx\nonumber\\
+      &=\int_{-\infty}^\infty x\int_{-\infty}^\infty p\left(x,y\right)dydx\nonumber\\
+      &=\int_{-\infty}^\infty \int_{-\infty}^\infty xp\left(x,y\right)dydx\nonumber\\
+      &=\int_{-\infty}^\infty \int_{-\infty}^\infty xp\left(x,y\right)dxdy\nonumber\\
+     \end{align}
+     である．
+     同様に，$Y$単独の確率密度関数$p_Y$は，
+     \begin{align}
+      p_Y\left(y\right)&=\int_{-\infty}^\infty p\left(x,y\right)dx
+     \end{align}
+     であり，その平均$E\left(Y\right)$は，
+     \begin{align}
+      E\left(Y\right)&=\int_{-\infty}^\infty yp_Y\left(y\right)dy\nonumber\\
+      &=\int_{-\infty}^\infty y\int_{-\infty}^\infty p\left(x,y\right)dxdy\nonumber\\
+      &=\int_{-\infty}^\infty \int_{-\infty}^\infty yp\left(x,y\right)dxdy\nonumber\\
+     \end{align}
+     である．
+     一方$X+Y$の平均$E\left(X+Y\right)$は，
+     \begin{align}
+      E\left(X+Y\right)&=\int_{-\infty}^\infty\int_{-\infty}^\infty\left(x+y\right)p\left(x,y\right)dxdy\nonumber\\
+      &=\int_{-\infty}^\infty\int_{-\infty}^\infty\left(xp\left(x,y\right)+yp\left(x,y\right)\right)dxdy\nonumber\\
+      &=\int_{-\infty}^\infty\left(\int_{-\infty}^\infty xp\left(x,y\right)dx+\int_{-\infty}^\infty yp\left(x,y\right)dx\right)dy\nonumber\\
+      &=\int_{-\infty}^\infty\int_{-\infty}^\infty xp\left(x,y\right)dxdy+\int_{-\infty}^\infty\int_{-\infty}^\infty yp\left(x,y\right)dxdy\nonumber\\
+      &=E\left(X\right)+E\left(Y\right)
+     \end{align}
     \subsubsubsection{離散確率変数と連続確率変数の和の平均}
-    互いに独立とは限らない離散確率変数$X$と連続確率変数$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
-    この時，$X$単独の確率質量関数$p_X$は，
-    \begin{align}
-     p_X\left(x\right)&=\int_{-\infty}^\infty p\left(x,y\right)dy
-    \end{align}
-    であり，その平均$E\left(X\right)$は，
-    \begin{align}
-     E\left(X\right)&=\sum_{x\in S}xp_X\left(x\right)\nonumber\\
-     &=\sum_{x\in S}x\int_{-\infty}^\infty p\left(x,y\right)dy\nonumber\\
-     &=\sum_{x\in S}\int_{-\infty}^\infty xp\left(x,y\right)dy\nonumber\\
-     &=\int_{-\infty}^\infty\sum_{x\in S}xp\left(x,y\right)dy\nonumber\\
-    \end{align}
-    である．
-    同様に，$Y$単独の確率密度関数$p_Y$は，
-    \begin{align}
-     p_Y\left(y\right)&=\sum_{x\in S}p\left(x,y\right)
-    \end{align}
-    であり，その平均$E\left(Y\right)$は，
-    \begin{align}
-     E\left(Y\right)&=\int_{-\infty}^\infty yp_Y\left(y\right)dy\nonumber\\
-     &=\int_{-\infty}^\infty y\sum_{x\in S}p\left(x,y\right)dy\nonumber\\
-     &=\int_{-\infty}^\infty\sum_{x\in S}yp\left(x,y\right)dy\nonumber\\
-    \end{align}
-    である．
-    一方$X+Y$の平均$E\left(X+Y\right)$は，
-    \begin{align}
-     E\left(X+Y\right)&=\int_{-\infty}^\infty\sum_{x\in S}\left(x+y\right)p\left(x,y\right)dy\nonumber\\
-     &=\int_{-\infty}^\infty\sum_{x\in S}\left(xp\left(x,y\right)+yp\left(x,y\right)\right)dy\nonumber\\
-     &=\int_{-\infty}^\infty\left(\sum_{x\in S}xp\left(x,y\right)+\sum_{x\in S}yp\left(x,y\right)\right)dy\nonumber\\
-     &=\int_{-\infty}^\infty\sum_{x\in S}xp\left(x,y\right)dy+\int_{-\infty}^\infty\sum_{x\in S}yp\left(x,y\right)dy\nonumber\\
-     &=E\left(X\right)+E\left(Y\right)
-    \end{align}
-    である．
+     互いに独立とは限らない離散確率変数$X$と連続確率変数$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
+     この時，$X$単独の確率質量関数$p_X$は，
+     \begin{align}
+      p_X\left(x\right)&=\int_{-\infty}^\infty p\left(x,y\right)dy
+     \end{align}
+     であり，その平均$E\left(X\right)$は，
+     \begin{align}
+      E\left(X\right)&=\sum_{x\in S}xp_X\left(x\right)\nonumber\\
+      &=\sum_{x\in S}x\int_{-\infty}^\infty p\left(x,y\right)dy\nonumber\\
+      &=\sum_{x\in S}\int_{-\infty}^\infty xp\left(x,y\right)dy\nonumber\\
+      &=\int_{-\infty}^\infty\sum_{x\in S}xp\left(x,y\right)dy\nonumber\\
+     \end{align}
+     である．
+     同様に，$Y$単独の確率密度関数$p_Y$は，
+     \begin{align}
+      p_Y\left(y\right)&=\sum_{x\in S}p\left(x,y\right)
+     \end{align}
+     であり，その平均$E\left(Y\right)$は，
+     \begin{align}
+      E\left(Y\right)&=\int_{-\infty}^\infty yp_Y\left(y\right)dy\nonumber\\
+      &=\int_{-\infty}^\infty y\sum_{x\in S}p\left(x,y\right)dy\nonumber\\
+      &=\int_{-\infty}^\infty\sum_{x\in S}yp\left(x,y\right)dy\nonumber\\
+     \end{align}
+     である．
+     一方$X+Y$の平均$E\left(X+Y\right)$は，
+     \begin{align}
+      E\left(X+Y\right)&=\int_{-\infty}^\infty\sum_{x\in S}\left(x+y\right)p\left(x,y\right)dy\nonumber\\
+      &=\int_{-\infty}^\infty\sum_{x\in S}\left(xp\left(x,y\right)+yp\left(x,y\right)\right)dy\nonumber\\
+      &=\int_{-\infty}^\infty\left(\sum_{x\in S}xp\left(x,y\right)+\sum_{x\in S}yp\left(x,y\right)\right)dy\nonumber\\
+      &=\int_{-\infty}^\infty\sum_{x\in S}xp\left(x,y\right)dy+\int_{-\infty}^\infty\sum_{x\in S}yp\left(x,y\right)dy\nonumber\\
+      &=E\left(X\right)+E\left(Y\right)
+     \end{align}
+     である．
   \subsection{スカラー倍の平均は平均のスカラー倍}
    ある確率変数$X$とある数$a$があるとき，
    \begin{align}
@@ -382,19 +382,19 @@
    である．
    \subsubsection{証明}
     \subsubsubsection{$X$が離散確率分布の場合}
-    式(\ref{DiscreteFunctionAverage})より，
-    \begin{align}
-     E\left(aX\right)&=\sum_{x\in S}axp\left(x\right)\nonumber\\
-     &=a\sum_{x\in S}xp\left(x\right)\nonumber\\
-     &=aE\left(X\right)\nonumber\\
-    \end{align}
+     式(\ref{DiscreteFunctionAverage})より，
+     \begin{align}
+      E\left(aX\right)&=\sum_{x\in S}axp\left(x\right)\nonumber\\
+      &=a\sum_{x\in S}xp\left(x\right)\nonumber\\
+      &=aE\left(X\right)\nonumber\\
+     \end{align}
     \subsubsubsection{$X$が連続確率分布の場合}
-    式(\ref{ContinuousFunctionAverate})より，
-    \begin{align}
-     E\left(aX\right)&=\int_{-\infty}^\infty axp\left(x\right)dx\nonumber\\
-     &=a\int_{-\infty}^\infty xp\left(x\right)dx\nonumber\\
-     &=aE\left(X\right)
-    \end{align}
+     式(\ref{ContinuousFunctionAverate})より，
+     \begin{align}
+      E\left(aX\right)&=\int_{-\infty}^\infty axp\left(x\right)dx\nonumber\\
+      &=a\int_{-\infty}^\infty xp\left(x\right)dx\nonumber\\
+      &=aE\left(X\right)
+     \end{align}
  \section{平均と分散の関係に関する定理}
   任意の確率変数$X$について，
   \begin{align}
