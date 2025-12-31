@@ -296,7 +296,7 @@
     &=\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)+g\left(x+h\right)-g\left(x\right)}{h}\nonumber\\
     &=\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}+\frac{g\left(x+h\right)-g\left(x\right)}{h}\nonumber\\
     &=\left(\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}\right)+\left(\lim_{h\to 0}\frac{g\left(x+h\right)-g\left(x\right)}{h}\right)\nonumber\\
-    &=\dv{f\left(x\right)}{x}+\dv{g\left(x\right)}{x}\nonumber\\
+    &=\dv{f\left(x\right)}{x}+\dv{g\left(x\right)}{x}
    \end{align}
   \subsection{積の微分}
    \begin{align}
@@ -330,10 +330,33 @@
      &=\dv{x}{x}x^n+x\dv{x^n}{x}\nonumber\\
      &=x^n+xnx^{n-1}\nonumber\\
      &=x^n+nx^n\nonumber\\
-     &=\left(n+1\right)x^n\nonumber\\
+     &=\left(n+1\right)x^n
     \end{align}
     よって成り立つ．
    \subsubsection{負の整数乗の微分}
+    \begin{align}
+     \forall n\in\mathbb{N},\dv{x^{-n}}{x}=-nx^{-n-1}
+    \end{align}
+    数学的帰納法により証明する．
+    $n=1$のとき，
+    \begin{align}
+     \dv{x^{-1}}{x}&=\dv{\frac{1}{x}}{x}\nonumber\\
+     &=-\frac{1}{x^2}\nonumber\\
+     &=-x^{-2}
+    \end{align}
+    が成り立つ．
+    \begin{align}
+     \dv{x^{-n}}{x}=-nx^{-n-1}
+    \end{align}
+    のとき，
+    \begin{align}
+     \dv{x^{-n-1}}{x}&=\dv{x^{-1}x^{-n}}{x}\nonumber\\
+     &=\dv{x^{-1}}{x}x^{-n}+x^{-1}\dv{x^{-n}}{x}\nonumber\\
+     &=-x^{-2}x^{-n}+x^{-1}\left(-nx^{-n-1}\right)\nonumber\\
+     &=-x^{-n-2}-nx^{-n-2}\nonumber\\
+     &=\left(-n-1\right)x^{-n-2}
+    \end{align}
+    よって成り立つ．
   \subsection{逆関数の微分}
   \subsection{合成関数の微分}
   \subsection{商の微分}
