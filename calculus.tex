@@ -340,7 +340,7 @@
     数学的帰納法により証明する．
     $n=1$のとき，
     \begin{align}
-     \dv{x^{-1}}{x}&=\dv{\frac{1}{x}}{x}\nonumber\\
+     \dv{x^{-1}}{x}&=\dv{x}\frac{1}{x}\nonumber\\
      &=-\frac{1}{x^2}\nonumber\\
      &=-x^{-2}
     \end{align}
@@ -360,6 +360,14 @@
   \subsection{逆関数の微分}
   \subsection{合成関数の微分}
   \subsection{商の微分}
+   \begin{align}
+    \dv{x}\frac{f\left(x\right)}{g\left(x\right)}&=\dv{x}\left(f\left(x\right)g\left(x\right)^{-1}\right)\nonumber\\
+    &=\left(\dv{x}f\left(x\right)\right)g\left(x\right)^{-1}+f\left(x\right)\left(\dv{x}g\left(x\right)^{-1}\right)\nonumber\\
+    &=\dv{f\left(x\right)}{x}g\left(x\right)^{-1}+f\left(x\right)\left(-g\left(x\right)^{-2}\dv{g\left(x\right)}{x}\right)\nonumber\\
+    &=\dv{f\left(x\right)}{x}\frac{1}{g\left(x\right)}-\frac{f\left(x\right)}{g\left(x\right)^2}\dv{g\left(x\right)}{x}\nonumber\\
+    &=\dv{f\left(x\right)}{x}\frac{g\left(x\right)}{g\left(x\right)^2}-\frac{f\left(x\right)}{g\left(x\right)^2}\dv{g\left(x\right)}{x}\nonumber\\
+    &=\frac{\dv{f\left(x\right)}{x}g\left(x\right)-f\left(x\right)\dv{g\left(x\right)}{x}}{g\left(x\right)^2}
+   \end{align}
  \section{積分}
 \end{document}
 
