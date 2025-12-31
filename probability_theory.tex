@@ -962,18 +962,18 @@
     \end{align}
     ここで，$F\left(x,y\right)$を$y$周りでマクローリン展開すると，
     \begin{align}
-     F\left(x,y\right)&=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\frac{\partial^nF\left(x,y\right)}{\partial y^n}\right|_{y=0}\right)y^k\nonumber\\
-     &=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\frac{\partial^nf\left(g\left(x\right)+y\right)}{\partial y^n}\right|_{y=0}\right)y^k\nonumber\\
-     &=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\frac{\partial^nf\left(g\left(x\right)+y\right)}{\partial\left(g\left(x\right)+y\right)^n}\right|_{y=0}\right)y^k\nonumber\\
+     F\left(x,y\right)&=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\pdv[n]{F\left(x,y\right)}{y}\right|_{y=0}\right)y^k\nonumber\\
+     &=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\pdv[n]{f\left(g\left(x\right)+y\right)}{y}\right|_{y=0}\right)y^k\nonumber\\
+     &=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\pdv{f\left(g\left(x\right)+y\right)}{\left(g\left(x\right)+y\right)}\right|_{y=0}\right)y^k\nonumber\\
      &=\sum_{k=0}^\infty\frac{f^{\left(n\right)}\left(g\left(x\right)\right)}{k!}y^k\nonumber\\
     \end{align}
     また，$G\left(x,y\right)$を$y$周りでマクローリン展開すると，
     \begin{align}
-     G\left(x,y\right)&=\sum_{n=0}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nG\left(x,y\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
-     &=G\left(x,0\right)+\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nG\left(x,y\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
-     &=g\left(x\right)-g\left(x\right)+\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\frac{\partial^n\left(g\left(x+y\right)-g\left(x\right)\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
-     &=\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\frac{\partial^ng\left(x+y\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
-     &=\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\frac{\partial^ng\left(x+y\right)}{\partial\left(x+y\right)^n}\right|_{y=0}\right)y^n\nonumber\\
+     G\left(x,y\right)&=\sum_{n=0}^\infty\frac{1}{n!}\left(\left.\pdv[n]{G\left(x,y\right)}{y}\right|_{y=0}\right)y^n\nonumber\\
+     &=G\left(x,0\right)+\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\pdv[n]{G\left(x,y\right)}{y}\right|_{y=0}\right)y^n\nonumber\\
+     &=g\left(x\right)-g\left(x\right)+\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\pdv[n]{\left(g\left(x+y\right)-g\left(x\right)\right)}{y}\right|_{y=0}\right)y^n\nonumber\\
+     &=\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\pdv[n]{g\left(x+y\right)}{y}\right|_{y=0}\right)y^n\nonumber\\
+     &=\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\pdv[n]{g\left(x+y\right)}{\left(x+y\right)}\right|_{y=0}\right)y^n\nonumber\\
      &=\sum_{n=1}^\infty\frac{g^{\left(n\right)}\left(x\right)}{n!}y^n
     \end{align}
     これらを合成すると，
