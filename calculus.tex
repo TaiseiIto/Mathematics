@@ -1,4 +1,6 @@
 \documentclass[dvipdfmx]{jsarticle}
+\usepackage{amsfonts}
+\usepackage{amsmath}
 \usepackage{here}
 \usepackage{physics}
 \usepackage{tikz}
@@ -310,6 +312,27 @@
    \end{align}
   \subsection{累乗の微分}
    \subsubsection{正の整数乗の微分}
+    \begin{align}
+     \forall n\in\mathbb{N},\dv{x^n}{x}=nx^{n-1}
+    \end{align}
+    数学的帰納法により証明する．
+    $n=1$のとき，
+    \begin{align}
+     \dv{x}{x}=1
+    \end{align}
+    が成り立つ．
+    \begin{align}
+     \dv{x^n}{x}=nx^{n-1}
+    \end{align}
+    のとき，
+    \begin{align}
+     \dv{x^{n+1}}{x}&=\dv{xx^n}{x}\nonumber\\
+     &=\dv{x}{x}x^n+x\dv{x^n}{x}\nonumber\\
+     &=x^n+xnx^{n-1}\nonumber\\
+     &=x^n+nx^n\nonumber\\
+     &=\left(n+1\right)x^n\nonumber\\
+    \end{align}
+    よって成り立つ．
    \subsubsection{負の整数乗の微分}
   \subsection{逆関数の微分}
   \subsection{合成関数の微分}
