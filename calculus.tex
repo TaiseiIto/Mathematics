@@ -357,7 +357,6 @@
      &=\left(-n-1\right)x^{-n-2}
     \end{align}
     よって成り立つ．
-  \subsection{逆関数の微分}
   \subsection{合成関数の微分}
    極限に使用する$\Delta y$が$0$に固定されてしまわないように，$g$の微分に$\Delta x$を余分に足しておくことがポイントとなる．
    \begin{align}
@@ -393,6 +392,18 @@
     &=\lim_{\Delta x\to 0}\frac{\dv{f\left(y\right)}{y}\left(\dv{g\left(x\right)}{x}+\Delta x\right)\Delta x}{\Delta x}\nonumber\\
     &=\lim_{\Delta x\to 0}\dv{f\left(y\right)}{y}\left(\dv{g\left(x\right)}{x}+\Delta x\right)\nonumber\\
     &=\dv{f\left(y\right)}{y}\dv{g\left(x\right)}{x}\nonumber\\
+   \end{align}
+  \subsection{逆関数の微分}
+   $f:\mathbb{R}\to\mathbb{R}$が全単射であり，
+   \begin{align}
+    \dv{f\left(x\right)}{x}\ne 0
+   \end{align}
+   であるとき，
+   \begin{align}
+    f^{-1}\left(f\left(x\right)\right)&=x\nonumber\\
+    \dv{f^{-1}\left(f\left(x\right)\right)}{x}&=\dv{x}{x}\nonumber\\
+    \dv{f^{-1}\left(f\left(x\right)\right)}{f\left(x\right)}\dv{f\left(x\right)}{x}&=1\nonumber\\
+    \dv{f^{-1}\left(f\left(x\right)\right)}{f\left(x\right)}&=\left(\dv{f\left(x\right)}{x}\right)^{-1}\nonumber\\
    \end{align}
   \subsection{商の微分}
    \begin{align}
