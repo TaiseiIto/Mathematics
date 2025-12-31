@@ -2207,12 +2207,33 @@
     &=\lambda\log_2e-\lambda\log_2\lambda+\frac{1}{e^{\lambda}}\sum_{n=0}^\infty\frac{\lambda^n}{n!}\sum_{m=1}^n\log_2m
    \end{align}
  \section{標準正規分布}
+  \subsection{上に有界な単調増加数列の収束}
   \subsection{自然数の$-2$乗の収束}
+   数列
    \begin{align}
-    \sum_{n=1}^\infty n^{-2}
+    \forall N\in\mathbb{N},a_N=\sum_{n=1}^N\frac{1}{n^2}
    \end{align}
    が収束することを証明する．
-   収束値は$\sin$の無限乗積展開を証明しなければならないので，ここでは収束することのみを証明する．
+   \begin{align}
+    \forall n\in\mathbb{N},n&>n-1\nonumber\\
+    n^2&>n\left(n-1\right)\nonumber\\
+    \frac{1}{n^2}&<\frac{1}{n\left(n-1\right)}\nonumber\\
+    \forall N\in\mathbb{N},\sum_{n=1}^N\frac{1}{n^2}=1+\sum_{n=2}^N\frac{1}{n^2}&<1+\sum_{n=2}^N\frac{1}{n\left(n-1\right)}\nonumber\\
+    &=1+\sum_{n=2}^N\frac{n-\left(n-1\right)}{n\left(n-1\right)}\nonumber\\
+    &=1+\sum_{n=2}^N\left(\frac{1}{n-1}-\frac{1}{n}\right)\nonumber\\
+    &=1+\left(\sum_{n=2}^N\frac{1}{n-1}\right)-\left(\sum_{n=2}^N\frac{1}{n}\right)\nonumber\\
+    &=1+\left(\sum_{n=1}^{N-1}\frac{1}{n}\right)-\left(\sum_{n=2}^N\frac{1}{n}\right)\nonumber\\
+    &=1+1-\frac{1}{N}\nonumber\\
+    &=2-\frac{1}{N}\nonumber\\
+    \lim_{N\to\infty}2-\frac{1}{N}&=2
+   \end{align}
+   よって上に有界である．
+   また，
+   \begin{align}
+    a_{N+1}-a_N&=\frac{1}{\left(N+1\right)^2}>0
+   \end{align}
+   よって単調増加である．
+   よって収束する．
   \subsection{無限乗積の収束判定}
    \begin{align}
     \sum_{n=1}^\infty a_n
