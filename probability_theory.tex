@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{here}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \usepackage{tikz}
 \usetikzlibrary{intersections, calc, arrows.meta}
 \makeatletter
@@ -156,7 +157,7 @@
    であり，確率密度関数$q$は，
    \begin{align}
     q\left(b\right)&=Q'\left(b\right)\nonumber\\
-    &=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx
+    &=\dv{b}\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx
    \end{align}
    となる．ここで，上の微分を図を用いて解く．
    \begin{figure}[H]
@@ -222,7 +223,7 @@
    となる．$q\left(b\right)$は，これを$\forall a_n\in\{a_0,\cdots,a_N\}=\{x\in S|f\left(x\right)=b\}$について足し合わせたものであるから，
    \begin{align}
     q\left(b\right)&=Q'\left(b\right)\nonumber\\
-    &=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx\nonumber\\
+    &=\dv{b}\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx\nonumber\\
     &=\sum_{x\in S|f\left(x\right)=b}\frac{p\left(x\right)}{f'\left(x\right)}
    \end{align}
    となる．
@@ -233,7 +234,7 @@
      &=\int_{-\infty}^\infty y\sum_{x\in S|f\left(x\right)=y}\frac{p\left(x\right)}{f'\left(x\right)}dy\nonumber\\
      &=\int_{-\infty}^\infty\sum_{x\in S|f\left(x\right)=y}\frac{yp\left(x\right)}{f'\left(x\right)}dy\nonumber\\
      &=\int_{-\infty}^\infty\sum_{x\in S|f\left(x\right)=y}\frac{f\left(x\right)p\left(x\right)}{f'\left(x\right)}dy\nonumber\\
-     &=\int_{-\infty}^\infty\frac{f\left(x\right)p\left(x\right)}{f'\left(x\right)}\frac{dy}{dx}dx\nonumber\\
+     &=\int_{-\infty}^\infty\frac{f\left(x\right)p\left(x\right)}{f'\left(x\right)}\dv{y}{x}dx\nonumber\\
      &=\int_{-\infty}^\infty\frac{f\left(x\right)p\left(x\right)}{f'\left(x\right)}f'\left(x\right)dx\nonumber\\
      &=\int_{-\infty}^\infty f\left(x\right)p\left(x\right)dx\label{ContinuousFunctionAverate}
     \end{align}
@@ -257,7 +258,7 @@
      &=\int_{-\infty}^\infty\left(y-E\left(f\left(X\right)\right)\right)^2\sum_{x\in S|f\left(x\right)=y}\frac{p\left(x\right)}{f'\left(x\right)}dy\nonumber\\
      &=\int_{-\infty}^\infty\sum_{x\in S|f\left(x\right)=y}\left(y-E\left(f\left(X\right)\right)\right)^2\frac{p\left(x\right)}{f'\left(x\right)}dy\nonumber\\
      &=\int_{-\infty}^\infty\sum_{x\in S|f\left(x\right)=y}\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2\frac{p\left(x\right)}{f'\left(x\right)}dy\nonumber\\
-     &=\int_{-\infty}^\infty\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2\frac{p\left(x\right)}{f'\left(x\right)}\frac{dy}{dx}dx\nonumber\\
+     &=\int_{-\infty}^\infty\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2\frac{p\left(x\right)}{f'\left(x\right)}\dv{y}{x}dx\nonumber\\
      &=\int_{-\infty}^\infty\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2\frac{p\left(x\right)}{f'\left(x\right)}f'\left(x\right)dx\nonumber\\
      &=\int_{-\infty}^\infty\left(f\left(x\right)-E\left(f\left(X\right)\right)\right)^2p\left(x\right)dx\nonumber\\
      &=E\left(\left(f\left(X\right)-E\left(f\left(X\right)\right)\right)^2\right)\nonumber\\
@@ -509,10 +510,10 @@
     確率母関数の定義を$t=1$でテイラー展開することで証明できる．
     \begin{align}
      G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
-     \sum_{n=0}^\infty\frac{\left(t-1\right)^n}{n!}G_X^{\left(n\right)}\left(1\right)&=\sum_{n=1}^\infty\frac{\left(t-1\right)^n}{n!}\left(\left.\frac{d^nE\left(t^X\right)}{dt^n}\right|_{t=1}\right)\nonumber\\
-     G_X^{\left(n\right)}\left(1\right)&=\left.\frac{d^nE\left(t^X\right)}{dt^n}\right|_{t=1}\nonumber\\
-     &=\left.\frac{d^n}{dt^n}\sum_{m=0}^\infty p\left(m\right)t^m\right|_{t=1}\nonumber\\
-     &=\left.\sum_{m=0}^\infty p\left(m\right)\frac{d^n}{dt^n}t^m\right|_{t=1}\nonumber\\
+     \sum_{n=0}^\infty\frac{\left(t-1\right)^n}{n!}G_X^{\left(n\right)}\left(1\right)&=\sum_{n=1}^\infty\frac{\left(t-1\right)^n}{n!}\left(\left.\dv[n]{E\left(t^X\right)}{t}\right|_{t=1}\right)\nonumber\\
+     G_X^{\left(n\right)}\left(1\right)&=\left.\dv[n]{E\left(t^X\right)}{t}\right|_{t=1}\nonumber\\
+     &=\left.\dv[n]{t}\sum_{m=0}^\infty p\left(m\right)t^m\right|_{t=1}\nonumber\\
+     &=\left.\sum_{m=0}^\infty p\left(m\right)\dv[n]{t}t^m\right|_{t=1}\nonumber\\
      &=\left.\sum_{m=n}^\infty p\left(m\right)\frac{m!t^{m-n}}{\left(m-n\right)!}\right|_{t=1}\nonumber\\
      &=\sum_{m=n}^\infty p\left(m\right)\frac{m!}{\left(m-n\right)!}\nonumber\\
      &=E\left(\frac{X!}{\left(X-n\right)!}\right)
@@ -551,13 +552,13 @@
     \begin{align}
      M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
      &=E\left(e^{tX}\right)\nonumber\\
-     \sum_{n=0}^\infty\frac{t^n}{n!}M_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\frac{d^n}{dt^n}E\left(e^{tX}\right)\right|_{t=0}\right)\nonumber\\
-     M_X^{\left(n\right)}\left(0\right)&=\left(\left.\frac{d^n}{dt^n}E\left(e^{tX}\right)\right|_{t=0}\right)\nonumber\\
-     &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\frac{d^me^{tX}}{dt^m}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
-     &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.X^me^{tX}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
-     &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}X^m\right)\right|_{t=0}\nonumber\\
-     &=\left.\frac{d^n}{dt^n}\sum_{m=0}^\infty\frac{t^m}{m!}E\left(X^m\right)\right|_{t=0}\nonumber\\
-     &=\left.\sum_{m=0}^\infty\frac{E\left(X^m\right)}{m!}\frac{d^nt^m}{dt^n}\right|_{t=0}\nonumber\\
+     \sum_{n=0}^\infty\frac{t^n}{n!}M_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\dv[n]{t}E\left(e^{tX}\right)\right|_{t=0}\right)\nonumber\\
+     M_X^{\left(n\right)}\left(0\right)&=\left(\left.\dv[n]{t}E\left(e^{tX}\right)\right|_{t=0}\right)\nonumber\\
+     &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\dv[m]{e^{tX}}{t}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
+     &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.X^me^{tX}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
+     &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}X^m\right)\right|_{t=0}\nonumber\\
+     &=\left.\dv[n]{t}\sum_{m=0}^\infty\frac{t^m}{m!}E\left(X^m\right)\right|_{t=0}\nonumber\\
+     &=\left.\sum_{m=0}^\infty\frac{E\left(X^m\right)}{m!}\dv[n]{t^m}{t}\right|_{t=0}\nonumber\\
      &=\left.\sum_{m=n}^\infty\frac{E\left(X^m\right)}{m!}\frac{m!}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
      &=\left.\sum_{m=n}^\infty\frac{E\left(X^m\right)}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
      &=\left.\frac{E\left(X^n\right)}{\left(n-n\right)!}t^{n-n}+\sum_{m=n+1}^\infty\frac{E\left(X^m\right)}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
@@ -618,13 +619,13 @@
      \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
      &=G_X\left(e^{it}\right)\nonumber\\
      &=E\left(e^{itX}\right)\nonumber\\
-     \sum_{n=0}^\infty\frac{t^n}{n!}\phi_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\frac{d^n}{dt^n}E\left(e^{itX}\right)\right|_{t=0}\right)\nonumber\\
-     \phi_X^{\left(n\right)}\left(0\right)&=\left.\frac{d^n}{dt^n}E\left(e^{itX}\right)\right|_{t=0}\nonumber\\
-     &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\frac{d^me^{itX}}{dt^m}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
-     &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\left(iX\right)^me^{itX}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
-     &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(iX\right)^m\right)\right|_{t=0}\nonumber\\
-     &=\left.\frac{d^n}{dt^n}E\left(\sum_{m=0}^\infty\frac{i^mt^m}{m!}X^m\right)\right|_{t=0}\nonumber\\
-     &=\left.\frac{d^n}{dt^n}\sum_{m=0}^\infty\frac{i^mt^m}{m!}E\left(X^m\right)\right|_{t=0}\nonumber\\
+     \sum_{n=0}^\infty\frac{t^n}{n!}\phi_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\dv[n]{t}E\left(e^{itX}\right)\right|_{t=0}\right)\nonumber\\
+     \phi_X^{\left(n\right)}\left(0\right)&=\left.\dv[n]{t}E\left(e^{itX}\right)\right|_{t=0}\nonumber\\
+     &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\frac{d^me^{itX}}{dt^m}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
+     &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\left(iX\right)^me^{itX}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
+     &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(iX\right)^m\right)\right|_{t=0}\nonumber\\
+     &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{i^mt^m}{m!}X^m\right)\right|_{t=0}\nonumber\\
+     &=\left.\dv[n]{t}\sum_{m=0}^\infty\frac{i^mt^m}{m!}E\left(X^m\right)\right|_{t=0}\nonumber\\
      &=\left.\sum_{m=0}^\infty\frac{i^mE\left(X^m\right)}{m!}\frac{d^nt^m}{dt^n}\right|_{t=0}\nonumber\\
      &=\left.\sum_{m=n}^\infty\frac{i^mE\left(X^m\right)}{m!}\frac{m!}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
      &=\left.\sum_{m=n}^\infty\frac{i^mE\left(X^m\right)}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
@@ -1401,8 +1402,8 @@
    これでは$t=0$を代入できないため，方針を変える．
    積率母関数をマクローリン展開すると，
    \begin{align}
-    \frac{d^n}{dt^n}e^{at}&=a^ne^{at}\nonumber\\
-    \left[\frac{d^n}{dt^n}e^{at}\right]_{t=0}&=a^n\nonumber\\
+    \dv[n]{t}e^{at}&=a^ne^{at}\nonumber\\
+    \left[\dv[n]{t}e^{at}\right]_{t=0}&=a^n\nonumber\\
     e^{at}&=\sum_{n=0}^\infty\frac{a^nt^n}{n!}\nonumber\\
     e^{at}-1&=\sum_{n=1}^\infty\frac{a^nt^n}{n!}\nonumber\\
     \frac{e^{at}-1}{at}&=\sum_{n=1}^\infty\frac{a^{n-1}t^{n-1}}{n!}\nonumber\\
