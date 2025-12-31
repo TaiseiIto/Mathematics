@@ -20,64 +20,64 @@
  \maketitle
  \tableofcontents
  \section{離散確率変数}
-$N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0\right),\cdots,p\left(N-1\right)$で定まる変数がある．
+ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0\right),\cdots,p\left(N-1\right)$で定まる変数がある．
  \begin{itemize}
   \item 全ての場合の集合$S=\{0,\cdots,N-1\}$を標本空間という．
   \item $p:S\to\left[0,1\right]$を確率質量関数という．
   \item $P:S\to\left[0,1\right];a\mapsto\sum_{x\in S|x<a}p\left(x\right)$を累積分布関数という．
  \end{itemize}
-累積分布関数$P$が
+ 累積分布関数$P$が
  \begin{align}
   P\left(N\right)=1
  \end{align}
-を満たすとき，$X=\left(S,P\right)$を離散確率変数という．
-累積分布関数$P$が確率質量関数$p$を用いて
+ を満たすとき，$X=\left(S,P\right)$を離散確率変数という．
+ 累積分布関数$P$が確率質量関数$p$を用いて
  \begin{align}
   P\left(a\right)=\sum_{x\in S|x<a}p\left(x\right)
  \end{align}
-と表されるのに対し，確率質量関数$p$は累積分布関数$P$を用いて
+ と表されるのに対し，確率質量関数$p$は累積分布関数$P$を用いて
  \begin{align}
   p\left(a\right)&=\left(\sum_{x\in S|x<a+1}p\left(x\right)\right)-\left(\sum_{x\in S|x<a}p\left(x\right)\right)\nonumber\\
   &=P\left(a+1\right)-P\left(a\right)
  \end{align}
-と表される．
+ と表される．
  \subsection{確率}
-離散確率変数$X$から取り出された値$a$が，$S$の部分集合$S'$の元である確率は，事象からその事象の確率への関数である確率関数$\mathscr{P}$を用いて，
+ 離散確率変数$X$から取り出された値$a$が，$S$の部分集合$S'$の元である確率は，事象からその事象の確率への関数である確率関数$\mathscr{P}$を用いて，
  \begin{align}
   \mathscr{P}\left(a\in S'\right)&=\sum_{x\in S'}p\left(x\right)
  \end{align}
-である．
-また，累積分布関数$P$は，確率関数$\mathscr{P}$を用いて，
+ である．
+ また，累積分布関数$P$は，確率関数$\mathscr{P}$を用いて，
  \begin{align}
   P\left(x\right)&=\mathscr{P}\left(a<x\right)
  \end{align}
-と表される．
+ と表される．
  \subsection{平均}
  \begin{align}
   E\left(X\right)=\sum_{x\in S}xp\left(x\right)
  \end{align}
-を，離散確率変数$X$の平均という．
+ を，離散確率変数$X$の平均という．
  \subsection{分散}
  \begin{align}
   V\left(X\right)=\sum_{x\in S}\left(x-E\left(X\right)\right)^2p\left(x\right)
  \end{align}
-を，離散確率変数$X$の分散という．
+ を，離散確率変数$X$の分散という．
  \subsection{関数の適用}
-関数$f:S\to T$を離散確率変数$X=\left(S,P\right)$に適用した離散確率変数を$f\left(X\right)=\left(T,Q\right)$とし，その確率質量関数を$q$とすると，累積分布関数$Q$は，
+ 関数$f:S\to T$を離散確率変数$X=\left(S,P\right)$に適用した離散確率変数を$f\left(X\right)=\left(T,Q\right)$とし，その確率質量関数を$q$とすると，累積分布関数$Q$は，
  \begin{align}
   Q\left(b\right)&=\mathscr{P}\left(y<b\right)\nonumber\\
   &=\mathscr{P}\left(f\left(x\right)<b\right)\nonumber\\
   &=\sum_{x\in S|f\left(x\right)<b}p\left(x\right)
  \end{align}
-であり，確率質量関数$q$は，
+ であり，確率質量関数$q$は，
  \begin{align}
   q\left(b\right)&=Q\left(b+1\right)-Q\left(b\right)\nonumber\\
   &=\left(\sum_{x\in S|f\left(x\right)<b+1}p\left(x\right)\right)-\left(\sum_{x\in S|f\left(x\right)<b}p\left(x\right)\right)\nonumber\\
   &=\sum_{x\in S|f\left(x\right)=b}p\left(x\right)
  \end{align}
-となる．
+ となる．
  \subsubsection{平均}
-離散確率変数$f\left(X\right)$の平均は，
+ 離散確率変数$f\left(X\right)$の平均は，
  \begin{align}
   E\left(f\left(X\right)\right)&=\sum_{y\in T}yq\left(y\right)\nonumber\\
   &=\sum_{y\in T}y\sum_{x\in S|f\left(x\right)=y}p\left(x\right)\nonumber\\
@@ -86,14 +86,14 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=\sum_{x\in S|f\left(x\right)\in T}f\left(x\right)p\left(x\right)\nonumber\\
   &=\sum_{x\in S}f\left(x\right)p\left(x\right)\label{DiscreteFunctionAverage}
  \end{align}
-となる．
-この議論より分散は，
+ となる．
+ この議論より分散は，
  \begin{align}
   V\left(X\right)=E\left(\left(X-E\left(X\right)\right)^2\right)
  \end{align}
-と書けることが分かる．
+ と書けることが分かる．
  \subsubsection{分散}
-離散確率変数$f\left(X\right)$の分散は，
+ 離散確率変数$f\left(X\right)$の分散は，
  \begin{align}
   V\left(f\left(X\right)\right)&=\sum_{y\in T}\left(y-E\left(f\left(X\right)\right)\right)^2q\left(y\right)\nonumber\\
   &=\sum_{y\in T}\left(y-E\left(f\left(X\right)\right)\right)^2\sum_{x\in S|f\left(x\right)=y}p\left(x\right)\nonumber\\
@@ -104,61 +104,61 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=E\left(\left(f\left(X\right)-E\left(f\left(X\right)\right)\right)^2\right)\nonumber\\
   &=E\left(\left(Y-E\left(Y\right)\right)^2\right)
  \end{align}
-となる．
+ となる．
  \section{連続確率変数}
-実数全体の集合$\mathbb{R}$の中から確率的に実数が選択される変数がある．
+ 実数全体の集合$\mathbb{R}$の中から確率的に実数が選択される変数がある．
  \begin{itemize}
   \item 選択されうる実数の集合$S=\mathbb{R}$を標本空間という．
   \item $p:S\to\left[0,\infty\right)$を確率密度関数という．
   \item $P:S\to\left[0,1\right];a\mapsto\int_{-\infty}^ap\left(x\right)dx$を累積分布関数という．
  \end{itemize}
-累積分布関数$P$が
+ 累積分布関数$P$が
  \begin{align}
   \lim_{a\to\infty}P\left(a\right)=1
  \end{align}
-を満たすとき，$X=\left(S,P\right)$を連続確率変数という．
-累積分布関数$P$が確率密度関数$p$を用いて
+ を満たすとき，$X=\left(S,P\right)$を連続確率変数という．
+ 累積分布関数$P$が確率密度関数$p$を用いて
  \begin{align}
   P\left(a\right)=\int_{-\infty}^ap\left(x\right)dx
  \end{align}
-と表されるのに対し，確率密度関数$p$は累積分布関数$P$を用いて，
+ と表されるのに対し，確率密度関数$p$は累積分布関数$P$を用いて，
  \begin{align}
   p\left(a\right)=P'\left(a\right)
  \end{align}
-と表される．
+ と表される．
  \subsection{確率}
-連続確率変数$X$から取り出された値$a$が，$S$の部分集合$S'$の元である確率は，事象からその事象の確率への関数である確率関数$\mathscr{P}$を用いて，
+ 連続確率変数$X$から取り出された値$a$が，$S$の部分集合$S'$の元である確率は，事象からその事象の確率への関数である確率関数$\mathscr{P}$を用いて，
  \begin{align}
   \mathscr{P}\left(a\in S'\right)&=\int_{x\in S'}p\left(x\right)dx
  \end{align}
-である．また，累積分布関数$P$は，確率関数$\mathscr{P}$を用いて，
+ である．また，累積分布関数$P$は，確率関数$\mathscr{P}$を用いて，
  \begin{align}
   P\left(x\right)&=\mathscr{P}\left(a<x\right)
  \end{align}
-である．
+ である．
  \subsection{平均}
  \begin{align}
   E\left(X\right)=\int_{-\infty}^\infty xp\left(x\right)dx
  \end{align}
-を，連続確率変数$X$の平均という．
+ を，連続確率変数$X$の平均という．
  \subsection{分散}
  \begin{align}
   V\left(X\right)=\int_{-\infty}^\infty \left(x-E\left(X\right)\right)^2p\left(x\right)dx
  \end{align}
-を，連続確率変数$X$の分散という．
+ を，連続確率変数$X$の分散という．
  \subsection{関数の適用}
-微分可能で$f'\left(x\right)=0$の解が高々有限個である関数$f:S\to T$を連続確率変数$X=\left(S,P\right)$に適用した連続確率変数を$f\left(X\right)=\left(T,Q\right)$とし，その確率密度関数を$q$とすると，$f'\left(b\right)=0$を満たすような$b$の範囲内において，累積分布関数$Q$は，
+ 微分可能で$f'\left(x\right)=0$の解が高々有限個である関数$f:S\to T$を連続確率変数$X=\left(S,P\right)$に適用した連続確率変数を$f\left(X\right)=\left(T,Q\right)$とし，その確率密度関数を$q$とすると，$f'\left(b\right)=0$を満たすような$b$の範囲内において，累積分布関数$Q$は，
  \begin{align}
   Q\left(b\right)&=\mathscr{P}\left(y<b\right)\nonumber\\
   &=\mathscr{P}\left(f\left(x\right)<b\right)\nonumber\\
   &=\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx
  \end{align}
-であり，確率密度関数$q$は，
+ であり，確率密度関数$q$は，
  \begin{align}
   q\left(b\right)&=Q'\left(b\right)\nonumber\\
   &=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx
  \end{align}
-となる．ここで，上の微分を図を用いて解く．
+ となる．ここで，上の微分を図を用いて解く．
  \begin{figure}[H]
   \begin{center}
    \begin{tikzpicture}
@@ -178,14 +178,14 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
    \caption{$b$の微小な変化による$\{x\in S|f\left(x\right)<b\}$の変化}\label{IntegrationRangeChange}
   \end{center}
  \end{figure}
-図\ref{IntegrationRangeChange}のように，$f\left(x\right)=b$の全ての解を$\{a_0,\cdots,a_N\}=\{x\in S|f\left(x\right)=b\}$とし，$b$の微小な変化$\Delta b$に対する$a_0,\cdots,a_N$の反応をそれぞれ$\Delta a_0,\cdots,\Delta a_N$とする．
-ここで，$\Delta b$は十分に小さいから，$\forall n\in\{0,\cdots,N\}$に対して，
+ 図\ref{IntegrationRangeChange}のように，$f\left(x\right)=b$の全ての解を$\{a_0,\cdots,a_N\}=\{x\in S|f\left(x\right)=b\}$とし，$b$の微小な変化$\Delta b$に対する$a_0,\cdots,a_N$の反応をそれぞれ$\Delta a_0,\cdots,\Delta a_N$とする．
+ ここで，$\Delta b$は十分に小さいから，$\forall n\in\{0,\cdots,N\}$に対して，
  \begin{align}
   f'\left(a_n\right)&=\frac{\Delta b}{\Delta a_n}\nonumber\\
   \Delta a_n&=\frac{\Delta b}{f'\left(a_n\right)}
  \end{align}
-である．
-ただしここで$f'\left(a_n\right)=0$の場合，それは$a_n$が$f$の極大若しくは極小であることにより，$b$の微小な変化によって$a_n$が消滅または2つに分裂することを意味し，$\Delta a_n$は定義できない．
+ である．
+ ただしここで$f'\left(a_n\right)=0$の場合，それは$a_n$が$f$の極大若しくは極小であることにより，$b$の微小な変化によって$a_n$が消滅または2つに分裂することを意味し，$\Delta a_n$は定義できない．
  \begin{figure}[H]
   \begin{center}
    \begin{tikzpicture}
@@ -206,12 +206,12 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
    \caption{$b$の微小な変化による$Q\left(b\right)$の変化}\label{QChange}
   \end{center}
  \end{figure}
-図\ref{QChange}において，領域$\{(x,y)|a_n\le x\le a_n+\Delta a_n\land \left(0-y\right)\left(p\left(x\right)-y\right)\le0\}$を台形とみなすと，その面積$\Delta s_n$は，
+ 図\ref{QChange}において，領域$\{(x,y)|a_n\le x\le a_n+\Delta a_n\land \left(0-y\right)\left(p\left(x\right)-y\right)\le0\}$を台形とみなすと，その面積$\Delta s_n$は，
  \begin{align}
   \Delta s_n&=\frac{1}{2}\Delta a_n\left(p\left(a_n\right)+p\left(a_n+\Delta a_n\right)\right)\nonumber\\
   &=\frac{\Delta b}{2f'\left(a_n\right)}\left(p\left(a_n\right)+p\left(a_n+\frac{\Delta b}{f'\left(a_n\right)}\right)\right)
  \end{align}
-となり，これを$\Delta b$で割ると，
+ となり，これを$\Delta b$で割ると，
  \begin{align}
   \frac{\Delta s_n}{\Delta b}&=\frac{p\left(a_n\right)+p\left(a_n+\frac{\Delta b}{f'\left(a_n\right)}\right)}{2f'\left(a_n\right)}\nonumber\\
   &=\frac{p\left(a_n\right)+p\left(a_n+\frac{0}{f'\left(a_n\right)}\right)}{2f'\left(a_n\right)}\nonumber\\
@@ -219,15 +219,15 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=\frac{2p\left(a_n\right)}{2f'\left(a_n\right)}\nonumber\\
   &=\frac{p\left(a_n\right)}{f'\left(a_n\right)}
  \end{align}
-となる．$q\left(b\right)$は，これを$\forall a_n\in\{a_0,\cdots,a_N\}=\{x\in S|f\left(x\right)=b\}$について足し合わせたものであるから，
+ となる．$q\left(b\right)$は，これを$\forall a_n\in\{a_0,\cdots,a_N\}=\{x\in S|f\left(x\right)=b\}$について足し合わせたものであるから，
  \begin{align}
   q\left(b\right)&=Q'\left(b\right)\nonumber\\
   &=\frac{d}{db}\int_{x\in S|f\left(x\right)<b}p\left(x\right)dx\nonumber\\
   &=\sum_{x\in S|f\left(x\right)=b}\frac{p\left(x\right)}{f'\left(x\right)}
  \end{align}
-となる．
+ となる．
  \subsubsection{平均}
-連続確率変数$f\left(X\right)$の平均は
+ 連続確率変数$f\left(X\right)$の平均は
  \begin{align}
   E\left(f\left(X\right)\right)&=\int_{-\infty}^\infty yq\left(y\right)dy\nonumber\\
   &=\int_{-\infty}^\infty y\sum_{x\in S|f\left(x\right)=y}\frac{p\left(x\right)}{f'\left(x\right)}dy\nonumber\\
@@ -237,21 +237,21 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=\int_{-\infty}^\infty\frac{f\left(x\right)p\left(x\right)}{f'\left(x\right)}f'\left(x\right)dx\nonumber\\
   &=\int_{-\infty}^\infty f\left(x\right)p\left(x\right)dx\label{ContinuousFunctionAverate}
  \end{align}
-となる．
-ここで，$f'\left(x\right)=0$となる$x$は高々有限個しかないため，この積分の結果には影響しない．
-この議論より分散は，
+ となる．
+ ここで，$f'\left(x\right)=0$となる$x$は高々有限個しかないため，この積分の結果には影響しない．
+ この議論より分散は，
  \begin{align}
   V\left(X\right)=E\left(\left(X-E\left(X\right)\right)^2\right)
  \end{align}
-と書けることが分かる．
-これは離散確率変数及び連続確率変数で共通して使用できる分散の定義となる．
-この分散の定義式の直感的理解について述べる．
-確率変数$X$から平均$E\left(X\right)$を引いた確率変数$X-E\left(X\right)$の平均は$0$で，分布は平行移動するものの$X$と同様の広がり具合を持っている．
-これをさらに2乗した確率変数$\left(X-E\left(X\right)\right)^2$は非負となる．
-分布は変形するものの，その広がり具合は2乗する前の確率変数$X-E\left(X\right)$と連動しており，どちらかが広がったり狭まったりすればもう一方も同様に広がったり狭まったりする．
-下限値$0$が設定された上で分布の広がり具合も連動しているので，その平均$E\left(\left(X-E\left(X\right)\right)^2\right)$も同様に$X$の分布の広がり具合と連動していると言える．
+ と書けることが分かる．
+ これは離散確率変数及び連続確率変数で共通して使用できる分散の定義となる．
+ この分散の定義式の直感的理解について述べる．
+ 確率変数$X$から平均$E\left(X\right)$を引いた確率変数$X-E\left(X\right)$の平均は$0$で，分布は平行移動するものの$X$と同様の広がり具合を持っている．
+ これをさらに2乗した確率変数$\left(X-E\left(X\right)\right)^2$は非負となる．
+ 分布は変形するものの，その広がり具合は2乗する前の確率変数$X-E\left(X\right)$と連動しており，どちらかが広がったり狭まったりすればもう一方も同様に広がったり狭まったりする．
+ 下限値$0$が設定された上で分布の広がり具合も連動しているので，その平均$E\left(\left(X-E\left(X\right)\right)^2\right)$も同様に$X$の分布の広がり具合と連動していると言える．
  \subsubsection{分散}
-連続確率変数$f\left(X\right)$の分散は
+ 連続確率変数$f\left(X\right)$の分散は
  \begin{align}
   V\left(f\left(X\right)\right)&=\int_{-\infty}^\infty\left(y-E\left(f\left(X\right)\right)\right)^2q\left(y\right)dy\nonumber\\
   &=\int_{-\infty}^\infty\left(y-E\left(f\left(X\right)\right)\right)^2\sum_{x\in S|f\left(x\right)=y}\frac{p\left(x\right)}{f'\left(x\right)}dy\nonumber\\
@@ -263,42 +263,42 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=E\left(\left(f\left(X\right)-E\left(f\left(X\right)\right)\right)^2\right)\nonumber\\
   &=E\left(\left(Y-E\left(Y\right)\right)^2\right)
  \end{align}
-となる．
-ここで，$f'\left(x\right)=0$となる$x$は高々有限個しかないため，この積分の結果には影響しない．
+ となる．
+ ここで，$f'\left(x\right)=0$となる$x$は高々有限個しかないため，この積分の結果には影響しない．
  \section{平均の線形性}
  \subsection{和の平均は平均の和}
-ある2つの確率変数$X$と$Y$があるとき，
+ ある2つの確率変数$X$と$Y$があるとき，
  \begin{align}
   E\left(X+Y\right)&=E\left(X\right)+E\left(Y\right)
  \end{align}
-である．
+ である．
  \subsubsection{証明}
  \subsubsubsection{離散確率変数同士の和の平均}
-互いに独立とは限らない2つの離散確率変数$X$と$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率質量変数が$p\left(x,y\right)$の形で与えられている．
-この時，$X$単独の確率質量関数$p_X$は，
+ 互いに独立とは限らない2つの離散確率変数$X$と$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率質量変数が$p\left(x,y\right)$の形で与えられている．
+ この時，$X$単独の確率質量関数$p_X$は，
  \begin{align}
   p_X\left(x\right)&=\sum_{y\in T}p\left(x,y\right)
  \end{align}
-であり，その平均$E\left(X\right)$は，
+ であり，その平均$E\left(X\right)$は，
  \begin{align}
   E\left(X\right)&=\sum_{x\in S}xp_X\left(x\right)\nonumber\\
   &=\sum_{x\in S}x\sum_{y\in T}p\left(x,y\right)\nonumber\\
   &=\sum_{x\in S}\sum_{y\in T}xp\left(x,y\right)\nonumber\\
   &=\sum_{y\in T}\sum_{x\in S}xp\left(x,y\right)
  \end{align}
-である．
-同様に，$Y$単独の確率質量関数$p_Y$は，
+ である．
+ 同様に，$Y$単独の確率質量関数$p_Y$は，
  \begin{align}
   p_Y\left(y\right)&=\sum_{x\in S}p\left(x,y\right)
  \end{align}
-であり，その平均$E\left(Y\right)$は，
+ であり，その平均$E\left(Y\right)$は，
  \begin{align}
   E\left(Y\right)&=\sum_{y\in T}yp_Y\left(y\right)\nonumber\\
   &=\sum_{y\in T}y\sum_{x\in S}p\left(x,y\right)\nonumber\\
   &=\sum_{y\in T}\sum_{x\in S}yp\left(x,y\right)
  \end{align}
-である．
-一方$X+Y$の平均$E\left(X+Y\right)$は，
+ である．
+ 一方$X+Y$の平均$E\left(X+Y\right)$は，
  \begin{align}
   E\left(X+Y\right)&=\sum_{y\in T}\sum_{x\in S}\left(x+y\right)p\left(x,y\right)\nonumber\\
   &=\sum_{y\in T}\sum_{x\in S}\left(xp\left(x,y\right)+yp\left(x,y\right)\right)\nonumber\\
@@ -306,33 +306,33 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=\left(\sum_{y\in T}\sum_{x\in S}xp\left(x,y\right)\right)+\left(\sum_{y\in T}\sum_{x\in S}yp\left(x,y\right)\right)\nonumber\\
   &=E\left(X\right)+E\left(Y\right)
  \end{align}
-である．
+ である．
  \subsubsubsection{連続確率変数同士の和の平均}
-互いに独立とは限らない2つの連続確率変数$X$と$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
-この時，$X$単独の確率密度関数$p_X$は，
+ 互いに独立とは限らない2つの連続確率変数$X$と$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
+ この時，$X$単独の確率密度関数$p_X$は，
  \begin{align}
   p_X\left(x\right)&=\int_{-\infty}^\infty p\left(x,y\right)dy
  \end{align}
-であり，その平均$E\left(X\right)$は，
+ であり，その平均$E\left(X\right)$は，
  \begin{align}
   E\left(X\right)&=\int_{-\infty}^\infty xp_X\left(x\right)dx\nonumber\\
   &=\int_{-\infty}^\infty x\int_{-\infty}^\infty p\left(x,y\right)dydx\nonumber\\
   &=\int_{-\infty}^\infty \int_{-\infty}^\infty xp\left(x,y\right)dydx\nonumber\\
   &=\int_{-\infty}^\infty \int_{-\infty}^\infty xp\left(x,y\right)dxdy\nonumber\\
  \end{align}
-である．
-同様に，$Y$単独の確率密度関数$p_Y$は，
+ である．
+ 同様に，$Y$単独の確率密度関数$p_Y$は，
  \begin{align}
   p_Y\left(y\right)&=\int_{-\infty}^\infty p\left(x,y\right)dx
  \end{align}
-であり，その平均$E\left(Y\right)$は，
+ であり，その平均$E\left(Y\right)$は，
  \begin{align}
   E\left(Y\right)&=\int_{-\infty}^\infty yp_Y\left(y\right)dy\nonumber\\
   &=\int_{-\infty}^\infty y\int_{-\infty}^\infty p\left(x,y\right)dxdy\nonumber\\
   &=\int_{-\infty}^\infty \int_{-\infty}^\infty yp\left(x,y\right)dxdy\nonumber\\
  \end{align}
-である．
-一方$X+Y$の平均$E\left(X+Y\right)$は，
+ である．
+ 一方$X+Y$の平均$E\left(X+Y\right)$は，
  \begin{align}
   E\left(X+Y\right)&=\int_{-\infty}^\infty\int_{-\infty}^\infty\left(x+y\right)p\left(x,y\right)dxdy\nonumber\\
   &=\int_{-\infty}^\infty\int_{-\infty}^\infty\left(xp\left(x,y\right)+yp\left(x,y\right)\right)dxdy\nonumber\\
@@ -341,31 +341,31 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=E\left(X\right)+E\left(Y\right)
  \end{align}
  \subsubsubsection{離散確率変数と連続確率変数の和の平均}
-互いに独立とは限らない離散確率変数$X$と連続確率変数$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
-この時，$X$単独の確率質量関数$p_X$は，
+ 互いに独立とは限らない離散確率変数$X$と連続確率変数$Y$があり，それぞれの標本空間を$S,T$とし，それらの確率密度関数が$p\left(x,y\right)$の形で与えられている．
+ この時，$X$単独の確率質量関数$p_X$は，
  \begin{align}
   p_X\left(x\right)&=\int_{-\infty}^\infty p\left(x,y\right)dy
  \end{align}
-であり，その平均$E\left(X\right)$は，
+ であり，その平均$E\left(X\right)$は，
  \begin{align}
   E\left(X\right)&=\sum_{x\in S}xp_X\left(x\right)\nonumber\\
   &=\sum_{x\in S}x\int_{-\infty}^\infty p\left(x,y\right)dy\nonumber\\
   &=\sum_{x\in S}\int_{-\infty}^\infty xp\left(x,y\right)dy\nonumber\\
   &=\int_{-\infty}^\infty\sum_{x\in S}xp\left(x,y\right)dy\nonumber\\
  \end{align}
-である．
-同様に，$Y$単独の確率密度関数$p_Y$は，
+ である．
+ 同様に，$Y$単独の確率密度関数$p_Y$は，
  \begin{align}
   p_Y\left(y\right)&=\sum_{x\in S}p\left(x,y\right)
  \end{align}
-であり，その平均$E\left(Y\right)$は，
+ であり，その平均$E\left(Y\right)$は，
  \begin{align}
   E\left(Y\right)&=\int_{-\infty}^\infty yp_Y\left(y\right)dy\nonumber\\
   &=\int_{-\infty}^\infty y\sum_{x\in S}p\left(x,y\right)dy\nonumber\\
   &=\int_{-\infty}^\infty\sum_{x\in S}yp\left(x,y\right)dy\nonumber\\
  \end{align}
-である．
-一方$X+Y$の平均$E\left(X+Y\right)$は，
+ である．
+ 一方$X+Y$の平均$E\left(X+Y\right)$は，
  \begin{align}
   E\left(X+Y\right)&=\int_{-\infty}^\infty\sum_{x\in S}\left(x+y\right)p\left(x,y\right)dy\nonumber\\
   &=\int_{-\infty}^\infty\sum_{x\in S}\left(xp\left(x,y\right)+yp\left(x,y\right)\right)dy\nonumber\\
@@ -373,36 +373,36 @@ $N$通りの場合$S=\{0,\cdots,N-1\}$の中からそれぞれの確率$p\left(0
   &=\int_{-\infty}^\infty\sum_{x\in S}xp\left(x,y\right)dy+\int_{-\infty}^\infty\sum_{x\in S}yp\left(x,y\right)dy\nonumber\\
   &=E\left(X\right)+E\left(Y\right)
  \end{align}
-である．
+ である．
  \subsection{スカラー倍の平均は平均のスカラー倍}
-ある確率変数$X$とある数$a$があるとき，
+ ある確率変数$X$とある数$a$があるとき，
  \begin{align}
   E\left(aX\right)&=aE\left(X\right)
  \end{align}
-である．
+ である．
  \subsubsection{証明}
  \subsubsubsection{$X$が離散確率分布の場合}
-式(\ref{DiscreteFunctionAverage})より，
+ 式(\ref{DiscreteFunctionAverage})より，
  \begin{align}
   E\left(aX\right)&=\sum_{x\in S}axp\left(x\right)\nonumber\\
   &=a\sum_{x\in S}xp\left(x\right)\nonumber\\
   &=aE\left(X\right)\nonumber\\
  \end{align}
  \subsubsubsection{$X$が連続確率分布の場合}
-式(\ref{ContinuousFunctionAverate})より，
+ 式(\ref{ContinuousFunctionAverate})より，
  \begin{align}
   E\left(aX\right)&=\int_{-\infty}^\infty axp\left(x\right)dx\nonumber\\
   &=a\int_{-\infty}^\infty xp\left(x\right)dx\nonumber\\
   &=aE\left(X\right)
  \end{align}
  \section{平均と分散の関係に関する定理}
-任意の確率変数$X$について，
+ 任意の確率変数$X$について，
  \begin{align}
   V\left(X\right)=E\left(X^2\right)-E\left(X\right)^2
  \end{align}
-が成り立つ．
+ が成り立つ．
  \subsection{証明}
-$E\left(X\right)$が定数であることに注意して平均の線形性を使えば証明できる．
+ $E\left(X\right)$が定数であることに注意して平均の線形性を使えば証明できる．
  \begin{align}
   V\left(X\right)&=E\left(\left(X-E\left(X\right)\right)^2\right)\nonumber\\
   &=E\left(X^2-2XE\left(X\right)+E\left(X\right)^2\right)\nonumber\\
@@ -412,101 +412,101 @@ $E\left(X\right)$が定数であることに注意して平均の線形性を使
   &=E\left(X^2\right)-E\left(X\right)^2
  \end{align}
  \section{独立な確率変数の積の平均}
-互いに独立な2つの確率変数$X,Y$について，
+ 互いに独立な2つの確率変数$X,Y$について，
  \begin{align}
   E\left(XY\right)&=E\left(X\right)E\left(Y\right)\label{ProductAverage}
  \end{align}
-が成り立つ．
-ただし，2つの確率変数が互いに独立であるということは，それらの組$(X,Y)$の確率質量関数若しくは確率密度関数を，それぞれの確率質量関数若しくは確率密度関数の積で表すことができることを意味する．
+ が成り立つ．
+ ただし，2つの確率変数が互いに独立であるということは，それらの組$(X,Y)$の確率質量関数若しくは確率密度関数を，それぞれの確率質量関数若しくは確率密度関数の積で表すことができることを意味する．
  \subsection{証明}
  \subsubsection{独立な離散確率変数同士の積の平均}
-互いに独立な2つの離散確率変数$X,Y$があり，それぞれの標本空間を$S,T$とし，それぞれの確率質量関数を$p,q$とすると，
+ 互いに独立な2つの離散確率変数$X,Y$があり，それぞれの標本空間を$S,T$とし，それぞれの確率質量関数を$p,q$とすると，
  \begin{align}
   E\left(XY\right)&=\sum_{x\in S}\sum_{y\in T}xyp\left(x\right)q\left(y\right)\nonumber\\
   &=\sum_{x\in S}xp\left(x\right)\sum_{y\in T}yq\left(y\right)\nonumber\\
   &=\left(\sum_{x\in S}xp\left(x\right)\right)\left(\sum_{y\in T}yq\left(y\right)\right)\nonumber\\
   &=E\left(X\right)E\left(Y\right)
  \end{align}
-となる．
+ となる．
  \subsubsection{独立な連続確率変数同士の積の平均}
-互いに独立な2つの連続確率変数$X,Y$があり，それぞれの標本空間を$S,T$とし，それぞれの確率質量関数を$p,q$とすると，
+ 互いに独立な2つの連続確率変数$X,Y$があり，それぞれの標本空間を$S,T$とし，それぞれの確率質量関数を$p,q$とすると，
  \begin{align}
   E\left(XY\right)&=\int_{-\infty}^\infty\int_{-\infty}^\infty xyp\left(x\right)q\left(y\right)dydx\nonumber\\
   &=\int_{-\infty}^\infty xp\left(x\right)\int_{-\infty}^\infty yq\left(y\right)dydx\nonumber\\
   &=\int_{-\infty}^\infty xp\left(x\right)dx\int_{-\infty}^\infty yq\left(y\right)dy\nonumber\\
   &=E\left(X\right)E\left(Y\right)
  \end{align}
-となる．
+ となる．
  \subsubsection{独立な離散確率変数と連続確率変数の積の平均}
-互いに独立な離散確率変数$X$と連続確率変数$Y$があり，それぞれの標本空間を$S,T$とし，それぞれの確率質量関数を$p,q$とすると，
+ 互いに独立な離散確率変数$X$と連続確率変数$Y$があり，それぞれの標本空間を$S,T$とし，それぞれの確率質量関数を$p,q$とすると，
  \begin{align}
   E\left(XY\right)&=\sum_{x\in S}\int_{-\infty}^\infty xyp\left(x\right)q\left(y\right)dy\nonumber\\
   &=\sum_{x\in S}xp\left(x\right)\int_{-\infty}^\infty yq\left(y\right)dy\nonumber\\
   &=\left(\sum_{x\in S}xp\left(x\right)\right)\left(\int_{-\infty}^\infty yq\left(y\right)dy\right)\nonumber\\
   &=E\left(X\right)E\left(Y\right)
  \end{align}
-となる．
+ となる．
  \section{標準偏差}
-確率変数$X$に対して，
+ 確率変数$X$に対して，
  \begin{align}
   \sigma\left(X\right)&=\sqrt{V\left(X\right)}
  \end{align}
-を$X$の標準偏差といい，$X$の確率分布の広がり具合を表す$X$と次元を同じくする量である．
+ を$X$の標準偏差といい，$X$の確率分布の広がり具合を表す$X$と次元を同じくする量である．
  \section{歪度}
-確率変数$X$に対して，
+ 確率変数$X$に対して，
  \begin{align}
   S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}
  \end{align}
-を$X$の歪度といい，$X$の確率分布の平均周りの左右非対称具合を表す無次元量である．
-歪度の定義式の直感的理解について述べる．
-確率変数$X$の平均を原点に合わせるため，平均を引くと$X-E\left(X\right)$となる．
-さらにこれを3乗すると，分布の平均に近い部分はより平均に近く寄せられ，平均から遠い部分はより平均から遠く伸ばされる．
-分布が左右対称な確率変数$X$の場合その平均$E\left(\left(X-E\left(X\right)\right)^3\right)$をとっても0になる．
-一方で，例えば平均より小さい方では分布が平均近くによっているのに対し，平均より大きい方では分布が遠くに引き伸ばされているような確率変数$X$を考えてみよう．
-確率変数$\left(X-E\left(X\right)\right)^3$の分布は，平均より小さい側の平均近くの盛り上がりがより平均近くに寄せられ，平均より大きい側の伸びはより平均から遠くに伸ばされる．
-結果的に3乗の影響で分布が全体的に正の方向にずれるので，その平均$E\left(\left(X-E\left(X\right)\right)^3\right)$も正の方向にずれる．
-これは確率変数$X$の平均周りの左右非対称具合を表していると言える．
-最後に，次元を無くすために$X$の分布の広がり具合と連動し，$X$の3乗の次元を持つ$\sigma\left(X\right)^3$で割れば，歪度の定義が現れる．
+ を$X$の歪度といい，$X$の確率分布の平均周りの左右非対称具合を表す無次元量である．
+ 歪度の定義式の直感的理解について述べる．
+ 確率変数$X$の平均を原点に合わせるため，平均を引くと$X-E\left(X\right)$となる．
+ さらにこれを3乗すると，分布の平均に近い部分はより平均に近く寄せられ，平均から遠い部分はより平均から遠く伸ばされる．
+ 分布が左右対称な確率変数$X$の場合その平均$E\left(\left(X-E\left(X\right)\right)^3\right)$をとっても0になる．
+ 一方で，例えば平均より小さい方では分布が平均近くによっているのに対し，平均より大きい方では分布が遠くに引き伸ばされているような確率変数$X$を考えてみよう．
+ 確率変数$\left(X-E\left(X\right)\right)^3$の分布は，平均より小さい側の平均近くの盛り上がりがより平均近くに寄せられ，平均より大きい側の伸びはより平均から遠くに伸ばされる．
+ 結果的に3乗の影響で分布が全体的に正の方向にずれるので，その平均$E\left(\left(X-E\left(X\right)\right)^3\right)$も正の方向にずれる．
+ これは確率変数$X$の平均周りの左右非対称具合を表していると言える．
+ 最後に，次元を無くすために$X$の分布の広がり具合と連動し，$X$の3乗の次元を持つ$\sigma\left(X\right)^3$で割れば，歪度の定義が現れる．
  \section{超過尖度}
-確率変数$X$に対して，
+ 確率変数$X$に対して，
  \begin{align}
   K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3
  \end{align}
-を$X$の超過尖度といい，分散よりも外れ値への反応をより敏感にした指標であり，分布の裾の重さを表す．
-超過尖度という名称から分布の平均周りの尖り具合を表していると誤解されやすいが，尖り具合を表してはいない．
+ を$X$の超過尖度といい，分散よりも外れ値への反応をより敏感にした指標であり，分布の裾の重さを表す．
+ 超過尖度という名称から分布の平均周りの尖り具合を表していると誤解されやすいが，尖り具合を表してはいない．
  \section{エントロピー}
-確率変数$X$に対して，
+ 確率変数$X$に対して，
  \begin{align}
   H\left(X\right)&=E\left(-\log_2p\left(X\right)\right)
  \end{align}
-を$X$のエントロピーといい，$X$の値を確定することによって生じる情報量の平均ビット数を意味する．
-ただし$p$は離散確率変数であれば確率質量関数を意味し，連続確率変数であれば確率密度関数を意味する．
+ を$X$のエントロピーといい，$X$の値を確定することによって生じる情報量の平均ビット数を意味する．
+ ただし$p$は離散確率変数であれば確率質量関数を意味し，連続確率変数であれば確率密度関数を意味する．
  \section{確率母関数}
-ある離散確率変数$X$に対し，その確率母関数$G_X$は，
+ ある離散確率変数$X$に対し，その確率母関数$G_X$は，
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
   &=\sum_{x\in S}t^xp\left(x\right)
  \end{align}
-と定義される．
+ と定義される．
  \subsection{確率母関数と確率質量関数の関係}
-確率母関数$G_X$と確率質量関数$p$の間には，以下の関係が成り立つ．
+ 確率母関数$G_X$と確率質量関数$p$の間には，以下の関係が成り立つ．
  \begin{align}
   \frac{G_X^{\left(a\right)}\left(0\right)}{a!}&=p\left(a\right)
  \end{align}
  \subsubsection{証明}
-確率母関数の定義をマクローリン展開することで証明できる．
+ 確率母関数の定義をマクローリン展開することで証明できる．
  \begin{align}
   G_X\left(t\right)&=\sum_{x\in S}t^xp\left(x\right)\nonumber\\
   \sum_{a=0}^\infty\frac{G_X^{\left(a\right)}\left(0\right)t^a}{a!}&=\sum_{a=0}^\infty p\left(a\right)t^a\nonumber\\
   \frac{G_X^{\left(a\right)}\left(0\right)}{a!}&=p\left(a\right)
  \end{align}
  \subsection{確率母関数と階乗積率の関係}
-確率母関数$G_X$と$n$次階乗積率$E\left(\frac{X!}{\left(X-n\right)!}\right)$の間には，以下の関係が成り立つ．
+ 確率母関数$G_X$と$n$次階乗積率$E\left(\frac{X!}{\left(X-n\right)!}\right)$の間には，以下の関係が成り立つ．
  \begin{align}
   G_X^{\left(n\right)}\left(1\right)&=E\left(\frac{X!}{\left(X-n\right)!}\right)
  \end{align}
  \subsubsection{証明}
-確率母関数の定義を$t=1$でテイラー展開することで証明できる．
+ 確率母関数の定義を$t=1$でテイラー展開することで証明できる．
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
   \sum_{n=0}^\infty\frac{\left(t-1\right)^n}{n!}G_X^{\left(n\right)}\left(1\right)&=\sum_{n=1}^\infty\frac{\left(t-1\right)^n}{n!}\left(\left.\frac{d^nE\left(t^X\right)}{dt^n}\right|_{t=1}\right)\nonumber\\
@@ -517,37 +517,37 @@ $E\left(X\right)$が定数であることに注意して平均の線形性を使
   &=\sum_{m=n}^\infty p\left(m\right)\frac{m!}{\left(m-n\right)!}\nonumber\\
   &=E\left(\frac{X!}{\left(X-n\right)!}\right)
  \end{align}
-$m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散することにより，項が0に収束するので問題ない．
+ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散することにより，項が0に収束するので問題ない．
  \subsection{互いに独立な確率変数の和の確率母関数}
-互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$の確率母関数$G_X$は，
+ 互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$の確率母関数$G_X$は，
  \begin{align}
   G_X\left(t\right)&=\prod_{n=1}^NG_{X_n}\left(t\right)\label{SummationProbabilityGeneratingFunction}
  \end{align}
-である．
+ である．
  \subsubsection{証明}
-式(\ref{ProductAverage})を用いて証明する．
+ 式(\ref{ProductAverage})を用いて証明する．
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
   &=E\left(t^{\sum_{n=1}^NX_n}\right)\nonumber\\
   &=E\left(\prod_{n=1}^Nt^{X_n}\right)\nonumber\\
  \end{align}
-ここで，$X_1,\cdots,X_N$は互いに独立だから式(\ref{ProductAverage})により，
+ ここで，$X_1,\cdots,X_N$は互いに独立だから式(\ref{ProductAverage})により，
  \begin{align}
   G_X\left(t\right)&=\prod_{n=1}^NE\left(t^{X_n}\right)\nonumber\\
   &=\prod_{n=1}^NG_{X_n}\left(t\right)
  \end{align}
  \section{積率母関数}
-ある確率変数$X$に対し，その積率母関数$M_X$は，
+ ある確率変数$X$に対し，その積率母関数$M_X$は，
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)
  \end{align}
-と定義される．
+ と定義される．
  \subsection{積率母関数と原点積率の関係}
  \begin{align}
   M_X^{\left(n\right)}\left(0\right)&=E\left(X^n\right)
  \end{align}
  \subsubsection{証明}
-積率母関数の定義をマクローリン展開することで証明できる．
+ 積率母関数の定義をマクローリン展開することで証明できる．
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
   &=E\left(e^{tX}\right)\nonumber\\
@@ -566,19 +566,19 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
   &=E\left(X^n\right)
  \end{align}
  \subsubsection{平均と分散への応用}
-この定理より，確率変数$X$の平均と分散はそれぞれ
+ この定理より，確率変数$X$の平均と分散はそれぞれ
  \begin{align}
   E\left(X\right)&=M_X^{\left(1\right)}\left(0\right)\\
   V\left(X\right)&=E\left(X^2\right)-E\left(X\right)^2\nonumber\\
   &=M_X^{\left(2\right)}\left(0\right)-M_X^{\left(1\right)}\left(0\right)^2
  \end{align}
-と表される．
+ と表される．
  \subsection{確率変数の一次式の積率母関数}
-ある確率変数$X$の一次式$aX+b$の積率母関数$M_{aX+b}$は，
+ ある確率変数$X$の一次式$aX+b$の積率母関数$M_{aX+b}$は，
  \begin{align}
   M_{aX+b}\left(t\right)&=e^{bt}M_X\left(at\right)\label{LinearMomentGeneratingFunction}
  \end{align}
-である．
+ である．
  \subsubsection{証明}
  \begin{align}
   M_{aX+b}\left(t\right)&=G_{aX+b}\left(e^t\right)\nonumber\\
@@ -590,30 +590,30 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
   &=e^{bt}M_X\left(at\right)\nonumber\\
  \end{align}
  \subsection{互いに独立な確率変数の和の積率母関数}
-互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$の積率母関数$M_X\left(t\right)$は，
+ 互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$の積率母関数$M_X\left(t\right)$は，
  \begin{align}
   M_X\left(t\right)&=\prod_{n=1}^NM_{X_n}\left(t\right)\label{SummationMomentGeneratingFunction}
  \end{align}
-である．
+ である．
  \subsubsection{証明}
-式(\ref{SummationProbabilityGeneratingFunction})より，
+ 式(\ref{SummationProbabilityGeneratingFunction})より，
  \begin{align}
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
   &=\prod_{n=1}^NG_{X_n}\left(e^t\right)\nonumber\\
   &=\prod_{n=1}^NM_{X_n}\left(t\right)
  \end{align}
  \section{特性関数}
-確率変数$X$の特性関数$\phi_X$は，
+ 確率変数$X$の特性関数$\phi_X$は，
  \begin{align}
   \phi_X\left(t\right)&=M_X\left(it\right)
  \end{align}
-で定義される．
+ で定義される．
  \subsection{特性関数と原点積率の関係}
  \begin{align}
   \left(-i\right)^n\phi_X^{\left(n\right)}\left(0\right)&=E\left(X^n\right)
  \end{align}
  \subsubsection{証明}
-特性関数の定義をマクローリン展開することで証明できる．
+ 特性関数の定義をマクローリン展開することで証明できる．
  \begin{align}
   \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
   &=G_X\left(e^{it}\right)\nonumber\\
@@ -635,120 +635,120 @@ $m<n$のとき，分母の$\left(m-n\right)!$が無限大に発散すること�
   \left(-i\right)^n\phi_X^{\left(n\right)}\left(0\right)&=E\left(X^n\right)
  \end{align}
  \subsection{確率変数の一次式の特性関数}
-確率変数$X$の一次式$aX+b$の特性関数$\phi_{aX+b}$は，
+ 確率変数$X$の一次式$aX+b$の特性関数$\phi_{aX+b}$は，
  \begin{align}
   \phi_{aX+b}\left(t\right)&=e^{ibt}\phi_{X}\left(at\right)
  \end{align}
-である．
+ である．
  \subsubsection{証明}
-式(\ref{LinearMomentGeneratingFunction})より，
+ 式(\ref{LinearMomentGeneratingFunction})より，
  \begin{align}
   \phi_{aX+b}\left(t\right)&=M_{aX+b}\left(it\right)\nonumber\\
   &=e^{ibt}M_X\left(iat\right)\nonumber\\
   &=e^{ibt}\phi_{X}\left(at\right)
  \end{align}
  \subsection{互いに独立な確率変数の和の特性関数}
-互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$の特性関数$\phi_X$は，
+ 互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$の特性関数$\phi_X$は，
  \begin{align}
   \phi_X\left(t\right)&=\prod_{n=1}^N\phi_{X_n}\left(t\right)
  \end{align}
-である．
+ である．
  \subsubsection{証明}
-式(\ref{SummationMomentGeneratingFunction})を用いて証明する．
+ 式(\ref{SummationMomentGeneratingFunction})を用いて証明する．
  \begin{align}
   \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
   &=\prod_{n=1}^NM_{X_n}\left(it\right)\nonumber\\
   &=\prod_{n=1}^N\phi_{X_n}\left(t\right)
  \end{align}
  \section{キュムラント母関数}
-確率変数$X$のキュムラント母関数$K_X$は，
+ 確率変数$X$のキュムラント母関数$K_X$は，
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\label{CumulantGeneratingFunction}
  \end{align}
-と定義される．
-$K_X$のマクローリン展開
+ と定義される．
+ $K_X$のマクローリン展開
  \begin{align}
   K_X\left(t\right)&=\sum_{k=0}^\infty \frac{K_X^{\left(k\right)}\left(0\right)t^k}{k!}
  \end{align}
-における$K_X^{\left(k\right)}\left(0\right)$を確率変数$X$の$k$次キュムラントという．
+ における$K_X^{\left(k\right)}\left(0\right)$を確率変数$X$の$k$次キュムラントという．
  \subsection{Bellの多項式}
-集合
+ 集合
  \begin{align}
   S=\{1,\cdots,|S|\}
  \end{align}
-を，集合
+ を，集合
  \begin{align}
   \{S_{ij}|i\in I=\{1,\cdots,|I|\}\land j\in J\left(i\right)=\{1,\cdots,|J\left(i\right)|\}\}\label{BellDividing}
  \end{align}
-に分けたい．
-但し，
+ に分けたい．
+ 但し，
  \begin{align}
   &S=\bigcup_{i\in I}\bigcup_{j\in J\left(i\right)}S_{ij}\\
   &\forall i_1\in I,\forall j_1\in J\left(i_1\right),\forall i_2\in I,\forall j_2\in J\left(i_2\right),\left(i_1,j_1\right)\ne\left(i_2,j_2\right)\implies S_{i_1j_1}\cup S_{i_2j_2}=\emptyset\\
   &\forall i\in I,\forall j\in J\left(i\right),|S_{ij}|=i\\
   &\sum_{i\in I}i|J\left(i\right)|=|S|
  \end{align}
-とする．
-このような分け方は何通りあるだろうか？
-まず，
+ とする．
+ このような分け方は何通りあるだろうか？
+ まず，
  \begin{align}
   S_i=\bigcup_{j\in J\left(i\right)}S_{ij}
  \end{align}
-とし，集合$S$を$\{S_i|i\in I\}$に分ける．
-$S_i$の濃度は，
+ とし，集合$S$を$\{S_i|i\in I\}$に分ける．
+ $S_i$の濃度は，
  \begin{align}
   |S_i|&=|\bigcup_{j\in J\left(i\right)}S_{ij}|\nonumber\\
   &=\sum_{j\in J\left(i\right)}|S_{ij}|\nonumber\\
   &=\sum_{j\in J\left(i\right)}i\nonumber\\
   &=i|J\left(i\right)|
  \end{align}
-だから，まず$S_1$の選び方は，
+ だから，まず$S_1$の選び方は，
  \begin{align}
   \binom{|S|}{|J\left(1\right)|}
  \end{align}
-次に$S_2$の選び方は，
+ 次に$S_2$の選び方は，
  \begin{align}
   \binom{|S|-|J\left(1\right)|}{2|J\left(2\right)|}
  \end{align}
-次に$S_3$の選び方は，
+ 次に$S_3$の選び方は，
  \begin{align}
   \binom{|S|-|J\left(1\right)|-2|J\left(2\right)|}{3|J\left(3\right)|}
  \end{align}
-一般に$S_i$の選び方は，
+ 一般に$S_i$の選び方は，
  \begin{align}
   \binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}
  \end{align}
-最後に$S_{|I|}$の選び方は，
+ 最後に$S_{|I|}$の選び方は，
  \begin{align}
   \binom{|S|-\sum_{i=1}^{|I|-1}i|J\left(i\right)|}{|I||J\left(|I|\right)|}
  \end{align}
-これらの場合の数は，
+ これらの場合の数は，
  \begin{align}
   \prod_{i\in I}\binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}\label{BellOutlineEnumeration}
  \end{align}
-である．
-次に，$\forall i\in I$について，$S_i$を$\{S_{ij}|j\in J\left(i\right)\}$に分ける．
-まず$S_{i1}$の選び方は，
+ である．
+ 次に，$\forall i\in I$について，$S_i$を$\{S_{ij}|j\in J\left(i\right)\}$に分ける．
+ まず$S_{i1}$の選び方は，
  \begin{align}
   \binom{i|J\left(i\right)|}{i}
  \end{align}
-次に$S_{i2}$の選び方は，
+ 次に$S_{i2}$の選び方は，
  \begin{align}
   \binom{i\left(|J\left(i\right)|-1\right)}{i}
  \end{align}
-次に$S_{i3}$の選び方は，
+ 次に$S_{i3}$の選び方は，
  \begin{align}
   \binom{i\left(|J\left(i\right)|-2\right)}{i}
  \end{align}
-一般に$S_{ij}$の選び方は，
+ 一般に$S_{ij}$の選び方は，
  \begin{align}
   \binom{i\left(|J\left(i\right)|-j+1\right)}{i}
  \end{align}
-最後に$S_{i|J\left(i\right)|}$の選び方は，
+ 最後に$S_{i|J\left(i\right)|}$の選び方は，
  \begin{align}
   \binom{i\left(|J\left(i\right)|-|J\left(i\right)|+1\right)}{i}
  \end{align}
-これらの場合の数は，
+ これらの場合の数は，
  \begin{align}
   &\prod_{j\in J\left(i\right)}\binom{i\left(|J\left(i\right)|-j+1\right)}{i}\nonumber\\
   =&\prod_{j\in J\left(i\right)}\binom{i|J\left(i\right)|-ij+i}{i}\nonumber\\
@@ -759,37 +759,37 @@ $S_i$の濃度は，
   =&\frac{1}{\left(i!\right)^{|J\left(i\right)|}}\prod_{l=0}^{i|J\left(i\right)|-1}\left(i|J\left(i\right)|-l\right)\nonumber\\
   =&\frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}}\label{BellDetailEnumerationWithDuplication}
  \end{align}
-ただし，$S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序は区別しないため，これらの順序の個数で割る必要がある．
-$S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
-まず$|J\left(i\right)|$個の中から$1$個選ぶ場合の数は，
+ ただし，$S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序は区別しないため，これらの順序の個数で割る必要がある．
+ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
+ まず$|J\left(i\right)|$個の中から$1$個選ぶ場合の数は，
  \begin{align}
   \binom{|J\left(i\right)|}{1}=|J\left(i\right)|
  \end{align}
-次に$|J\left(i\right)-1|$個の中から$1$個選ぶ場合の数は，
+ 次に$|J\left(i\right)-1|$個の中から$1$個選ぶ場合の数は，
  \begin{align}
   \binom{|J\left(i\right)|-1}{1}=|J\left(i\right)|-1
  \end{align}
-次に$|J\left(i\right)-2|$個の中から$1$個選ぶ場合の数は，
+ 次に$|J\left(i\right)-2|$個の中から$1$個選ぶ場合の数は，
  \begin{align}
   \binom{|J\left(i\right)|-2}{1}=|J\left(i\right)|-2
  \end{align}
-一般に$|J\left(i\right)-j+1|$個の中から$1$個選ぶ場合の数は，
+ 一般に$|J\left(i\right)-j+1|$個の中から$1$個選ぶ場合の数は，
  \begin{align}
   \binom{|J\left(i\right)|-j+1}{1}=|J\left(i\right)|-j+1
  \end{align}
-一般に$|J\left(i\right)-|J\left(i\right)|+1|$個の中から$1$個選ぶ場合の数は，
+ 一般に$|J\left(i\right)-|J\left(i\right)|+1|$個の中から$1$個選ぶ場合の数は，
  \begin{align}
   \binom{|J\left(i\right)|-|J\left(i\right)|+1}{1}=|J\left(i\right)|-|J\left(i\right)|+1
  \end{align}
-これらの場合の数は，
+ これらの場合の数は，
  \begin{align}
   \prod_{j\in J\left(i\right)}\left(|J\left(i\right)|-j+1\right)=|J\left(i\right)|!\label{BellDetailEnumerationDuplication}
  \end{align}
-\ref{BellDetailEnumerationWithDuplication}を\ref{BellDetailEnumerationDuplication}で割ると，
+ \ref{BellDetailEnumerationWithDuplication}を\ref{BellDetailEnumerationDuplication}で割ると，
  \begin{align}
   \frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\label{BellDetailEnumeration}
  \end{align}
-\ref{BellOutlineEnumeration}および\ref{BellDetailEnumeration}を合わせると，場合の数は，
+ \ref{BellOutlineEnumeration}および\ref{BellDetailEnumeration}を合わせると，場合の数は，
  \begin{align}
   &\prod_{i\in I}\binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}\frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\nonumber\\
   =&\prod_{i\in I}\frac{\left(|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|\right)!}{\left(|S|-i|J\left(i\right)|-\sum_{k=1}^{i-1}k|J\left(k\right)|\right)!\left(i|J\left(i\right)|\right)!}\frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\nonumber\\
@@ -801,63 +801,63 @@ $S_{i1},\cdots,S_{i|J\left(i\right)|}$の順序の個数を数えてみよう．
   =&\left(\prod_{i\in I}\frac{1}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\right)|S|!\nonumber\\
   =&|S|!\prod_{i\in I}\frac{1}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\label{BellEnumerationWithoutJ}
  \end{align}
-ここで，\ref{BellDividing}において，分ける個数を$k$とする場合，関数${}_{\max}J:I\to \mathbb{N};i\mapsto|J\left(i\right)|$の可能な形の集合${}_{\max} J_k$は，
+ ここで，\ref{BellDividing}において，分ける個数を$k$とする場合，関数${}_{\max}J:I\to \mathbb{N};i\mapsto|J\left(i\right)|$の可能な形の集合${}_{\max} J_k$は，
  \begin{align}
   {}_{\max} J_k=\{{}_{\max}J:I\to \mathbb{N};i\mapsto|J\left(i\right)||\sum_{i\in I}|J\left(i\right)|=k\land\sum_{i\in I}i|J\left(i\right)|=|S|\}
  \end{align}
-よって，関数$J:I\to 2^\mathbb{N};i\mapsto\{1,\cdots,{}_{\max}J\left(i\right)\}$の可能な形の集合$J_k$は，
+ よって，関数$J:I\to 2^\mathbb{N};i\mapsto\{1,\cdots,{}_{\max}J\left(i\right)\}$の可能な形の集合$J_k$は，
  \begin{align}
   J_k=\{J:I\to 2^\mathbb{N};i\mapsto\{1,\cdots,{}_{\max}J\left(i\right)\}|{}_{\max}J\in{}_{\max} J_k\}
  \end{align}
-となる．
-ここから関数$J$を選ぶ場合の数も考慮して\ref{BellEnumerationWithoutJ}を拡張すると，集合$S$を$k$個の部分集合に分割する場合の数は，
+ となる．
+ ここから関数$J$を選ぶ場合の数も考慮して\ref{BellEnumerationWithoutJ}を拡張すると，集合$S$を$k$個の部分集合に分割する場合の数は，
  \begin{align}
   \sum_{J\in J_k}|S|!\prod_{i\in I}\frac{1}{\left(i!\right)^{|J\left(i\right)|}|J\left(i\right)|!}\label{BellEnumaration}
  \end{align}
-となる．
-ここで，部分集合$S_{ij}$の濃度に応じて何らかの実数を返す関数
+ となる．
+ ここで，部分集合$S_{ij}$の濃度に応じて何らかの実数を返す関数
  \begin{align}
   &f:I\to\mathbb{R}\\
   &g:\{S_{ij}|i\in I\land j\in J\left(i\right)\}\to\mathbb{R};S_{ij}\mapsto f\left(i\right)
  \end{align}
-を考えた時，分けられた部分集合族に渡るそれらの総積
+ を考えた時，分けられた部分集合族に渡るそれらの総積
  \begin{align}
   \prod_{i\in I\land j\in J\left(i\right)}g\left(S_{ij}\right)&=\prod_{i\in I\land j\in J\left(i\right)}f\left(i\right)\nonumber\\
   &=\prod_{i\in I}f\left(i\right)^{|J\left(i\right)|}
  \end{align}
-の，全ての分け方の場合に渡る総和がどうなるか考えよう．
-場合の数を数えた時にまず$i$を固定して$j$を変動させたときの場合の数を計算し，その後さらに$i$を変動させて場合の数を計算した．
-この流れに合わせて関数$f$を組み込むために，$i$を固定した形
+ の，全ての分け方の場合に渡る総和がどうなるか考えよう．
+ 場合の数を数えた時にまず$i$を固定して$j$を変動させたときの場合の数を計算し，その後さらに$i$を変動させて場合の数を計算した．
+ この流れに合わせて関数$f$を組み込むために，$i$を固定した形
  \begin{align}
   f\left(i\right)^{|J\left(i\right)|}\label{BellWeight}
  \end{align}
-を用いる．
-これは，ひとつの場合における関数の総積を各$i$ごとに因数分解し，$i$を固定して$j$を変動させたときの場合の数に組み込む形になるが，場合の数の算出において各$i$は積の形で再び合流するため，問題ない．
-\ref{BellWeight}を\ref{BellDetailEnumerationWithDuplication}に組み込むと，
+ を用いる．
+ これは，ひとつの場合における関数の総積を各$i$ごとに因数分解し，$i$を固定して$j$を変動させたときの場合の数に組み込む形になるが，場合の数の算出において各$i$は積の形で再び合流するため，問題ない．
+ \ref{BellWeight}を\ref{BellDetailEnumerationWithDuplication}に組み込むと，
  \begin{align}
   \frac{\left(i|J\left(i\right)|\right)!}{\left(i!\right)^{|J\left(i\right)|}}f\left(i\right)^{|J\left(i\right)|}&=\left(i|J\left(i\right)|\right)!\frac{f\left(i\right)^{|J\left(i\right)|}}{\left(i!\right)^{|J\left(i\right)|}}\nonumber\\
   &=\left(i|J\left(i\right)|\right)!\left(\frac{f\left(i\right)}{i!}\right)^{|J\left(i\right)|}
  \end{align}
-これを\ref{BellDetailEnumerationDuplication}で割ると，
+ これを\ref{BellDetailEnumerationDuplication}で割ると，
  \begin{align}
   \frac{\left(i|J\left(i\right)|\right)!}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{i!}\right)^{|J\left(i\right)|}
  \end{align}
-これを\ref{BellOutlineEnumeration}に組み込むと，
+ これを\ref{BellOutlineEnumeration}に組み込むと，
  \begin{align}
   \prod_{i\in I}\binom{|S|-\sum_{k=1}^{i-1}k|J\left(k\right)|}{i|J\left(i\right)|}\frac{\left(i|J\left(i\right)|\right)!}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{i!}\right)^{|J\left(i\right)|}=|S|!\prod_{i\in I}\frac{1}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{i!}\right)^{|J\left(i\right)|}
  \end{align}
-さらに$J$を選ぶ場合の数も考慮した
+ さらに$J$を選ぶ場合の数も考慮した
  \begin{align}
   B_{|S|,k}\left(f\left(1\right),\cdots,f\left(|I|=|S|-k+1\right)\right)=\sum_{J\in J_k}|S|!\prod_{i\in I}\frac{1}{|J\left(i\right)|!}\left(\frac{f\left(i\right)}{i!}\right)^{|J\left(i\right)|}
  \end{align}
-を部分Bell多項式といい，大きさ$|S|$の集合の全ての可能な$k$個の部分集合への分割方法を考え，元の集合から分割された各部分集合の大きさ$i$に応じた値$f\left(i\right)$の総積として再統合し，それを全ての分割方法に渡って総和を取った値を意味する．
-また，
+ を部分Bell多項式といい，大きさ$|S|$の集合の全ての可能な$k$個の部分集合への分割方法を考え，元の集合から分割された各部分集合の大きさ$i$に応じた値$f\left(i\right)$の総積として再統合し，それを全ての分割方法に渡って総和を取った値を意味する．
+ また，
  \begin{align}
   B_{|S|}\left(f\left(1\right),\cdots,f\left(|S|\right)\right)=\sum_{k=1}^{|S|}B_{|S|,k}\left(f\left(1\right),\cdots,f\left(|S|-k+1\right)\right)
  \end{align}
-を完全Bell多項式といい，大きさ$|S|$の集合の全ての分割方法を考え，元の集合から分割された各部分集合の大きさ$i$に応じた値$f\left(i\right)$の総積として再統合し，それを全ての分割方法に渡って総和を取った値を意味する．
+ を完全Bell多項式といい，大きさ$|S|$の集合の全ての分割方法を考え，元の集合から分割された各部分集合の大きさ$i$に応じた値$f\left(i\right)$の総積として再統合し，それを全ての分割方法に渡って総和を取った値を意味する．
  \subsubsection{マクローリン展開の$k$乗の展開}
-$\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$f\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)$ただし$f\left(0\right)=0$を$\forall k\in\mathbb{N}$乗してみよう．
+ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$f\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)$ただし$f\left(0\right)=0$を$\forall k\in\mathbb{N}$乗してみよう．
  \begin{align}
   f\left(x\right)^k&=\left(\sum_{n=0}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
   &=\left(\frac{f^{\left(0\right)}\left(0\right)}{0!}x^0+\sum_{n=1}^\infty\frac{f^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
@@ -865,42 +865,42 @@ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$f\in C^\infty\left(\math
   &=\sum_{n_1=1}^\infty\cdots\sum_{n_k=1}^\infty\prod_{m=1}^k\frac{f^{\left(n_m\right)}\left(0\right)}{n_m!}x^{n_m}\nonumber\\
   &=\sum_{n=1}^\infty\sum_{\left(n_1,\cdots,n_k\right)\in\mathbb{N}^k|\sum_{j=1}^k n_j=n}\prod_{i\in\left(n_1,\cdots,n_k\right)}\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i
  \end{align}
-ここから，数列$\left(n_1,\cdots,n_k\right)$を，集合$\{n_1,\cdots,n_k\}$に書き換える．
-数列$\left(n_1,\cdots,n_k\right)$は値が等しくても場所が異なれば区別するのに対し，集合$\{n_1,\cdots,n_k\}$は等しい値を区別しない．
-従って，数列$\left(n_1,\cdots,n_k\right)$を集合$\{n_1,\cdots,n_k\}$に書き換えた際に式を保存するために，数列$\left(n_1,\cdots,n_k\right)$に登場する自然数を同じ値ごとに分類し，各値について同じ値がいくつ数列$\left(n_1,\cdots,n_k\right)$に現れるかを知っておく必要がある．
-そのために，
+ ここから，数列$\left(n_1,\cdots,n_k\right)$を，集合$\{n_1,\cdots,n_k\}$に書き換える．
+ 数列$\left(n_1,\cdots,n_k\right)$は値が等しくても場所が異なれば区別するのに対し，集合$\{n_1,\cdots,n_k\}$は等しい値を区別しない．
+ 従って，数列$\left(n_1,\cdots,n_k\right)$を集合$\{n_1,\cdots,n_k\}$に書き換えた際に式を保存するために，数列$\left(n_1,\cdots,n_k\right)$に登場する自然数を同じ値ごとに分類し，各値について同じ値がいくつ数列$\left(n_1,\cdots,n_k\right)$に現れるかを知っておく必要がある．
+ そのために，
  \begin{align}
   {}_{\max}J\left(i\right)=|\{j|n_j=i\}|
  \end{align}
-とすると，
+ とすると，
  \begin{align}
   \sum_{i\in\{n_1,\cdots,n_k\}}{}_{\max}J\left(i\right)&=\sum_{i\in\{n_1,\cdots,n_k\}}|\{j|n_j=i\}|\nonumber\\
   &=\sum_{i\in\left(n_1,\cdots,n_k\right)}1\nonumber\\
   &=k
  \end{align}
-また，
+ また，
  \begin{align}
   \sum_{i\in\{n_1,\cdots,n_k\}}i{}_{\max}J\left(i\right)&=\sum_{i\in\{n_1,\cdots,n_k\}}i|\{j|n_j=i\}|\nonumber\\
   &=\sum_{i\in\left(n_1,\cdots,n_k\right)}i\nonumber\\
   &=\sum_{m=1}^kn_m\nonumber\\
   &=n
  \end{align}
-であり，これを用いて総積の範囲として現れている数列$\left(n_1,\cdots,n_k\right)$を集合$\{n_1,\cdots,n_k\}$に変えると，
+ であり，これを用いて総積の範囲として現れている数列$\left(n_1,\cdots,n_k\right)$を集合$\{n_1,\cdots,n_k\}$に変えると，
  \begin{align}
   f\left(x\right)^k&=\sum_{n=1}^\infty\sum_{\left(n_1,\cdots,n_k\right)\in\mathbb{N}^k|\sum_{j=1}^k n_j=n}\prod_{i\in\left(n_1,\cdots,n_k\right)}\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\nonumber\\
   &=\sum_{n=1}^\infty\sum_{\left(n_1,\cdots,n_k\right)\in\mathbb{N}^k|\sum_{j=1}^k n_j=n}\prod_{i\in\{n_1,\cdots,n_k\}}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\right)^{{}_{\max}J\left(i\right)}
  \end{align}
-となる．
-次に総和の変数として現れている数列$\left(n_1,\cdots,n_k\right)$も集合$\{n_1,\cdots,n_k\}$として扱いたい．
-まず，集合$\{n_1,\cdots,n_k\}$から数列$\left(n_1,\cdots,n_k\right)$を見ると，$k$個の順番が与えられているので$k!$を掛ける必要がある．
-しかし，$n_{j_1}=n_{j_2}$であるような要素は集合$\{n_1,\cdots,n_k\}$においても数列$\left(n_1,\cdots,n_k\right)$においても順番を区別しないので，${}_{\max}J\left(i\right)!$で割る必要がある．
-さらに，数列$\left(n_1,\cdots,n_k\right)$が保証していた条件$\sum_{j=1}^k n_j=n$に関して，集合$\{n_1,\cdots,n_k\}$は値の等しい要素を区別する能力がないため，これと同値な条件を保証する能力はないことがわかる．
-代わりに，関数${}_{\max}J$を
+ となる．
+ 次に総和の変数として現れている数列$\left(n_1,\cdots,n_k\right)$も集合$\{n_1,\cdots,n_k\}$として扱いたい．
+ まず，集合$\{n_1,\cdots,n_k\}$から数列$\left(n_1,\cdots,n_k\right)$を見ると，$k$個の順番が与えられているので$k!$を掛ける必要がある．
+ しかし，$n_{j_1}=n_{j_2}$であるような要素は集合$\{n_1,\cdots,n_k\}$においても数列$\left(n_1,\cdots,n_k\right)$においても順番を区別しないので，${}_{\max}J\left(i\right)!$で割る必要がある．
+ さらに，数列$\left(n_1,\cdots,n_k\right)$が保証していた条件$\sum_{j=1}^k n_j=n$に関して，集合$\{n_1,\cdots,n_k\}$は値の等しい要素を区別する能力がないため，これと同値な条件を保証する能力はないことがわかる．
+ 代わりに，関数${}_{\max}J$を
  \begin{align}
   \mathbb{J}=\{{}_{\max}J:\{1,\cdots,n-k+1\}\to\{1,\cdots,n\};i\mapsto|\{j|n_j=i\}||\sum_{i\in\{n_1,\cdots,n_k\}}{}_{\max}J\left(i\right)=k\land\sum_{i\in\{n_1,\cdots,n_k\}}i{}_{\max}J\left(i\right)=n\}
  \end{align}
-から選ぶようにすることで条件を保証する．
-これらを考慮すると，
+ から選ぶようにすることで条件を保証する．
+ これらを考慮すると，
  \begin{align}
   f\left(x\right)^k&=\sum_{n=1}^\infty\sum_{\left(n_1,\cdots,n_k\right)\in\mathbb{N}^k|\sum_{j=1}^k n_j=n}\prod_{i\in\{n_1,\cdots,n_k\}}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\right)^{{}_{\max}J\left(i\right)}\nonumber\\
   &=\sum_{n=1}^\infty\sum_{{}_{\max}J\in\mathbb{J}}k!\prod_{i\in\{n_1,\cdots,n_k\}}\frac{1}{{}_{\max}J\left(i\right)!}\left(\frac{f^{\left(i\right)}\left(0\right)}{i!}x^i\right)^{{}_{\max}J\left(i\right)}\nonumber\\
@@ -914,7 +914,7 @@ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$f\in C^\infty\left(\math
   &=\sum_{n=1}^\infty\frac{k!}{n!}B_{n,k}\left(f^{\left(1\right)}\left(0\right),\cdots,f^{\left(n-k+1\right)}\left(0\right)\right)x^n\nonumber\\
  \end{align}
  \subsubsection{マクローリン展開の合成関数}
-$\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\left(f,g\right)\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)^2$ただし$g\left(0\right)=0$の合成は，
+ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\left(f,g\right)\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)^2$ただし$g\left(0\right)=0$の合成は，
  \begin{align}
   f\left(g\left(x\right)\right)&=\sum_{k=0}^\infty\frac{f^{\left(k\right)}\left(0\right)}{k!}\left(\sum_{n=0}^\infty\frac{g^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
   &=f\left(0\right)+\sum_{k=0}^\infty\frac{f^{\left(k\right)}\left(0\right)}{k!}\left(g\left(0\right)+\sum_{n=1}^\infty\frac{g^{\left(n\right)}\left(0\right)}{n!}x^n\right)^k\nonumber\\
@@ -924,27 +924,27 @@ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\left(f,g\right)\in C^\i
   &=f\left(0\right)+\sum_{n=1}^\infty\sum_{k=0}^n\frac{f^{\left(k\right)}\left(0\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(0\right),\cdots,g^{\left(n-k+1\right)}\left(0\right)\right)x^n\nonumber\\
  \end{align}
  \subsubsection{Fa\`a di Brunoの公式}
-$\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\forall\left(f,g\right)\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)^2$の合成関数の$n\in\mathbb{N}$回微分は，
+ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\forall\left(f,g\right)\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)^2$の合成関数の$n\in\mathbb{N}$回微分は，
  \begin{align}
   \frac{d^n}{dx^n}f\left(g\left(x\right)\right)=\sum_{k=1}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)
  \end{align}
-である．
-これがFa\`a di Brunoの公式である．
-これを証明するために以下の補題
+ である．
+ これがFa\`a di Brunoの公式である．
+ これを証明するために以下の補題
  \begin{align}
   \forall n\in\mathbb{N},\forall f\in C^n\left(\mathbb{R}^\mathbb{R}\right),\frac{d^nf\left(x\right)}{dx^n}=\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}
  \end{align}
-を数学的帰納法により証明する．
-$n=1$の時，
+ を数学的帰納法により証明する．
+ $n=1$の時，
  \begin{align}
   \frac{df\left(x\right)}{dx}&=\frac{df\left(x\right)}{d\left(x+y\right)}\frac{d\left(x+y\right)}{dx}\nonumber\\
   &=\frac{df\left(x\right)}{d\left(x+y\right)}
  \end{align}
-また，
+ また，
  \begin{align}
   \exists n\in\mathbb{N},\frac{d^nf\left(x\right)}{dx^n}=\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}
  \end{align}
-のとき，
+ のとき，
  \begin{align}
   \frac{d^{n+1}f\left(x\right)}{dx^{n+1}}&=\frac{d}{dx}\frac{d^nf\left(x\right)}{dx^n}\nonumber\\
   &=\frac{d}{dx}\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}\nonumber\\
@@ -952,21 +952,21 @@ $n=1$の時，
   &=\frac{d}{d\left(x+y\right)}\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}\nonumber\\
   &=\frac{d^{n+1}f\left(x\right)}{d\left(x+y\right)^{n+1}}
  \end{align}
-よって数学的帰納法により補題が成り立つ．
-これでFa\`a di Brunoの公式を証明する準備が整った．
-$\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\forall\left(f,g\right)\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)^2$をもとに，以下の関数を定義する．
+ よって数学的帰納法により補題が成り立つ．
+ これでFa\`a di Brunoの公式を証明する準備が整った．
+ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\forall\left(f,g\right)\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)^2$をもとに，以下の関数を定義する．
  \begin{align}
   F\left(x,y\right)&=f\left(g\left(x\right)+y\right)\\
   G\left(x,y\right)&=g\left(x+y\right)-g\left(x\right)
  \end{align}
-ここで，$F\left(x,y\right)$を$y$周りでマクローリン展開すると，
+ ここで，$F\left(x,y\right)$を$y$周りでマクローリン展開すると，
  \begin{align}
   F\left(x,y\right)&=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\frac{\partial^nF\left(x,y\right)}{\partial y^n}\right|_{y=0}\right)y^k\nonumber\\
   &=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\frac{\partial^nf\left(g\left(x\right)+y\right)}{\partial y^n}\right|_{y=0}\right)y^k\nonumber\\
   &=\sum_{k=0}^\infty\frac{1}{k!}\left(\left.\frac{\partial^nf\left(g\left(x\right)+y\right)}{\partial\left(g\left(x\right)+y\right)^n}\right|_{y=0}\right)y^k\nonumber\\
   &=\sum_{k=0}^\infty\frac{f^{\left(n\right)}\left(g\left(x\right)\right)}{k!}y^k\nonumber\\
  \end{align}
-また，$G\left(x,y\right)$を$y$周りでマクローリン展開すると，
+ また，$G\left(x,y\right)$を$y$周りでマクローリン展開すると，
  \begin{align}
   G\left(x,y\right)&=\sum_{n=0}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nG\left(x,y\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
   &=G\left(x,0\right)+\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nG\left(x,y\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
@@ -975,11 +975,11 @@ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\forall\left(f,g\right)\
   &=\sum_{n=1}^\infty\frac{1}{n!}\left(\left.\frac{\partial^ng\left(x+y\right)}{\partial\left(x+y\right)^n}\right|_{y=0}\right)y^n\nonumber\\
   &=\sum_{n=1}^\infty\frac{g^{\left(n\right)}\left(x\right)}{n!}y^n
  \end{align}
-これらを合成すると，
+ これらを合成すると，
  \begin{align}
   F\left(x,G\left(x,y\right)\right)&=f\left(g\left(x\right)\right)+\sum_{n=1}^\infty\sum_{k=0}^n\frac{f^{\left(k\right)}\left(g\left(x\right)\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)y^n
  \end{align}
-となる一方で，
+ となる一方で，
  \begin{align}
   F\left(x,G\left(x,y\right)\right)&=f\left(g\left(x\right)+G\left(x,y\right)\right)\nonumber\\
   &=f\left(g\left(x\right)+g\left(x+y\right)-g\left(x\right)\right)\nonumber\\
@@ -988,8 +988,8 @@ $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\forall\left(f,g\right)\
   &=\sum_{n=0}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nf\left(g\left(x+y\right)\right)}{\partial\left(x+y\right)^n}\right|_{y=0}\right)y^n\nonumber\\
   &=\sum_{n=0}^\infty\frac{1}{n!}\frac{d^nf\left(g\left(x\right)\right)}{dx^n}y^n\nonumber\\
  \end{align}
-とも展開できる．
-$\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
+ とも展開できる．
+ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
  \begin{align}
   \frac{1}{n!}\frac{d^nf\left(g\left(x\right)\right)}{dx^n}y^n&=\sum_{k=0}^n\frac{f^{\left(k\right)}\left(g\left(x\right)\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)y^n\nonumber\\
   \frac{d^nf\left(g\left(x\right)\right)}{dx^n}&=\sum_{k=0}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)\nonumber\\
@@ -997,7 +997,7 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=\sum_{k=1}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)\nonumber\\
  \end{align}
  \subsection{積率からキュムラントを求める}
-キュムラントの定義\ref{CumulantGeneratingFunction}より，
+ キュムラントの定義\ref{CumulantGeneratingFunction}より，
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
   \sum_{n=0}^\infty\frac{t^n}{n!}K_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\frac{d^n\log M_X\left(t\right)}{dt^n}\right|_{t=0}\right)\nonumber\\
@@ -1008,7 +1008,7 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=\sum_{k=1}^n\left(-1\right)^{k-1}\left(k-1\right)!B_{n,k}\left(M_X^{\left(1\right)}\left(0\right),\cdots,M_X^{\left(n-k+1\right)}\left(0\right)\right)
  \end{align}
  \subsection{キュムラントから積率を求める}
-キュムラントの定義\ref{CumulantGeneratingFunction}より，
+ キュムラントの定義\ref{CumulantGeneratingFunction}より，
  \begin{align}
   M_X\left(t\right)&=e^{K_X\left(t\right)}\nonumber\\
   \sum_{n=0}^\infty\frac{t^n}{n!}M_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t!}{n!}\left(\left.\frac{d^ne^{K_X\left(t\right)}}{dt^n}\right|_{t=0}\right)\nonumber\\
@@ -1047,17 +1047,17 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=M_X^{\left(3\right)}\left(0\right)-3M_X^{\left(1\right)}\left(0\right)M_X^{\left(2\right)}\left(0\right)+2M_X^{\left(1\right)}\left(0\right)^3\nonumber\\
   &=E\left(X^3\right)-3E\left(X\right)E\left(X^2\right)+2E\left(X\right)^3
  \end{align}
-一方で，
+ 一方で，
  \begin{align}
   E\left(\left(X-E\left(X\right)\right)^3\right)&=E\left(X^3-3X^2E\left(X\right)+3XE\left(X\right)^2-E\left(X\right)^3\right)\nonumber\\
   &=E\left(X^3\right)-3E\left(X^2\right)E\left(X\right)+3E\left(X\right)E\left(X\right)^2-E\left(X\right)^3\nonumber\\
   &=E\left(X^3\right)-3E\left(X^2\right)E\left(X\right)+2E\left(X\right)^3
  \end{align}
-よって，
+ よって，
  \begin{align}
   K_X^{\left(3\right)}\left(0\right)&=E\left(\left(X-E\left(X\right)\right)^3\right)
  \end{align}
-よって歪度は，
+ よって歪度は，
  \begin{align}
   S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
   &=\frac{K_X^{\left(3\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^\frac{3}{2}}
@@ -1072,7 +1072,7 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=M_X^{\left(4\right)}\left(0\right)-4M_X^{\left(1\right)}\left(0\right)M_X^{\left(3\right)}\left(0\right)-3M_X^{\left(2\right)}\left(0\right)^2+12M_X^{\left(1\right)}\left(0\right)^2M_X^{\left(2\right)}\left(0\right)-6M_X^{\left(1\right)}\left(0\right)^4\nonumber\\
   &=E\left(X^4\right)-4E\left(X\right)E\left(X^3\right)-3E\left(X^2\right)^2+12E\left(X\right)^2E\left(X^2\right)-6E\left(X\right)^4
  \end{align}
-一方で，
+ 一方で，
  \begin{align}
   &E\left(\left(X-E\left(X\right)\right)^4\right)-3V\left(X\right)^2=E\left(\left(X-E\left(X\right)\right)^4\right)-3E\left(\left(X-E\left(X\right)\right)^2\right)^2\nonumber\\
   &=E\left(X^4-4X^3E\left(X\right)+6X^2E\left(X\right)^2-4XE\left(X\right)^3+E\left(X\right)^4\right)-3E\left(X^2-2XE\left(X\right)+E\left(X\right)^2\right)^2\nonumber\\
@@ -1082,11 +1082,11 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=E\left(X^4\right)-4E\left(X^3\right)E\left(X\right)+6E\left(X^2\right)E\left(X\right)^2-3E\left(X\right)^4-3E\left(X^2\right)^2+6E\left(X^2\right)E\left(X\right)^2-3E\left(X\right)^4\nonumber\\
   &=E\left(X^4\right)-4E\left(X^3\right)E\left(X\right)+12E\left(X^2\right)E\left(X\right)^2-6E\left(X\right)^4-3E\left(X^2\right)^2\nonumber\\
  \end{align}
-よって，
+ よって，
  \begin{align}
   K_X^{\left(4\right)}\left(0\right)&=E\left(\left(X-E\left(X\right)\right)^4\right)-3V\left(X\right)^2
  \end{align}
-よって超過尖度は，
+ よって超過尖度は，
  \begin{align}
   K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3\nonumber\\
   &=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{V\left(X\right)^2}-3\nonumber\\
@@ -1094,13 +1094,13 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}
  \end{align}
  \subsection{確率変数の一次式のキュムラント母関数}
-確率変数$X$の一次式$aX+b$のキュムラント母関数$K_{aX+b}\left(t\right)$は，
+ 確率変数$X$の一次式$aX+b$のキュムラント母関数$K_{aX+b}\left(t\right)$は，
  \begin{align}
   K_{aX+b}\left(t\right)&=bt+K_X\left(at\right)
  \end{align}
-である．
+ である．
  \subsubsection{証明}
-式(\ref{LinearMomentGeneratingFunction})より，
+ 式(\ref{LinearMomentGeneratingFunction})より，
  \begin{align}
   K_{aX+b}\left(t\right)&=\log M_{aX+b}\left(t\right)\nonumber\\
   &=\log\left(e^{bt}M_X\left(at\right)\right)\nonumber\\
@@ -1108,13 +1108,13 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=bt+K_X\left(at\right)\nonumber\\
  \end{align}
  \subsection{互いに独立な確率変数の和のキュムラント母関数}
-互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$のキュムラント母関数$K_X\left(t\right)$は，
+ 互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和$X=\sum_{n=1}^NX_n$のキュムラント母関数$K_X\left(t\right)$は，
  \begin{align}
   K_X\left(t\right)&=\sum_{n=1}^NK_{X_n}\left(t\right)\label{SummationCumulantGeneratingFunction}
  \end{align}
-である．
+ である．
  \subsubsection{証明}
-式(\ref{SummationMomentGeneratingFunction})より，
+ 式(\ref{SummationMomentGeneratingFunction})より，
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
   &=\log\prod_{n=1}^NM_{X_n}\left(t\right)\nonumber\\
@@ -1122,22 +1122,22 @@ $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
   &=\sum_{n=1}^NK_{X_n}\left(t\right)\nonumber\\
  \end{align}
  \section{離散一様分布}
-標本空間を
+ 標本空間を
  \begin{align}
   S\left(X\right)&=\{1,\cdots,n\}\subset\mathbb{Z}\\
   |S\left(X\right)|&=n
  \end{align}
-とし，確率質量関数を
+ とし，確率質量関数を
  \begin{align}
   \forall x\in S\left(X\right),p\left(x\right)=\frac{1}{n}
  \end{align}
-とすると，
+ とすると，
  \begin{align}
   \sum_{x\in S\left(X\right)}p\left(x\right)&=\sum_{x=1}^n\frac{1}{n}\nonumber\\
   &=1
  \end{align}
-より，$X$は離散確率変数である．
-$X$の分布を離散一様分布という．
+ より，$X$は離散確率変数である．
+ $X$の分布を離散一様分布という．
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
@@ -1171,7 +1171,7 @@ $X$の分布を離散一様分布という．
  \begin{align}
   \binom{n+1}{m+1}&=\binom{n}{m}+\binom{n}{m+1}
  \end{align}
-証明
+ 証明
  \begin{align}
   \binom{n}{m}+\binom{n}{m+1}&=\frac{n!}{m!\left(n-m\right)!}+\frac{n!}{\left(m+1\right)!\left(n-m-1\right)!}\nonumber\\
   &=\frac{n!\left(m+1\right)+n!\left(n-m\right)}{\left(m+1\right)!\left(n-m\right)!}\nonumber\\
@@ -1183,12 +1183,12 @@ $X$の分布を離散一様分布という．
  \begin{align}
   \forall \left(a,b,n\right)\in\mathbb{Z}\times\mathbb{Z}\times\mathbb{N}_0,\left(a+b\right)^n&=\sum_{m=0}^n\binom{n}{m}a^mb^{n-m}
  \end{align}
-数学的帰納法により証明する．
-$n=0$のとき，式は成立する．
+ 数学的帰納法により証明する．
+ $n=0$のとき，式は成立する．
  \begin{align}
   \left(a+b\right)^n&=\sum_{m=0}^n\binom{n}{m}a^mb^{n-m}
  \end{align}
-が成り立つ時，
+ が成り立つ時，
  \begin{align}
   \left(a+b\right)^{n+1}&=\left(a+b\right)\left(a+b\right)^n\nonumber\\
   &=\left(a+b\right)\sum_{m=0}^n\binom{n}{m}a^mb^{n-m}\nonumber\\
@@ -1201,7 +1201,7 @@ $n=0$のとき，式は成立する．
   &=a^{n+1}+\left(\sum_{m=1}^n\binom{n+1}{m}a^mb^{n+1-m}\right)+b^{n+1}\nonumber\\
   &=\sum_{m=0}^{n+1}\binom{n+1}{m}a^mb^{n+1-m}\nonumber\\
  \end{align}
-よって成り立つ．
+ よって成り立つ．
  \subsubsection{自然数の和}
  \begin{align}
   \left(x+1\right)^2&=x^2+2x+1\nonumber\\
@@ -1293,7 +1293,7 @@ $n=0$のとき，式は成立する．
   &=\frac{1}{8}\left(n+1\right)^2\left(2n-4n-2+3n+3-n-1\right)\nonumber\\
   &=0
  \end{align}
-よって歪度は，
+ よって歪度は，
  \begin{align}
   S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
   &=0
@@ -1334,7 +1334,7 @@ $n=0$のとき，式は成立する．
   &=\frac{n+1}{240}\left(3n^3-3n^2-7n+7\right)\nonumber\\
   &=\frac{1}{240}\left(n+1\right)\left(n-1\right)\left(3n^2-7\right)
  \end{align}
-よって超過尖度は，
+ よって超過尖度は，
  \begin{align}
   K\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^4\right)}{\sigma\left(X\right)^4}-3\nonumber\\
   &=\frac{\frac{1}{240}\left(n+1\right)\left(n-1\right)\left(3n^2-7\right)}{\left(\frac{n^2-1}{12}\right)^2}-3\nonumber\\
@@ -1351,22 +1351,22 @@ $n=0$のとき，式は成立する．
   &=\log_2n\nonumber\\
  \end{align}
  \section{連続一様分布}
-標本空間を
+ 標本空間を
  \begin{align}
   S\left(X\right)&=\left[0,a\right]\subset\mathbb{R}
  \end{align}
-とし，確率密度関数を
+ とし，確率密度関数を
  \begin{align}
   \forall x\in S\left(X\right),p\left(x\right)&=\frac{1}{a}
  \end{align}
-とすると，
+ とすると，
  \begin{align}
   \int_{S\left(X\right)}p\left(x\right)dx&=\int_0^a\frac{1}{a}dx\nonumber\\
   &=\left[\frac{x}{a}\right]_{x=0}^{x=a}\nonumber\\
   &=1
  \end{align}
-より，$X$は連続確率変数である．
-$X$の分布を連続一様分布という．
+ より，$X$は連続確率変数である．
+ $X$の分布を連続一様分布という．
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
@@ -1398,8 +1398,8 @@ $X$の分布を連続一様分布という．
   &=\frac{\frac{d}{dt}\left(e^{at}-1\right)}{e^{at}-1}-\frac{1}{t}\nonumber\\
   &=\frac{ae^{at}}{e^{at}-1}-\frac{1}{t}
  \end{align}
-これでは$t=0$を代入できないため，方針を変える．
-積率母関数をマクローリン展開すると，
+ これでは$t=0$を代入できないため，方針を変える．
+ 積率母関数をマクローリン展開すると，
  \begin{align}
   \frac{d^n}{dt^n}e^{at}&=a^ne^{at}\nonumber\\
   \left[\frac{d^n}{dt^n}e^{at}\right]_{t=0}&=a^n\nonumber\\
@@ -1408,7 +1408,7 @@ $X$の分布を連続一様分布という．
   \frac{e^{at}-1}{at}&=\sum_{n=1}^\infty\frac{a^{n-1}t^{n-1}}{n!}\nonumber\\
   M_X\left(t\right)&=\sum_{n=0}^\infty\frac{a^nt^n}{\left(n+1\right)!}
  \end{align}
-また，対数関数のテイラー展開は，
+ また，対数関数のテイラー展開は，
  \begin{align}
   \frac{d^n}{dx^n}\log\left(x+1\right)&=-\left(-1\right)^n\left(n-1\right)!\left(x+1\right)^{-n}\nonumber\\
   \left[\frac{d^n}{dx^n}\log\left(x+1\right)\right]_{x=0}&=-\left(-1\right)^n\left(n-1\right)!\nonumber\\
@@ -1416,7 +1416,7 @@ $X$の分布を連続一様分布という．
   &=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}x^n\nonumber\\
   \log x&=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}\left(x-1\right)^n
  \end{align}
-だから，
+ だから，
  \begin{align}
   K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
   &=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}\left(\left(\sum_{m=0}^\infty\frac{a^mt^m}{\left(m+1\right)!}\right)-1\right)^n\nonumber\\
@@ -1461,7 +1461,7 @@ $X$の分布を連続一様分布という．
   &=\frac{a^3}{4}-\frac{a^3}{2}+\frac{a^3}{4}\nonumber\\
   &=0
  \end{align}
-よって歪度は，
+ よって歪度は，
  \begin{align}
   S\left(X\right)&=\frac{K_X^{\left(3\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^\frac{3}{2}}\nonumber\\
   &=0
@@ -1481,7 +1481,7 @@ $X$の分布を連続一様分布という．
   &=\left(\frac{24}{120}-\frac{60}{120}-\frac{40}{120}+\frac{120}{120}-\frac{45}{120}\right)a^4\nonumber\\
   &=-\frac{1}{120}a^4
  \end{align}
-よって超過尖度は，
+ よって超過尖度は，
  \begin{align}
   K\left(X\right)&=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}\nonumber\\
   &=\frac{-\frac{1}{120}a^4}{\left(\frac{a^2}{12}\right)^2}\nonumber\\
@@ -1496,11 +1496,11 @@ $X$の分布を連続一様分布という．
   &=\log_2a\nonumber\\
  \end{align}
  \section{ベルヌーイ分布}
-標本空間を
+ 標本空間を
  \begin{align}
   S\left(X\right)&=\{0,1\}
  \end{align}
-とし，ある$p\in\left(0,1\right)$に対して確率質量関数を
+ とし，ある$p\in\left(0,1\right)$に対して確率質量関数を
  \begin{align}
   p\left(x\right)&=
   \begin{cases}
@@ -1508,12 +1508,12 @@ $X$の分布を連続一様分布という．
    1-p&\left(x=0\right)
   \end{cases}
  \end{align}
-とすると，
+ とすると，
  \begin{align}
   \sum_{x\in S\left(X\right)}p\left(x\right)&=1
  \end{align}
-より，$X$は離散確率変数である．
-$X$の分布をベルヌーイ分布という．
+ より，$X$は離散確率変数である．
+ $X$の分布をベルヌーイ分布という．
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
@@ -1598,28 +1598,28 @@ $X$の分布をベルヌーイ分布という．
   &=-\log_2\left(1-p\right)^{1-p}p^p\nonumber\\
  \end{align}
  \section{二項分布}
-ベルヌーイ分布に従う互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和
+ ベルヌーイ分布に従う互いに独立な$N$個の確率変数$X_1,\cdots,X_N$の和
  \begin{align}
   X&=\sum_{n=1}^NX_n
  \end{align}
-を二項分布といい，その標本空間は$S\left(X\right)=\{n\in\mathbb{N}|0\le n\le N\}$である．
-$X$の確率質量関数$p$について考えよう．
-$X$の値が$n$になるということは，$X_1,\cdots,X_N$のうち$n$個が$1$となり，$N-n$個が0になるということだ．
-$N$個の中から$n$個選ぶ場合の数は$\binom{N}{n}$で，選ばれた$n$個が全て$1$になる確率は$p^n$，残りの$N-n$個が全て$0$になる確率は$\left(1-p\right)^{N-n}$であるから，$X=n$となる確率は，
+ を二項分布といい，その標本空間は$S\left(X\right)=\{n\in\mathbb{N}|0\le n\le N\}$である．
+ $X$の確率質量関数$p$について考えよう．
+ $X$の値が$n$になるということは，$X_1,\cdots,X_N$のうち$n$個が$1$となり，$N-n$個が0になるということだ．
+ $N$個の中から$n$個選ぶ場合の数は$\binom{N}{n}$で，選ばれた$n$個が全て$1$になる確率は$p^n$，残りの$N-n$個が全て$0$になる確率は$\left(1-p\right)^{N-n}$であるから，$X=n$となる確率は，
  \begin{align}
   p\left(n\right)&=\binom{N}{n}p^n\left(1-p\right)^{N-n}
  \end{align}
-である．
-このとき，確かに
+ である．
+ このとき，確かに
  \begin{align}
   \sum_{x\in S\left(X\right)}p\left(x\right)&=\sum_{x=0}^N\binom{N}{x}p^x\left(1-p\right)^{N-x}\nonumber\\
   &=\left(p+1-p\right)^N\nonumber\\
   &=1^N\nonumber\\
   &=1
  \end{align}
-である．
+ である．
  \subsection{確率母関数}
-$X_1,\cdots,X_N$は互いに独立なので，
+ $X_1,\cdots,X_N$は互いに独立なので，
  \begin{align}
   G_X\left(t\right)&=G_{\sum_{n=1}^NX_n}\left(t\right)\nonumber\\
   &=\prod_{n=1}^NG_{X_n}\left(t\right)\nonumber\\
@@ -1627,7 +1627,7 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=\left(pt+1-p\right)^N
  \end{align}
  \subsection{積率母関数}
-$X_1,\cdots,X_N$は互いに独立なので，
+ $X_1,\cdots,X_N$は互いに独立なので，
  \begin{align}
   M_X\left(t\right)&=M_{\sum_{n=1}^NX_n}\left(t\right)\nonumber\\
   &=\prod_{n=1}^NM_{X_n}\left(t\right)\nonumber\\
@@ -1635,7 +1635,7 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=\left(pe^t+1-p\right)^N
  \end{align}
  \subsection{特性関数}
-$X_1,\cdots,X_N$は互いに独立なので，
+ $X_1,\cdots,X_N$は互いに独立なので，
  \begin{align}
   \phi_X\left(t\right)&=\phi_{\sum_{n=1}^NX_n}\left(t\right)\nonumber\\
   &=\prod_{n=1}^N\phi_{X_n}\left(t\right)\nonumber\\
@@ -1643,7 +1643,7 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=\left(pe^{it}+1-p\right)^N
  \end{align}
  \subsection{キュムラント母関数}
-$X_1,\cdots,X_N$は互いに独立なので，
+ $X_1,\cdots,X_N$は互いに独立なので，
  \begin{align}
   K_X\left(t\right)&=K_{\sum_{n=1}^NX_n}\left(t\right)\nonumber\\
   &=\sum_{n=1}^NK_{X_n}\left(t\right)\nonumber\\
@@ -1742,15 +1742,15 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=-\log_2\prod_{n=0}^N\left(\binom{N}{n}p^n\left(1-p\right)^{N-n}\right)^{\binom{N}{n}p^n\left(1-p\right)^{N-n}}
  \end{align}
  \section{幾何分布}
-標本空間を
+ 標本空間を
  \begin{align}
   S\left(X\right)=\mathbb{N}
  \end{align}
-とし，ある$p\in\left(0,1\right)$に対して，確率質量関数を，
+ とし，ある$p\in\left(0,1\right)$に対して，確率質量関数を，
  \begin{align}
   \forall x\in S\left(X\right),p\left(x\right)=\left(1-p\right)^{x-1}p
  \end{align}
-とすると，
+ とすると，
  \begin{align}
   \sum_{x\in S\left(X\right)}p\left(x\right)&=\sum_{x=1}^\infty\left(1-p\right)^{x-1}p\nonumber\\
   &=p\sum_{x=1}^\infty\left(1-p\right)^{x-1}\nonumber\\
@@ -1759,12 +1759,12 @@ $X_1,\cdots,X_N$は互いに独立なので，
   &=p\frac{-1}{-p}\nonumber\\
   &=1
  \end{align}
-なので，$X$は離散確率変数である．
-$X$の分布を幾何分布という．
-幾何分布は，ベルヌーイ思考を繰り返して初めて成功するまでの試行回数が従う分布である．
+ なので，$X$は離散確率変数である．
+ $X$の分布を幾何分布という．
+ 幾何分布は，ベルヌーイ思考を繰り返して初めて成功するまでの試行回数が従う分布である．
  \subsection{等比数列の和}
-上の計算で等比数列の和の公式を使った．
-等比数列の和の公式は以下のように証明される．
+ 上の計算で等比数列の和の公式を使った．
+ 等比数列の和の公式は以下のように証明される．
  \begin{align}
   x&=\sum_{m=0}^na^m\nonumber\\
   ax&=a\sum_{m=0}^na^m\nonumber\\
@@ -1786,14 +1786,14 @@ $X$の分布を幾何分布という．
   &=pt\sum_{x=0}^\infty\left(\left(1-p\right)t\right)^x\nonumber\\
   &=pt\frac{\left(\left(1-p\right)t\right)^{\infty+1}-1}{\left(1-p\right)t-1}
  \end{align}
-上の式より，この確率母関数は
+ 上の式より，この確率母関数は
  \begin{align}
   &-1<\left(1-p\right)t<1\nonumber\\
   &-\frac{1}{1-p}<t<\frac{1}{1-p}\nonumber\\
   &t\in\left(-\frac{1}{1-p},\frac{1}{1-p}\right)
  \end{align}
-において定義されることが分かる．
-よって，
+ において定義されることが分かる．
+ よって，
  \begin{align}
   G_X\left(t\right)&=pt\frac{\left(\left(1-p\right)t\right)^{\infty+1}-1}{\left(1-p\right)t-1}\nonumber\\
   &=pt\frac{-1}{\left(1-p\right)t-1}\nonumber\\
@@ -1804,7 +1804,7 @@ $X$の分布を幾何分布という．
   M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
   &=\frac{pe^t}{1-\left(1-p\right)e^t}
  \end{align}
-また，確率母関数の定義域より，積率母関数の定義域は，
+ また，確率母関数の定義域より，積率母関数の定義域は，
  \begin{align}
   e^t&\in\left(-\frac{1}{1-p},\frac{1}{1-p}\right)\nonumber\\
   t&\in\log\left(-\frac{1}{1-p},\frac{1}{1-p}\right)\nonumber\\
@@ -1813,7 +1813,7 @@ $X$の分布を幾何分布という．
   &=\left(-\infty,-\log\left(1-p\right)\right)\nonumber\\
   t&<-\log\left(1-p\right)
  \end{align}
-である．
+ である．
  \subsection{特性関数}
  \begin{align}
   \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
@@ -1836,7 +1836,7 @@ $X$の分布を幾何分布という．
   &=\frac{1-\left(1-p\right)e^t+\left(1-p\right)e^t}{1-\left(1-p\right)e^t}\nonumber\\
   &=\frac{1}{1-\left(1-p\right)e^t}
  \end{align}
-よって，
+ よって，
  \begin{align}
   E\left(X\right)&=K_X^{\left(1\right)}\left(0\right)\nonumber\\
   &=\frac{1}{1-\left(1-p\right)}\nonumber\\
@@ -1846,7 +1846,7 @@ $X$の分布を幾何分布という．
  \begin{align}
   f\left(t\right)=\left(1-p\right)e^t
  \end{align}
-とすると，
+ とすると，
  \begin{align}
   K_X^{\left(2\right)}\left(t\right)&=\frac{d}{dt}K_X^{\left(1\right)}\left(t\right)\nonumber\\
   &=\frac{d}{dt}\frac{1}{1-\left(1-p\right)e^t}\nonumber\\
@@ -1855,7 +1855,7 @@ $X$の分布を幾何分布という．
   &=\frac{f\left(t\right)}{\left(1-f\left(t\right)\right)^2}\nonumber\\
   &=\frac{\left(1-p\right)e^t}{\left(1-\left(1-p\right)e^t\right)^2}
  \end{align}
-よって，
+ よって，
  \begin{align}
   V\left(X\right)&=K_X^{\left(2\right)}\left(0\right)\nonumber\\
   &=\frac{1-p}{\left(1-\left(1-p\right)\right)^2}\nonumber\\
@@ -1884,7 +1884,7 @@ $X$の分布を幾何分布という．
   &=\frac{p^2-3p+2}{p^3}\nonumber\\
   E\left(\left(X-E\left(X\right)\right)^3\right)&=\frac{\left(p-1\right)\left(p-2\right)}{p^3}
  \end{align}
-よって，
+ よって，
  \begin{align}
   S\left(X\right)&=\frac{E\left(\left(X-E\left(X\right)\right)^3\right)}{\sigma\left(X\right)^3}\nonumber\\
   &=\frac{\left(p-1\right)\left(p-2\right)}{p^3\left(\frac{\sqrt{1-p}}{p}\right)^3}\nonumber\\
@@ -1907,7 +1907,7 @@ $X$の分布を幾何分布という．
   &=f\left(t\right)\frac{f\left(t\right)^2+4f\left(t\right)+1}{\left(1-f\left(t\right)\right)^4}\nonumber\\
   &=\left(1-p\right)e^t\frac{\left(\left(1-p\right)e^t\right)^2+4\left(1-p\right)e^t+1}{\left(1-\left(1-p\right)e^t\right)^4}
  \end{align}
-よって，
+ よって，
  \begin{align}
   K_X^{\left(4\right)}\left(0\right)&=\left(1-p\right)\frac{\left(1-p\right)^2+4\left(1-p\right)+1}{\left(1-\left(1-p\right)\right)^4}\nonumber\\
   &=\left(1-p\right)\frac{1-2p+p^2+4-4p+1}{p^4}\nonumber\\
@@ -1915,7 +1915,7 @@ $X$の分布を幾何分布という．
   &=\frac{p^2-6p+6-p^3+6p^2-6p}{p^4}\nonumber\\
   &=\frac{-p^3+7p^2-12p+6}{p^4}
  \end{align}
-よって，
+ よって，
  \begin{align}
   K\left(X\right)&=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}\nonumber\\
   &=\frac{-p^3+7p^2-12p+6}{p^4}\left(\frac{p^2}{1-p}\right)^2\nonumber\\
@@ -1933,15 +1933,15 @@ $X$の分布を幾何分布という．
   &=-\log_2p-\frac{1-p}{p}\log_2\left(1-p\right)
  \end{align}
  \section{指数分布}
-標本空間を
+ 標本空間を
  \begin{align}
   S\left(X\right)&=\left(0,\infty\right)
  \end{align}
-とし，ある$\lambda\in\left(0,\infty\right)$に対して，確率密度関数を，
+ とし，ある$\lambda\in\left(0,\infty\right)$に対して，確率密度関数を，
  \begin{align}
   \forall x\in S\left(X\right),p\left(x\right)=\lambda e^{-\lambda x}
  \end{align}
-とすると，
+ とすると，
  \begin{align}
   \int_{S\left(X\right)}p\left(x\right)dx&=\int_0^\infty\lambda e^{-\lambda x}dx\nonumber\\
   &=\left[-e^{-\lambda x}\right]_{x=0}^{x=\infty}\nonumber\\
@@ -1949,8 +1949,8 @@ $X$の分布を幾何分布という．
   &=-e^{-\infty}+e^0\nonumber\\
   &=1
  \end{align}
-なので，$X$は連続確率変数である．
-指数分布は，ポアソン過程における事象発生の時間間隔を表す．
+ なので，$X$は連続確率変数である．
+ 指数分布は，ポアソン過程における事象発生の時間間隔を表す．
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
@@ -1964,14 +1964,14 @@ $X$の分布を幾何分布という．
   &=\frac{\lambda\left(e^{\left(\log t-\lambda\right)\infty}-e^{\left(\log t-\lambda\right)0}\right)}{\log t-\lambda}\nonumber\\
   &=\frac{\lambda\left(e^{\left(\log t-\lambda\right)\infty}-1\right)}{\log t-\lambda}
  \end{align}
-ここで，
+ ここで，
  \begin{align}
   &\log t-\lambda<0\nonumber\\
   \iff&\log t<\lambda\nonumber\\
   \iff&0<t<e^\lambda\nonumber\\
   \iff&t\in\left(0,e^\lambda\right)
  \end{align}
-とすると，
+ とすると，
  \begin{align}
   G_X\left(t\right)&=\frac{\lambda\left(e^{\left(\log t-\lambda\right)\infty}-1\right)}{\log t-\lambda}\nonumber\\
   &=\frac{\lambda\left(e^{-\infty}-1\right)}{\log t-\lambda}\nonumber\\
@@ -1985,7 +1985,7 @@ $X$の分布を幾何分布という．
   &=\frac{\lambda}{\lambda-\log e^t}\nonumber\\
   &=\frac{\lambda}{\lambda-t}
  \end{align}
-定義域は，確率母関数の定義域より，
+ 定義域は，確率母関数の定義域より，
  \begin{align}
   &e^t\in\left(0,e^\lambda\right)\nonumber\\
   \iff&0<e^t<e^\lambda\nonumber\\
@@ -1993,7 +1993,7 @@ $X$の分布を幾何分布という．
   \iff&t<\lambda\nonumber\\
   \iff&t\in\left(-\infty,\lambda\right)
  \end{align}
-である．
+ である．
  \subsection{特性関数}
  \begin{align}
   \phi_X\left(t\right)&=M_X\left(it\right)\nonumber\\
@@ -2038,7 +2038,7 @@ $X$の分布を幾何分布という．
   &=\frac{2}{\left(\lambda-t\right)^3}\nonumber\\
   K_X^{\left(3\right)}\left(0\right)&=\frac{2}{\lambda^3}
  \end{align}
-よって，
+ よって，
  \begin{align}
   S\left(X\right)&=\frac{K_X^{\left(3\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^\frac{3}{2}}\nonumber\\
   &=\frac{2}{\lambda^3}\left(\frac{1}{\lambda^2}\right)^{-\frac{3}{2}}\nonumber\\
@@ -2052,7 +2052,7 @@ $X$の分布を幾何分布という．
   &=\frac{6}{\left(\lambda-t\right)^4}\nonumber\\
   K_X^{\left(4\right)}\left(0\right)&=\frac{6}{\lambda^4}
  \end{align}
-よって，
+ よって，
  \begin{align}
   K\left(X\right)&=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}\nonumber\\
   &=\frac{6}{\lambda^4}\left(\frac{1}{\lambda^2}\right)^{-2}\nonumber\\
@@ -2070,24 +2070,24 @@ $X$の分布を幾何分布という．
   &=\log_2e-\log_2\lambda
  \end{align}
  \section{ポアソン分布}
-二項分布
+ 二項分布
  \begin{align}
   \forall n\in\{n\in\mathbb{N}|0\le n\le N\},p\left(n\right)&=\binom{N}{n}p^n\left(1-p\right)^{N-n}
  \end{align}
-において，平均を
+ において，平均を
  \begin{align}
   \lambda=E\left(X\right)=Np
  \end{align}
-とする．
+ とする．
  \begin{align}
   p=\frac{\lambda}{N}
  \end{align}
-を使って二項分布の確率質量関数を$p$を使わずに表現すると，
+ を使って二項分布の確率質量関数を$p$を使わずに表現すると，
  \begin{align}
   \forall n\in\{n\in\mathbb{N}|0\le n\le N\},p\left(n\right)&=\binom{N}{n}\left(\frac{\lambda}{N}\right)^n\left(1-\frac{\lambda}{N}\right)^{N-n}
  \end{align}
-となる．
-さらに，$N$を無限に増大させると，
+ となる．
+ さらに，$N$を無限に増大させると，
  \begin{align}
   p\left(n\right)&=\lim_{N\to\infty}\binom{N}{n}\left(\frac{\lambda}{N}\right)^n\left(1-\frac{\lambda}{N}\right)^{N-n}\nonumber\\
   &=\lim_{N\to\infty}\frac{N!}{\left(N-n\right)!n!}\frac{\lambda^n}{N^n}\left(1-\frac{\lambda}{N}\right)^N\left(1-\frac{\lambda}{N}\right)^{-n}\nonumber\\
@@ -2100,19 +2100,19 @@ $X$の分布を幾何分布という．
   &=\frac{\lambda^ne^{-\lambda}}{n!}\nonumber\\
   &=\frac{\lambda^n}{n!e^\lambda}
  \end{align}
-これがポアソン分布の確率質量関数であり，$N$を無限大に増大させたために，その標本空間は，
+ これがポアソン分布の確率質量関数であり，$N$を無限大に増大させたために，その標本空間は，
  \begin{align}
   S\left(X\right)=\lim_{N\to\infty}\{n\in\mathbb{N}|0\le n\le N\}=\mathbb{N}_0
  \end{align}
-である．
-確かに，
+ である．
+ 確かに，
  \begin{align}
   \sum_{n\in S\left(X\right)}p\left(n\right)&=\sum_{n=0}^\infty\frac{\lambda^n}{n!e^\lambda}\nonumber\\
   &=\frac{1}{e^\lambda}\sum_{n=0}^\infty\frac{\lambda^n}{n!}\nonumber\\
   &=\frac{e^\lambda}{e^\lambda}\nonumber\\
   &=1
  \end{align}
-である．
+ である．
  \subsection{確率母関数}
  \begin{align}
   G_X\left(t\right)&=E\left(t^X\right)\nonumber\\
@@ -2144,7 +2144,7 @@ $X$の分布を幾何分布という．
   &=\lambda\frac{d}{dt}\left(e^t-1\right)\nonumber\\
   &=\lambda e^t
  \end{align}
-よって平均は，
+ よって平均は，
  \begin{align}
   E\left(X\right)&=K_X^{\left(1\right)}\left(0\right)\nonumber\\
   &=\lambda e^0\nonumber\\
@@ -2156,7 +2156,7 @@ $X$の分布を幾何分布という．
   &=\frac{d}{dt}\lambda e^t\nonumber\\
   &=\lambda e^t
  \end{align}
-よって分散は，
+ よって分散は，
  \begin{align}
   V\left(X\right)&=K_X^{\left(2\right)}\left(0\right)\nonumber\\
   &=\lambda e^0\nonumber\\
@@ -2173,7 +2173,7 @@ $X$の分布を幾何分布という．
   &=\frac{d}{dt}\lambda e^t\nonumber\\
   &=\lambda e^t
  \end{align}
-よって歪度は，
+ よって歪度は，
  \begin{align}
   S\left(X\right)&=\frac{K_X^{\left(3\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^\frac{3}{2}}\nonumber\\
   &=\frac{\lambda}{\lambda^\frac{3}{2}}\nonumber\\
@@ -2186,7 +2186,7 @@ $X$の分布を幾何分布という．
   &=\frac{d}{dt}\lambda e^t\nonumber\\
   &=\lambda e^t
  \end{align}
-よって超過尖度は，
+ よって超過尖度は，
  \begin{align}
   K\left(X\right)&=\frac{K_X^{\left(4\right)}\left(0\right)}{K_X^{\left(2\right)}\left(0\right)^2}\nonumber\\
   &=\frac{\lambda}{\lambda^2}\nonumber\\
@@ -2206,15 +2206,15 @@ $X$の分布を幾何分布という．
   &=\lambda\log_2e-\lambda\log_2\lambda+\frac{1}{e^{\lambda}}\sum_{n=0}^\infty\frac{\lambda^n}{n!}\sum_{m=1}^n\log_2m
  \end{align}
  \section{標準正規分布}
- \subsection{sinの無限乗積}
+ \subsection{ワイエルシュトラスの因数分解定理}
  \subsection{ウォリスの公式}
  \subsection{スターリングの近似}
  \subsection{ポアソン分布から標準正規分布を導出}
-確率変数$X$が平均$\lambda$のポアソン分布に従うとき，
+ 確率変数$X$が平均$\lambda$のポアソン分布に従うとき，
  \begin{align}
   \lim_{\lambda\to\infty}\frac{X-\lambda}{\sqrt{\lambda}}
  \end{align}
-は標準正規分布に従う連続確率変数である．
+ は標準正規分布に従う連続確率変数である．
  \subsection{確率母関数}
  \subsection{積率母関数}
  \subsection{特性関数}
@@ -2226,7 +2226,7 @@ $X$の分布を幾何分布という．
  \subsection{超過尖度}
  \subsection{エントロピー}
  \section{$\chi^2$分布}
-$\chi^2$分布は，独立に正規分布に従う確率変数の二乗の和である．
+ $\chi^2$分布は，独立に正規分布に従う確率変数の二乗の和である．
  \subsection{確率母関数}
  \subsection{積率母関数}
  \subsection{特性関数}
