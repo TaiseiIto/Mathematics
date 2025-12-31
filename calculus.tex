@@ -178,6 +178,34 @@
      \left|\vec{AB}\right|^2+\left|\vec{BC}\right|^2-\left|\vec{AC}\right|^2&=2\left|\vec{AB}\right|\left|\vec{BC}\right|\cos\angle ABC
     \end{align}
    \subsubsection{加法定理}
+    \begin{figure}[H]
+     \begin{center}
+      \begin{tikzpicture}
+       \pgfmathsetmacro{\a}{30};
+       \pgfmathsetmacro{\b}{60};
+       \coordinate(O)at(0,0);
+       \coordinate(Xn)at(-3,0);
+       \coordinate(Xp)at(3,0);
+       \coordinate(Yn)at(0,-3);
+       \coordinate(Yp)at(0,3);
+       \coordinate(A)at({3*cos(\a)},{3*sin(\a)});
+       \coordinate(B)at({3*cos(\b)},{3*sin(\b)});
+       \node[below left]at(O){$O$};
+       \node[above right]at(A){$A$};
+       \node[above right]at(B){$B$};
+       \node[right]at(Xp){$X$};
+       \node[above]at(Yp){$Y$};
+       \draw(Xn)--(Xp);
+       \draw(Yn)--(Yp);
+       \draw(O)--(A);
+       \draw(O)--(B);
+       \draw([shift={(O)}]\a:3)arc[radius=3,start angle={\a},end angle={\b}];
+       \draw([shift={(O)}]0:1)arc[radius=1,start angle=0,end angle={\b}]node[right]{$\beta$};
+       \draw([shift={(O)}]0:2)arc[radius=2,start angle=0,end angle={\a}]node[right]{$\alpha$};
+      \end{tikzpicture}
+     \end{center}
+     \caption{加法定理}
+    \end{figure}
     原点$O=\left(0,0\right)$，点$A=\left(\cos\alpha,\sin\alpha\right)$，点$B=\left(\cos\beta,\sin\beta\right)$とすると，$\triangle OAB$について，余弦定理より，
     \begin{align}
      2\left|\vec{OA}\right|\left|\vec{OB}\right|\cos\angle AOB&=\left|\vec{OA}\right|^2+\left|\vec{OB}\right|^2-\left|\vec{AB}\right|^2\nonumber\\
