@@ -621,12 +621,12 @@
      &=E\left(e^{itX}\right)\nonumber\\
      \sum_{n=0}^\infty\frac{t^n}{n!}\phi_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\dv[n]{t}E\left(e^{itX}\right)\right|_{t=0}\right)\nonumber\\
      \phi_X^{\left(n\right)}\left(0\right)&=\left.\dv[n]{t}E\left(e^{itX}\right)\right|_{t=0}\nonumber\\
-     &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\frac{d^me^{itX}}{dt^m}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
+     &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\dv[m]{e^{itX}}{t}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
      &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(\left.\left(iX\right)^me^{itX}\right|_{t=0}\right)\right)\right|_{t=0}\nonumber\\
      &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{t^m}{m!}\left(iX\right)^m\right)\right|_{t=0}\nonumber\\
      &=\left.\dv[n]{t}E\left(\sum_{m=0}^\infty\frac{i^mt^m}{m!}X^m\right)\right|_{t=0}\nonumber\\
      &=\left.\dv[n]{t}\sum_{m=0}^\infty\frac{i^mt^m}{m!}E\left(X^m\right)\right|_{t=0}\nonumber\\
-     &=\left.\sum_{m=0}^\infty\frac{i^mE\left(X^m\right)}{m!}\frac{d^nt^m}{dt^n}\right|_{t=0}\nonumber\\
+     &=\left.\sum_{m=0}^\infty\frac{i^mE\left(X^m\right)}{m!}\dv[n]{t^m}{t}\right|_{t=0}\nonumber\\
      &=\left.\sum_{m=n}^\infty\frac{i^mE\left(X^m\right)}{m!}\frac{m!}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
      &=\left.\sum_{m=n}^\infty\frac{i^mE\left(X^m\right)}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
      &=\left.\frac{i^nE\left(X^n\right)}{\left(n-n\right)!}t^{n-n}+\sum_{m=n+1}^\infty\frac{i^mE\left(X^m\right)}{\left(m-n\right)!}t^{m-n}\right|_{t=0}\nonumber\\
@@ -927,31 +927,31 @@
    \subsubsection{Fa\`a di Brunoの公式}
     $\mathbb{R}$から$\mathbb{R}$への$C^\infty$級関数$\forall\left(f,g\right)\in C^\infty\left(\mathbb{R}^\mathbb{R}\right)^2$の合成関数の$n\in\mathbb{N}$回微分は，
     \begin{align}
-     \frac{d^n}{dx^n}f\left(g\left(x\right)\right)=\sum_{k=1}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)
+     \dv[n]{x}f\left(g\left(x\right)\right)=\sum_{k=1}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)
     \end{align}
     である．
     これがFa\`a di Brunoの公式である．
     これを証明するために以下の補題
     \begin{align}
-     \forall n\in\mathbb{N},\forall f\in C^n\left(\mathbb{R}^\mathbb{R}\right),\frac{d^nf\left(x\right)}{dx^n}=\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}
+     \forall n\in\mathbb{N},\forall f\in C^n\left(\mathbb{R}^\mathbb{R}\right),\dv[n]{f\left(x\right)}{x}=\dv[n]{f\left(x\right)}{\left(x+y\right)}
     \end{align}
     を数学的帰納法により証明する．
     $n=1$の時，
     \begin{align}
-     \frac{df\left(x\right)}{dx}&=\frac{df\left(x\right)}{d\left(x+y\right)}\frac{d\left(x+y\right)}{dx}\nonumber\\
-     &=\frac{df\left(x\right)}{d\left(x+y\right)}
+     \dv{f\left(x\right)}{x}&=\dv{f\left(x\right)}{\left(x+y\right)}\dv{\left(x+y\right)}{x}\nonumber\\
+     &=\dv{f\left(x\right)}{\left(x+y\right)}
     \end{align}
     また，
     \begin{align}
-     \exists n\in\mathbb{N},\frac{d^nf\left(x\right)}{dx^n}=\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}
+     \exists n\in\mathbb{N},\dv[n]{f\left(x\right)}{x}=\dv[n]{f\left(x\right)}{\left(x+y\right)}
     \end{align}
     のとき，
     \begin{align}
-     \frac{d^{n+1}f\left(x\right)}{dx^{n+1}}&=\frac{d}{dx}\frac{d^nf\left(x\right)}{dx^n}\nonumber\\
-     &=\frac{d}{dx}\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}\nonumber\\
-     &=\frac{d}{d\left(x+y\right)}\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}\frac{d\left(x+y\right)}{dx}\nonumber\\
-     &=\frac{d}{d\left(x+y\right)}\frac{d^nf\left(x\right)}{d\left(x+y\right)^n}\nonumber\\
-     &=\frac{d^{n+1}f\left(x\right)}{d\left(x+y\right)^{n+1}}
+     \dv[n+1]{f\left(x\right)}{x}&=\dv{x}\dv[n]{f\left(x\right)}{x}\nonumber\\
+     &=\dv{x}\dv[n]{f\left(x\right)}{\left(x+y\right)}\nonumber\\
+     &=\dv{\left(x+y\right)}\dv[n]{f\left(x\right)}{\left(x+y\right)}\dv{\left(x+y\right)}{x}\nonumber\\
+     &=\dv{\left(x+y\right)}\dv[n]{f\left(x\right)}{\left(x+y\right)}\nonumber\\
+     &=\dv[n+1]{f\left(x\right)}{\left(x+y\right)}
     \end{align}
     よって数学的帰納法により補題が成り立つ．
     これでFa\`a di Brunoの公式を証明する準備が整った．
@@ -987,13 +987,13 @@
      &=f\left(g\left(x+y\right)\right)\nonumber\\
      &=\sum_{n=0}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nf\left(g\left(x+y\right)\right)}{\partial y^n}\right|_{y=0}\right)y^n\nonumber\\
      &=\sum_{n=0}^\infty\frac{1}{n!}\left(\left.\frac{\partial^nf\left(g\left(x+y\right)\right)}{\partial\left(x+y\right)^n}\right|_{y=0}\right)y^n\nonumber\\
-     &=\sum_{n=0}^\infty\frac{1}{n!}\frac{d^nf\left(g\left(x\right)\right)}{dx^n}y^n\nonumber\\
+     &=\sum_{n=0}^\infty\frac{1}{n!}\dv[n]{f\left(g\left(x\right)\right)}{x}y^n\nonumber\\
     \end{align}
     とも展開できる．
     $\forall n\in\mathbb{N}$に対して両者の$y^n$の項を比較すると，
     \begin{align}
-     \frac{1}{n!}\frac{d^nf\left(g\left(x\right)\right)}{dx^n}y^n&=\sum_{k=0}^n\frac{f^{\left(k\right)}\left(g\left(x\right)\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)y^n\nonumber\\
-     \frac{d^nf\left(g\left(x\right)\right)}{dx^n}&=\sum_{k=0}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)\nonumber\\
+     \frac{1}{n!}\dv[n]{f\left(g\left(x\right)\right)}{x}y^n&=\sum_{k=0}^n\frac{f^{\left(k\right)}\left(g\left(x\right)\right)}{n!}B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)y^n\nonumber\\
+     \dv[n]{f\left(g\left(x\right)\right)}{x}&=\sum_{k=0}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)\nonumber\\
      &=f^{\left(0\right)}\left(g\left(x\right)\right)B_{n,0}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n+1\right)}\left(x\right)\right)+\sum_{k=1}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)\nonumber\\
      &=\sum_{k=1}^nf^{\left(k\right)}\left(g\left(x\right)\right)B_{n,k}\left(g^{\left(1\right)}\left(x\right),\cdots,g^{\left(n-k+1\right)}\left(x\right)\right)\nonumber\\
     \end{align}
@@ -1001,8 +1001,8 @@
    キュムラントの定義\ref{CumulantGeneratingFunction}より，
    \begin{align}
     K_X\left(t\right)&=\log M_X\left(t\right)\nonumber\\
-    \sum_{n=0}^\infty\frac{t^n}{n!}K_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\frac{d^n\log M_X\left(t\right)}{dt^n}\right|_{t=0}\right)\nonumber\\
-    K_X^{\left(n\right)}\left(0\right)&=\left.\frac{d^n\log M_X\left(t\right)}{dt^n}\right|_{t=0}\nonumber\\
+    \sum_{n=0}^\infty\frac{t^n}{n!}K_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t^n}{n!}\left(\left.\dv[n]{\log M_X\left(t\right)}{t}\right|_{t=0}\right)\nonumber\\
+    K_X^{\left(n\right)}\left(0\right)&=\left.\dv[n]{\log M_X\left(t\right)}{t}\right|_{t=0}\nonumber\\
     &=\left.\sum_{k=1}^nB_{n,k}\left(M_X^{\left(1\right)}\left(t\right),\cdots,M_X^{\left(n-k+1\right)}\left(t\right)\right)\log^{\left(k\right)}M_X\left(t\right)\right|_{t=0}\nonumber\\
     &=\left.\sum_{k=1}^n\left(-1\right)^{k-1}\left(k-1\right)!M_X\left(t\right)^{-k}B_{n,k}\left(M_X^{\left(1\right)}\left(t\right),\cdots,M_X^{\left(n-k+1\right)}\left(t\right)\right)\right|_{t=0}\nonumber\\
     &=\sum_{k=1}^n\left(-1\right)^{k-1}\left(k-1\right)!M_X\left(0\right)^{-k}B_{n,k}\left(M_X^{\left(1\right)}\left(0\right),\cdots,M_X^{\left(n-k+1\right)}\left(0\right)\right)\nonumber\\
@@ -1012,9 +1012,9 @@
    キュムラントの定義\ref{CumulantGeneratingFunction}より，
    \begin{align}
     M_X\left(t\right)&=e^{K_X\left(t\right)}\nonumber\\
-    \sum_{n=0}^\infty\frac{t^n}{n!}M_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t!}{n!}\left(\left.\frac{d^ne^{K_X\left(t\right)}}{dt^n}\right|_{t=0}\right)\nonumber\\
-    M_X^{\left(n\right)}\left(0\right)&=\left.\frac{d^ne^{K_X\left(t\right)}}{dt^n}\right|_{t=0}\nonumber\\
-    &=\left.\sum_{k=1}^n\frac{d^ke^{K_X\left(t\right)}}{dK_X\left(t\right)^k}B_{n,k}\left(K_X^{\left(1\right)}\left(t\right),\cdots,K_X^{\left(n-k+1\right)}\left(t\right)\right)\right|_{t=0}\nonumber\\
+    \sum_{n=0}^\infty\frac{t^n}{n!}M_X^{\left(n\right)}\left(0\right)&=\sum_{n=0}^\infty\frac{t!}{n!}\left(\left.\dv[n]{e^{K_X\left(t\right)}}{t}\right|_{t=0}\right)\nonumber\\
+    M_X^{\left(n\right)}\left(0\right)&=\left.\dv[n]{e^{K_X\left(t\right)}}{t}\right|_{t=0}\nonumber\\
+    &=\left.\sum_{k=1}^n\dv[k]{e^{K_X\left(t\right)}}{K_X\left(t\right)}B_{n,k}\left(K_X^{\left(1\right)}\left(t\right),\cdots,K_X^{\left(n-k+1\right)}\left(t\right)\right)\right|_{t=0}\nonumber\\
     &=\left.\sum_{k=1}^ne^{K_X\left(t\right)}B_{n,k}\left(K_X^{\left(1\right)}\left(t\right),\cdots,K_X^{\left(n-k+1\right)}\left(t\right)\right)\right|_{t=0}\nonumber\\
     &=\left.\sum_{k=1}^nM_X\left(t\right)B_{n,k}\left(K_X^{\left(1\right)}\left(t\right),\cdots,K_X^{\left(n-k+1\right)}\left(t\right)\right)\right|_{t=0}\nonumber\\
     &=\sum_{k=1}^nM_X\left(0\right)B_{n,k}\left(K_X^{\left(1\right)}\left(0\right),\cdots,K_X^{\left(n-k+1\right)}\left(0\right)\right)\nonumber\\
@@ -1151,8 +1151,8 @@
     M_X\left(t\right)&=G_X\left(e^t\right)\nonumber\\
     &=E\left(e^{tX}\right)\nonumber\\
     &=\frac{1}{n}\sum_{x=1}^ne^{tx}\\
-    M_X^{\left(m\right)}\left(t\right)&=\frac{d^m}{dt^m}\frac{1}{n}\sum_{x=1}^ne^{tx}\nonumber\\
-    &=\frac{1}{n}\sum_{x=1}^n\frac{d^me^{tx}}{dt^m}\nonumber\\
+    M_X^{\left(m\right)}\left(t\right)&=\dv[m]{t}\frac{1}{n}\sum_{x=1}^ne^{tx}\nonumber\\
+    &=\frac{1}{n}\sum_{x=1}^n\dv[m]{e^{tx}}{t}\nonumber\\
     &=\frac{1}{n}\sum_{x=1}^nx^me^{tx}\\
     M_X^{\left(m\right)}\left(0\right)&=\frac{1}{n}\sum_{x=1}^nx^m\nonumber\\
     E\left(X^m\right)&=\frac{1}{n}\sum_{x=1}^nx^m
@@ -1262,8 +1262,8 @@
     &=\sum_{x=1}^np\left(x\right)e^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
     &=\sum_{x=1}^n\frac{1}{n}e^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
     &=\frac{1}{n}\sum_{x=1}^ne^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
-    M_{X-E\left(X\right)}^{\left(m\right)}\left(t\right)&=\frac{d^m}{dt^m}\frac{1}{n}\sum_{x=1}^ne^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
-    &=\frac{1}{n}\sum_{x=1}^n\frac{d^m}{dt^m}e^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
+    M_{X-E\left(X\right)}^{\left(m\right)}\left(t\right)&=\dv[m]{t}\frac{1}{n}\sum_{x=1}^ne^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
+    &=\frac{1}{n}\sum_{x=1}^n\dv[m]{t}e^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
     &=\frac{1}{n}\sum_{x=1}^n\left(x-\frac{n+1}{2}\right)^me^{\left(x-\frac{n+1}{2}\right)t}\nonumber\\
     M_{X-E\left(X\right)}^{\left(m\right)}\left(0\right)&=\frac{1}{n}\sum_{x=1}^n\left(x-\frac{n+1}{2}\right)^m
    \end{align}
@@ -1411,8 +1411,8 @@
    \end{align}
    また，対数関数のテイラー展開は，
    \begin{align}
-    \frac{d^n}{dx^n}\log\left(x+1\right)&=-\left(-1\right)^n\left(n-1\right)!\left(x+1\right)^{-n}\nonumber\\
-    \left[\frac{d^n}{dx^n}\log\left(x+1\right)\right]_{x=0}&=-\left(-1\right)^n\left(n-1\right)!\nonumber\\
+    \dv[n]{x}\log\left(x+1\right)&=-\left(-1\right)^n\left(n-1\right)!\left(x+1\right)^{-n}\nonumber\\
+    \left[\dv[n]{x}\log\left(x+1\right)\right]_{x=0}&=-\left(-1\right)^n\left(n-1\right)!\nonumber\\
     \log\left(x+1\right)&=-\sum_{n=0}^\infty\left(-1\right)^n\left(n-1\right)!\frac{x^n}{n!}\nonumber\\
     &=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}x^n\nonumber\\
     \log x&=-\sum_{n=1}^\infty\frac{\left(-1\right)^n}{n}\left(x-1\right)^n
@@ -1872,7 +1872,7 @@
    \begin{align}
     K_X^{\left(3\right)}\left(t\right)&=\dv{t}K_X^{\left(2\right)}\left(t\right)\nonumber\\
     &=\dv{t}\frac{f\left(t\right)}{\left(1-f\left(t\right)\right)^2}\nonumber\\
-    &=\frac{\frac{df\left(t\right)}{dt}\left(1-f\left(t\right)\right)^2-f\left(t\right)\frac{d\left(1-f\left(t\right)\right)^2}{dt}}{\left(1-f\left(t\right)\right)^4}\nonumber\\
+    &=\frac{\dv{f\left(t\right)}{t}\left(1-f\left(t\right)\right)^2-f\left(t\right)\dv{\left(1-f\left(t\right)\right)^2}{t}}{\left(1-f\left(t\right)\right)^4}\nonumber\\
     &=\frac{f\left(t\right)\left(1-f\left(t\right)\right)^2+2f\left(t\right)^2\left(1-f\left(t\right)\right)}{\left(1-f\left(t\right)\right)^4}\nonumber\\
     &=\frac{f\left(t\right)\left(1-2f\left(t\right)+f\left(t\right)^2\right)+2f\left(t\right)^2\left(1-f\left(t\right)\right)}{\left(1-f\left(t\right)\right)^4}\nonumber\\
     &=\frac{f\left(t\right)-2f\left(t\right)^2+f\left(t\right)^3+2f\left(t\right)^2-2f\left(t\right)^3}{\left(1-f\left(t\right)\right)^4}\nonumber\\
@@ -1896,8 +1896,8 @@
    \begin{align}
     K_X^{\left(4\right)}\left(t\right)&=\dv{t}K_X^{\left(3\right)}\left(t\right)\nonumber\\
     &=\dv{t}\frac{f\left(t\right)-f\left(t\right)^3}{\left(1-f\left(t\right)\right)^4}\nonumber\\
-    &=\frac{\frac{d\left(f\left(t\right)-f\left(t\right)^3\right)}{dt}\left(1-f\left(t\right)\right)^4-\left(f\left(t\right)-f\left(t\right)^3\right)\frac{d\left(1-f\left(t\right)\right)^4}{dt}}{\left(1-f\left(t\right)\right)^8}\nonumber\\
-    &=\frac{\left(\frac{d\left(f\left(t\right)\right)}{dt}-\frac{df\left(t\right)^3}{dt}\right)\left(1-f\left(t\right)\right)^4-\left(f\left(t\right)-f\left(t\right)^3\right)4\left(1-f\left(t\right)\right)^3\frac{d\left(1-f\left(t\right)\right)}{dt}}{\left(1-f\left(t\right)\right)^8}\nonumber\\
+    &=\frac{\dv{\left(f\left(t\right)-f\left(t\right)^3\right)}{t}\left(1-f\left(t\right)\right)^4-\left(f\left(t\right)-f\left(t\right)^3\right)\dv{\left(1-f\left(t\right)\right)^4}{t}}{\left(1-f\left(t\right)\right)^8}\nonumber\\
+    &=\frac{\left(\dv{\left(f\left(t\right)\right)}{t}-\dv{f\left(t\right)^3}{t}\right)\left(1-f\left(t\right)\right)^4-\left(f\left(t\right)-f\left(t\right)^3\right)4\left(1-f\left(t\right)\right)^3\dv{\left(1-f\left(t\right)\right)}{t}}{\left(1-f\left(t\right)\right)^8}\nonumber\\
     &=\frac{\left(f\left(t\right)-3f\left(t\right)^3\right)\left(1-f\left(t\right)\right)^4+4\left(f\left(t\right)-f\left(t\right)^3\right)\left(1-f\left(t\right)\right)^3f\left(t\right)}{\left(1-f\left(t\right)\right)^8}\nonumber\\
     &=\frac{\left(f\left(t\right)-3f\left(t\right)^3\right)\left(1-f\left(t\right)\right)+4\left(f\left(t\right)-f\left(t\right)^3\right)f\left(t\right)}{\left(1-f\left(t\right)\right)^5}\nonumber\\
     &=f\left(t\right)\frac{\left(1-3f\left(t\right)^2\right)\left(1-f\left(t\right)\right)+4\left(f\left(t\right)-f\left(t\right)^3\right)}{\left(1-f\left(t\right)\right)^5}\nonumber\\
@@ -2010,8 +2010,8 @@
    \begin{align}
     K_X^{\left(1\right)}\left(t\right)&=\dv{t}K_X\left(t\right)\nonumber\\
     &=\dv{t}\left(\log\lambda-\log\left(\lambda-t\right)\right)\nonumber\\
-    &=\frac{d\log\lambda}{dt}-\frac{d\log\left(\lambda-t\right)}{dt}\nonumber\\
-    &=-\frac{1}{\lambda-t}\frac{d\left(\lambda-t\right)}{dt}\nonumber\\
+    &=\dv{\log\lambda}{t}-\dv{\log\left(\lambda-t\right)}{t}\nonumber\\
+    &=-\frac{1}{\lambda-t}\dv{\left(\lambda-t\right)}{t}\nonumber\\
     &=\frac{1}{\lambda-t}\nonumber\\
     E\left(X\right)&=K_X^{\left(1\right)}\left(0\right)\nonumber\\
     &=\frac{1}{\lambda}
@@ -2020,7 +2020,7 @@
    \begin{align}
     K_X^{\left(2\right)}\left(t\right)&=\dv{t}K_X^{\left(1\right)}\left(t\right)\nonumber\\
     &=\dv{t}\frac{1}{\lambda-t}\nonumber\\
-    &=-\frac{1}{\left(\lambda-t\right)^2}\frac{d\left(\lambda-t\right)}{dt}\nonumber\\
+    &=-\frac{1}{\left(\lambda-t\right)^2}\dv{\left(\lambda-t\right)}{t}\nonumber\\
     &=\frac{1}{\left(\lambda-t\right)^2}\nonumber\\
     V\left(X\right)&=K_X^{\left(2\right)}\left(0\right)\nonumber\\
     &=\frac{1}{\lambda^2}
@@ -2035,7 +2035,7 @@
    \begin{align}
     K_X^{\left(3\right)}\left(t\right)&=\dv{t}K_X^{\left(2\right)}\left(t\right)\nonumber\\
     &=\dv{t}\frac{1}{\left(\lambda-t\right)^2}\nonumber\\
-    &=-\frac{2}{\left(\lambda-t\right)^3}\frac{d\left(\lambda-t\right)}{dt}\nonumber\\
+    &=-\frac{2}{\left(\lambda-t\right)^3}\dv{\left(\lambda-t\right)}{t}\nonumber\\
     &=\frac{2}{\left(\lambda-t\right)^3}\nonumber\\
     K_X^{\left(3\right)}\left(0\right)&=\frac{2}{\lambda^3}
    \end{align}
@@ -2049,7 +2049,7 @@
    \begin{align}
     K_X^{\left(4\right)}\left(t\right)&=\dv{t}K_X^{\left(3\right)}\left(t\right)\nonumber\\
     &=\dv{t}\frac{2}{\left(\lambda-t\right)^3}\nonumber\\
-    &=-\frac{6}{\left(\lambda-t\right)^4}\frac{d\left(\lambda-t\right)}{dt}\nonumber\\
+    &=-\frac{6}{\left(\lambda-t\right)^4}\dv{\left(\lambda-t\right)}{t}\nonumber\\
     &=\frac{6}{\left(\lambda-t\right)^4}\nonumber\\
     K_X^{\left(4\right)}\left(0\right)&=\frac{6}{\lambda^4}
    \end{align}
