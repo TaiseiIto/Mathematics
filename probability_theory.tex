@@ -2267,7 +2267,14 @@
      \forall R\subset\mathbb{R},\inf R\le R\land\forall\epsilon\in{}_{0<}\mathbb{R},R\cap\left[\inf R,\inf R+\epsilon\right]\ne\emptyset
     \end{align}
    \subsubsection{実数の連続性}
-    上界$u$を持つ$R\subset\mathbb{R}$は，必ず上限$\sup R$を持つことを証明する．
+    上界$u$を持つ$\emptyset\ne\forall R\subset\mathbb{R}$は，必ず上限$\sup R$を持つことを証明する．
+    まず，
+    \begin{align}
+     \mathbb{Q}_{<x}&=\bigcup_{r\in R}\mathbb{Q}_{<r}\\
+     {}_{x\le}\mathbb{Q}=\mathbb{Q}-\mathbb{Q}_{<x}&=\bigcap_{r\in R}{}_{r\le}\mathbb{Q}
+    \end{align}
+    がデデキント切断であることを証明する．
+    $R\ne\emptyset$より，$\exists r\in R$で，$\mathbb{Q}_{<r}\subset\mathbb{Q}_{<\sup R}\ne\emptyset$である．
    \subsubsection{上に有界な単調増加数列の収束}
    \subsubsection{自然数の$-2$乗の和の収束}
     数列
