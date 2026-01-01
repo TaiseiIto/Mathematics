@@ -1,6 +1,7 @@
 \documentclass[dvipdfmx]{jsarticle}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{here}
 \usepackage{mathrsfs}
 \usepackage{physics}
@@ -2224,14 +2225,29 @@
      \forall \left(S, l\right)\in 2^\mathbb{R}\times\mathbb{R},l<S\iff\forall x\in S,l<x
     \end{align}
    \subsubsection{上限，下限の定義}
+    \begin{align}
+     {}_{0<}\mathbb{R}=\{x\in\mathbb{R}|0<x\}
+    \end{align}
+    とする．
     $\forall S\in 2^\mathbb{R}$の上限$\sup S$は以下を満たす．
     \begin{align}
-     \forall S\in 2^\mathbb{R},S<\sup S\land\forall\epsilon\in\mathbb{R}_{>0},\exists x,x\in\left[\sup S-\epsilon,\sup S\right]
+     \forall S\in 2^\mathbb{R},S<\sup S\land\forall\epsilon\in{}_{0<}\mathbb{R},\exists x,x\in\left[\sup S-\epsilon,\sup S\right]
     \end{align}
     $\forall S\in 2^\mathbb{R}$の下限$\inf S$は以下を満たす．
     \begin{align}
-     \forall S\in 2^\mathbb{R},\inf S<S\land\forall\epsilon\in\mathbb{R}_{>0},\exists x,x\in\left[\inf S,\inf S+\epsilon\right]
+     \forall S\in 2^\mathbb{R},\inf S<S\land\forall\epsilon\in{}_{0<}\mathbb{R},\exists x,x\in\left[\inf S,\inf S+\epsilon\right]
     \end{align}
+   \subsubsection{デデキント切断}
+    $\mathbb{Q}$の$q\in\mathbb{Q}$におけるデデキント切断とは，$\mathbb{Q}$を$\mathbb{Q}_{<q}$と${}_{q\le}\mathbb{Q}$に切断することであり，以下が成り立つ．
+    \begin{align}
+     &\mathbb{Q}_{<q}\ne\emptyset\\
+     &{}_{q\le}\mathbb{Q}\ne\emptyset\\
+     &\mathbb{Q}_{<q}\cup{}_{q\le}\mathbb{Q}=\mathbb{Q}\\
+     &\mathbb{Q}_{<q}\cap{}_{q\le}\mathbb{Q}=\emptyset\\
+     &\forall r\in{}_{q\le}\mathbb{Q},q\le r\\
+     &\forall r\in\mathbb{Q}_{<q},\exists s\in\mathbb{Q}_{<q},r<s
+    \end{align}
+   \subsubsection{実数の部分集合は必ず上限と下限を持つ}
    \subsubsection{上に有界な単調増加数列の収束}
    \subsubsection{自然数の$-2$乗の和の収束}
     数列
