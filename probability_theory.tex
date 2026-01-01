@@ -2215,6 +2215,35 @@
    \end{align}
    は標準正規分布に従う連続確率変数である．
    以下でそのことを証明する．
+   \subsubsection{有理数の実数への拡張}
+    $\mathbb{Q}$のデデキント切断とは，以下が成り立つように$\mathbb{Q}$を$\mathbb{Q}_{<x}$と${}_{x\le}\mathbb{Q}$に切断することである．
+    \begin{align}
+     &\mathbb{Q}_{<x}\ne\emptyset\\
+     &{}_{x\le}\mathbb{Q}\ne\emptyset\\
+     &\mathbb{Q}_{<x}\cup{}_{x\le}\mathbb{Q}=\mathbb{Q}\\
+     &\mathbb{Q}_{<x}\cap{}_{x\le}\mathbb{Q}=\emptyset\\
+     &\forall q\in\mathbb{Q}_{<x},\exists r\in\mathbb{Q}_{<x},q<r
+    \end{align}
+    デデキント切断において，
+    \begin{align}
+     \exists x\in{}_{x\le}\mathbb{Q},\forall q\in{}_{x\le}\mathbb{Q},x\le q
+    \end{align}
+    が成り立つ場合と成り立たない場合がある．
+    成り立つ場合，$x\in\mathbb{Q}$だが，成り立たない場合，$x\in\mathbb{R}-\mathbb{Q}$である．
+    つまり，デデキント切断は有理数から無理数を生み出す能力を持つ．
+    例えば，
+    \begin{align}
+     \mathbb{Q}_{<\sqrt{2}}&=\{q\in\mathbb{Q}|q<0\lor q^2<2\}\\
+     {}_{\sqrt{2}\le}\mathbb{Q}&=\{q\in\mathbb{Q}|0\le q\land 2\le q^2\}
+    \end{align}
+    において${}_{\sqrt{2}\le}\mathbb{Q}$は最小値を持たない．
+    このデデキント切断における$\mathbb{Q}$上に存在しない最小値は$\sqrt{2}\in\mathbb{R}-\mathbb{Q}$と定義される．
+   \subsubsection{$\mathbb{R}$上の順序関係の定義}
+    \begin{align}
+     \forall\left(a,b\right)\in\mathbb{R}^2,a<b\iff\mathbb{Q}_{<a}\subset\mathbb{Q}_{<b}\\
+     \forall\left(a,b\right)\in\mathbb{R}^2,a\le b\iff\mathbb{Q}_{<a}\subseteq\mathbb{Q}_{<b}\\
+     \forall\left(a,b\right)\in\mathbb{R}^2,a=b\iff\mathbb{Q}_{<a}=\mathbb{Q}_{<b}
+    \end{align}
    \subsubsection{上界，下界の定義}
     上界$S<u$の定義は以下の通りである．
     \begin{align}
@@ -2237,30 +2266,6 @@
     \begin{align}
      \forall S\in 2^\mathbb{R},\inf S<S\land\forall\epsilon\in{}_{0<}\mathbb{R},\exists x,x\in\left[\inf S,\inf S+\epsilon\right]
     \end{align}
-   \subsubsection{デデキント切断}
-    $\mathbb{Q}$のデデキント切断とは，以下が成り立つように$\mathbb{Q}$を$\mathbb{Q}_{<x}$と${}_{x\le}\mathbb{Q}$に切断することである．
-    \begin{align}
-     &\mathbb{Q}_{<x}\ne\emptyset\\
-     &{}_{x\le}\mathbb{Q}\ne\emptyset\\
-     &\mathbb{Q}_{<x}\cup{}_{x\le}\mathbb{Q}=\mathbb{Q}\\
-     &\mathbb{Q}_{<x}\cap{}_{x\le}\mathbb{Q}=\emptyset\\
-     &\forall q\in\mathbb{Q}_{<x},\exists r\in\mathbb{Q}_{<x},q<r
-    \end{align}
-    全てのデデキント切断の集合を$\mathbb{R}$と定義する．
-    デデキント切断において，
-    \begin{align}
-     \exists x\in{}_{x\le}\mathbb{Q},\forall q\in{}_{x\le}\mathbb{Q},x\le q
-    \end{align}
-    が成り立つ場合と成り立たない場合がある．
-    成り立つ場合，$x\in\mathbb{Q}$だが，成り立たない場合，$x\in\mathbb{R}-\mathbb{Q}$である．
-    つまり，デデキント切断は有理数から無理数を生み出す能力を持つ．
-    例えば，
-    \begin{align}
-     \mathbb{Q}_{<\sqrt{2}}&=\{q\in\mathbb{Q}|q<0\lor q^2<2\}\\
-     {}_{\sqrt{2}\le}\mathbb{Q}&=\{q\in\mathbb{Q}|0\le q\land 2\le q^2\}
-    \end{align}
-    において${}_{\sqrt{2}\le}\mathbb{Q}$は最小値を持たない．
-    このデデキント切断は無理数$\sqrt{2}$を意味する．
    \subsubsection{実数の部分集合は必ず上限と下限を持つ}
    \subsubsection{上に有界な単調増加数列の収束}
    \subsubsection{自然数の$-2$乗の和の収束}
