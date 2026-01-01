@@ -2238,15 +2238,29 @@
      \forall S\in 2^\mathbb{R},\inf S<S\land\forall\epsilon\in{}_{0<}\mathbb{R},\exists x,x\in\left[\inf S,\inf S+\epsilon\right]
     \end{align}
    \subsubsection{デデキント切断}
-    $\mathbb{Q}$の$q\in\mathbb{Q}$におけるデデキント切断とは，$\mathbb{Q}$を$\mathbb{Q}_{<q}$と${}_{q\le}\mathbb{Q}$に切断することであり，以下が成り立つ．
+    $\mathbb{Q}$のデデキント切断とは，以下が成り立つように$\mathbb{Q}$を$\mathbb{Q}_{<x}$と${}_{x\le}\mathbb{Q}$に切断することである．
     \begin{align}
-     &\mathbb{Q}_{<q}\ne\emptyset\\
-     &{}_{q\le}\mathbb{Q}\ne\emptyset\\
-     &\mathbb{Q}_{<q}\cup{}_{q\le}\mathbb{Q}=\mathbb{Q}\\
-     &\mathbb{Q}_{<q}\cap{}_{q\le}\mathbb{Q}=\emptyset\\
-     &\forall r\in{}_{q\le}\mathbb{Q},q\le r\\
-     &\forall r\in\mathbb{Q}_{<q},\exists s\in\mathbb{Q}_{<q},r<s
+     &\mathbb{Q}_{<x}\ne\emptyset\\
+     &{}_{x\le}\mathbb{Q}\ne\emptyset\\
+     &\mathbb{Q}_{<x}\cup{}_{x\le}\mathbb{Q}=\mathbb{Q}\\
+     &\mathbb{Q}_{<x}\cap{}_{x\le}\mathbb{Q}=\emptyset\\
+     &\forall q\in\mathbb{Q}_{<x},\exists r\in\mathbb{Q}_{<x},q<r
     \end{align}
+    全てのデデキント切断の集合を$\mathbb{R}$と定義する．
+    デデキント切断において，
+    \begin{align}
+     \exists x\in{}_{x\le}\mathbb{Q},\forall q\in{}_{x\le}\mathbb{Q},x\le q
+    \end{align}
+    が成り立つ場合と成り立たない場合がある．
+    成り立つ場合，$x\in\mathbb{Q}$だが，成り立たない場合，$x\in\mathbb{R}-\mathbb{Q}$である．
+    つまり，デデキント切断は有理数から無理数を生み出す能力を持つ．
+    例えば，
+    \begin{align}
+     \mathbb{Q}_{<\sqrt{2}}&=\{q\in\mathbb{Q}|q<0\lor q^2<2\}\\
+     {}_{\sqrt{2}\le}\mathbb{Q}&=\{q\in\mathbb{Q}|0\le q\land 2\le q^2\}
+    \end{align}
+    において${}_{\sqrt{2}\le}\mathbb{Q}$は最小値を持たない．
+    このデデキント切断は無理数$\sqrt{2}$を意味する．
    \subsubsection{実数の部分集合は必ず上限と下限を持つ}
    \subsubsection{上に有界な単調増加数列の収束}
    \subsubsection{自然数の$-2$乗の和の収束}
