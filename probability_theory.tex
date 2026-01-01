@@ -2207,52 +2207,72 @@
     &=\lambda\log_2e-\lambda\log_2\lambda+\frac{1}{e^{\lambda}}\sum_{n=0}^\infty\frac{\lambda^n}{n!}\sum_{m=1}^n\log_2m
    \end{align}
  \section{標準正規分布}
-  \subsection{上に有界な単調増加数列の収束}
-  \subsection{自然数の$-2$乗の収束}
-   数列
-   \begin{align}
-    \forall N\in\mathbb{N},a_N=\sum_{n=1}^N\frac{1}{n^2}
-   \end{align}
-   が収束することを証明する．
-   \begin{align}
-    \forall n\in\mathbb{N},n&>n-1\nonumber\\
-    n^2&>n\left(n-1\right)\nonumber\\
-    \frac{1}{n^2}&<\frac{1}{n\left(n-1\right)}\nonumber\\
-    \forall N\in\mathbb{N},\sum_{n=1}^N\frac{1}{n^2}=1+\sum_{n=2}^N\frac{1}{n^2}&<1+\sum_{n=2}^N\frac{1}{n\left(n-1\right)}\nonumber\\
-    &=1+\sum_{n=2}^N\frac{n-\left(n-1\right)}{n\left(n-1\right)}\nonumber\\
-    &=1+\sum_{n=2}^N\left(\frac{1}{n-1}-\frac{1}{n}\right)\nonumber\\
-    &=1+\left(\sum_{n=2}^N\frac{1}{n-1}\right)-\left(\sum_{n=2}^N\frac{1}{n}\right)\nonumber\\
-    &=1+\left(\sum_{n=1}^{N-1}\frac{1}{n}\right)-\left(\sum_{n=2}^N\frac{1}{n}\right)\nonumber\\
-    &=1+1-\frac{1}{N}\nonumber\\
-    &=2-\frac{1}{N}\nonumber\\
-    \lim_{N\to\infty}2-\frac{1}{N}&=2
-   \end{align}
-   よって上に有界である．
-   また，
-   \begin{align}
-    a_{N+1}-a_N&=\frac{1}{\left(N+1\right)^2}>0
-   \end{align}
-   よって単調増加である．
-   よって収束する．
-  \subsection{無限乗積の収束判定}
-   \begin{align}
-    \sum_{n=1}^\infty a_n
-   \end{align}
-   が収束するならば，
-   \begin{align}
-    \prod_{n=1}^\infty\left(1+a_n\right)
-   \end{align}
-   も収束することを証明する．
-  \subsection{三角関数の部分分数分解}
-  \subsection{$\sin$の無限乗積展開}
-  \subsection{ウォリスの公式}
-  \subsection{スターリングの近似}
   \subsection{ポアソン分布から標準正規分布を導出}
    確率変数$X$が平均$\lambda$のポアソン分布に従うとき，
    \begin{align}
     \lim_{\lambda\to\infty}\frac{X-\lambda}{\sqrt{\lambda}}
    \end{align}
    は標準正規分布に従う連続確率変数である．
+   以下でそのことを証明する．
+   \subsubsection{上界，下界の定義}
+    上界$S<u$の定義は以下の通りである．
+    \begin{align}
+     \forall \left(S, u\right)\in 2^\mathbb{R}\times\mathbb{R},S<u\iff\forall x\in S,x<u
+    \end{align}
+    下界$l<S$の定義は以下の通りである．
+    \begin{align}
+     \forall \left(S, l\right)\in 2^\mathbb{R}\times\mathbb{R},l<S\iff\forall x\in S,l<x
+    \end{align}
+   \subsubsection{上限，下限の定義}
+    $\forall S\in 2^\mathbb{R}$の上限$\sup S$は以下を満たす．
+    \begin{align}
+     \forall S\in 2^\mathbb{R},S<\sup S\land\forall\epsilon\in\mathbb{R}_{>0},\exists x,x\in\left[\sup S-\epsilon,\sup S\right]
+    \end{align}
+    $\forall S\in 2^\mathbb{R}$の下限$\inf S$は以下を満たす．
+    \begin{align}
+     \forall S\in 2^\mathbb{R},\inf S<S\land\forall\epsilon\in\mathbb{R}_{>0},\exists x,x\in\left[\inf S,\inf S+\epsilon\right]
+    \end{align}
+   \subsubsection{上に有界な単調増加数列の収束}
+   \subsubsection{自然数の$-2$乗の和の収束}
+    数列
+    \begin{align}
+     \forall N\in\mathbb{N},a_N=\sum_{n=1}^N\frac{1}{n^2}
+    \end{align}
+    が収束することを証明する．
+    \begin{align}
+     \forall n\in\mathbb{N},n&>n-1\nonumber\\
+     n^2&>n\left(n-1\right)\nonumber\\
+     \frac{1}{n^2}&<\frac{1}{n\left(n-1\right)}\nonumber\\
+     \forall N\in\mathbb{N},\sum_{n=1}^N\frac{1}{n^2}=1+\sum_{n=2}^N\frac{1}{n^2}&<1+\sum_{n=2}^N\frac{1}{n\left(n-1\right)}\nonumber\\
+     &=1+\sum_{n=2}^N\frac{n-\left(n-1\right)}{n\left(n-1\right)}\nonumber\\
+     &=1+\sum_{n=2}^N\left(\frac{1}{n-1}-\frac{1}{n}\right)\nonumber\\
+     &=1+\left(\sum_{n=2}^N\frac{1}{n-1}\right)-\left(\sum_{n=2}^N\frac{1}{n}\right)\nonumber\\
+     &=1+\left(\sum_{n=1}^{N-1}\frac{1}{n}\right)-\left(\sum_{n=2}^N\frac{1}{n}\right)\nonumber\\
+     &=1+1-\frac{1}{N}\nonumber\\
+     &=2-\frac{1}{N}\nonumber\\
+     \lim_{N\to\infty}2-\frac{1}{N}&=2
+    \end{align}
+    よって上に有界である．
+    また，
+    \begin{align}
+     a_{N+1}-a_N&=\frac{1}{\left(N+1\right)^2}>0
+    \end{align}
+    よって単調増加である．
+    よって収束する．
+   \subsubsection{無限乗積の収束判定}
+    \begin{align}
+     \sum_{n=1}^\infty a_n
+    \end{align}
+    が収束するならば，
+    \begin{align}
+     \prod_{n=1}^\infty\left(1+a_n\right)
+    \end{align}
+    も収束することを証明する．
+   \subsubsection{三角関数の部分分数分解}
+   \subsubsection{$\sin$の無限乗積展開}
+   \subsubsection{ウォリスの公式}
+   \subsubsection{スターリングの近似}
+   \subsubsection{本証明}
   \subsection{確率母関数}
   \subsection{積率母関数}
   \subsection{特性関数}
