@@ -2286,7 +2286,23 @@
      $\forall r\in R$について，$\mathbb{Q}_{<r}\subseteq\mathbb{Q}_{<x}$よって$r\le x$よって$R\le x$
     \subsubsubsection{$x=\sup R$の証明}
      $R\le\forall y$について，$\forall r\in R$について，$r\le y$よって$\mathbb{Q}_{<r}\subseteq\mathbb{Q}_{<y}$よって${}_{y\le}\mathbb{Q}\subseteq{}_{r\le}\mathbb{Q}$よって${}_{y\le}\mathbb{Q}\subseteq{}_{x\le}\mathbb{Q}$よって$\mathbb{Q}_{<x}\subseteq\mathbb{Q}_{<y}$よって$x\le y$よって$x=\sup R$
-   \subsubsection{上に有界な単調増加数列の収束}
+   \subsubsection{上界を持つ単調増加数列の収束}
+    単調増加数列
+    \begin{align}
+     &f:\mathbb{N}\to\mathbb{R}\\
+     &\forall n\in\mathbb{N},f\left(n\right)<f\left(n+1\right)
+    \end{align}
+    の像$f\left(\mathbb{N}\right)$が，上界を持つとき，上限$\sup f\left(\mathbb{N}\right)$が存在するので，$\forall\epsilon\in{}_{0<}\mathbb{R}$について，
+    \begin{align}
+     &f\left(\mathbb{N}\right)\cap\left[\sup f\left(\mathbb{N}\right)-\epsilon,\sup f\left(\mathbb{N}\right)\right]\ne\emptyset\nonumber\\
+     &\iff\exists n\in\mathbb{N},\sup f\left(\mathbb{N}\right)-\epsilon\le f\left(n\right)\le\sup f\left(\mathbb{N}\right)\nonumber\\
+     &\iff\exists n\in\mathbb{N},0\le\sup f\left(\mathbb{N}\right)-f\left(n\right)\le\epsilon\nonumber\\
+    \end{align}
+    さらに単調増加性より，
+    \begin{align}
+     &\forall\epsilon\in{}_{0<}\mathbb{R},\exists n\in\mathbb{N},\forall m\in{}_{n\le}\mathbb{N},0\le\sup f\left(\mathbb{N}\right)-f\left(m\right)\le\epsilon\nonumber\\
+     &\iff\lim_{n\to\infty}f\left(n\right)=\sup f\left(\mathbb{N}\right)
+    \end{align}
    \subsubsection{自然数の$-2$乗の和の収束}
     数列
     \begin{align}
