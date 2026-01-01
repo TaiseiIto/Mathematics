@@ -2247,26 +2247,27 @@
    \subsubsection{上界，下界の定義}
     上界$S<u$の定義は以下の通りである．
     \begin{align}
-     \forall \left(S, u\right)\in 2^\mathbb{R}\times\mathbb{R},S<u\iff\forall x\in S,x<u
+     \forall \left(R, u\right)\in 2^\mathbb{R}\times\mathbb{R},R<u\iff\forall r\in R,r<u
     \end{align}
     下界$l<S$の定義は以下の通りである．
     \begin{align}
-     \forall \left(S, l\right)\in 2^\mathbb{R}\times\mathbb{R},l<S\iff\forall x\in S,l<x
+     \forall \left(R, l\right)\in 2^\mathbb{R}\times\mathbb{R},l<R\iff\forall r\in R,l<r
     \end{align}
    \subsubsection{上限，下限の定義}
     \begin{align}
      {}_{0<}\mathbb{R}=\{x\in\mathbb{R}|0<x\}
     \end{align}
     とする．
-    $\forall S\in 2^\mathbb{R}$の上限$\sup S$は以下を満たす．
+    $\forall R\in 2^\mathbb{R}$の上限$\sup R$は以下を満たす．
     \begin{align}
-     \forall S\in 2^\mathbb{R},S<\sup S\land\forall\epsilon\in{}_{0<}\mathbb{R},\exists x,x\in\left[\sup S-\epsilon,\sup S\right]
+     \forall R\in 2^\mathbb{R},R<\sup R\land\forall\epsilon\in{}_{0<}\mathbb{R},R\cap\left[\sup R-\epsilon,\sup R\right]\ne\emptyset
     \end{align}
-    $\forall S\in 2^\mathbb{R}$の下限$\inf S$は以下を満たす．
+    $\forall R\in 2^\mathbb{R}$の下限$\inf R$は以下を満たす．
     \begin{align}
-     \forall S\in 2^\mathbb{R},\inf S<S\land\forall\epsilon\in{}_{0<}\mathbb{R},\exists x,x\in\left[\inf S,\inf S+\epsilon\right]
+     \forall R\in 2^\mathbb{R},\inf R<R\land\forall\epsilon\in{}_{0<}\mathbb{R},R\cap\left[\inf R,\inf R+\epsilon\right]\ne\emptyset
     \end{align}
-   \subsubsection{実数の部分集合は必ず上限と下限を持つ}
+   \subsubsection{実数の連続性}
+    上界$u$を持つ$R\subset\mathbb{R}$は，必ず上限$\sup R$を持つことを証明する．
    \subsubsection{上に有界な単調増加数列の収束}
    \subsubsection{自然数の$-2$乗の和の収束}
     数列
