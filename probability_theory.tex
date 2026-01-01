@@ -2331,13 +2331,21 @@
     よって収束する．
    \subsubsection{無限乗積の収束判定}
     \begin{align}
-     \sum_{n=1}^\infty a_n
+     s=\sum_{n=1}^\infty f\left(n\right)
     \end{align}
     が収束するならば，
     \begin{align}
-     \prod_{n=1}^\infty\left(1+a_n\right)
+     p=\prod_{n=1}^\infty\left(1+f\left(n\right)\right)
     \end{align}
     も収束することを証明する．
+    \begin{align}
+     \log p-s&=\log\prod_{n=1}^\infty\left(1+f\left(n\right)\right)-\sum_{n=1}^\infty f\left(n\right)\nonumber\\
+     &=\sum_{n=1}^\infty\log\left(1+f\left(n\right)\right)-\sum_{n=1}^\infty f\left(n\right)\nonumber\\
+     &=-\sum_{n=1}^\infty\sum_{m=1}^\infty\frac{\left(-1\right)^mf\left(n\right)^m}{m}-\sum_{n=1}^\infty f\left(n\right)\nonumber\\
+     &=-\sum_{n=1}^\infty\sum_{m=2}^\infty\frac{\left(-1\right)^mf\left(n\right)^m}{m}\nonumber\\
+     &=-\sum_{n=1}^\infty\sum_{m=0}^\infty\frac{\left(-1\right)^mf\left(n\right)^{m+2}}{m+2}\nonumber\\
+     &=-\sum_{n=1}^\infty f\left(n\right)^2\sum_{m=0}^\infty\frac{\left(-1\right)^mf\left(n\right)^m}{m+2}\nonumber\\
+    \end{align}
    \subsubsection{三角関数の部分分数分解}
    \subsubsection{$\sin$の無限乗積展開}
    \subsubsection{ウォリスの公式}
