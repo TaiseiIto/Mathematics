@@ -2347,37 +2347,37 @@
     \end{align}
    \subsubsection{$\sin$の無限乗積の収束}
     \begin{align}
-     \forall x\in\mathbb{R},\sum_{n=1}^\infty\left|f_n\left(x\right)\right|\in\mathbb{R}\implies\prod_{n=1}^\infty\left(1-\left|f_n\left(x\right)\right|\right)\in\mathbb{R}
+     \forall x\in\mathbb{R},\sum_{n=1}^\infty\left|f\left(n\right)\right|\in\mathbb{R}\implies\prod_{n=1}^\infty\left(1-\left|f\left(n\right)\right|\right)\in\mathbb{R}
     \end{align}
     を証明する．
     無限数列の和が収束するならば数列は$0$に収束することから，
     \begin{align}
-     \sum_{n=1}^\infty\left|f_n\left(x\right)\right|\in\mathbb{R}
+     \sum_{n=1}^\infty\left|f\left(n\right)\right|\in\mathbb{R}
     \end{align}
     より，
     \begin{align}
-     \exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|f_n\left(x\right)\right|\in\left(0,2^{-1}\right]
+     \exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|f\left(n\right)\right|\in\left(0,2^{-1}\right]
     \end{align}
     であり，
     \begin{align}
-     \prod_{n=1}^\infty\left(1-\left|f_n\left(x\right)\right|\right)=\prod_{n=1}^{N-1}\left(1-\left|f_n\left(x\right)\right|\right)\prod_{n=N}^\infty\left(1-\left|f_n\left(x\right)\right|\right)
+     \prod_{n=1}^\infty\left(1-\left|f\left(n\right)\right|\right)=\prod_{n=1}^{N-1}\left(1-\left|f\left(n\right)\right|\right)\prod_{n=N}^\infty\left(1-\left|f\left(n\right)\right|\right)
     \end{align}
     ここで，明らかに
     \begin{align}
-     \prod_{n=1}^{N-1}\left(1-\left|f_n\left(x\right)\right|\right)\in\mathbb{R}
+     \prod_{n=1}^{N-1}\left(1-\left|f\left(n\right)\right|\right)\in\mathbb{R}
     \end{align}
     だから，
     \begin{align}
-     \prod_{n=N}^\infty\left(1-\left|f_n\left(x\right)\right|\right)\in\mathbb{R}
+     \prod_{n=N}^\infty\left(1-\left|f\left(n\right)\right|\right)\in\mathbb{R}
     \end{align}
     さえ示せば良い．
     もし収束するならば，
     \begin{align}
-     \forall n\in{}_{N\le}\mathbb{N},&\left|f_n\left(x\right)\right|\in\left(0,2^{-1}\right]\nonumber\\
-     &\implies 1-\left|f_n\left(x\right)\right|\in\left[2^{-1},1\right)\nonumber\\
-     &\implies\prod_{n=N}^\infty\left(1-\left|f_n\left(x\right)\right|\right)\in\left(0,1\right)\nonumber\\
-     &\implies\log\prod_{n=N}^\infty\left(1-\left|f_n\left(x\right)\right|\right)\in\mathbb{R}_{<0}\nonumber\\
-     &\implies-\log\prod_{n=N}^\infty\left(1-\left|f_n\left(x\right)\right|\right)\in{}_{0<}\mathbb{R}
+     \forall n\in{}_{N\le}\mathbb{N},&\left|f\left(n\right)\right|\in\left(0,2^{-1}\right]\nonumber\\
+     &\implies 1-\left|f\left(n\right)\right|\in\left[2^{-1},1\right)\nonumber\\
+     &\implies\prod_{n=N}^\infty\left(1-\left|f\left(n\right)\right|\right)\in\left(0,1\right)\nonumber\\
+     &\implies\log\prod_{n=N}^\infty\left(1-\left|f\left(n\right)\right|\right)\in\mathbb{R}_{<0}\nonumber\\
+     &\implies-\log\prod_{n=N}^\infty\left(1-\left|f\left(n\right)\right|\right)\in{}_{0<}\mathbb{R}
     \end{align}
     であるから，$-\log\left(1-x\right)$のマクローリン展開
     \begin{align}
@@ -2385,17 +2385,17 @@
     \end{align}
     を使って，
     \begin{align}
-     -\log\prod_{n=N}^\infty\left(1-\left|f_n\left(x\right)\right|\right)&=-\sum_{n=N}^\infty\log\left(1-\left|f_n\left(x\right)\right|\right)\nonumber\\
-     &=\sum_{n=N}^\infty\sum_{m=1}^\infty\frac{\left|f_n\left(x\right)\right|^m}{m}\nonumber\\
-     &=\sum_{n=N}^\infty\left|f_n\left(x\right)\right|\sum_{m=1}^\infty\frac{\left|f_n\left(x\right)\right|^{m-1}}{m}\nonumber\\
-     &=\sum_{n=N}^\infty\left|f_n\left(x\right)\right|\sum_{m=0}^\infty\frac{\left|f_n\left(x\right)\right|^m}{m+1}\nonumber\\
-     &=\sum_{n=N}^\infty\left|f_n\left(x\right)\right|\left(1+\sum_{m=1}^\infty\frac{\left|f_n\left(x\right)\right|^m}{m+1}\right)\nonumber\\
-     &<\sum_{n=N}^\infty\left|f_n\left(x\right)\right|\left(1+\sum_{m=1}^\infty\frac{\left|f_n\left(x\right)\right|^m}{m}\right)\nonumber\\
-     &=\sum_{n=N}^\infty\left|f_n\left(x\right)\right|\left(1+\log\left(1-\left|f_n\left(x\right)\right|\right)\right)\nonumber\\
-     &<\sum_{n=N}^\infty\left|f_n\left(x\right)\right|\left(1+\log\left(1-2^{-1}\right)\right)\nonumber\\
-     &=\sum_{n=N}^\infty\left|f_n\left(x\right)\right|\left(1+\log 2^{-1}\right)\nonumber\\
-     &=\sum_{n=N}^\infty\left|f_n\left(x\right)\right|\left(1-\log 2\right)\nonumber\\
-     &=\left(1-\log 2\right)\sum_{n=N}^\infty\left|f_n\left(x\right)\right|\in\mathbb{R}
+     -\log\prod_{n=N}^\infty\left(1-\left|f\left(n\right)\right|\right)&=-\sum_{n=N}^\infty\log\left(1-\left|f\left(n\right)\right|\right)\nonumber\\
+     &=\sum_{n=N}^\infty\sum_{m=1}^\infty\frac{\left|f\left(n\right)\right|^m}{m}\nonumber\\
+     &=\sum_{n=N}^\infty\left|f\left(n\right)\right|\sum_{m=1}^\infty\frac{\left|f\left(n\right)\right|^{m-1}}{m}\nonumber\\
+     &=\sum_{n=N}^\infty\left|f\left(n\right)\right|\sum_{m=0}^\infty\frac{\left|f\left(n\right)\right|^m}{m+1}\nonumber\\
+     &=\sum_{n=N}^\infty\left|f\left(n\right)\right|\left(1+\sum_{m=1}^\infty\frac{\left|f\left(n\right)\right|^m}{m+1}\right)\nonumber\\
+     &<\sum_{n=N}^\infty\left|f\left(n\right)\right|\left(1+\sum_{m=1}^\infty\frac{\left|f\left(n\right)\right|^m}{m}\right)\nonumber\\
+     &=\sum_{n=N}^\infty\left|f\left(n\right)\right|\left(1+\log\left(1-\left|f\left(n\right)\right|\right)\right)\nonumber\\
+     &<\sum_{n=N}^\infty\left|f\left(n\right)\right|\left(1+\log\left(1-2^{-1}\right)\right)\nonumber\\
+     &=\sum_{n=N}^\infty\left|f\left(n\right)\right|\left(1+\log 2^{-1}\right)\nonumber\\
+     &=\sum_{n=N}^\infty\left|f\left(n\right)\right|\left(1-\log 2\right)\nonumber\\
+     &=\left(1-\log 2\right)\sum_{n=N}^\infty\left|f\left(n\right)\right|\in\mathbb{R}
     \end{align}
     よって収束する．
     \begin{align}
