@@ -2395,7 +2395,13 @@
      &<\sum_{n=N}^\infty\left|f\left(n\right)\right|\left(1-\log\left(1-2^{-1}\right)\right)\nonumber\\
      &=\sum_{n=N}^\infty\left|f\left(n\right)\right|\left(1-\log 2^{-1}\right)\nonumber\\
      &=\sum_{n=N}^\infty\left|f\left(n\right)\right|\left(1+\log 2\right)\nonumber\\
-     &=\left(1+\log 2\right)\sum_{n=N}^\infty\left|f\left(n\right)\right|\in\mathbb{R}
+     &=\left(1+\log 2\right)\sum_{n=N}^\infty\left|f\left(n\right)\right|
+    \end{align}
+    よって
+    \begin{align}
+     &-\log\prod_{n=N}^\infty\left(1-\left|f\left(n\right)\right|\right)\in\left(0,\left(1+\log 2\right)\sum_{n=N}^\infty\left|f\left(n\right)\right|\right)\nonumber\\
+     &\log\prod_{n=N}^\infty\left(1-\left|f\left(n\right)\right|\right)\in\left(-\left(1+\log 2\right)\sum_{n=N}^\infty\left|f\left(n\right)\right|,0\right)\nonumber\\
+     &\prod_{n=N}^\infty\left(1-\left|f\left(n\right)\right|\right)\in\left(\exp\left(-\left(1+\log 2\right)\sum_{n=N}^\infty\left|f\left(n\right)\right|\right),1\right)\nonumber\\
     \end{align}
     よって収束する．
     \begin{align}
