@@ -2329,48 +2329,13 @@
     \end{align}
     よって単調増加である．
     よって収束する．
-   \subsubsection{無限乗積の収束判定}
-    \begin{align}
-     s=\sum_{n=1}^\infty f\left(n\right)
-    \end{align}
-    が収束するならば，
-    \begin{align}
-     p=\prod_{n=1}^\infty\left(1+f\left(n\right)\right)
-    \end{align}
-    も収束することを証明する．$\log\left(1+x\right)$のマクローリン展開
-    \begin{align}
-     \log\left(1+x\right)=-\sum_{n=1}^\infty\frac{\left(-1\right)^nx^n}{n}
-    \end{align}
-    を使って，
-    \begin{align}
-     \log p-s&=\log\prod_{n=1}^\infty\left(1+f\left(n\right)\right)-\sum_{n=1}^\infty f\left(n\right)\nonumber\\
-     &=\sum_{n=1}^\infty\log\left(1+f\left(n\right)\right)-\sum_{n=1}^\infty f\left(n\right)\nonumber\\
-     &=-\sum_{n=1}^\infty\sum_{m=1}^\infty\frac{\left(-1\right)^mf\left(n\right)^m}{m}-\sum_{n=1}^\infty f\left(n\right)\nonumber\\
-     &=-\sum_{n=1}^\infty\sum_{m=2}^\infty\frac{\left(-1\right)^mf\left(n\right)^m}{m}
-    \end{align}
-    よって
-    \begin{align}
-     \left|\log p-s\right|&=\left|-\sum_{n=1}^\infty\sum_{m=2}^\infty\frac{\left(-1\right)^mf\left(n\right)^m}{m}\right|\nonumber\\
-     &<\sum_{n=1}^\infty\sum_{m=2}^\infty\frac{\left|f\left(n\right)\right|^m}{m}\nonumber\\
-    \end{align}
-    ここで，$s$は収束するから，
-    \begin{align}
-     \forall\epsilon\in{}_{0<}\mathbb{R},&\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|f\left(n\right)\right|\le\epsilon\nonumber\\
-     \implies&\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|f\left(n\right)\right|\le 2^{-1}
-    \end{align}
-    より，
-    \begin{align}
-     \exists N\in\mathbb{N},\sum_{n=N}^\infty\sum_{m=2}^\infty\frac{\left|f\left(n\right)\right|^m}{m}&<\sum_{n=N}^\infty\sum_{m=2}^\infty\frac{2^{-m}}{m}
-    \end{align}
-    ここで，$-\log\left(1-x\right)$のマクローリン展開
-    \begin{align}
-     -\log\left(1-x\right)=\sum_{n=1}^\infty\frac{x^n}{n}
-    \end{align}
-    を使うと，
-    \begin{align}
-     \exists N\in\mathbb{N},\sum_{n=N}^\infty\sum_{m=2}^\infty\frac{\left|f\left(n\right)\right|^m}{m}&<\sum_{n=N}^\infty\sum_{m=2}^\infty\frac{2^{-m}}{m}\nonumber\\
-     &=\sum_{n=N}^\infty -\log\frac{1}{2}
-    \end{align}
+   \subsubsection{無乗積の収束}
+     \begin{align}
+      &s:\mathbb{N}\to\mathbb{R}\nonumber\\
+      &p=\lim_{N\to\infty}\prod_{n=1}^Ns\left(n\right)
+     \end{align}
+     のとき，$p\in\mathbb{R}_{\ne 0}$を，無限積$p$は収束するという．
+    \subsubsubsection{収束判定}
    \subsubsection{三角関数の部分分数分解}
    \subsubsection{$\sin$の無限乗積展開}
    \subsubsection{ウォリスの公式}
