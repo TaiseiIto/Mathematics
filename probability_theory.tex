@@ -2303,22 +2303,6 @@
      &\forall\epsilon\in{}_{0<}\mathbb{R},\exists n\in\mathbb{N},\forall m\in{}_{n\le}\mathbb{N},0\le\sup f\left(\mathbb{N}\right)-f\left(m\right)\le\epsilon\nonumber\\
      &\iff\lim_{n\to\infty}f\left(n\right)=\sup f\left(\mathbb{N}\right)
     \end{align}
-   \subsubsection{無限数列の和が収束するならば数列は$0$に収束}
-    \begin{align}
-     s=\sum_{n=1}^\infty f\left(n\right)
-    \end{align}
-    のとき，部分和を，
-    \begin{align}
-     s\left(m\right)=\sum_{n=1}^m f\left(n\right)
-    \end{align}
-    とすると，
-    \begin{align}
-     f\left(m\right)&=s\left(m\right)-s\left(m-1\right)\nonumber\\
-     &=\left(\sum_{n=1}^m f\left(n\right)\right)-\left(\sum_{n=1}^{m-1} f\left(n\right)\right)\nonumber\\
-     \lim_{m\to\infty}f\left(m\right)&=\left(\lim_{m\to\infty}\sum_{n=1}^m f\left(n\right)\right)-\left(\lim_{m\to\infty}\sum_{n=1}^{m-1} f\left(n\right)\right)\nonumber\\
-     &=s-s\nonumber\\
-     &=0
-    \end{align}
    \subsubsection{自然数の$-2$乗の和の収束}
     数列
     \begin{align}
@@ -2345,6 +2329,22 @@
     \end{align}
     よって単調増加である．
     よって収束する．
+   \subsubsection{無限数列の和が収束するならば数列は$0$に収束}
+    \begin{align}
+     s=\sum_{n=1}^\infty f\left(n\right)
+    \end{align}
+    のとき，部分和を，
+    \begin{align}
+     s\left(m\right)=\sum_{n=1}^m f\left(n\right)
+    \end{align}
+    とすると，
+    \begin{align}
+     f\left(m\right)&=s\left(m\right)-s\left(m-1\right)\nonumber\\
+     &=\left(\sum_{n=1}^m f\left(n\right)\right)-\left(\sum_{n=1}^{m-1} f\left(n\right)\right)\nonumber\\
+     \lim_{m\to\infty}f\left(m\right)&=\left(\lim_{m\to\infty}\sum_{n=1}^m f\left(n\right)\right)-\left(\lim_{m\to\infty}\sum_{n=1}^{m-1} f\left(n\right)\right)\nonumber\\
+     &=s-s\nonumber\\
+     &=0
+    \end{align}
    \subsubsection{無乗積の収束}
     \begin{align}
      &s:\mathbb{N}\to\mathbb{R}\nonumber\\
