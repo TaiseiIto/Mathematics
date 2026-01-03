@@ -379,6 +379,25 @@
     &=\frac{1}{x}\lim_{g\to 0}\frac{\log\left(1+g\right)}{g}\nonumber\\
     &=\frac{1}{x}
    \end{align}
+  \subsection{スターリングの公式の証明に使われる不等式}
+   \begin{align}
+    \forall x\in{}_{1\le}\mathbb{R},0<\left(x+\frac{1}{2}\right)\log\left(1+\frac{1}{x}\right)-1<\frac{1}{4x\left(x+1\right)}
+   \end{align}
+   を証明する．
+   \begin{align}
+    f:{}_{1\le}\mathbb{R}\to\mathbb{R};x\mapsto\left(x+\frac{1}{2}\right)\log\left(1+\frac{1}{x}\right)-1
+   \end{align}
+   とする．
+   \subsubsection{下界の証明}
+    \begin{align}
+     \dv{f\left(x\right)}{x}&=\dv{x}\left(\left(x+\frac{1}{2}\right)\log\left(1+\frac{1}{x}\right)-1\right)\nonumber\\
+     &=\dv{x}\left(x+\frac{1}{2}\right)\log\left(1+\frac{1}{x}\right)\nonumber\\
+     &=\dv{\left(x+\frac{1}{2}\right)}{x}\log\left(1+\frac{1}{x}\right)+\left(x+\frac{1}{2}\right)\dv{\log\left(1+\frac{1}{x}\right)}{x}\nonumber\\
+     &=\log\left(1+\frac{1}{x}\right)+\left(\frac{2x+1}{2}\right)\frac{1}{1+\frac{1}{x}}\dv{\left(1+\frac{1}{x}\right)}{x}\nonumber\\
+     &=\log\left(1+\frac{1}{x}\right)+\left(\frac{2x+1}{2}\right)\frac{x}{1+x}\left(-1\right)x^{-2}\nonumber\\
+     &=\log\left(1+\frac{1}{x}\right)-\frac{2x+1}{2x\left(x+1\right)}\nonumber\\
+    \end{align}
+   \subsubsection{上界の証明}
   \subsection{$\sin$の微分}
    \subsubsection{三平方の定理}
     \begin{figure}[H]
