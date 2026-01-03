@@ -152,6 +152,56 @@
      &\iff\lim_{n\to\infty}f\left(n\right)=\sup f\left(\mathbb{N}\right)
     \end{align}
    \subsubsection{ボルツァーノ・ワイエルシュトラスの定理}
+    有界な数列が収束する部分列を持つことを証明する．
+    数列
+    \begin{align}
+     f:\mathbb{N}\to\mathbb{R}
+    \end{align}
+    に対して，性質
+    \begin{align}
+     g:\mathbb{N}\to\{\top,\bot\};n\mapsto\forall m\in{}_{n<}\mathbb{N},f\left(m\right)<f\left(n\right)
+    \end{align}
+    の逆像の濃度
+    \begin{align}
+     \left|g^{-1}\left(\top\right)\right|
+    \end{align}
+    が，$0$の場合，有限個の場合，可算無限個の場合に分けて考える．
+    \subsubsubsection{$\left|g^{-1}\left(\top\right)\right|=0$の場合}
+     \begin{align}
+      &\forall n\in\mathbb{N},\lnot g\left(n\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\lnot \forall m\in{}_{n<}\mathbb{N},f\left(m\right)<f\left(n\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\exists m\in{}_{n<}\mathbb{N},\lnot f\left(m\right)<f\left(n\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\exists m\in{}_{n<}\mathbb{N},f\left(n\right)\le f\left(m\right)\nonumber\\
+     \end{align}
+     よって単調増加な部分列が存在する．
+    \subsubsubsection{$\left|g^{-1}\left(\top\right)\right|<\aleph_0$の場合}
+     \begin{align}
+      &\left|g^{-1}\left(\top\right)\right|<\aleph_0\nonumber\\
+      &\iff \max\left(g^{-1}\left(\top\right)\right)
+     \end{align}
+     よって部分列
+     \begin{align}
+      f_1:\mathbb{N}\to\mathbb{R};n\mapsto f\left(n+\max\left(g^{-1}\left(\top\right)\right)\right)
+     \end{align}
+     は，性質
+     \begin{align}
+      g_1:\mathbb{N}\to\{\top,\bot\};n\mapsto\forall m\in{}_{n<}\mathbb{N},f_1\left(m\right)<f_1\left(n\right)
+     \end{align}
+     について，
+     \begin{align}
+      &\forall n\in\mathbb{N},\max\left(g^{-1}\left(\top\right)\right)<n+\max\left(g^{-1}\left(\top\right)\right)\nonumber\\
+      &\implies\forall n\in\mathbb{N},\lnot g\left(n+\max\left(g^{-1}\left(\top\right)\right)\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\lnot\forall k\in{}_{n+\max\left(g^{-1}\left(\top\right)\right)<}\mathbb{N},f\left(k\right)<f\left(n+\max\left(g^{-1}\left(\top\right)\right)\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\exists k\in{}_{n+\max\left(g^{-1}\left(\top\right)\right)<}\mathbb{N},\lnot f\left(k\right)<f\left(n+\max\left(g^{-1}\left(\top\right)\right)\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\exists k\in{}_{n+\max\left(g^{-1}\left(\top\right)\right)<}\mathbb{N},f\left(n+\max\left(g^{-1}\left(\top\right)\right)\right)\le f\left(k\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\exists k\in{}_{n<}\mathbb{N},f_1\left(n\right)\le f_1\left(k\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\exists k\in{}_{n<}\mathbb{N},\lnot f_1\left(k\right)<f_1\left(n\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\lnot\forall k\in{}_{n<}\mathbb{N},f_1\left(k\right)<f_1\left(n\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\lnot g_1\left(n\right)\nonumber\\
+      &\iff\left|g_1^{-1}\left(\top\right)\right|=0
+     \end{align}
+     よって部分列$f_1$は単調増加な部分列を持つ．
+    \subsubsubsection{$\left|g^{-1}\left(\top\right)\right|=\aleph_0$の場合}
    \subsubsection{相加相乗平均の不等式}
    \subsubsection{自然対数の底の収束性}
    \subsubsection{自然対数の底の無理性}
