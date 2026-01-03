@@ -155,7 +155,7 @@
     有界な数列が収束する部分列を持つことを証明する．
     数列
     \begin{align}
-     f:\mathbb{N}\to\mathbb{R}
+     f:\mathbb{N}\to\left[\min f\left(\mathbb{N}\right),\max f\left(\mathbb{N}\right)\right]
     \end{align}
     に対して，性質
     \begin{align}
@@ -177,11 +177,11 @@
     \subsubsubsection{$\left|g^{-1}\left(\top\right)\right|<\aleph_0$の場合}
      \begin{align}
       &\left|g^{-1}\left(\top\right)\right|<\aleph_0\nonumber\\
-      &\iff \max\left(g^{-1}\left(\top\right)\right)
+      &\iff \max g^{-1}\left(\top\right)
      \end{align}
      よって部分列
      \begin{align}
-      f_1:\mathbb{N}\to\mathbb{R};n\mapsto f\left(n+\max\left(g^{-1}\left(\top\right)\right)\right)
+      f_1:\mathbb{N}\to\mathbb{R};n\mapsto f\left(n+\max g^{-1}\left(\top\right)\right)
      \end{align}
      は，性質
      \begin{align}
@@ -189,11 +189,11 @@
      \end{align}
      について，
      \begin{align}
-      &\forall n\in\mathbb{N},\max\left(g^{-1}\left(\top\right)\right)<n+\max\left(g^{-1}\left(\top\right)\right)\nonumber\\
-      &\implies\forall n\in\mathbb{N},\lnot g\left(n+\max\left(g^{-1}\left(\top\right)\right)\right)\nonumber\\
-      &\iff\forall n\in\mathbb{N},\lnot\forall k\in{}_{n+\max\left(g^{-1}\left(\top\right)\right)<}\mathbb{N},f\left(k\right)<f\left(n+\max\left(g^{-1}\left(\top\right)\right)\right)\nonumber\\
-      &\iff\forall n\in\mathbb{N},\exists k\in{}_{n+\max\left(g^{-1}\left(\top\right)\right)<}\mathbb{N},\lnot f\left(k\right)<f\left(n+\max\left(g^{-1}\left(\top\right)\right)\right)\nonumber\\
-      &\iff\forall n\in\mathbb{N},\exists k\in{}_{n+\max\left(g^{-1}\left(\top\right)\right)<}\mathbb{N},f\left(n+\max\left(g^{-1}\left(\top\right)\right)\right)\le f\left(k\right)\nonumber\\
+      &\forall n\in\mathbb{N},\max g^{-1}\left(\top\right)<n+\max g^{-1}\left(\top\right)\nonumber\\
+      &\implies\forall n\in\mathbb{N},\lnot g\left(n+\max g^{-1}\left(\top\right)\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\lnot\forall k\in{}_{n+\max g^{-1}\left(\top\right)<}\mathbb{N},f\left(k\right)<f\left(n+\max g^{-1}\left(\top\right)\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\exists k\in{}_{n+\max\left(g^{-1}\left(\top\right)\right)<}\mathbb{N},\lnot f\left(k\right)<f\left(n+\max g^{-1}\left(\top\right)\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\exists k\in{}_{n+\max\left(g^{-1}\left(\top\right)\right)<}\mathbb{N},f\left(n+\max g^{-1}\left(\top\right)\right)\le f\left(k\right)\nonumber\\
       &\iff\forall n\in\mathbb{N},\exists k\in{}_{n<}\mathbb{N},f_1\left(n\right)\le f_1\left(k\right)\nonumber\\
       &\iff\forall n\in\mathbb{N},\exists k\in{}_{n<}\mathbb{N},\lnot f_1\left(k\right)<f_1\left(n\right)\nonumber\\
       &\iff\forall n\in\mathbb{N},\lnot\forall k\in{}_{n<}\mathbb{N},f_1\left(k\right)<f_1\left(n\right)\nonumber\\
