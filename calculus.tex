@@ -328,7 +328,29 @@
      &=\left(\lim_{x\to+\infty}\left(1+\frac{1}{x-1}\right)^{x-1}\right)\left(\lim_{x\to+\infty}\left(1+\frac{1}{x-1}\right)\right)\nonumber\\
      &=e
     \end{align}
+    よって
+    \begin{align}
+     \lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x&=e\nonumber\\
+     \implies\lim_{x\to 0}\left(1+x\right)^{\frac{1}{x}}&=e\nonumber\\
+     \implies\log\lim_{x\to 0}\left(1+x\right)^{\frac{1}{x}}&=\log e\nonumber\\
+     \implies\lim_{x\to 0}\log\left(1+x\right)^{\frac{1}{x}}&=1\nonumber\\
+     \implies\lim_{x\to 0}\frac{\log\left(1+x\right)}{x}&=1
+    \end{align}
    \subsubsection{指数関数の極限}
+    \begin{align}
+     y=\log\left(1+x\right)
+    \end{align}
+    とすると，
+    \begin{align}
+     e^y&=1+x\nonumber\\
+     e^y-1&=x
+    \end{align}
+    だから，
+    \begin{align}
+     \lim_{x\to 0}\frac{\log\left(1+x\right)}{x}&=1\nonumber\\
+     \implies\lim_{y\to 0}\frac{y}{e^y-1}&=1\nonumber\\
+     \implies\lim_{y\to 0}\frac{e^y-1}{y}&=1
+    \end{align}
    \subsubsection{本証明}
     自然対数の底の定義
     \begin{align}
