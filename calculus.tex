@@ -405,6 +405,35 @@
      &=\frac{8x^2+8x+2-8x^2-8x}{4x^2\left(x+1\right)^2}\nonumber\\
      &=\frac{2}{4x^2\left(x+1\right)^2}\nonumber\\
      &=\frac{1}{2x^2\left(x+1\right)^2}\nonumber\\
+     0&<\frac{1}{2x^2\left(x+1\right)^2}\nonumber\\
+     0&<\dv[2]{f\left(x\right)}{x}
+    \end{align}
+    また，
+    \begin{align}
+     \lim_{x\to\infty}\dv{f\left(x\right)}{x}&=\lim_{x\to\infty}\log\left(1+\frac{1}{x}\right)-\frac{2x+1}{2x\left(x+1\right)}\nonumber\\
+     &=\left(\lim_{x\to\infty}\log\left(1+\frac{1}{x}\right)\right)-\left(\lim_{x\to\infty}\frac{2x+1}{2x\left(x+1\right)}\right)\nonumber\\
+     &=0
+    \end{align}
+    よって
+    \begin{align}
+     \dv{f\left(x\right)}{x}<0
+    \end{align}
+    さらに，
+    \begin{align}
+     y=\frac{1}{x}
+    \end{align}
+    とすると，
+    \begin{align}
+     \lim_{x\to\infty}f\left(x\right)&=\lim_{x\to\infty}\left(x+\frac{1}{2}\right)\log\left(1+\frac{1}{x}\right)-1\nonumber\\
+     &=\lim_{y\to 0}\left(\frac{1}{y}+\frac{1}{2}\right)\log\left(1+y\right)-1\nonumber\\
+     &=\lim_{y\to 0}\frac{\log\left(1+y\right)}{y}+\frac{1}{2}\log\left(1+y\right)-1\nonumber\\
+     &=\left(\lim_{y\to 0}\frac{\log\left(1+y\right)}{y}\right)+\frac{1}{2}\left(\lim_{y\to 0}\log\left(1+y\right)\right)-1\nonumber\\
+     &=1+\frac{1}{2}\cdot0-1\nonumber\\
+     &=0
+    \end{align}
+    よって
+    \begin{align}
+     0<f\left(x\right)
     \end{align}
    \subsubsection{上界の証明}
   \subsection{$\sin$の微分}
