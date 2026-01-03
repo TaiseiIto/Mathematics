@@ -299,8 +299,36 @@
      \end{align}
      よって$3$は数列の上界のひとつといえる．
      この数列は上界を持ち広義単調増加だから，単調収束定理より数列は収束する．
-   \subsubsection{自然対数の底の無理性}
-   \subsubsection{指数関数と対数関数の極限の公式}
+   \subsubsection{対数関数の極限}
+    \begin{align}
+     \lim_{x\to 0}\frac{\log\left(1+x\right)}{x}=1
+    \end{align}
+    を証明する．
+    関数
+    \begin{align}
+     e:\mathbb{R}\to\mathbb{R};x\mapsto\left(1+\frac{1}{x}\right)^x
+    \end{align}
+    は広義単調増加だから，
+    \begin{align}
+     \forall x\in\mathbb{R},&\lfloor x\rfloor\le x<\lfloor x\rfloor+1\nonumber\\
+     &\implies e\left(\lfloor x\rfloor\right)\le e\left(x\right)\le e\left(\lfloor x\rfloor+1\right)\nonumber\\
+     &\implies\left(\lim_{x\to+\infty}e\left(\lfloor x\rfloor\right)\right)\le\left(\lim_{x\to+\infty}e\left(x\right)\right)\le\left(\lim_{x\to+\infty}e\left(\lfloor x\rfloor+1\right)\right)\nonumber\\
+     &\implies\left(\lim_{n\to+\infty}e\left(n\right)\right)\le\left(\lim_{x\to+\infty}e\left(x\right)\right)\le\left(\lim_{n\to+\infty}e\left(n\right)\right)\nonumber\\
+     &\implies e\le\left(\lim_{x\to+\infty}e\left(x\right)\right)\le e\nonumber\\
+     &\implies\lim_{x\to+\infty}e\left(x\right)=e\nonumber\\
+     &\implies\lim_{x\to+\infty}\left(1+\frac{1}{x}\right)^x=e
+    \end{align}
+    また，
+    \begin{align}
+     \lim_{x\to-\infty}\left(1+\frac{1}{x}\right)^x&=\lim_{x\to+\infty}\left(1-\frac{1}{x}\right)^{-x}\nonumber\\
+     &=\lim_{x\to+\infty}\left(\frac{x-1}{x}\right)^{-x}\nonumber\\
+     &=\lim_{x\to+\infty}\left(\frac{x}{x-1}\right)^x\nonumber\\
+     &=\lim_{x\to+\infty}\left(1+\frac{1}{x-1}\right)^x\nonumber\\
+     &=\lim_{x\to+\infty}\left(1+\frac{1}{x-1}\right)^{x-1}\left(1+\frac{1}{x-1}\right)\nonumber\\
+     &=\left(\lim_{x\to+\infty}\left(1+\frac{1}{x-1}\right)^{x-1}\right)\left(\lim_{x\to+\infty}\left(1+\frac{1}{x-1}\right)\right)\nonumber\\
+     &=e
+    \end{align}
+   \subsubsection{指数関数の極限}
    \subsubsection{本証明}
     自然対数の底の定義
     \begin{align}
