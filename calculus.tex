@@ -519,6 +519,18 @@
     &=\lim_{\Delta x\to 0}\dv{f\left(y\right)}{y}\left(\dv{g\left(x\right)}{x}+\Delta x\right)\nonumber\\
     &=\dv{f\left(y\right)}{y}\dv{g\left(x\right)}{x}\nonumber\\
    \end{align}
+  \subsection{逆関数の微分}
+   $f:\mathbb{R}\to\mathbb{R}$が全単射であり，
+   \begin{align}
+    \dv{f\left(x\right)}{x}\ne 0
+   \end{align}
+   であるとき，
+   \begin{align}
+    f^{-1}\left(f\left(x\right)\right)&=x\nonumber\\
+    \dv{f^{-1}\left(f\left(x\right)\right)}{x}&=\dv{x}{x}\nonumber\\
+    \dv{f^{-1}\left(f\left(x\right)\right)}{f\left(x\right)}\dv{f\left(x\right)}{x}&=1\nonumber\\
+    \dv{f^{-1}\left(f\left(x\right)\right)}{f\left(x\right)}&=\left(\dv{f\left(x\right)}{x}\right)^{-1}\nonumber\\
+   \end{align}
   \subsection{累乗の微分}
    \subsubsection{正の整数乗の微分}
     \begin{align}
@@ -566,28 +578,16 @@
      &=\left(-n-1\right)x^{-n-2}
     \end{align}
     よって成り立つ．
-   \subsubsection{非$0$有理数乗の微分}
+   \subsubsection{非$0$実数乗の微分}
     \begin{align}
-     \forall\left(n,m\right)\in\mathbb{Z}_{\ne 0}^2,\dv{x^{\frac{m}{n}}}{x}&=\dv{e^{\frac{m}{n}\log x}}{x}\nonumber\\
-     &=e^{\frac{m}{n}\log x}\dv{\frac{m}{n}\log x}{x}\nonumber\\
-     &=\frac{m}{n}e^{\frac{m}{n}\log x}\dv{\log x}{x}\nonumber\\
-     &=\frac{m}{n}e^{\frac{m}{n}\log x}x^{-1}\nonumber\\
-     &=\frac{m}{n}e^{\frac{m}{n}\log x}e^{-\log x}\nonumber\\
-     &=\frac{m}{n}e^{\left(\frac{m}{n}-1\right)\log x}\nonumber\\
-     &=\frac{m}{n}x^{\left(\frac{m}{n}-1\right)}\nonumber\\
+     \forall n\in\mathbb{R}_{\ne 0},\dv{x^{n}}{x}&=\dv{e^{n\log x}}{x}\nonumber\\
+     &=e^{n\log x}\dv{n\log x}{x}\nonumber\\
+     &=ne^{n\log x}\dv{\log x}{x}\nonumber\\
+     &=ne^{n\log x}x^{-1}\nonumber\\
+     &=ne^{n\log x}e^{-\log x}\nonumber\\
+     &=ne^{\left(n-1\right)\log x}\nonumber\\
+     &=nx^{\left(n-1\right)}\nonumber\\
     \end{align}
-  \subsection{逆関数の微分}
-   $f:\mathbb{R}\to\mathbb{R}$が全単射であり，
-   \begin{align}
-    \dv{f\left(x\right)}{x}\ne 0
-   \end{align}
-   であるとき，
-   \begin{align}
-    f^{-1}\left(f\left(x\right)\right)&=x\nonumber\\
-    \dv{f^{-1}\left(f\left(x\right)\right)}{x}&=\dv{x}{x}\nonumber\\
-    \dv{f^{-1}\left(f\left(x\right)\right)}{f\left(x\right)}\dv{f\left(x\right)}{x}&=1\nonumber\\
-    \dv{f^{-1}\left(f\left(x\right)\right)}{f\left(x\right)}&=\left(\dv{f\left(x\right)}{x}\right)^{-1}\nonumber\\
-   \end{align}
   \subsection{商の微分}
    \begin{align}
     \dv{x}\frac{f\left(x\right)}{g\left(x\right)}&=\dv{x}\left(f\left(x\right)g\left(x\right)^{-1}\right)\nonumber\\
