@@ -144,7 +144,7 @@
     \begin{align}
      &f\left(\mathbb{N}\right)\cap\left[\sup f\left(\mathbb{N}\right)-\epsilon,\sup f\left(\mathbb{N}\right)\right]\ne\emptyset\nonumber\\
      &\iff\exists n\in\mathbb{N},\sup f\left(\mathbb{N}\right)-\epsilon\le f\left(n\right)\le\sup f\left(\mathbb{N}\right)\nonumber\\
-     &\iff\exists n\in\mathbb{N},0\le\sup f\left(\mathbb{N}\right)-f\left(n\right)\le\epsilon\nonumber\\
+     &\iff\exists n\in\mathbb{N},0\le\sup f\left(\mathbb{N}\right)-f\left(n\right)\le\epsilon
     \end{align}
     さらに単調増加性より，
     \begin{align}
@@ -171,7 +171,7 @@
       &\forall n\in\mathbb{N},\lnot g\left(n\right)\nonumber\\
       &\iff\forall n\in\mathbb{N},\lnot \forall m\in{}_{n<}\mathbb{N},f\left(m\right)<f\left(n\right)\nonumber\\
       &\iff\forall n\in\mathbb{N},\exists m\in{}_{n<}\mathbb{N},\lnot f\left(m\right)<f\left(n\right)\nonumber\\
-      &\iff\forall n\in\mathbb{N},\exists m\in{}_{n<}\mathbb{N},f\left(n\right)\le f\left(m\right)\nonumber\\
+      &\iff\forall n\in\mathbb{N},\exists m\in{}_{n<}\mathbb{N},f\left(n\right)\le f\left(m\right)
      \end{align}
      よって単調増加な部分列が存在する．
     \subsubsubsection{$\left|g^{-1}\left(\top\right)\right|<\aleph_0$の場合}
@@ -210,10 +210,16 @@
      \begin{align}
       &\forall n\in g^{-1}\left(\top\right),g\left(n\right)\nonumber\\
       &\iff\forall n\in g^{-1}\left(\top\right),\forall m\in{}_{n<}\mathbb{N},f\left(m\right)<f\left(n\right)\nonumber\\
-      &\implies\forall n\in g^{-1}\left(\top\right),\forall m\in{}_{n<}g^{-1}\left(\top\right),f_1\left(m\right)<f_1\left(n\right)\nonumber\\
+      &\implies\forall n\in g^{-1}\left(\top\right),\forall m\in{}_{n<}g^{-1}\left(\top\right),f_1\left(m\right)<f_1\left(n\right)
      \end{align}
      より，単調減少である．
    \subsubsection{相加相乗平均の不等式}
+    \begin{align}
+     \forall\left(a,b\right)\in\mathbb{R}^2,&0\le\left(\sqrt{a}-\sqrt{b}\right)^2\nonumber\\
+     \implies&0\le a+b-2\sqrt{ab}\nonumber\\
+     \implies&2\sqrt{ab}\le a+b\nonumber\\
+     \implies&\sqrt{ab}\le\frac{a+b}{2}
+    \end{align}
    \subsubsection{自然対数の底の収束性}
    \subsubsection{自然対数の底の無理性}
    \subsubsection{指数関数と対数関数の極限の公式}
