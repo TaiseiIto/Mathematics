@@ -385,7 +385,8 @@
    \end{align}
    を証明する．
    \begin{align}
-    f:{}_{1\le}\mathbb{R}\to\mathbb{R};x\mapsto\left(x+\frac{1}{2}\right)\log\left(1+\frac{1}{x}\right)-1
+    &f:{}_{1\le}\mathbb{R}\to\mathbb{R};x\mapsto\left(x+\frac{1}{2}\right)\log\left(1+\frac{1}{x}\right)-1\\
+    &g:{}_{1\le}\mathbb{R}\to\mathbb{R};x\mapsto\frac{1}{4x\left(x+1\right)}
    \end{align}
    とする．
    \subsubsection{下界の証明}
@@ -436,6 +437,24 @@
      0<f\left(x\right)
     \end{align}
    \subsubsection{上界の証明}
+    \begin{align}
+     \dv{x}g\left(x\right)&=\dv{x}\frac{1}{4x\left(x+1\right)}\nonumber\\
+     &=\dv{x}\left(4x\left(x+1\right)\right)^{-1}\nonumber\\
+     &=-\left(4x\left(x+1\right)\right)^{-2}\dv{4x\left(x+1\right)}{x}\nonumber\\
+     &=-\frac{1}{16x^2\left(x+1\right)^2}\dv{4x^2+4x}{x}\nonumber\\
+     &=-\frac{2x+1}{4x^2\left(x+1\right)^2}\nonumber\\
+     \dv[2]{x}g\left(x\right)&=\dv{x}\left(-\frac{2x+1}{4x^2\left(x+1\right)^2}\right)\nonumber\\
+     &=-\dv{x}\frac{2x+1}{4x^2\left(x+1\right)^2}\nonumber\\
+     &=-\frac{\dv{\left(2x+1\right)}{x}\left(4x^2\left(x+1\right)^2\right)-\left(2x+1\right)\dv{4x^2\left(x+1\right)^2}{x}}{\left(4x^2\left(x+1\right)^2\right)^2}\nonumber\\
+     &=-\frac{2\left(4x^2\left(x+1\right)^2\right)-\left(2x+1\right)\dv{\left(4x^4+8x^3+4x^2\right)}{x}}{16x^4\left(x+1\right)^4}\nonumber\\
+     &=-\frac{2\left(4x^4+8x^3+4x^2\right)-\left(2x+1\right)\left(16x^3+24x^2+8x\right)}{16x^4\left(x+1\right)^4}\nonumber\\
+     &=-\frac{8x^4+16x^3+8x^2-\left(32x^4+48x^3+16x^2+16x^3+24x^2+8x\right)}{16x^4\left(x+1\right)^4}\nonumber\\
+     &=-\frac{8x^4+16x^3+8x^2-\left(32x^4+64x^3+40x^2+8x\right)}{16x^4\left(x+1\right)^4}\nonumber\\
+     &=-\frac{8x^4+16x^3+8x^2-32x^4-64x^3-40x^2-8x}{16x^4\left(x+1\right)^4}\nonumber\\
+     &=\frac{32x^4+64x^3+40x^2+8x-8x^4-16x^3-8x^2}{16x^4\left(x+1\right)^4}\nonumber\\
+     &=\frac{24x^4+48x^3+32x^2+8x}{16x^4\left(x+1\right)^4}\nonumber\\
+     &=\frac{3x^3+6x^2+4x+1}{2x^3\left(x+1\right)^4}\nonumber\\
+    \end{align}
   \subsection{$\sin$の微分}
    \subsubsection{三平方の定理}
     \begin{figure}[H]
