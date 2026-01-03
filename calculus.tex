@@ -243,6 +243,19 @@
       &=\left(\prod_{i=1}^{2^{n+1}}s\left(i\right)\right)^{2^{-n-1}}
      \end{align}
     \subsubsubsection{$p\left(n+1\right)\implies p\left(n\right)$}
+     \begin{align}
+      s\left(n+1\right)=n^{-1}\sum_{i=1}^ns\left(n\right)
+     \end{align}
+     とすると，
+     \begin{align}
+      &\left(\prod_{i=1}^{n+1}s\left(i\right)\right)^{\left(n+1\right)^{-1}}\le \left(n+1\right)^{-1}\sum_{i=1}^{n+1}s\left(i\right)\nonumber\\
+      &\iff\left(n^{-1}\sum_{i=1}^ns\left(n\right)\prod_{i=1}^ns\left(i\right)\right)^{\left(n+1\right)^{-1}}\le \left(n+1\right)^{-1}\left(n^{-1}\sum_{i=1}^ns\left(n\right)+\sum_{i=1}^ns\left(i\right)\right)\nonumber\\
+      &\iff\left(n^{-1}\sum_{i=1}^ns\left(n\right)\prod_{i=1}^ns\left(i\right)\right)^{\left(n+1\right)^{-1}}\le \left(n+1\right)^{-1}\left(\frac{n+1}{n}\sum_{i=1}^ns\left(n\right)\right)\nonumber\\
+      &\iff\left(n^{-1}\sum_{i=1}^ns\left(n\right)\prod_{i=1}^ns\left(i\right)\right)^{\left(n+1\right)^{-1}}\le n^{-1}\sum_{i=1}^ns\left(n\right)\nonumber\\
+      &\iff n^{-1}\sum_{i=1}^ns\left(n\right)\prod_{i=1}^ns\left(i\right)\le\left(n^{-1}\sum_{i=1}^ns\left(n\right)\right)^{n+1}\nonumber\\
+      &\iff\prod_{i=1}^ns\left(i\right)\le\left(n^{-1}\sum_{i=1}^ns\left(n\right)\right)^n\nonumber\\
+      &\iff\left(\prod_{i=1}^ns\left(i\right)\right)^{n^{-1}}\le n^{-1}\sum_{i=1}^ns\left(n\right)\nonumber\\
+     \end{align}
    \subsubsection{自然対数の底の定義}
     \begin{align}
      e=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n
