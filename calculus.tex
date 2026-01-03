@@ -2,6 +2,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{here}
+\usepackage{mathtools}
 \usepackage{physics}
 \usepackage{tikz}
 \usetikzlibrary{angles}
@@ -261,6 +262,39 @@
      e=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n
     \end{align}
    \subsubsection{自然対数の底の収束性}
+    単調収束定理より，数列
+    \begin{align}
+     e:\mathbb{N}\to\mathbb{R};n\mapsto\left(1+\frac{1}{n}\right)^n
+    \end{align}
+    について，広義単調増加性と上界を示せば，数列は収束するといえる．
+    \subsubsubsection{自然対数の底の広義単調増加性}
+     相加相乗平均の不等式に
+     \begin{align}
+      s\left(i\right)=
+      \begin{cases}
+       \frac{n+1}{n} & \left(i\le n\right)\\
+       1 & \left(i=n+1\right)
+      \end{cases}
+     \end{align}
+     を代入すると，
+     \begin{align}
+     &\left(\frac{n+1}{n}\right)^{\frac{n}{n+1}}\le\frac{n+2}{n+1}\nonumber\\
+     &\iff\left(1+\frac{1}{n}\right)^{\frac{n}{n+1}}\le 1+\frac{1}{n+1}\nonumber\\
+     &\iff\left(1+\frac{1}{n}\right)^n\le\left(1+\frac{1}{n+1}\right)^{n+1}\nonumber\\
+     \end{align}
+     よって数列は広義単調増加である．
+    \subsubsubsection{自然対数の底の上界}
+     \begin{align}
+      \left(1+\frac{1}{n}\right)^n&=\sum_{i=0}^n\binom{n}{i}\frac{1}{n^i}\nonumber\\
+      &=\sum_{i=0}^n\frac{n!}{i!\left(n-i\right)!n^i}\nonumber\\
+      &=\sum_{i=0}^n\frac{1}{i!}\prod_{j=n-i+1}^n\frac{j}{n}\nonumber\\
+      &=\sum_{i=0}^n\frac{1}{i!}\prod_{j=0}^{i-1}\frac{n-j}{n}\nonumber\\
+      &=\sum_{i=0}^n\frac{1}{i!}\prod_{j=0}^{i-1}\left(1-\frac{j}{n}\right)\nonumber\\
+      &\le\sum_{i=0}^n\frac{1}{i!}\nonumber\\
+      &=1+\sum_{i=1}^n\frac{1}{i!}\nonumber\\
+      &\le1+\sum_{i=1}^n\frac{1}{2^i}\nonumber\\
+      &\le1+\sum_{i=1}^\infty\frac{1}{2^i}\nonumber\\
+     \end{align}
    \subsubsection{自然対数の底の無理性}
    \subsubsection{指数関数と対数関数の極限の公式}
    \subsubsection{本証明}
