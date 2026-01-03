@@ -364,8 +364,8 @@
     \dv{\log x}{x}&=\lim_{h\to 0}\frac{\log\left(x+h\right)-\log x}{h}\nonumber\\
     &=\lim_{h\to 0}\frac{\log\frac{x+h}{x}}{h}\nonumber\\
     &=\lim_{h\to 0}\log\left(\frac{x+h}{x}\right)^{\frac{1}{h}}\nonumber\\
-    &=\log\lim_{h\to 0}\left(\frac{x}{x}+\frac{h}{x}\right)^{\frac{1}{h}}\nonumber\\
-    &=\log\lim_{h\to 0}\left(1+\frac{h}{x}\right)^{\frac{1}{h}}
+    &=\lim_{h\to 0}\log\left(\frac{x}{x}+\frac{h}{x}\right)^{\frac{1}{h}}\nonumber\\
+    &=\lim_{h\to 0}\log\left(1+\frac{h}{x}\right)^{\frac{1}{h}}
    \end{align}
    ここで，
    \begin{align}
@@ -373,12 +373,11 @@
    \end{align}
    とすると，
    \begin{align}
-    \dv{\log x}{x}&=\log\lim_{h\to 0}\left(1+\frac{h}{x}\right)^{\frac{1}{h}}\nonumber\\
-    &=\log\lim_{g\to 0}\left(1+g\right)^{\frac{1}{gx}}\nonumber\\
-    &=\log\lim_{g\to 0}\left(\left(1+g\right)^{\frac{1}{g}}\right)^{\frac{1}{x}}\nonumber\\
-    &=\log\left(\lim_{g\to 0}\left(1+g\right)^{\frac{1}{g}}\right)^{\frac{1}{x}}\nonumber\\
-    &=\log e^{\frac{1}{x}}\nonumber\\
-    &=\frac{1}{x}\nonumber\\
+    \dv{\log x}{x}&=\lim_{h\to 0}\log\left(1+\frac{h}{x}\right)^{\frac{1}{h}}\nonumber\\
+    &=\lim_{g\to 0}\log\left(1+g\right)^{\frac{1}{gx}}\nonumber\\
+    &=\lim_{g\to 0}\frac{\log\left(1+g\right)}{gx}\nonumber\\
+    &=\frac{1}{x}\lim_{g\to 0}\frac{\log\left(1+g\right)}{g}\nonumber\\
+    &=\frac{1}{x}
    \end{align}
   \subsection{$\sin$の微分}
    \subsubsection{三平方の定理}
