@@ -352,22 +352,11 @@
      \implies\lim_{y\to 0}\frac{e^y-1}{y}&=1
     \end{align}
    \subsubsection{本証明}
-    自然対数の底の定義
-    \begin{align}
-     e&=\lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x\nonumber\\
-     &=\lim_{h\to 0}\left(1+h\right)^{\frac{1}{h}}
-    \end{align}
-    より，
     \begin{align}
      \dv{e^x}{x}&=\lim_{h\to 0}\frac{e^{x+h}-e^x}{h}\nonumber\\
      &=\lim_{h\to 0}\frac{e^xe^h-e^x}{h}\nonumber\\
      &=\lim_{h\to 0}\frac{e^x\left(e^h-1\right)}{h}\nonumber\\
      &=e^x\lim_{h\to 0}\frac{e^h-1}{h}\nonumber\\
-     &=e^x\lim_{h\to 0}\frac{\left(\left(1+h\right)^{\frac{1}{h}}\right)^h-1}{h}\nonumber\\
-     &=e^x\lim_{h\to 0}\frac{\left(1+h\right)^{\frac{h}{h}}-1}{h}\nonumber\\
-     &=e^x\lim_{h\to 0}\frac{\left(1+h\right)-1}{h}\nonumber\\
-     &=e^x\lim_{h\to 0}\frac{h}{h}\nonumber\\
-     &=e^x\lim_{h\to 0}1\nonumber\\
      &=e^x
     \end{align}
   \subsection{対数関数の微分}
