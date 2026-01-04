@@ -833,15 +833,47 @@
    \subsubsection{収束する列は基本列であることの証明}
     \begin{align}
      &\lim_{n\to\infty}s\left(n\right)=c\nonumber\\
-     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|c-s\left(n\right)\right|<\epsilon\nonumber\\
-     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)\right|<\epsilon\land\left|c-s\left(n_2\right)\right|<\epsilon\nonumber\\
-     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)\right|+\left|c-s\left(n_2\right)\right|<2\epsilon\nonumber\\
-     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)\right|+\left|s\left(n_2\right)-c\right|<2\epsilon\nonumber\\
-     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)+s\left(n_2\right)-c\right|<2\epsilon\nonumber\\
-     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|s\left(n_2\right)-s\left(n_1\right)\right|<2\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|c-s\left(n\right)\right|<\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)\right|<\epsilon\land\left|c-s\left(n_2\right)\right|<\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)\right|+\left|c-s\left(n_2\right)\right|<2\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)\right|+\left|s\left(n_2\right)-c\right|<2\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)+s\left(n_2\right)-c\right|<2\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|s\left(n_2\right)-s\left(n_1\right)\right|<2\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|s\left(n_2\right)-s\left(n_1\right)\right|<\epsilon
     \end{align}
     よって基本列である．
    \subsubsection{基本列は収束することの証明}
+    \begin{align}
+     &\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|s\left(n_1\right)-s\left(n_2\right)\right|<\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|s\left(n\right)-s\left(N\right)\right|<\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|s\left(n\right)\right|-\left|s\left(N\right)\right|<\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|s\left(n\right)\right|<\epsilon+\left|s\left(N\right)\right|\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in\mathbb{N},\left|s\left(n\right)\right|<\epsilon+\max s\left(\mathbb{N}_{\le N}\right)\nonumber\\
+    \end{align}
+    よって$\epsilon+\max_{\epsilon\in{}_{0<}\mathbb{R}}s\left(\mathbb{N}_{\le N}\right)$は列$s$の上界である．
+    ボルツァーノ・ワイエルシュトラスの定理より，列$s$は収束部分列
+    \begin{align}
+     &t:\mathbb{N}\to\mathbb{N}\\
+     &\lim_{n\to\infty}\left(s\circ t\right)\left(n\right)=c
+    \end{align}
+    を持つ．
+    よって，
+    \begin{align}
+     \forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|c-\left(s\circ t\right)\left(n\right)\right|<\epsilon
+    \end{align}
+    加えて$s$は基本列であるから，
+    \begin{align}
+     &\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\forall m\in{}_{\max\left(N,t\left(n\right)\right)\le}\mathbb{N},\left|c-\left(s\circ t\right)\left(n\right)\right|<\epsilon\land\left|\left(s\circ t\right)\left(n\right)-s\left(m\right)\right|<\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\forall m\in{}_{\max\left(N,t\left(n\right)\right)\le}\mathbb{N},\left|c-\left(s\circ t\right)\left(n\right)\right|+\left|\left(s\circ t\right)\left(n\right)-s\left(m\right)\right|<2\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\forall m\in{}_{\max\left(N,t\left(n\right)\right)\le}\mathbb{N},\left|c-\left(s\circ t\right)\left(n\right)+\left(s\circ t\right)\left(n\right)-s\left(m\right)\right|<2\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\forall m\in{}_{\max\left(N,t\left(n\right)\right)\le}\mathbb{N},\left|c-s\left(m\right)\right|<2\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|c-s\left(n\right)\right|<2\epsilon\nonumber\\
+     \implies&\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|c-s\left(n\right)\right|<\epsilon
+    \end{align}
+    よって
+    \begin{align}
+     \lim_{n\to\infty}s\left(n\right)=c
+    \end{align}
   \subsection{ワイエルシュトラスのM判定法}
    \subsubsection{一様収束の定義}
    \subsubsection{絶対収束の定義}
