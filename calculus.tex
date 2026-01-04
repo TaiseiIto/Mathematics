@@ -819,7 +819,29 @@
      f\left(x\right)&<g\left(x\right)\nonumber\\
     \left(x+\frac{1}{2}\right)\log\left(1+\frac{1}{x}\right)-1&<\frac{1}{4x\left(x+1\right)}
     \end{align}
-  \subsection{コーシー列}
+  \subsection{基本列}
+   列$s:\mathbb{N}\to\mathbb{C}$が，
+   \begin{align}
+    \forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|s\left(n_1\right)-s\left(n_2\right)\right|<\epsilon
+   \end{align}
+   であるとき，これを基本列であるといい，
+   \begin{align}
+    \lim_{n_1,n_2\to\infty}\left|s\left(n_1\right)-s\left(n_2\right)\right|=0
+   \end{align}
+   である．
+   基本列であることと収束することが同値であることを証明する．
+   \subsubsection{収束する列は基本列であることの証明}
+    \begin{align}
+     &\lim_{n\to\infty}s\left(n\right)=c\nonumber\\
+     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall n\in{}_{N\le}\mathbb{N},\left|c-s\left(n\right)\right|<\epsilon\nonumber\\
+     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)\right|<\epsilon\land\left|c-s\left(n_2\right)\right|<\epsilon\nonumber\\
+     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)\right|+\left|c-s\left(n_2\right)\right|<2\epsilon\nonumber\\
+     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)\right|+\left|s\left(n_2\right)-c\right|<2\epsilon\nonumber\\
+     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|c-s\left(n_1\right)+s\left(n_2\right)-c\right|<2\epsilon\nonumber\\
+     &\implies\forall\epsilon\in{}_{0<}\mathbb{R},\exists N\in\mathbb{N},\forall\left(n_1,n_2\right)\in{}_{N\le}\mathbb{N}^2,\left|s\left(n_2\right)-s\left(n_1\right)\right|<2\epsilon\nonumber\\
+    \end{align}
+    よって基本列である．
+   \subsubsection{基本列は収束することの証明}
   \subsection{ワイエルシュトラスのM判定法}
    \subsubsection{一様収束の定義}
    \subsubsection{絶対収束の定義}
