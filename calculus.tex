@@ -874,7 +874,7 @@
     \begin{align}
      \lim_{n\to\infty}s\left(n\right)=c
     \end{align}
-  \subsection{ワイエルシュトラスのM判定法}
+  \subsection{優級数定理}
    \subsubsection{各点収束の定義}
     関数列$f:\mathbb{N}\times I\to O$と関数$g:I\to O$について，
     \begin{align}
@@ -902,7 +902,25 @@
     \end{align}
     となるとき，これを絶対収束という．
    \subsubsection{主張}
+    \begin{align}
+     &f:\mathbb{N}\times I\to\mathbb{C}\nonumber\\
+     &s:\mathbb{N}\to\mathbb{R}\nonumber\\
+     &g:\mathbb{N}\times I\to\mathbb{C};\left(n,x\right)\mapsto\sum_{m=1}^n\left|f\left(m,x\right)\right|\nonumber\\
+     &\forall\left(n,x\right)\in\mathbb{N}\times I,\left|f\left(n,x\right)\right|\le s\left(n\right)\land\sum_{n=1}^\infty s\left(n\right)\in\mathbb{R}\nonumber\\
+    \end{align}
+    のとき，$g$は一様収束する．
    \subsubsection{証明}
+    収束する列は基本列だから，
+    \begin{align}
+     &\forall\left(x,n_1,n_2\right)\in I\times\mathbb{N}^2,\sum_{n=n_1}^{n_2}\left|f\left(n,x\right)\right|\le\sum_{n=n_1}^{n_2} s\left(n\right)\in\mathbb{R}\nonumber\\
+     &\implies\forall\left(x,n_1,n_2\right)\in I\times\mathbb{N}^2,\sum_{n=n_1}^{n_2}\left|f\left(n,x\right)\right|\le\sum_{n=n_1}^{n_2} s\left(n\right)\in\mathbb{R}\nonumber\\
+     &\implies\forall x\in I,\lim_{n1,n2\to\infty}\sum_{n=n_1}^{n_2}\left|f\left(n,x\right)\right|\le\sum_{n=n_1}^{n_2} s\left(n\right)=0\nonumber\\
+     &\implies\forall x\in I,\lim_{n1,n2\to\infty}\sum_{n=n_1}^{n_2}\left|f\left(n,x\right)\right|=0\nonumber\\
+     &\implies\forall x\in I,\lim_{n1,n2\to\infty}\left|g\left(n_2,x\right)\right|-\left|g\left(n_1-1,x\right)\right|=0\nonumber\\
+     &\implies\forall x\in I,\lim_{n1,n2\to\infty}\left|g\left(n_2,x\right)\right|-\left|g\left(n_1,x\right)\right|=0\nonumber\\
+     &\implies\forall x\in I,\lim_{n1,n2\to\infty}\left|g\left(n_2,x\right)-g\left(n_1,x\right)\right|=0
+    \end{align}
+    よって$g$は$x\in I$に渡って一様に基本列であり，よって一様収束する．
   \subsection{複素積分の導入}
   \subsection{コーシーの積分定理}
   \subsection{コーシーの積分公式}
