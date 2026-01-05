@@ -906,21 +906,18 @@
      &f:\mathbb{N}\times I\to\mathbb{C}\nonumber\\
      &s:\mathbb{N}\to\mathbb{R}\nonumber\\
      &g:\mathbb{N}\times I\to\mathbb{C};\left(n,x\right)\mapsto\sum_{m=1}^n\left|f\left(m,x\right)\right|\nonumber\\
-     &\forall\left(n,x\right)\in\mathbb{N}\times I,\left|f\left(n,x\right)\right|\le s\left(n\right)\land\sum_{n=1}^\infty s\left(n\right)\in\mathbb{R}\nonumber\\
+     &\forall\left(n,x\right)\in\mathbb{N}\times I,\left|f\left(n,x\right)\right|\le s\left(n\right)\land\sum_{n=1}^\infty s\left(n\right)\in\mathbb{R}
     \end{align}
     のとき，$g$は一様収束する．
    \subsubsection{証明}
     収束する列は基本列だから，
     \begin{align}
-     &\forall\left(x,n_1,n_2\right)\in I\times\mathbb{N}^2,\sum_{n=n_1}^{n_2}\left|f\left(n,x\right)\right|\le\sum_{n=n_1}^{n_2} s\left(n\right)\in\mathbb{R}\nonumber\\
-     &\implies\forall\left(x,n_1,n_2\right)\in I\times\mathbb{N}^2,\sum_{n=n_1}^{n_2}\left|f\left(n,x\right)\right|\le\sum_{n=n_1}^{n_2} s\left(n\right)\in\mathbb{R}\nonumber\\
-     &\implies\forall x\in I,\lim_{n1,n2\to\infty}\sum_{n=n_1}^{n_2}\left|f\left(n,x\right)\right|\le\sum_{n=n_1}^{n_2} s\left(n\right)=0\nonumber\\
-     &\implies\forall x\in I,\lim_{n1,n2\to\infty}\sum_{n=n_1}^{n_2}\left|f\left(n,x\right)\right|=0\nonumber\\
-     &\implies\forall x\in I,\lim_{n1,n2\to\infty}\left|g\left(n_2,x\right)\right|-\left|g\left(n_1-1,x\right)\right|=0\nonumber\\
-     &\implies\forall x\in I,\lim_{n1,n2\to\infty}\left|g\left(n_2,x\right)\right|-\left|g\left(n_1,x\right)\right|=0\nonumber\\
-     &\implies\forall x\in I,\lim_{n1,n2\to\infty}\left|g\left(n_2,x\right)-g\left(n_1,x\right)\right|=0
+     &\forall\left(n,x\right)\in\mathbb{N}\times I,\left|f\left(n,x\right)\right|\le s\left(n\right)\land\sum_{n=1}^\infty s\left(n\right)\in\mathbb{R}\nonumber\\
+     \implies&\forall x\in I,\lim_{n\to\infty}\sum_{m=1}^n\left|f\left(m,x\right)\right|\le\lim_{n\to\infty}\sum_{m=1}^n s\left(m\right)\in\mathbb{R}\nonumber\\
+     \implies&\forall x\in I,\lim_{n\to\infty}g\left(n,x\right)\le\lim_{n\to\infty}\sum_{m=1}^n s\left(m\right)\in\mathbb{R}\nonumber\\
+     \implies&\lim_{n\to\infty}\sup_{x\in I}g\left(n,x\right)\le\lim_{n\to\infty}\sum_{m=1}^n s\left(m\right)\in\mathbb{R}\nonumber\\
     \end{align}
-    よって$g$は$x\in I$に渡って一様に基本列であり，よって一様収束する．
+    よって$g$は$\forall x\in I$に渡って一様に基本列であり，よって一様収束する．
   \subsection{複素積分の導入}
   \subsection{コーシーの積分定理}
   \subsection{コーシーの積分公式}
