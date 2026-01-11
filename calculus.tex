@@ -749,6 +749,19 @@
     \mathrm{d}f\left(x_1,\cdots,x_N\right)=\sum_{n=1}^N\mathrm{d}x_n\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)
    \end{align}
    と書く．
+   \subsubsection{閉区間上の連続関数の像は有界}
+    \begin{align}
+     \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),f\left(\left[a,b\right]\right)\subset\mathbb{R}
+    \end{align}
+    背理法により$f\left(\left[a,b\right]\right)$が上に有界であることを証明する．
+    $f\left(\left[a,b\right]\right)$が上に有界でないと仮定する．
+    $f\in C^0$より，
+    \begin{align}
+     &\forall\epsilon\in{}_{0\le}\mathbb{R},\exists x\in\left[a,b\right],\epsilon<f\left(x\right)\nonumber\\
+     \implies&\forall\epsilon\in{}_{0\le}\mathbb{R},f^{-1}\left({}_{\epsilon\le}\mathbb{R}\right)\ne\emptyset\nonumber\\
+     \implies&\forall n\in\mathbb{N},f^{-1}\left({}_{n\le}\mathbb{R}\right)\ne\emptyset\nonumber\\
+     \implies&\exists\left(x_1,\cdots\right)\in\mathbb{R}^\infty,\lim_{n\to\infty}f\left(x_n\right)=\infty
+    \end{align}
    \subsubsection{最大値最小値の定理}
     \begin{align}
      \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),\exists\left(m,M\right)\in\left[a,b\right]^2,\forall x\in\left[a,b\right],f\left(m\right)\le f\left(x\right)\le f\left(M\right)
