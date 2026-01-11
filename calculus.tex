@@ -710,12 +710,17 @@
     &=\frac{\dv{f\left(x\right)}{x}g\left(x\right)-f\left(x\right)\dv{g\left(x\right)}{x}}{g\left(x\right)^2}
    \end{align}
   \subsection{偏微分}
-   $f:\mathbb{R}^n\to\mathbb{R}$の，$m$番目の引数における偏微分を，
+   $f:\mathbb{R}^N\to\mathbb{R}$の，$n$番目の引数における偏微分を，
    \begin{align}
-    \pdv{f}{x_m}\left(x_1,\cdots,x_m,\cdots,x_n\right)=\lim_{h\to 0}\frac{f\left(x_1,\cdots,x_m+h,\cdots,x_n\right)-f\left(x_1,\cdots,x_m,\cdots,x_n\right)}{h}
+    \pdv{f}{x_n}\left(x_1,\cdots,x_n,\cdots,x_N\right)=\lim_{h\to 0}\frac{f\left(x_1,\cdots,x_n+h,\cdots,x_N\right)-f\left(x_1,\cdots,x_n,\cdots,x_N\right)}{h}
    \end{align}
    と定義する．
   \subsection{全微分}
+   $f:\mathbb{R}^N\to\mathbb{R}$が，$\left(x_1,\cdots,x_N\right)$において
+   \begin{align}
+    \exists\left(g_1,\cdots,g_N\right)\in\mathbb{R}^N\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}\left(\sum_{n=1}^Nh_n^2\right)^{-\frac{1}{2}}\left(f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)-\sum_{n=1}^Ng_nh_n\right)=0
+   \end{align}
+   のとき，$f$は$\left(x_1,\cdots,x_n\right)$において全微分可能であるという．
   \subsection{複素微分}
    関数$f:\mathbb{C}\to\mathbb{C}$の微分は，関数$f:\mathbb{R}\to\mathbb{R}$の微分と同様に，
    \begin{align}
