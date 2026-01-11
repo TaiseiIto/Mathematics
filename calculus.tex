@@ -720,7 +720,21 @@
    \begin{align}
     \exists\left(g_1,\cdots,g_N\right)\in\mathbb{R}^N\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}\left(\sum_{n=1}^Nh_n^2\right)^{-\frac{1}{2}}\left(f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)-\sum_{n=1}^Ng_nh_n\right)=0
    \end{align}
-   のとき，$f$は$\left(x_1,\cdots,x_n\right)$において全微分可能であるという．
+   のとき，$f$は$\left(x_1,\cdots,x_n\right)$において全微分可能であるといい，このとき，
+   \begin{align}
+    &\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}\left(\sum_{n=1}^Nh_n^2\right)^{-\frac{1}{2}}\left(f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)-\sum_{n=1}^Ng_nh_n\right)=0\nonumber\\
+    \implies&\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)-\sum_{n=1}^Ng_nh_n=0\nonumber\\
+    \implies&\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}\sum_{n=1}^Ng_nh_n=\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)\nonumber\\
+    \implies&\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}\sum_{n=1}^Ng_nh_n=\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)\nonumber\\
+    \implies&\forall n\in\mathbb{N}_{\le N},\lim_{h_n\to 0}g_nh_n=\lim_{h_n\to 0}f\left(x_1,\cdots,x_n+h_n,\cdots,x_N\right)-f\left(x_1,\cdots,x_N\right)\nonumber\\
+    \implies&\forall n\in\mathbb{N}_{\le N},\lim_{h_n\to 0}g_n=\lim_{h_n\to 0}\frac{f\left(x_1,\cdots,x_n+h_n,\cdots,x_N\right)-f\left(x_1,\cdots,x_N\right)}{h_n}\nonumber\\
+    \implies&\forall n\in\mathbb{N}_{\le N},\lim_{h_n\to 0}g_n=\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)
+   \end{align}
+   よって，
+   \begin{align}
+    \lim_{h_1\to 0}\cdots\lim_{h_N\to 0}\left(\sum_{n=1}^Nh_n^2\right)^{-\frac{1}{2}}\left(f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)-\sum_{n=1}^Nh_n\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)\right)=0
+   \end{align}
+   である．
   \subsection{複素微分}
    関数$f:\mathbb{C}\to\mathbb{C}$の微分は，関数$f:\mathbb{R}\to\mathbb{R}$の微分と同様に，
    \begin{align}
