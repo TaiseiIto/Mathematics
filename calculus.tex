@@ -730,7 +730,9 @@
     \implies&\forall n\in\mathbb{N}_{\le N},\lim_{h_n\to 0}g_n=\lim_{h_n\to 0}\frac{f\left(x_1,\cdots,x_n+h_n,\cdots,x_N\right)-f\left(x_1,\cdots,x_N\right)}{h_n}\nonumber\\
     \implies&\forall n\in\mathbb{N}_{\le N},\lim_{h_n\to 0}g_n=\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)
    \end{align}
-   よって，
+   である．
+   これは，全微分可能ならば偏微分可能であることを示している．
+   よって，全微分可能性を偏微分を用いて書くと，
    \begin{align}
     \lim_{h_1\to 0}\cdots\lim_{h_N\to 0}\left(\sum_{n=1}^Nh_n^2\right)^{-\frac{1}{2}}\left(f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)-\sum_{n=1}^Nh_n\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)\right)=0
    \end{align}
@@ -740,7 +742,9 @@
     &\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)-\sum_{n=1}^Nh_n\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)=0\nonumber\\
     \implies&\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)=\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}\sum_{n=1}^Nh_n\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)
    \end{align}
-   であり，これを
+   である．
+   これは，全微分可能ならば連続であることを示している．
+   また，これを
    \begin{align}
     \mathrm{d}f\left(x_1,\cdots,x_N\right)=\sum_{n=1}^N\mathrm{d}x_n\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)
    \end{align}
