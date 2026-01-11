@@ -762,6 +762,19 @@
      \implies&\forall n\in\mathbb{N},f^{-1}\left({}_{n\le}\mathbb{R}\right)\ne\emptyset\nonumber\\
      \implies&\exists\left(x_1,\cdots\right)\in\mathbb{R}^\infty,\lim_{n\to\infty}f\left(x_n\right)=\infty
     \end{align}
+    ここで，$\forall n\in\mathbb{N},x_n\in\left[a,b\right]$は有界な数列であるから，ボルツァーノ・ワイエルシュトラスの定理より，この数列は収束する部分列$\forall n\in\mathbb{N},y_n\in\left[a,b\right]$を持つ．
+    よって
+    \begin{align}
+     &\lim_{n\to\infty}y_n\in\left[a,b\right]\nonumber\\
+     \implies&\lim_{n\to\infty}f\left(y_n\right)\in\mathbb{R}
+    \end{align}
+    これは
+    \begin{align}
+     \lim_{n\to\infty}f\left(x_n\right)=\infty
+    \end{align}
+    と矛盾する．
+    よって$f\left(\left[a,b\right]\right)$は上に有界である．
+    下に有界であることも同様に証明できる．
    \subsubsection{最大値最小値の定理}
     \begin{align}
      \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),\exists\left(m,M\right)\in\left[a,b\right]^2,\forall x\in\left[a,b\right],f\left(m\right)\le f\left(x\right)\le f\left(M\right)
