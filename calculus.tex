@@ -760,7 +760,8 @@
      &\forall\epsilon\in{}_{0\le}\mathbb{R},\exists x\in\left[a,b\right],\epsilon<f\left(x\right)\nonumber\\
      \implies&\forall\epsilon\in{}_{0\le}\mathbb{R},f^{-1}\left({}_{\epsilon\le}\mathbb{R}\right)\ne\emptyset\nonumber\\
      \implies&\forall n\in\mathbb{N},f^{-1}\left({}_{n\le}\mathbb{R}\right)\ne\emptyset\nonumber\\
-     \implies&\exists\left(x_1,\cdots\right)\in\mathbb{R}^\infty,\lim_{n\to\infty}f\left(x_n\right)=\infty
+     \implies&\forall n\in\mathbb{N},\exists x\in\left[a,b\right],n\le f\left(x\right)\nonumber\\
+     \implies&\exists\left(x_1,\cdots\right)\in\left[a,b\right]^\infty,\lim_{n\to\infty}f\left(x_n\right)=\infty
     \end{align}
     ここで，$\forall n\in\mathbb{N},x_n\in\left[a,b\right]$は有界な数列であるから，ボルツァーノ・ワイエルシュトラスの定理より，この数列は収束する部分列$\forall n\in\mathbb{N},y_n\in\left[a,b\right]$を持つ．
     よって
@@ -777,8 +778,38 @@
     下に有界であることも同様に証明できる．
    \subsubsection{最大値最小値の定理}
     \begin{align}
-     \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),\exists\left(m,M\right)\in\left[a,b\right]^2,\forall x\in\left[a,b\right],f\left(m\right)\le f\left(x\right)\le f\left(M\right)
+     \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),\exists\left(x_{\min{}},x_{\max{}}\right)\in\left[a,b\right]^2,\forall x\in\left[a,b\right],f\left(x_{\min{}}\right)\le f\left(x\right)\le f\left(x_{\max{}}\right)
     \end{align}
+    最大値が存在することを証明する．
+    閉区間上の連続関数$f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right)$の像$f\left(\left[a,b\right]\right)$が有界であることを使って証明する．
+    実数の連続性より，上界ならば上限を持つから，
+    \begin{align}
+     f_{\sup}=\sup f\left(\left[a,b\right]\right)
+    \end{align}
+    とすると，$f\in C^0$より，
+    \begin{align}
+     &\forall\epsilon\in{}_{0\le}\mathbb{R},f^{-1}\left(\left[f_{\sup}-\epsilon,f_{\sup}\right]\right)\ne\emptyset\nonumber\\
+     \implies&\forall n\in\mathbb{N},f^{-1}\left(\left[f_{\sup}-n^{-1},f_{\sup}\right]\right)\ne\emptyset\nonumber\\
+     \implies&\forall n\in\mathbb{N},\exists x\in\left[a,b\right],f_{\sup}-n^{-1}\le f\left(x\right)\le f_{\sup}\nonumber\\
+     \implies&\exists\left(x_1,\cdots\right)\in\left[a,b\right]^\infty,\lim_{n\to\infty}f\left(x_n\right)=f_{\sup}
+    \end{align}
+    ここで，$\forall n\in\mathbb{N},x_n\in\left[a,b\right]$は有界な数列であるから，ボルツァーノ・ワイエルシュトラスの定理より，この数列は収束する部分列$\forall n\in\mathbb{N},y_n\in\left[a,b\right]$を持つ．
+    よって，
+    \begin{align}
+     &\lim_{n\to\infty}y_n\in\left[a,b\right]\\
+     &\lim_{n\to\infty}f\left(y_n\right)=f_{\sup}
+    \end{align}
+    ここで，
+    \begin{align}
+     x_{\max{}}=\lim_{n\to\infty}y_n
+    \end{align}
+    とすると，
+    \begin{align}
+     \forall x\in\left[a,b\right],f\left(x\right)\le f\left(x_{\max{}}\right)
+    \end{align}
+    である．
+    これは$f\left(\left[a,b\right]\right)$の最大値である．
+    最小値の存在も同様に証明できる．
    \subsubsection{ロルの定理}
    \subsubsection{平均値の定理}
    \subsubsection{偏導関数が連続ならば全微分可能}
