@@ -709,7 +709,87 @@
     &=\dv{f\left(x\right)}{x}\frac{g\left(x\right)}{g\left(x\right)^2}-\frac{f\left(x\right)}{g\left(x\right)^2}\dv{g\left(x\right)}{x}\nonumber\\
     &=\frac{\dv{f\left(x\right)}{x}g\left(x\right)-f\left(x\right)\dv{g\left(x\right)}{x}}{g\left(x\right)^2}
    \end{align}
+  \subsection{偏微分}
+  \subsection{全微分}
+  \subsection{複素微分}
+   関数$f:\mathbb{C}\to\mathbb{C}$の微分は，関数$f:\mathbb{R}\to\mathbb{R}$の微分と同様に，
+   \begin{align}
+    \dv{f\left(x\right)}{x}=\lim_{h\to 0}\frac{f\left(x+h\right)-f\left(x\right)}{h}
+   \end{align}
+   で定義される．
+   ただし，$h$は$\mathbb{C}$上でどのような近付け方をしても結果が一致しなければならない．
+   \subsubsection{正則関数}
+    $f:\mathbb{C}\to\mathbb{C}$が，$\mathbb{C}$全体において微分可能であるとき，$f$を正則関数という．
+   \subsubsection{コーシー・リーマンの関係式}
  \section{積分}
+  \subsection{複素積分の導入}
+   \subsubsection{積分経路}
+    積分経路は，次を満たす経路$c$の有限個の結合である．
+    \begin{align}
+     &c\in C^1\left(\mathbb{C}^{\left[t_1,t_2\right]}\right)\\
+     &\dv{c\left(t\right)}{t}\ne 0
+    \end{align}
+   \subsubsection{積分経路の反転}
+    積分経路
+    \begin{align}
+     c_1\in C^1\left(\mathbb{C}^{\left[t_1,t_2\right]}\right)
+    \end{align}
+    に対し，
+    \begin{align}
+     &c_2\in C^1\left(\mathbb{C}^{\left[t_1,t_2\right]}\right)\\
+     &c_2\left(t\right)=c_1\left(b-t\right)
+    \end{align}
+    を積分経路の反転といい，
+    \begin{align}
+     c_2=-c_1
+    \end{align}
+    と表す．
+   \subsubsection{積分経路の結合}
+    積分経路
+    \begin{align}
+     &c_1\in C^1\left(\mathbb{C}^{\left[t_1,t_2\right]}\right)\\
+     &c_2\in C^1\left(\mathbb{C}^{\left[t_2,t_3\right]}\right)\\
+     &c_1\left(t_2\right)=c_2\left(t_2\right)
+    \end{align}
+    に対し，
+    \begin{align}
+     &c_3\in C^1\left(\mathbb{C}^{\left[t_1,t_3\right]}\right)\\
+     &c_3\left(t\right)=
+     \begin{cases}
+      c_1\left(t\right)&t\in\left[t_1,t_2\right]\\
+      c_2\left(t\right)&t\in\left(t_2,t_3\right]
+     \end{cases}
+    \end{align}
+    を積分経路の結合といい，
+    \begin{align}
+     c_3=c_1+c_2
+    \end{align}
+    と表す．
+   \subsubsection{複素積分}
+    複素関数
+    \begin{align}
+     f\in\mathbb{C}^\mathbb{C}
+    \end{align}
+    の，積分経路
+    \begin{align}
+     c\in\mathbb{C}^{\left[t_1,t_2\right]}
+    \end{align}
+    に沿った積分は，
+    \begin{align}
+     \int_cf\left(z\right)dz&=\lim_{h\to 0}\sum_{t=\frac{t_1}{h}}^{\frac{t_2}{h}}\left(c\left(t+h\right)-c\left(t\right)\right)f\left(c\left(t\right)\right)\nonumber\\
+     &=\lim_{h\to 0}\sum_{t=\frac{t_1}{h}}^{\frac{t_2}{h}}h\dv{c\left(t\right)}{t}f\left(c\left(t\right)\right)\nonumber\\
+     &=\int_{t_1}^{t_2}f\left(c\left(t\right)\right)\dv{c\left(t\right)}{t}dt\nonumber\\
+    \end{align}
+    である．
+   \subsubsection{複素積分の線形性}
+    \begin{align}
+     \int_c\left(f\left(z\right)+g\left(z\right)\right)dz&=\int_cf\left(z\right)dz+\int_cf\left(z\right)dz\\
+     \int_caf\left(z\right)dz&=a\int_cf\left(z\right)dz\\
+     \int_{-c}f\left(z\right)dz&=-\int_cf\left(z\right)dz\\
+     \int_{c_1+c_2}f\left(z\right)dz&=\int_{c_1}f\left(z\right)dz+\int_{c_2}f\left(z\right)dz
+    \end{align}
+   \subsubsection{原始関数と積分}
+
  \section{スターリングの公式}
   この公式は，ポアソン分布で標準正規分布を近似できることを示すために必要となる．
   確率論で使用されるので確率論の方に書きたかったが，証明が相当に長いのでこちらに移動した．
@@ -917,76 +997,6 @@
      \implies&\lim_{n\to\infty}\sup_{x\in I}g\left(n,x\right)\le\lim_{n\to\infty}\sum_{m=1}^n s\left(m\right)\in\mathbb{R}\nonumber\\
     \end{align}
     よって$g$は$\forall x\in I$に渡って一様に基本列であり，よって一様収束する．
-  \subsection{複素微分の導入}
-   \subsubsection{複素微分}
-   \subsubsection{正則関数}
-  \subsection{複素積分の導入}
-   \subsubsection{積分経路}
-    積分経路は，次を満たす経路$c$の有限個の結合である．
-    \begin{align}
-     &c\in C^1\left(\mathbb{C}^{\left[t_1,t_2\right]}\right)\\
-     &\dv{c\left(t\right)}{t}\ne 0
-    \end{align}
-   \subsubsection{積分経路の反転}
-    積分経路
-    \begin{align}
-     c_1\in C^1\left(\mathbb{C}^{\left[t_1,t_2\right]}\right)
-    \end{align}
-    に対し，
-    \begin{align}
-     &c_2\in C^1\left(\mathbb{C}^{\left[t_1,t_2\right]}\right)\\
-     &c_2\left(t\right)=c_1\left(b-t\right)
-    \end{align}
-    を積分経路の反転といい，
-    \begin{align}
-     c_2=-c_1
-    \end{align}
-    と表す．
-   \subsubsection{積分経路の結合}
-    積分経路
-    \begin{align}
-     &c_1\in C^1\left(\mathbb{C}^{\left[t_1,t_2\right]}\right)\\
-     &c_2\in C^1\left(\mathbb{C}^{\left[t_2,t_3\right]}\right)\\
-     &c_1\left(t_2\right)=c_2\left(t_2\right)
-    \end{align}
-    に対し，
-    \begin{align}
-     &c_3\in C^1\left(\mathbb{C}^{\left[t_1,t_3\right]}\right)\\
-     &c_3\left(t\right)=
-     \begin{cases}
-      c_1\left(t\right)&t\in\left[t_1,t_2\right]\\
-      c_2\left(t\right)&t\in\left(t_2,t_3\right]
-     \end{cases}
-    \end{align}
-    を積分経路の結合といい，
-    \begin{align}
-     c_3=c_1+c_2
-    \end{align}
-    と表す．
-   \subsubsection{複素積分}
-    複素関数
-    \begin{align}
-     f\in\mathbb{C}^\mathbb{C}
-    \end{align}
-    の，積分経路
-    \begin{align}
-     c\in\mathbb{C}^{\left[t_1,t_2\right]}
-    \end{align}
-    に沿った積分は，
-    \begin{align}
-     \int_cf\left(z\right)dz&=\lim_{h\to 0}\sum_{t=\frac{t_1}{h}}^{\frac{t_2}{h}}\left(c\left(t+h\right)-c\left(t\right)\right)f\left(c\left(t\right)\right)\nonumber\\
-     &=\lim_{h\to 0}\sum_{t=\frac{t_1}{h}}^{\frac{t_2}{h}}h\dv{c\left(t\right)}{t}f\left(c\left(t\right)\right)\nonumber\\
-     &=\int_{t_1}^{t_2}f\left(c\left(t\right)\right)\dv{c\left(t\right)}{t}dt\nonumber\\
-    \end{align}
-    である．
-   \subsubsection{複素積分の線形性}
-    \begin{align}
-     \int_c\left(f\left(z\right)+g\left(z\right)\right)dz&=\int_cf\left(z\right)dz+\int_cf\left(z\right)dz\\
-     \int_caf\left(z\right)dz&=a\int_cf\left(z\right)dz\\
-     \int_{-c}f\left(z\right)dz&=-\int_cf\left(z\right)dz\\
-     \int_{c_1+c_2}f\left(z\right)dz&=\int_{c_1}f\left(z\right)dz+\int_{c_2}f\left(z\right)dz
-    \end{align}
-   \subsubsection{原始関数と積分}
   \subsection{コーシーの積分定理}
   \subsection{コーシーの積分公式}
   \subsection{ローラン展開}
