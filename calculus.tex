@@ -749,12 +749,15 @@
     \mathrm{d}f\left(x_1,\cdots,x_N\right)=\sum_{n=1}^N\mathrm{d}x_n\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)
    \end{align}
    と書く．
+   \subsubsection{連続領域は開区間である}
    \subsubsection{開区間上の連続領域は幅を持つ}
     \begin{align}
      &\forall\left(f,x\right)\in\mathbb{R}^{\left(x_{\inf{}},x_{\sup{}}\right)}\times\left(x_{\inf{}},x_{\sup{}}\right),\lim_{h\to0}f\left(x+h\right)=f\left(x\right)\nonumber\\
      \implies&\exists\left(c_{\inf{}},c_{\sup{}}\right)\in\left(x_{\inf{}},x\right)\times\left(x,x_{\sup{}}\right),\forall c\in\left(c_{\inf{}},c_{\sup{}}\right),\lim_{h\to0}f\left(c+h\right)=f\left(c\right)
     \end{align}
     を証明する．
+    開区間上の連続領域が幅を持たない場合，その連続領域は閉区間$\{x\}$であり，連続領域が開区間であることに矛盾する．
+    よって開区間上の連続領域は幅を持つ．
    \subsubsection{閉区間上の連続関数の像は有界}
     \begin{align}
      \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),f\left(\left[a,b\right]\right)\subset\mathbb{R}
