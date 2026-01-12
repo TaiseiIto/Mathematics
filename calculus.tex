@@ -712,7 +712,7 @@
   \subsection{偏微分}
    $f:\mathbb{R}^N\to\mathbb{R}$の，$n$番目の引数における偏微分を，
    \begin{align}
-    \pdv{f}{x_n}\left(x_1,\cdots,x_n,\cdots,x_N\right)=\lim_{h\to 0}\frac{f\left(x_1,\cdots,x_n+h,\cdots,x_N\right)-f\left(x_1,\cdots,x_n,\cdots,x_N\right)}{h}
+    \pdv{f}{x_n}\left(x_1,\cdots,x_n,\cdots,x_N\right)=\lim_{h\to 0}\frac{f\left(x_1,\cdots,x_{n-1},x_n+h,x_{n+1},\cdots,x_N\right)-f\left(x_1,\cdots,x_n,\cdots,x_N\right)}{h}
    \end{align}
    と定義する．
   \subsection{全微分}
@@ -726,8 +726,8 @@
     \implies&\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)-\sum_{n=1}^Ng_nh_n=0\nonumber\\
     \implies&\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}\sum_{n=1}^Ng_nh_n=\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)\nonumber\\
     \implies&\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}\sum_{n=1}^Ng_nh_n=\lim_{h_1\to 0}\cdots\lim_{h_N\to 0}f\left(x_1+h_1,\cdots,x_N+h_N\right)-f\left(x_1,\cdots,x_N\right)\nonumber\\
-    \implies&\forall n\in\mathbb{N}_{\le N},\lim_{h_n\to 0}g_nh_n=\lim_{h_n\to 0}f\left(x_1,\cdots,x_n+h_n,\cdots,x_N\right)-f\left(x_1,\cdots,x_N\right)\nonumber\\
-    \implies&\forall n\in\mathbb{N}_{\le N},\lim_{h_n\to 0}g_n=\lim_{h_n\to 0}\frac{f\left(x_1,\cdots,x_n+h_n,\cdots,x_N\right)-f\left(x_1,\cdots,x_N\right)}{h_n}\nonumber\\
+    \implies&\forall n\in\mathbb{N}_{\le N},\lim_{h_n\to 0}g_nh_n=\lim_{h_n\to 0}f\left(x_1,\cdots,x_{n-1},x_n+h_n,x_{n+1},\cdots,x_N\right)-f\left(x_1,\cdots,x_N\right)\nonumber\\
+    \implies&\forall n\in\mathbb{N}_{\le N},\lim_{h_n\to 0}g_n=\lim_{h_n\to 0}\frac{f\left(x_1,\cdots,x_{n-1},x_n+h_n,x_{n+1},\cdots,x_N\right)-f\left(x_1,\cdots,x_N\right)}{h_n}\nonumber\\
     \implies&\forall n\in\mathbb{N}_{\le N},\lim_{h_n\to 0}g_n=\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)
    \end{align}
    である．
@@ -876,6 +876,12 @@
      \dv{f}{x}\left(c\right)&=\frac{f\left(b\right)-f\left(a\right)}{b-a}\nonumber\\
     \end{align}
    \subsubsection{偏導関数が連続ならば全微分可能}
+    \begin{align}
+     &\forall\left(f;\left(x_1,\cdots,x_N\right)\mapsto f\left(x_1,\cdots,x_N\right),\left(a_1,\cdots,a_N\right)\right)\in\mathbb{R}^{\mathbb{R}^N}\times\mathbb{R}^N,\nonumber\\
+     &\forall n\in\mathbb{N}_{\le N},\exists\pdv{f}{x_n}\left(a_1,\cdots,a_N\right)\land\exists m\in\mathbb{N}_{\le N},\lim_{h\to 0}f\left(a_1,\cdots,a_{m-1},a_m+h,a_{m+1},\cdots,a_N\right)=f\left(a_1,\cdots,a_N\right)\nonumber\\
+     &\implies\forall n\in\mathbb{N}_{\le N},\exists\dv{f}{x_n}\left(a_1,\cdots,a_N\right)
+    \end{align}
+    を証明する．
   \subsection{複素微分}
    関数$f:\mathbb{C}\to\mathbb{C}$の微分は，関数$f:\mathbb{R}\to\mathbb{R}$の微分と同様に，
    \begin{align}
@@ -954,7 +960,6 @@
      \int_{c_1+c_2}f\left(z\right)dz&=\int_{c_1}f\left(z\right)dz+\int_{c_2}f\left(z\right)dz
     \end{align}
    \subsubsection{原始関数と積分}
-
  \section{スターリングの公式}
   この公式は，ポアソン分布で標準正規分布を近似できることを示すために必要となる．
   確率論で使用されるので確率論の方に書きたかったが，証明が相当に長いのでこちらに移動した．
