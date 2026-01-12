@@ -812,7 +812,7 @@
     最小値の存在も同様に証明できる．
    \subsubsection{ロルの定理}
     \begin{align}
-     \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),f\left(a\right)=f\left(b\right)\land\forall x\in\left(a,b\right),\exists\dv{f\left(x\right)}{x}\implies\exists c\in\left(a,b\right),\dv{f}{x}\left(c\right)=0
+     \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),\left(f\left(a\right)=f\left(b\right)\land\forall x\in\left(a,b\right),\exists\dv{f}{x}\left(x\right)\right)\implies\exists c\in\left(a,b\right),\dv{f}{x}\left(c\right)=0
     \end{align}
     を証明する．
     最大値最小値の定理より，
@@ -862,6 +862,9 @@
     \end{align}
     $x_{\min{}}\in\left(a,b\right)$の場合も同様に証明できる．
    \subsubsection{平均値の定理}
+    \begin{align}
+     \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),\left(\forall x\in\left(a,b\right),\exists\dv{f}{x}\left(x\right)\right)\implies\left(\exists c\in\left(a,b\right),\dv{f}{x}\left(c\right)=\frac{f\left(b\right)-f\left(a\right)}{b-a}\right)
+    \end{align}
    \subsubsection{偏導関数が連続ならば全微分可能}
   \subsection{複素微分}
    関数$f:\mathbb{C}\to\mathbb{C}$の微分は，関数$f:\mathbb{R}\to\mathbb{R}$の微分と同様に，
