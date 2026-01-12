@@ -891,10 +891,15 @@
      \lim_{h_1\to 0}f\left(a_1+h_1,a_2,\cdots,a_N\right)=f\left(a_1,\cdots,a_N\right)
     \end{align}
     と言い換えられる．
+    また，
     \begin{align}
-     \Delta f\left(h_1,\cdots,h_N\right)=f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)
+     \forall n\in\mathbb{N}_{\le N},\exists\pdv{f}{x_n}\left(a_1,\cdots,a_N\right)
     \end{align}
-    とすると，
+    より，$f$は$\left(a_1,\cdots,a_N\right)$において各引数上連続であり，開区間内の連続領域は幅を持つから，関数
+    \begin{align}
+     \Delta f\in C^0\left(\mathbb{R}^{\left(\inf{h_1},\sup{h_1}\right)\times\cdots\times\left(\inf{h_N},\sup{h_N}\right)}\right);\left(h_1,\cdots,h_N\right)\mapsto f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)
+    \end{align}
+    が定義できる．
   \subsection{複素微分}
    関数$f:\mathbb{C}\to\mathbb{C}$の微分は，関数$f:\mathbb{R}\to\mathbb{R}$の微分と同様に，
    \begin{align}
