@@ -865,6 +865,16 @@
     \begin{align}
      \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),\left(\forall x\in\left(a,b\right),\exists\dv{f}{x}\left(x\right)\right)\implies\left(\exists c\in\left(a,b\right),\dv{f}{x}\left(c\right)=\frac{f\left(b\right)-f\left(a\right)}{b-a}\right)
     \end{align}
+    を証明する．
+    \begin{align}
+     g\left(x\right)=f\left(x\right)-\frac{f\left(b\right)-f\left(a\right)}{b-a}\left(x-a\right)-f\left(a\right)
+    \end{align}
+    とすると，これはロルの定理の前提条件を満たすから，ロルの定理より，
+    \begin{align}
+     \exists c\in\left(a,b\right),\dv{g}{x}\left(c\right)&=0\nonumber\\
+     \dv{f}{x}\left(c\right)-\frac{f\left(b\right)-f\left(a\right)}{b-a}&=0\nonumber\\
+     \dv{f}{x}\left(c\right)&=\frac{f\left(b\right)-f\left(a\right)}{b-a}\nonumber\\
+    \end{align}
    \subsubsection{偏導関数が連続ならば全微分可能}
   \subsection{複素微分}
    関数$f:\mathbb{C}\to\mathbb{C}$の微分は，関数$f:\mathbb{R}\to\mathbb{R}$の微分と同様に，
