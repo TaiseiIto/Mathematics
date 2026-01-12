@@ -749,6 +749,12 @@
     \mathrm{d}f\left(x_1,\cdots,x_N\right)=\sum_{n=1}^N\mathrm{d}x_n\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)
    \end{align}
    と書く．
+   \subsubsection{開区間上の連続領域は幅を持つ}
+    \begin{align}
+     &\forall\left(f,x\right)\in\mathbb{R}^{\left(x_{\min{}},x_{\max{}}\right)}\times\left(x_{\min{}},x_{\max{}}\right),\lim_{h\to0}f\left(x+h\right)=f\left(x\right)\nonumber\\
+     \implies&\exists\left(c_{\min{}},c_{\max{}}\right)\in\left(x_{\min{}},x\right)\times\left(x,x_{\max{}}\right),\forall c\in\left(c_{\min{}},c_{\max{}}\right),\lim_{h\to0}f\left(c+h\right)=f\left(c\right)
+    \end{align}
+    を証明する．
    \subsubsection{閉区間上の連続関数の像は有界}
     \begin{align}
      \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),f\left(\left[a,b\right]\right)\subset\mathbb{R}
