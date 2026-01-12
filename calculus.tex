@@ -811,6 +811,56 @@
     これは$f\left(\left[a,b\right]\right)$の最大値である．
     最小値の存在も同様に証明できる．
    \subsubsection{ロルの定理}
+    \begin{align}
+     \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),f\left(a\right)=f\left(b\right)\land\forall x\in\left(a,b\right),\exists\dv{f\left(x\right)}{x}\implies\exists c\in\left(a,b\right),\dv{f}{x}\left(c\right)=0
+    \end{align}
+    を証明する．
+    最大値最小値の定理より，
+    \begin{align}
+     \exists\left(x_{\min{}},x_{\max{}}\right)\in\left[a,b\right]^2,\forall x\in\left[a,b\right],f\left(x_{\min{}}\right)\le f\left(x\right)\le f\left(x_{\max{}}\right)
+    \end{align}
+    さらに，$f\left(a\right)=f\left(b\right)$より，
+    \begin{align}
+     &x_{\min{}}\notin\left(a,b\right)\land x_{\max{}}\notin\left(a,b\right)\nonumber\\
+     \implies&f\left(a\right)=f\left(x_{\min{}}\right)=f\left(x_{\max{}}\right)=f\left(b\right)\nonumber\\
+     \implies&\forall x\in\left[a,b\right],f\left(a\right)=f\left(x_{\min{}}\right)=f\left(x\right)=f\left(x_{\max{}}\right)=f\left(b\right)
+    \end{align}
+    よってこの場合は$x_{\min{}}$と$x_{\max{}}$を$\left[a,b\right]$から自由に選択可能であるから結局
+    \begin{align}
+     \lnot&x_{\min{}}\notin\left(a,b\right)\land x_{\max{}}\notin\left(a,b\right)\nonumber\\
+     \implies&x_{\min{}}\in\left(a,b\right)\lor x_{\max{}}\in\left(a,b\right)
+    \end{align}
+    として問題ない．
+    $x_{\max{}}\in\left(a,b\right)$の場合を考えよう．
+    前提条件より，
+    \begin{align}
+     \forall x\in\left(a,b\right),\exists\dv{f\left(x\right)}{x}
+    \end{align}
+    であるから，
+    \begin{align}
+     \dv{f}{x}\left(x_{\max{}}\right)
+    \end{align}
+    が存在し，その値は，
+    \begin{align}
+     \forall x\in\left[a,b\right],f\left(x\right)\le f\left(x_{\max{}}\right)
+    \end{align}
+    であることを考慮すると，
+    \begin{align}
+     \lim_{h\to+0}f\left(x_{\max{}}+h\right)\le f\left(x_{\max{}}\right)\nonumber\\
+     \implies\lim_{h\to+0}f\left(x_{\max{}}+h\right)-f\left(x_{\max{}}\right)\le 0\nonumber\\
+     \implies\lim_{h\to+0}\frac{f\left(x_{\max{}}+h\right)-f\left(x_{\max{}}\right)}{h}\le 0
+    \end{align}
+    また，
+    \begin{align}
+     \lim_{h\to-0}f\left(x_{\max{}}+h\right)\le f\left(x_{\max{}}\right)\nonumber\\
+     \implies\lim_{h\to-0}f\left(x_{\max{}}+h\right)-f\left(x_{\max{}}\right)\le 0\nonumber\\
+     \implies\lim_{h\to-0}\frac{f\left(x_{\max{}}+h\right)-f\left(x_{\max{}}\right)}{h}\ge 0
+    \end{align}
+    よって，
+    \begin{align}
+     \dv{f}{x}\left(x_{\max{}}\right)=0
+    \end{align}
+    $x_{\min{}}\in\left(a,b\right)$の場合も同様に証明できる．
    \subsubsection{平均値の定理}
    \subsubsection{偏導関数が連続ならば全微分可能}
   \subsection{複素微分}
