@@ -887,17 +887,17 @@
    \subsubsection{偏導関数が連続ならば全微分可能}
     \begin{align}
      &\forall\left(f;\left(x_1,\cdots,x_N\right)\mapsto f\left(x_1,\cdots,x_N\right),\left(a_1,\cdots,a_N\right)\right)\in\mathbb{R}^{\mathbb{R}^N}\times\mathbb{R}^N,\nonumber\\
-     &\forall n\in\mathbb{N}_{\le N},\exists\pdv{f}{x_n}\left(a_1,\cdots,a_N\right)\land\exists m\in\mathbb{N}_{\le N},\lim_{h_m\to 0}f\left(a_1,\cdots,a_{m-1},a_m+h_m,a_{m+1},\cdots,a_N\right)=f\left(a_1,\cdots,a_N\right)\nonumber\\
+     &\forall n\in\mathbb{N}_{\le N},\exists\pdv{f}{x_n}\left(a_1,\cdots,a_N\right)\land\exists m\in\mathbb{N}_{\le N},\lim_{h_m\to 0}\pdv{f}{x_m}\left(a_1,\cdots,a_{m-1},a_m+h_m,a_{m+1},\cdots,a_N\right)=\pdv{f}{x_m}\left(a_1,\cdots,a_N\right)\nonumber\\
      &\implies\forall n\in\mathbb{N}_{\le N},\exists\dv{f}{x_n}\left(a_1,\cdots,a_N\right)
     \end{align}
     を証明する．
     関数の引数の順序を入れ替えることを考えると，一般性を失わずに
     \begin{align}
-     \exists m\in\mathbb{N}_{\le N},\lim_{h_m\to 0}f\left(a_1,\cdots,a_{m-1},a_m+h_m,a_{m+1},\cdots,a_N\right)=f\left(a_1,\cdots,a_N\right)
+     \exists m\in\mathbb{N}_{\le N},\lim_{h_m\to 0}\pdv{f}{x_m}\left(a_1,\cdots,a_{m-1},a_m+h_m,a_{m+1},\cdots,a_N\right)=\pdv{f}{x_m}\left(a_1,\cdots,a_N\right)
     \end{align}
     を
     \begin{align}
-     \lim_{h_1\to 0}f\left(a_1+h_1,a_2,\cdots,a_N\right)=f\left(a_1,\cdots,a_N\right)
+     \lim_{h_1\to 0}\pdv{f}{x_1}\left(a_1+h_1,a_2,\cdots,a_N\right)=f\left(a_1,\cdots,a_N\right)
     \end{align}
     と言い換えられる．
     また，
@@ -909,6 +909,17 @@
      \Delta f\in C^0\left(\mathbb{R}^{\left(\inf{h_1},\sup{h_1}\right)\times\cdots\times\left(\inf{h_N},\sup{h_N}\right)}\right);\left(h_1,\cdots,h_N\right)\mapsto f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)
     \end{align}
     が定義できる．
+    平均値の定理より，
+    \begin{align}
+     &\exists\epsilon_1\in\left(0,h_1\right),\pdv{f}{x_1}\left(a_1+\epsilon_1,\cdots,a_N+h_N\right)=\frac{f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)}{h_1}\nonumber\\
+     &h_1\pdv{f}{x_1}\left(a_1+\epsilon_1,\cdots,a_N+h_N\right)=f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)\nonumber\\
+     &h_1\pdv{f}{x_1}\left(a_1+\epsilon_1,\cdots,a_N+h_N\right)+f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)=f\left(a_1+h_1,\cdots,a_N+h_N\right)
+    \end{align}
+    よって，
+    \begin{align}
+     \Delta f\left(h_1,\cdots,h_N\right)&=f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)\nonumber\\
+     &=h_1\pdv{f}{x_1}\left(a_1+\epsilon_1,\cdots,a_N+h_N\right)+f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)\nonumber\\
+    \end{align}
   \subsection{複素微分}
    関数$f:\mathbb{C}\to\mathbb{C}$の微分は，関数$f:\mathbb{R}\to\mathbb{R}$の微分と同様に，
    \begin{align}
