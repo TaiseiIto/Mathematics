@@ -922,25 +922,33 @@
     \end{align}
     さらに，
     \begin{align}
-     \epsilon_1&=\pdv{f}{x_1}\left(a_1+\epsilon_0\left(h_1,\cdots,h_N\right),\cdots,a_N+h_N\right)-\pdv{f}{x_1}\left(a_1,\cdots,a_N\right)\nonumber\\
-     \epsilon_1+\pdv{f}{x_1}\left(a_1,\cdots,a_N\right)&=\pdv{f}{x_1}\left(a_1+\epsilon_0\left(h_1,\cdots,h_N\right),\cdots,a_N+h_N\right)
+     \epsilon_1\left(h_1,\cdots,h_N\right)&=\pdv{f}{x_1}\left(a_1+\epsilon_0\left(h_1,\cdots,h_N\right),\cdots,a_N+h_N\right)-\pdv{f}{x_1}\left(a_1,\cdots,a_N\right)\nonumber\\
+     \epsilon_1\left(h_1,\cdots,h_N\right)+\pdv{f}{x_1}\left(a_1,\cdots,a_N\right)&=\pdv{f}{x_1}\left(a_1+\epsilon_0\left(h_1,\cdots,h_N\right),\cdots,a_N+h_N\right)
     \end{align}
     とすると，
     \begin{align}
      \Delta f\left(h_1,\cdots,h_N\right)&=h_1\pdv{f}{x_1}\left(a_1+\epsilon_0\left(h_1,\cdots,h_N\right),\cdots,a_N+h_N\right)+f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)\nonumber\\
-     &=h_1\left(\epsilon_1+\pdv{f}{x_1}\left(a_1,\cdots,a_N\right)\right)+f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)\nonumber\\
-     &=h_1\epsilon_1+h_1\pdv{f}{x_1}\left(a_1,\cdots,a_N\right)+f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)
+     &=h_1\left(\epsilon_1\left(h_1,\cdots,h_N\right)+\pdv{f}{x_1}\left(a_1,\cdots,a_N\right)\right)+f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)\nonumber\\
+     &=h_1\epsilon_1\left(h_1,\cdots,h_N\right)+h_1\pdv{f}{x_1}\left(a_1,\cdots,a_N\right)+f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)
     \end{align}
     さらに，
     \begin{align}
-     &\forall n\in{}_{2\le}\mathbb{N}_{\le N},\epsilon_n\left(h_n,\cdots,h_N\right)=f\left(a_1,\cdots,a_{n-1},a_n+h_n,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_n,a_{n+1}+h_{n+1},\cdots,a_N+h_N\right)\nonumber\\
-     &\iff\epsilon_n\left(h_n,\cdots,h_N\right)+f\left(a_1,\cdots,a_n,a_{n+1}+h_{n+1},\cdots,a_N+h_N\right)=f\left(a_1,\cdots,a_{n-1},a_n+h_n,\cdots,a_N+h_N\right)
+     \epsilon_2\left(h_2,\cdots,h_N\right)&=\frac{f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,a_2,a_3+h_3,\cdots,a_N+h_N\right)}{h_2}-\pdv{f}{x_2}\left(a_1,\cdots,a_N\right)
     \end{align}
     とすると，
     \begin{align}
-     \Delta f\left(h_1,\cdots,h_N\right)&=h_1\pdv{f}{x_1}\left(a_1+\epsilon_0\left(h_1,\cdots,h_N\right),\cdots,a_N+h_N\right)+f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)\nonumber\\
-     &=h_1\pdv{f}{x_1}\left(a_1+\epsilon_0\left(h_1,\cdots,h_N\right),\cdots,a_N+h_N\right)+\sum_{n=2}^N\epsilon_n
+     \epsilon_2\left(h_2,\cdots,h_N\right)+\pdv{f}{x_2}\left(a_1,\cdots,a_N\right)&=\frac{f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,a_2,a_3+h_3,\cdots,a_N+h_N\right)}{h_2}\nonumber\\
+     h_2\epsilon_2\left(h_2,\cdots,h_N\right)+h_2\pdv{f}{x_2}\left(a_1,\cdots,a_N\right)&=f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,a_2,a_3+h_3,\cdots,a_N+h_N\right)\nonumber\\
+     h_2\epsilon_2\left(h_2,\cdots,h_N\right)+h_2\pdv{f}{x_2}\left(a_1,\cdots,a_N\right)+f\left(a_1,a_2,a_3+h_3,\cdots,a_N+h_N\right)&=f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)
     \end{align}
+    だから，
+    \begin{align}
+     \Delta f\left(h_1,\cdots,h_N\right)=&h_1\epsilon_1\left(h_1,\cdots,h_N\right)+h_1\pdv{f}{x_1}\left(a_1,\cdots,a_N\right)+f\left(a_1,a_2+h_2,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)\nonumber\\
+     =&h_1\epsilon_1\left(h_1,\cdots,h_N\right)+h_1\pdv{f}{x_1}\left(a_1,\cdots,a_N\right)\nonumber\\
+     &+h_2\epsilon_2\left(h_2,\cdots,h_N\right)+h_2\pdv{f}{x_2}\left(a_1,\cdots,a_N\right)\nonumber\\
+     &+f\left(a_1,a_2,a_3+h_3,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)
+    \end{align}
+    である．
   \subsection{複素微分}
    関数$f:\mathbb{C}\to\mathbb{C}$の微分は，関数$f:\mathbb{R}\to\mathbb{R}$の微分と同様に，
    \begin{align}
