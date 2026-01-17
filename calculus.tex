@@ -878,7 +878,8 @@
    \subsubsection{偏導関数が連続ならば全微分可能}
     \begin{align}
      &\forall\left(f;\left(x_1,\cdots,x_N\right)\mapsto f\left(x_1,\cdots,x_N\right),\left(a_1,\cdots,a_N\right)\right)\in\mathbb{R}^{\mathbb{R}^N}\times\mathbb{R}^N,\nonumber\\
-     &\forall n\in\mathbb{N}_{\le N},\exists\pdv{f}{x_n}\left(a_1,\cdots,a_N\right)\land\exists m\in\mathbb{N}_{\le N},\lim_{h_m\to 0}\pdv{f}{x_m}\left(a_1,\cdots,a_{m-1},a_m+h_m,a_{m+1},\cdots,a_N\right)=\pdv{f}{x_m}\left(a_1,\cdots,a_N\right)\nonumber\\
+     &\exists\epsilon\in\mathbb{R}_+,\forall\left(n,h_1,\cdots,h_N\right)\in\mathbb{N}_{\le N}\times\left[-\epsilon,\epsilon\right]^N,\exists\pdv{f}{x_n}\left(a_1+h_1,\cdots,a_N+h_N\right)\nonumber\\
+     &\land\exists m\in\mathbb{N}_{\le N},\lim_{h_m\to 0}\pdv{f}{x_m}\left(a_1,\cdots,a_{m-1},a_m+h_m,a_{m+1},\cdots,a_N\right)=\pdv{f}{x_m}\left(a_1,\cdots,a_N\right)\nonumber\\
      &\implies\forall n\in\mathbb{N}_{\le N},\exists\dv{f}{x_n}\left(a_1,\cdots,a_N\right)
     \end{align}
     を証明する．
@@ -893,11 +894,11 @@
     と言い換えられる．
     また，
     \begin{align}
-     \forall n\in\mathbb{N}_{\le N},\exists\pdv{f}{x_n}\left(a_1,\cdots,a_N\right)
+     &\exists\epsilon\in\mathbb{R}_+,\forall\left(n,h_1,\cdots,h_N\right)\in\mathbb{N}_{\le N}\times\left[-\epsilon,\epsilon\right]^N,\exists\pdv{f}{x_n}\left(a_1+h_1,\cdots,a_N+h_N\right)
     \end{align}
-    より，$f$は$\left(a_1,\cdots,a_N\right)$において各引数上連続であり，開区間上の連続領域は幅を持つから，関数
+    より，
     \begin{align}
-     \Delta f\in C^0\left(\mathbb{R}^{\left(\inf{h_1},\sup{h_1}\right)\times\cdots\times\left(\inf{h_N},\sup{h_N}\right)}\right);\left(h_1,\cdots,h_N\right)\mapsto f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)
+     \Delta f\in\mathbb{R}^{\left[-\epsilon,\epsilon\right]^N};\left(h_1,\cdots,h_N\right)\mapsto f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)
     \end{align}
     が定義できる．
     平均値の定理より，
