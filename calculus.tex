@@ -749,6 +749,12 @@
     \mathrm{d}f\left(x_1,\cdots,x_N\right)=\sum_{n=1}^N\mathrm{d}x_n\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)
    \end{align}
    と書く．
+   このとき，
+   \begin{align}
+    \forall n\in\mathbb{N}_{\le N},\dv{f}{x_n}\left(x_1,\cdots,x_N\right)=&\sum_{m=1}^N\dv{x_m}{x_n}\pdv{f}{x_m}\left(x_1,\cdots,x_N\right)\nonumber\\
+    =&\pdv{f}{x_n}\left(x_1,\cdots,x_N\right)
+   \end{align}
+   である．
    \subsubsection{閉区間上の連続関数の像は有界}
     \begin{align}
      \forall f\in C^0\left(\mathbb{R}^{\left[a,b\right]}\right),f\left(\left[a,b\right]\right)\subset\mathbb{R}
