@@ -1001,8 +1001,15 @@
     よって，
     \begin{align}
      \lim_{h\to0}\Delta f\left(h_1,\cdots,h_N\right)=&\lim_{h\to0}\sum_{n=1}^Nh_n\left(\epsilon\left(h_n,\cdots,h_N\right)+\pdv{f}{x_n}\left(a_1,\cdots,a_n,a_{n+1}+h_{n+1},\cdots,a_N+h_N\right)\right)\nonumber\\
-     =&\lim_{h\to0}\sum_{n=1}^Nh_n\pdv{f}{x_n}\left(a_1,\cdots,a_n,a_{n+1}+h_{n+1},\cdots,a_N+h_N\right)\nonumber\\
+     \lim_{h\to0}f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)=&\lim_{h\to0}\sum_{n=1}^Nh_n\pdv{f}{x_n}\left(a_1,\cdots,a_n,a_{n+1}+h_{n+1},\cdots,a_N+h_N\right)\nonumber\\
+     \lim_{h\to0}\frac{f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)}{h}=&\lim_{h\to0}\frac{1}{h}\sum_{n=1}^Nh_n\pdv{f}{x_n}\left(a_1,\cdots,a_n,a_{n+1}+h_{n+1},\cdots,a_N+h_N\right)\nonumber\\
+     \lim_{h\to0}\left(\sum_{n=1}^Nh_n^2\right)^{-\frac{1}{2}}\left(f\left(a_1+h_1,\cdots,a_N+h_N\right)-f\left(a_1,\cdots,a_N\right)\right)=&\lim_{h\to0}\left(\sum_{n=1}^Nh_n^2\right)^{-\frac{1}{2}}\sum_{n=1}^Nh_n\pdv{f}{x_n}\left(a_1,\cdots,a_n,a_{n+1}+h_{n+1},\cdots,a_N+h_N\right)
     \end{align}
+    ここで，
+    \begin{align}
+     \forall n\in\mathbb{N}_{\le N},g_n=\pdv{f}{x_n}\left(a_1,\cdots,a_n,a_{n+1}+h_{n+1},\cdots,a_N+h_N\right)
+    \end{align}
+    とすれば，全微分可能性の定義を満たしていることがわかる．
   \subsection{複素微分}
    関数$f:\mathbb{C}\to\mathbb{C}$の微分は，関数$f:\mathbb{R}\to\mathbb{R}$の微分と同様に，
    \begin{align}
